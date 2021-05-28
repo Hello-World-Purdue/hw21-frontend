@@ -1,31 +1,68 @@
 import Head from "next/head";
+import Link from "next/link";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Resources</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <header>
+          <div className={styles.topNav}>
+            <a className={styles.active} href="#home">
+              Home
+            </a>
+            <a href="#schedule">Schedule</a>
+            <a href="#faq">FAQ</a>
+            <a href="#sponsors">Sponsors</a>
+            <Link href="/">
+              <a>Resources</a>
+            </Link>
+            <a href="#announcements">Announcements</a>
+            <div className={styles.dropdown}>
+              <button className={styles.dropbtn}>Manage</button>
+              <div className={styles.dropdownContent}>
+                <Link href="/admin_dashboard">
+                  <a>Admin Dashboard</a>
+                </Link>
+                <Link href="#">
+                  <a>Announcements</a>
+                </Link>
+                <Link href="#">
+                  <a>Link 3</a>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <h1 className={styles.title}>Resources</h1>
 
         <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.js</code>
+          resources from workshops as well as other materials
         </p>
 
         <div className={styles.grid}>
+          <a href="https://nextjs.org/docs" className={styles.card}>
+            <h3>Resource &rarr;</h3>
+            <p>Find in-depth information about Next.js features and API.</p>
+          </a>
+
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h3>Documentation &rarr;</h3>
             <p>Find in-depth information about Next.js features and API.</p>
           </a>
 
-          <a href="/profile" className={styles.card}>
+          <a href="https://nextjs.org/docs" className={styles.card}>
+            <h3>Documentation &rarr;</h3>
+            <p>Find in-depth information about Next.js features and API.</p>
+          </a>
+
+          <a href="https://nextjs.org/learn" className={styles.card}>
             <h3>Learn &rarr;</h3>
             <p>Learn about Next.js in an interactive course with quizzes!</p>
           </a>
@@ -58,6 +95,7 @@ export default function Home() {
         >
           Powered by{" "}
           <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
+          Hello World 2021
         </a>
       </footer>
     </div>
