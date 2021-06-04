@@ -39,6 +39,10 @@
   color: black;
 }
 
+.table {
+  background-color: aliceblue;
+}
+
 /* Add a color to the active/current link */
 .topNav a.active {
   background-color: #044caa;
