@@ -1,11 +1,17 @@
 import { Form, Card } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-import CustomButton from '../../components/button';
+import CustomButton from './button';
 
-function LoginForm() {
+import "bootstrap/dist/css/bootstrap.min.css";
+
+function SignupForm() {
+	const onSubmitHandler = (e: any) => {
+		e.preventDefault();
+		console.log(e);
+	}
+
     return (
-        <Card style={{ width: "30%", padding: "20px" }}>
-				<Form>
+        <Card className="signupForm">
+				<Form onSubmit={onSubmitHandler}>
 					<Form.Group>
 						<Form.Label>LOGIN</Form.Label>
 						<Form.Control type="text" name="username" />
@@ -17,26 +23,20 @@ function LoginForm() {
 					</Form.Group>
 
 					<Form.Group>
-						<Form.Check type="checkbox" label="REMEMBER ME" />
+						<Form.Label>RETYPE PASSWORD</Form.Label>
+						<Form.Control type="password" name="password" />
 					</Form.Group>
 
-					<div style={{ display: 'flex', justifyContent: 'center' }}>
+					<div className="buttonContainer">
 						<CustomButton type="submit">BAM!</CustomButton>
 					</div>
 				</Form>
 
-				<div
-					style={{
-						textAlign: "center",
-						display: "flex",
-						flexDirection: "column",
-					}}
-				>
-					<a href="/forgot">FORGOT PASSWORD</a>
-					<a href="/auth/signup">CREATE A NEW ACCOUNT</a>
+				<div className="linkContainer">
+					<a href="/auth/login">ALREADY HAVE AN ACCOUNT?</a>
 				</div>
 			</Card>
     )
 }
 
-export default LoginForm;
+export default SignupForm;

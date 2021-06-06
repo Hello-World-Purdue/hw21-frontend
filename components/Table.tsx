@@ -4,7 +4,7 @@
 import React, { FC } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 //component imports
-import { HackerData } from '../admin_dashboard';
+import { HackerData } from '../pages/admin_dashboard';
 import { NONAME } from 'node:dns';
 
 

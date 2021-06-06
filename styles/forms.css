@@ -1,0 +1,17 @@
+.signupForm,
+.loginForm {
+    width: "30%";
+    padding: '20px'; 
+    margin: 'auto'
+}
+
+.linkContainer {
+    text-align: center;
+	display: "flex";
+	flex-direction: column;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+}

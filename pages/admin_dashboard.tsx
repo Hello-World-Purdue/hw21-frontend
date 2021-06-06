@@ -4,8 +4,8 @@ import Head from 'next/head'
 import React, { FC, Fragment } from 'react';
 
 
-import Table from './Components/Table';
-import { Header } from './Components/Header';
+import Table from '../components/Table';
+import { Header } from '../components/Header';
 
 import styles from '../styles/Home.module.css'
 export interface HackerData {

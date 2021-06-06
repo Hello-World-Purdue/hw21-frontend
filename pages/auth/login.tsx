@@ -1,6 +1,7 @@
-import LoginForm from '../Components/LoginForm';
+import LoginForm from '../../components/LoginForm';
 
 function Login() {
+
 	return (
 		<div
 			style={{
