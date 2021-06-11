@@ -1,9 +1,9 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Form, Card } from "react-bootstrap";
 import CustomButton from "./button";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import classes from "./forms.module.css";
+import styles from "./forms.module.css";
 
 const LoginForm: React.FC<{ loginUser: (user) => void }> = (props) => {
 	const [login, setLogin] = useState<string>("");
@@ -98,7 +98,7 @@ const LoginForm: React.FC<{ loginUser: (user) => void }> = (props) => {
 	};
 
 	return (
-		<Card className={classes.loginform}>
+		<Card className={styles.loginform}>
 			<Form onSubmit={submitForm}>
 				<Form.Group>
 					<Form.Label>LOGIN</Form.Label>
@@ -136,12 +136,12 @@ const LoginForm: React.FC<{ loginUser: (user) => void }> = (props) => {
 					/>
 				</Form.Group>
 
-				<div className={classes.buttonContainer}>
+				<div className={styles.buttonContainer}>
 					<CustomButton type="submit">BAM!</CustomButton>
 				</div>
 			</Form>
 
-			<div className={classes.linkContainer}>
+			<div className={styles.linkContainer}>
 				<a href="/forgot">FORGOT PASSWORD</a>
 				<a href="/auth/signup">CREATE A NEW ACCOUNT</a>
 			</div>
