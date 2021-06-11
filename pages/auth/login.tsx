@@ -1,6 +1,9 @@
 import LoginForm from '../../components/LoginForm';
 
 function Login() {
+	function loginUser(user) {
+		console.log(user);
+	}
 
 	return (
 		<div
@@ -11,7 +14,7 @@ function Login() {
 				justifyContent: "center",
 			}}
 		>
-			<LoginForm />
+			<LoginForm loginUser={loginUser} />
 		</div>
 	);
 }

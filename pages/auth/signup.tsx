@@ -1,6 +1,10 @@
 import SignupForm from '../../components/SignupForm';
 
 function Signup() {
+	function signupUser(user) {
+		console.log(user);
+	}
+
 	return (
 		<div
 			style={{
@@ -10,7 +14,7 @@ function Signup() {
 				justifyContent: "center",
 			}}
 		>
-			<SignupForm />
+			<SignupForm signupUser={signupUser} />
 		</div>
 	);
 }
