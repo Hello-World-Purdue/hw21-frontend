@@ -1,12 +1,14 @@
-import { Button } from 'react-bootstrap';
+import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const CustomButton: React.FC<{ type: string }> = (props) => {
+const CustomButton: React.FC<{ type: string; onClick?: () => void }> = (
+	props
+) => {
 	return (
-		<Button type={props.type}>
+		<Button type={props.type} onClick={props.onClick}>
 			{props.children}
-		</Button>	
+		</Button>
 	);
-}
+};
 
 export default CustomButton;

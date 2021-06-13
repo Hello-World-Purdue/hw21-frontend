@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Form, Card } from "react-bootstrap";
 import CustomButton from "./button";
+import Toast from "./Toast";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./forms.module.css";
@@ -15,6 +16,8 @@ const LoginForm: React.FC<{ loginUser: (user) => void }> = (props) => {
 
 	const [loginClasses, setLoginClasses] = useState<string[]>([]);
 	const [passwordClasses, setPasswordClasses] = useState<string[]>([]);
+
+	const [showToast, setShowToast] = useState<boolean>(false);
 
 	function submitForm(event) {
 		event.preventDefault();
@@ -98,54 +101,64 @@ const LoginForm: React.FC<{ loginUser: (user) => void }> = (props) => {
 	};
 
 	return (
-		<Card className={styles.loginform}>
-			<Form onSubmit={submitForm}>
-				<Form.Group>
-					<Form.Label>LOGIN</Form.Label>
-					<Form.Control
-						className={loginClasses.join(" ")}
-						minLength={3}
-						onChange={loginHandler}
-						type="text"
-						name="username"
-					/>
-					{loginIssues && (
-						<div className="invalid-feedback">Login cannot be empty</div>
-					)}
-				</Form.Group>
+		<div>
+			<Card className={styles.loginform}>
+				<Form onSubmit={submitForm}>
+					<Form.Group>
+						<Form.Label>LOGIN</Form.Label>
+						<Form.Control
+							className={loginClasses.join(" ")}
+							minLength={3}
+							onChange={loginHandler}
+							type="text"
+							name="username"
+						/>
+						{loginIssues && (
+							<div className="invalid-feedback">Login cannot be empty</div>
+						)}
+					</Form.Group>
 
-				<Form.Group>
-					<Form.Label>PASSWORD</Form.Label>
-					<Form.Control
-						className={passwordClasses.join(" ")}
-						minLength={5}
-						onChange={passwordHandler}
-						type="password"
-						name="password"
-					/>
-					{passwordIssues && (
-						<div className="invalid-feedback">Password cannot be empty</div>
-					)}
-				</Form.Group>
+					<Form.Group>
+						<Form.Label>PASSWORD</Form.Label>
+						<Form.Control
+							className={passwordClasses.join(" ")}
+							minLength={5}
+							onChange={passwordHandler}
+							type="password"
+							name="password"
+						/>
+						{passwordIssues && (
+							<div className="invalid-feedback">Password cannot be empty</div>
+						)}
+					</Form.Group>
 
-				<Form.Group>
-					<Form.Check
-						onChange={rememberHandler}
-						type="checkbox"
-						label="REMEMBER ME"
-					/>
-				</Form.Group>
+					<Form.Group>
+						<Form.Check
+							onChange={rememberHandler}
+							type="checkbox"
+							label="REMEMBER ME"
+						/>
+					</Form.Group>
 
-				<div className={styles.buttonContainer}>
-					<CustomButton type="submit">BAM!</CustomButton>
+					<div className={styles.buttonContainer}>
+						<CustomButton type="submit">BAM!</CustomButton>
+					</div>
+				</Form>
+
+				<div className={styles.linkContainer}>
+					<a href="/forgot">FORGOT PASSWORD</a>
+					<a href="/auth/signup">CREATE A NEW ACCOUNT</a>
 				</div>
-			</Form>
+			</Card>
 
-			<div className={styles.linkContainer}>
-				<a href="/forgot">FORGOT PASSWORD</a>
-				<a href="/auth/signup">CREATE A NEW ACCOUNT</a>
-			</div>
-		</Card>
+			<Toast
+				show={showToast}
+				title="Username does not exist"
+				message="The username you have entered does not exist in our database"
+				comment="Please check your credentials and try again"
+				onHide={() => setShowToast(false)}
+			/>
+		</div>
 	);
 };
 
