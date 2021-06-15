@@ -13,6 +13,9 @@ function Login() {
 		})
 			.then((data) => {
 				console.log(data);
+				if (data.status === 404) {
+					setShowToast(true);
+				}
 			})
 			.catch((err) => {
 				setShowToast(true);
