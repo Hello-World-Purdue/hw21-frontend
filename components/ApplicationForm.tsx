@@ -9,16 +9,6 @@ const ApplicationForm: React.FC<{
 	status: string;
 }> = (props) => {
 	const [buttonValue, setButtonValue] = useState<string>("EDIT PROFILE");
-	const [fullNameField, setFullNameField] = useState<any>(
-        <div>
-            <strong>{props.name.toUpperCase()}</strong>
-        </div>
-    );
-	const [emailField, setEmailField] = useState<any>(
-        <div>
-            <strong>{props.email.toUpperCase()}</strong>
-        </div>
-    );
 
 	const [fullName, setFullName] = useState<string>(props.name);
 	const [email, setEmail] = useState<string>(props.email);
@@ -32,50 +22,13 @@ const ApplicationForm: React.FC<{
 		switch (buttonValue) {
 			case "EDIT PROFILE":
 				{
-					setFullNameField(
-						<Form.Control
-							placeholder={fullName.toUpperCase()}
-							onChange={handleNameChange}
-							type="text"
-							name="fullname"
-						/>
-					);
-
-					setEmailField(
-						<div>
-							<Form.Control
-								className={emailClasses.join(" ")}
-								placeholder={email.toUpperCase()}
-								onChange={handleEmailChange}
-								type="email"
-								name="email"
-							/>
-							{emailIssues && (
-								<div className="invalid-feedback">Must be a purdue email</div>
-							)}
-						</div>
-					);
-
 					setButtonValue("SUBMIT");
 				}
 				break;
 			case "SUBMIT": {
-                
 				if (validateEmail()) {
 					return;
 				}
-
-				setFullNameField(
-					<div>
-						<strong>{fullName.toUpperCase()}</strong>
-					</div>
-				);
-
-				setEmailField(
-					<div>
-						<strong>{email.toUpperCase()}</strong>
-					</div>
-				);
 
 				setButtonValue("EDIT PROFILE");
 			}
@@ -124,11 +77,41 @@ const ApplicationForm: React.FC<{
 			<Form onSubmit={handleSubmit}>
 				<Form.Group>
 					<Form.Label>Full Name</Form.Label>
-					{fullNameField}
+					{buttonValue === "SUBMIT" && (
+						<Form.Control
+							defaultValue={fullName.toUpperCase()}
+							onChange={handleNameChange}
+							type="text"
+							name="fullname"
+						/>
+					)}
+					{buttonValue === "EDIT PROFILE" && (
+						<div>
+							<strong>{fullName.toUpperCase()}</strong>
+						</div>
+					)}
 				</Form.Group>
 				<Form.Group>
 					<Form.Label>Email</Form.Label>
-					{emailField}
+					{buttonValue === "SUBMIT" && (
+						<div>
+							<Form.Control
+								className={emailClasses.join(" ")}
+								defaultValue={email.toUpperCase()}
+								onChange={handleEmailChange}
+								type="email"
+								name="email"
+							/>
+							{emailIssues && (
+								<div className="invalid-feedback">Must be a purdue email</div>
+							)}
+						</div>
+					)}
+					{buttonValue === "EDIT PROFILE" && (
+						<div>
+							<strong>{email.toUpperCase()}</strong>
+						</div>
+					)}
 				</Form.Group>
 				<Form.Group>
 					<Form.Label>Application Status</Form.Label>
