@@ -3,7 +3,7 @@ import { Form, Card } from "react-bootstrap";
 import CustomButton from "./button";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import styles from "./forms.module.css";
+import styles from "../styles/forms.module.css";
 
 const LoginForm: React.FC<{ loginUser: (user) => void }> = (props) => {
 	const [login, setLogin] = useState<string>("");
