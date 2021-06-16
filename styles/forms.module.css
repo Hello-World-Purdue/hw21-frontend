@@ -1,5 +1,6 @@
 .signupForm,
-.loginForm {
+.loginForm,
+.applicationForm {
     width: "30%";
     padding: '20px'; 
     margin: 'auto'
@@ -14,4 +15,9 @@
 .buttonContainer {
     display: flex;
     justify-content: center;
+}
+
+.appField {
+    display: flex;
+    flex-direction: row;
 }

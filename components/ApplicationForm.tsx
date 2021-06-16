@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { Form, Card, Button } from "react-bootstrap";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser, faFolder, faAt } from "@fortawesome/free-solid-svg-icons";
+
 import "bootstrap/dist/css/bootstrap.min.css";
+import styles from "../styles/forms.module.css";
 
 const ApplicationForm: React.FC<{
 	name: string;
@@ -73,50 +77,59 @@ const ApplicationForm: React.FC<{
 	};
 
 	return (
-		<Card>
+		<Card className={styles.applicationForm}>
 			<Form onSubmit={handleSubmit}>
-				<Form.Group>
-					<Form.Label>Full Name</Form.Label>
-					{buttonValue === "SUBMIT" && (
-						<Form.Control
-							defaultValue={fullName.toUpperCase()}
-							onChange={handleNameChange}
-							type="text"
-							name="fullname"
-						/>
-					)}
-					{buttonValue === "EDIT PROFILE" && (
-						<div>
-							<strong>{fullName.toUpperCase()}</strong>
-						</div>
-					)}
-				</Form.Group>
-				<Form.Group>
-					<Form.Label>Email</Form.Label>
-					{buttonValue === "SUBMIT" && (
-						<div>
+				<div className={styles.appField}>
+					<FontAwesomeIcon size="3x" icon={faUser} />
+					<Form.Group>
+						<Form.Label>Full Name</Form.Label>
+						{buttonValue === "SUBMIT" && (
 							<Form.Control
-								className={emailClasses.join(" ")}
-								defaultValue={email.toUpperCase()}
-								onChange={handleEmailChange}
-								type="email"
-								name="email"
+								defaultValue={fullName.toUpperCase()}
+								onChange={handleNameChange}
+								type="text"
+								name="fullname"
 							/>
-							{emailIssues && (
-								<div className="invalid-feedback">Must be a purdue email</div>
-							)}
-						</div>
-					)}
-					{buttonValue === "EDIT PROFILE" && (
-						<div>
-							<strong>{email.toUpperCase()}</strong>
-						</div>
-					)}
-				</Form.Group>
-				<Form.Group>
-					<Form.Label>Application Status</Form.Label>
-					<div>ACCEPTED</div>
-				</Form.Group>
+						)}
+						{buttonValue === "EDIT PROFILE" && (
+							<div>
+								<strong>{fullName.toUpperCase()}</strong>
+							</div>
+						)}
+					</Form.Group>
+				</div>
+				<div className={styles.appField}>
+					<FontAwesomeIcon size="3x" icon={faAt} />
+					<Form.Group>
+						<Form.Label>Email</Form.Label>
+						{buttonValue === "SUBMIT" && (
+							<div>
+								<Form.Control
+									className={emailClasses.join(" ")}
+									defaultValue={email.toUpperCase()}
+									onChange={handleEmailChange}
+									type="email"
+									name="email"
+								/>
+								{emailIssues && (
+									<div className="invalid-feedback">Must be a purdue email</div>
+								)}
+							</div>
+						)}
+						{buttonValue === "EDIT PROFILE" && (
+							<div>
+								<strong>{email.toUpperCase()}</strong>
+							</div>
+						)}
+					</Form.Group>
+				</div>
+				<div className={styles.appField}>
+					<FontAwesomeIcon size="3x" icon={faFolder} />
+					<Form.Group>
+						<Form.Label>Application Status</Form.Label>
+						<div>ACCEPTED</div>
+					</Form.Group>
+				</div>
 				<Button type="submit">{buttonValue}</Button>
 			</Form>
 		</Card>
