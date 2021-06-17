@@ -2,6 +2,8 @@ import { useState } from "react";
 import LoginForm from "../../components/LoginForm";
 import Toast from "../../components/Toast";
 
+import styles from '../../styles/forms.module.css';
+
 function Login() {
 	const [showToast, setShowToast] = useState<boolean>(false);
 
@@ -23,14 +25,7 @@ function Login() {
 	}
 
 	return (
-		<div
-			style={{
-				height: "100%",
-				display: "flex",
-				alignItems: "center",
-				justifyContent: "center",
-			}}
-		>
+		<div className={styles.formPage}>
 			<LoginForm loginUser={loginUser} />
 			<Toast
 				show={showToast}

@@ -1,23 +1,97 @@
+.formPage {
+    height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    background: url('../assets/img/bg_img.png') no-repeat;
+    background-size: cover;
+}
+
+.formContainer {
+	width: 40%;
+	padding: 15px;
+    border: 3px solid black;
+}
+
+.appFormContainer {
+    width: 30%;
+    height: 60%;
+    padding: 20px;
+    border: 3px solid black;
+}
+
 .signupForm,
 .loginForm,
 .applicationForm {
-    width: "30%";
-    padding: '20px'; 
-    margin: 'auto'
+	margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.formField {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.formLabel {
+    margin-bottom: 1px;
 }
 
 .linkContainer {
-    text-align: center;
+	text-align: center;
 	display: flex;
 	flex-direction: column;
 }
 
+.linkContainer a {
+    color: black;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    font-size: smaller;
+}
+
+.linkContainer a:hover {
+    color: salmon;
+}
+
 .buttonContainer {
-    display: flex;
-    justify-content: center;
+    margin-top: 15px;
+	display: flex;
+	justify-content: center;
 }
 
 .appField {
-    display: flex;
-    flex-direction: row;
+	display: flex;
+	flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.appIcon {
+    margin-left: 15px;
+    margin-right: 25px;
+}
+
+.appLabel {
+    font-weight: lighter;
+    font-size: smaller;
+    margin-bottom: 1px;
+}
+
+.appButton {
+    background-color: skyblue;
+    color: black;
+    border: 2px solid black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 30%;
+}
+
+.appButton:hover {
+    color: brown;
+    background-color: skyblue;
+    border: 2px solid brown;
 }

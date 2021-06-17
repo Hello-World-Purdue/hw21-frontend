@@ -77,12 +77,12 @@ const ApplicationForm: React.FC<{
 	};
 
 	return (
-		<Card className={styles.applicationForm}>
-			<Form onSubmit={handleSubmit}>
+		<Card className={styles.appFormContainer}>
+			<Form className={styles.applicationForm} onSubmit={handleSubmit}>
 				<div className={styles.appField}>
-					<FontAwesomeIcon size="3x" icon={faUser} />
+					<FontAwesomeIcon className={styles.appIcon} size="3x" icon={faUser} />
 					<Form.Group>
-						<Form.Label>Full Name</Form.Label>
+						<Form.Label className={styles.appLabel}>Full Name</Form.Label>
 						{buttonValue === "SUBMIT" && (
 							<Form.Control
 								defaultValue={fullName.toUpperCase()}
@@ -99,9 +99,9 @@ const ApplicationForm: React.FC<{
 					</Form.Group>
 				</div>
 				<div className={styles.appField}>
-					<FontAwesomeIcon size="3x" icon={faAt} />
+					<FontAwesomeIcon className={styles.appIcon} size="3x" icon={faAt} />
 					<Form.Group>
-						<Form.Label>Email</Form.Label>
+						<Form.Label className={styles.appLabel}>Email</Form.Label>
 						{buttonValue === "SUBMIT" && (
 							<div>
 								<Form.Control
@@ -124,13 +124,24 @@ const ApplicationForm: React.FC<{
 					</Form.Group>
 				</div>
 				<div className={styles.appField}>
-					<FontAwesomeIcon size="3x" icon={faFolder} />
+					<FontAwesomeIcon
+						className={styles.appIcon}
+						size="3x"
+						icon={faFolder}
+					/>
 					<Form.Group>
-						<Form.Label>Application Status</Form.Label>
-						<div>ACCEPTED</div>
+						<Form.Label className={styles.appLabel}>
+							Application Status
+						</Form.Label>
+						<div><strong>ACCEPTED</strong></div>
 					</Form.Group>
 				</div>
-				<Button type="submit">{buttonValue}</Button>
+
+				<div className={styles.buttonContainer}>
+					<button className={styles.appButton} type="submit">
+						<small>{buttonValue}</small>
+					</button>
+				</div>
 			</Form>
 		</Card>
 	);

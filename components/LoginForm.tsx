@@ -98,9 +98,9 @@ const LoginForm: React.FC<{ loginUser: (user) => void }> = (props) => {
 	};
 
 	return (
-		<Card className={styles.loginform}>
-			<Form onSubmit={submitForm}>
-				<Form.Group>
+		<Card className={styles.formContainer}>
+			<Form className={styles.loginForm} onSubmit={submitForm}>
+				<Form.Group className={styles.formField}>
 					<Form.Label>LOGIN</Form.Label>
 					<Form.Control
 						className={loginClasses.join(" ")}
@@ -114,7 +114,7 @@ const LoginForm: React.FC<{ loginUser: (user) => void }> = (props) => {
 					)}
 				</Form.Group>
 
-				<Form.Group>
+				<Form.Group className={styles.formField}>
 					<Form.Label>PASSWORD</Form.Label>
 					<Form.Control
 						className={passwordClasses.join(" ")}
@@ -128,8 +128,9 @@ const LoginForm: React.FC<{ loginUser: (user) => void }> = (props) => {
 					)}
 				</Form.Group>
 
-				<Form.Group>
+				<Form.Group className={styles.formField}>
 					<Form.Check
+						style={{ fontSize: "75%" }}
 						onChange={rememberHandler}
 						type="checkbox"
 						label="REMEMBER ME"

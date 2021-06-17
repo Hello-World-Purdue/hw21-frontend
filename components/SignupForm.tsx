@@ -143,9 +143,9 @@ const SignupForm: React.FC<{ signupUser: (user) => void }> = (props) => {
 	}
 
 	return (
-		<Card className={styles.signupForm}>
-			<Form onSubmit={submitForm}>
-				<Form.Group>
+		<Card className={styles.formContainer}>
+			<Form className={styles.signupForm} onSubmit={submitForm}>
+				<Form.Group className={styles.formField}>
 					<Form.Label>LOGIN</Form.Label>
 					<Form.Control
 						className={usernameClasses.join(" ")}
@@ -159,7 +159,7 @@ const SignupForm: React.FC<{ signupUser: (user) => void }> = (props) => {
 					)}
 				</Form.Group>
 
-				<Form.Group>
+				<Form.Group className={styles.formField}>
 					<Form.Label>PASSWORD</Form.Label>
 					<Form.Control
 						minLength={5}
@@ -173,7 +173,7 @@ const SignupForm: React.FC<{ signupUser: (user) => void }> = (props) => {
 					)}
 				</Form.Group>
 
-				<Form.Group>
+				<Form.Group className={styles.formField}>
 					<Form.Label>RETYPE PASSWORD</Form.Label>
 					<Form.Control
 						className={passTwoClasses.join(" ")}
