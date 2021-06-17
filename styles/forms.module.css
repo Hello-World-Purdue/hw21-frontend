@@ -1,3 +1,4 @@
+/* General Form Styling */
 .formPage {
     height: 100%;
 	display: flex;
@@ -10,13 +11,6 @@
 .formContainer {
 	width: 40%;
 	padding: 15px;
-    border: 3px solid black;
-}
-
-.appFormContainer {
-    width: 30%;
-    height: 60%;
-    padding: 20px;
     border: 3px solid black;
 }
 
@@ -61,6 +55,14 @@
 	justify-content: center;
 }
 
+/* Application Form Styling */
+.appFormContainer {
+    width: 30%;
+    height: 60%;
+    padding: 20px;
+    border: 3px solid black;
+}
+
 .appField {
 	display: flex;
 	flex-direction: row;
@@ -73,6 +75,15 @@
     margin-right: 25px;
 }
 
+.appInput {
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+.appInput::selection {
+    border-bottom: 1px solid lightblue;
+}
+
 .appLabel {
     font-weight: lighter;
     font-size: smaller;
@@ -83,15 +94,12 @@
     background-color: skyblue;
     color: black;
     border: 2px solid black;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 5px 15px;
     width: 30%;
 }
 
 .appButton:hover {
-    color: brown;
+    color: rgba(255, 255, 255, 0.753);
     background-color: skyblue;
-    border: 2px solid brown;
+    border: 2px solid black;
 }

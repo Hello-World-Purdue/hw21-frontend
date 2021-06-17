@@ -18,7 +18,7 @@ const ApplicationForm: React.FC<{
 	const [email, setEmail] = useState<string>(props.email);
 
 	const [emailIssues, setEmailIssues] = useState<boolean>(false);
-	const [emailClasses, setEmailClasses] = useState<string[]>([]);
+	const [emailClasses, setEmailClasses] = useState<string[]>([styles.appInput]);
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
@@ -85,6 +85,7 @@ const ApplicationForm: React.FC<{
 						<Form.Label className={styles.appLabel}>Full Name</Form.Label>
 						{buttonValue === "SUBMIT" && (
 							<Form.Control
+								className={styles.appInput}
 								defaultValue={fullName.toUpperCase()}
 								onChange={handleNameChange}
 								type="text"
@@ -138,9 +139,9 @@ const ApplicationForm: React.FC<{
 				</div>
 
 				<div className={styles.buttonContainer}>
-					<button className={styles.appButton} type="submit">
+					<Button className={styles.appButton} type="submit">
 						<small>{buttonValue}</small>
-					</button>
+					</Button>
 				</div>
 			</Form>
 		</Card>
