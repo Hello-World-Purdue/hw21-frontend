@@ -1,6 +1,5 @@
 /* General Form Styling */
 .formPage {
-    height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -57,8 +56,6 @@
 
 /* Application Form Styling */
 .appFormContainer {
-    width: 30%;
-    height: 60%;
     padding: 20px;
     border: 3px solid black;
 }
@@ -90,12 +87,16 @@
     margin-bottom: 1px;
 }
 
+.appValue {
+    align-self: auto;
+    font-size: 1rem;
+}
+
 .appButton {
     background-color: skyblue;
     color: black;
     border: 2px solid black;
     padding: 5px 15px;
-    width: 30%;
 }
 
 .appButton:hover {

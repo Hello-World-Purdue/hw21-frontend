@@ -93,7 +93,7 @@ const ApplicationForm: React.FC<{
 							/>
 						)}
 						{buttonValue === "EDIT PROFILE" && (
-							<div>
+							<div className={styles.appValue}>
 								<strong>{fullName.toUpperCase()}</strong>
 							</div>
 						)}
@@ -118,7 +118,7 @@ const ApplicationForm: React.FC<{
 							</div>
 						)}
 						{buttonValue === "EDIT PROFILE" && (
-							<div>
+							<div className={styles.appValue}>
 								<strong>{email.toUpperCase()}</strong>
 							</div>
 						)}
@@ -134,14 +134,16 @@ const ApplicationForm: React.FC<{
 						<Form.Label className={styles.appLabel}>
 							Application Status
 						</Form.Label>
-						<div><strong>ACCEPTED</strong></div>
+						<div className={styles.appValue}>
+							<strong>{props.status.toUpperCase()}</strong>
+						</div>
 					</Form.Group>
 				</div>
 
 				<div className={styles.buttonContainer}>
-					<Button className={styles.appButton} type="submit">
+					<button className={styles.appButton} type="submit">
 						<small>{buttonValue}</small>
-					</Button>
+					</button>
 				</div>
 			</Form>
 		</Card>
