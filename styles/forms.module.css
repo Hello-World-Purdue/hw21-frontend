@@ -8,7 +8,7 @@
 }
 
 .formContainer {
-	width: 40%;
+	/* width: 40%; */
 	padding: 15px;
     border: 3px solid black;
 }
@@ -16,10 +16,11 @@
 .signupForm,
 .loginForm,
 .applicationForm {
-	margin-top: 10px;
+	/* margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 5px;
-    margin-right: 5px;
+    margin-right: 5px; */
+    margin: 10px 5px;
 }
 
 .formField {
@@ -89,7 +90,6 @@
 
 .appValue {
     align-self: auto;
-    font-size: 1rem;
 }
 
 .appButton {
