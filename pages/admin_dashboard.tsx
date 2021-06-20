@@ -279,40 +279,50 @@ const hackerData: HackerData[] = [
 
 export default function Admin_Dashboard() {
     return (
-        <div className={styles.container}>
+        <div className={styles.admin_dashboard}>
           <Head>
             <title>Admin Dashboard</title>
             <link rel="icon" href="/favicon.ico" />
           </Head>
-    
+
+          {/* navbar */}
+          <Header></Header>
+          
+          {/* header stuff */}
+          <body style={{width:'100%'}}>
+            <div className={styles.admin_dashboard_header}>
+              <div style={{fontSize:30, fontStyle:'italic', paddingTop:20, paddingBottom:20}}>
+                APPLICANTS
+              </div>
+            </div>
+            <div style=
+            {{
+              backgroundColor:'white', 
+              width:'100%', 
+              borderLeft: '2px solid black',
+              borderRight: '2px solid black',
+              borderBottom: '2px solid black',
+              marginBottom: '-2px'
+            }}>
+              <div style={{paddingTop:10, paddingBottom:10}}>
+              </div>
+            </div>
+          </body>
+          
+          {/* Hacker data table */}
           <main className={styles.main}>
-        <Header></Header>
-    
-  
-    
-            <p className={styles.description}>
-              admin dashboard
-            </p>
-    
             <Fragment>
-              <Table 
+              <Table
                 tableData={hackerData}
                 headingColumns={['Name', 'Email', 'Major', 'Gender', 'Year', 'Hackathons', 'Diet Restrictions', 'Resume', 'States Internal', 'States External']}
-                title="Hackers Data"
-                
+                title="APPLICANTS"
               />
             </Fragment>
           </main>
-    
+
           <footer className={styles.footer}>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Hello World 2021
-            </a>
           </footer>
+
         </div>
       )
 }

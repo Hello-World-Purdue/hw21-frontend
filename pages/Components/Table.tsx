@@ -2,7 +2,7 @@
 
 //dependency imports
 import React, { FC } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
+//import 'bootstrap/dist/css/bootstrap.css';
 //component imports
 import { HackerData } from '../admin_dashboard';
 import { NONAME } from 'node:dns';
@@ -40,6 +40,10 @@ interface TableProps {
       return <tr key={index}>
         {rowData.map((data, index) => <td key={index} data-heading={data.key} style={{
             border: 'solid 1px grey',
+            paddingLeft:5, 
+            paddingRight:5,
+            width:'100%',
+            textAlign:'center'
         }}>{data.val}</td>)}
       </tr>
     });
@@ -50,34 +54,27 @@ interface TableProps {
     return (
       <div 
       style={{
-      color: 'white',
-      border: 0,
-      borderRadius: 10,
       overflow:'auto',
       height:500,
-     // border: 'solid 2px black'
+      width:'100%',
+      border: 'solid 3px black'
       }}>
         
-        <div className="table-container__title"
-        style={{
-        background: '#fa3c3c',
-        color: 'white',
-        fontWeight: 'bold',
-        textAlign: 'center',
-  
-        
-        }}>
-          <h2>{title}</h2>
-        </div>
-        <table className={tableClasses} >
-          <thead>
+        <table className={tableClasses}
+          style= {{
+            background:'white',
+            fontSize:'1vw'
+          }}
+        >
+          <thead 
+          style={{color:'black', backgroundColor:'#58D3F7'}}>
             <tr>
               {headingColumns.map((col, index) => (
-                <th key={index}>{col}</th>
+                <th key={index} style={{padding:10, fontWeight:500}}>{col}</th>
               ))}
             </tr>
           </thead>
-          <tbody>
+          <tbody style={{color:'black'}}>
             {data}
           </tbody>
         </table>
@@ -87,3 +84,7 @@ interface TableProps {
   }
   
   export default Table;
+
+  // style={{
+  //   backgroundImage:`url("../../styles/images/admin_dashboard_background.jpg")`,
+  // }}
