@@ -130,7 +130,6 @@ const LoginForm: React.FC<{ loginUser: (user) => void }> = (props) => {
 
 				<Form.Group className={styles.formField}>
 					<Form.Check
-						style={{ fontSize: "75%" }}
 						onChange={rememberHandler}
 						type="checkbox"
 						label="REMEMBER ME"

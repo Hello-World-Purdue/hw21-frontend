@@ -75,6 +75,19 @@ const SignupForm: React.FC<{ signupUser: (user) => void }> = (props) => {
 			return true;
 		}
 
+		if (!username.includes("@purdue.edu")) {
+			setUsernameIssues(true);
+
+			if (idx === -1) {
+				usr.push("is-invalid");
+			}
+
+			setUsernameClasses(usr);
+			setUsernameWarning("Username must be a purdue email");
+
+			return true;
+		}
+
 		return false;
 	}
 
@@ -149,7 +162,6 @@ const SignupForm: React.FC<{ signupUser: (user) => void }> = (props) => {
 					<Form.Label>LOGIN</Form.Label>
 					<Form.Control
 						className={usernameClasses.join(" ")}
-						minLength={3}
 						onChange={handleUsername}
 						type="text"
 						name="username"
