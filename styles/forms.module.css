@@ -71,14 +71,16 @@
 }
 
 .appInput {
+    display: block;
+    margin: 1px 0px;
     border: none;
+    outline: none;
+    font-weight: lighter;
     border-bottom: 1px solid gray;
 }
 
-.appInput::selection,
+.appInput:hover,
 .appInput:focus {
-    border-style: none;
-    outline: none;
     border-bottom: 1px solid lightblue;
 }
 

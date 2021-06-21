@@ -84,7 +84,7 @@ const ApplicationForm: React.FC<{
 					<Form.Group>
 						<Form.Label className={styles.appLabel}>Full Name</Form.Label>
 						{buttonValue === "SUBMIT" && (
-							<Form.Control
+							<input
 								className={styles.appInput}
 								defaultValue={fullName.toUpperCase()}
 								onChange={handleNameChange}
@@ -105,7 +105,7 @@ const ApplicationForm: React.FC<{
 						<Form.Label className={styles.appLabel}>Email</Form.Label>
 						{buttonValue === "SUBMIT" && (
 							<div>
-								<Form.Control
+								<input
 									className={emailClasses.join(" ")}
 									defaultValue={email.toUpperCase()}
 									onChange={handleEmailChange}
