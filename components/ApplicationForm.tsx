@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Form, Card, Button } from "react-bootstrap";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faFolder, faAt } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faFolder, faAt, faUserEdit, faMale, faFemale, faBookmark } from "@fortawesome/free-solid-svg-icons";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "../styles/forms.module.css";
