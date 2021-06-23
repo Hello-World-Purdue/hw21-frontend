@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { Form, Card } from "react-bootstrap";
-import CustomButton from "./button";
+import CustomButton from "./CustomButton";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "../styles/forms.module.css";
@@ -140,7 +140,7 @@ const LoginForm: React.FC<{ loginUser: (user) => void }> = (props) => {
 				</Form.Group>
 
 				<div className={styles.buttonContainer}>
-					<CustomButton type="submit">BAM!</CustomButton>
+					<CustomButton>BAM!</CustomButton>
 				</div>
 			</Form>
 
