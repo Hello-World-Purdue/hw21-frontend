@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 import { Form, Card } from "react-bootstrap";
 import CustomButton from "./button";
 
@@ -204,7 +205,9 @@ const SignupForm: React.FC<{ signupUser: (user) => void }> = (props) => {
 			</Form>
 
 			<div className={styles.linkContainer}>
-				<a href="/auth/login">ALREADY HAVE AN ACCOUNT?</a>
+				<Link href="/auth/login">
+					<a>ALREADY HAVE AN ACCOUNT?</a>
+				</Link>
 			</div>
 		</Card>
 	);

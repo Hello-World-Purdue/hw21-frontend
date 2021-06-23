@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "next/link";
 import { Form, Card } from "react-bootstrap";
 import CustomButton from "./button";
 
@@ -129,11 +130,13 @@ const LoginForm: React.FC<{ loginUser: (user) => void }> = (props) => {
 				</Form.Group>
 
 				<Form.Group className={styles.formField}>
-					<Form.Check
-						onChange={rememberHandler}
-						type="checkbox"
-						label="REMEMBER ME"
-					/>
+					<small>
+						<Form.Check
+							onChange={rememberHandler}
+							type="checkbox"
+							label="REMEMBER ME"
+						/>
+					</small>
 				</Form.Group>
 
 				<div className={styles.buttonContainer}>
@@ -142,8 +145,12 @@ const LoginForm: React.FC<{ loginUser: (user) => void }> = (props) => {
 			</Form>
 
 			<div className={styles.linkContainer}>
-				<a href="api/auth/forgot">FORGOT PASSWORD</a>
-				<a href="/auth/signup">CREATE A NEW ACCOUNT</a>
+				<Link href="/api/auth/forgot">
+					<a>FORGOT PASSWORD</a>
+				</Link>
+				<Link href="/auth/signup">
+					<a>CREATE A NEW ACCOUNT</a>
+				</Link>
 			</div>
 		</Card>
 	);
