@@ -2,7 +2,15 @@ import React, { useState } from "react";
 import { Form, Card, Button } from "react-bootstrap";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faFolder, faAt, faUserEdit, faMale, faFemale, faBookmark } from "@fortawesome/free-solid-svg-icons";
+import {
+	faUser,
+	faFolder,
+	faAt,
+	faUserEdit,
+	faMale,
+	faFemale,
+	faBookmark,
+} from "@fortawesome/free-solid-svg-icons";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "../styles/forms.module.css";
@@ -80,7 +88,13 @@ const ApplicationForm: React.FC<{
 		<Card className={styles.appFormContainer}>
 			<Form className={styles.applicationForm} onSubmit={handleSubmit}>
 				<div className={styles.appField}>
-					<FontAwesomeIcon className={styles.appIcon} size="3x" icon={faUser} />
+					<FontAwesomeIcon
+						color="darkturquoise"
+						fixedWidth
+						className={styles.appIcon}
+						size="3x"
+						icon={faUser}
+					/>
 					<Form.Group>
 						<Form.Label className={styles.appLabel}>Full Name</Form.Label>
 						{buttonValue === "SUBMIT" && (
@@ -100,7 +114,13 @@ const ApplicationForm: React.FC<{
 					</Form.Group>
 				</div>
 				<div className={styles.appField}>
-					<FontAwesomeIcon className={styles.appIcon} size="3x" icon={faAt} />
+					<FontAwesomeIcon
+						color="crimson"
+						fixedWidth
+						className={styles.appIcon}
+						size="3x"
+						icon={faAt}
+					/>
 					<Form.Group>
 						<Form.Label className={styles.appLabel}>Email</Form.Label>
 						{buttonValue === "SUBMIT" && (
@@ -126,6 +146,8 @@ const ApplicationForm: React.FC<{
 				</div>
 				<div className={styles.appField}>
 					<FontAwesomeIcon
+						color="gold"
+						fixedWidth
 						className={styles.appIcon}
 						size="3x"
 						icon={faFolder}
