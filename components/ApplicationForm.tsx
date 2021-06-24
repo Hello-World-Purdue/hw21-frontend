@@ -1,15 +1,11 @@
 import React, { useState } from "react";
-import { Form, Card, Image } from "react-bootstrap";
+import { Form, Card } from "react-bootstrap";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faUser,
 	faFolder,
 	faAt,
-	faUserEdit,
-	faMale,
-	faFemale,
-	faBookmark,
 } from "@fortawesome/free-solid-svg-icons";
 
 import "bootstrap/dist/css/bootstrap.min.css";
