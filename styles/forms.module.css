@@ -20,6 +20,27 @@
     margin: 10px 5px;
 }
 
+.applicationForm::before {
+    content: '';
+    position: absolute;
+    bottom: 82%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    background-image: url('../assets/img/user_avatar.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 1px solid black;
+    border-radius: 55%;
+    transform: translate(-50%, -50%);
+    border-bottom: inherit;
+    border-bottom-color: transparent;
+}
+
+.imgContainer {
+    text-align: center;
+}
+
 .formField {
     margin-top: 10px;
     margin-bottom: 5px;
