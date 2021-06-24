@@ -5,7 +5,7 @@ import styles from "../styles/forms.module.css";
 const CustomButton: React.FC<{ onClick?: () => void }> = (props) => {
 	return (
 		<button className={styles.formButton} type="submit" onClick={props.onClick}>
-			<div className={styles.formButton} />
+			<div></div>
 		</button>
 	);
 };
