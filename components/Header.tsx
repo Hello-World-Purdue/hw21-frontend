@@ -4,7 +4,7 @@ import React, { FC } from 'react';
 import Link from 'next/link'
 
 
-import 'bootstrap/dist/css/bootstrap.css';
+//import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../../styles/Home.module.css'
 
 
@@ -20,7 +20,7 @@ type HeaderProps = {
         <header>
         <div className={styles.topNav}>
           <a className={styles.active} href="#home">Home</a>
-          <a href="#schedule">Schedule</a>
+          <a href="/schedule">Schedule</a>
           <a href="#faq">FAQ</a>
           <a href="#sponsors">Sponsors</a>
           <Link href="/"><a>Resources</a></Link>
