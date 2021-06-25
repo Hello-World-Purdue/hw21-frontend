@@ -15,6 +15,8 @@ function Login() {
 	const [loginError, setLoginError] = useState<string>('');
 
 	function loginUser(user: User) {
+		console.log(user);
+
 		const requestBody = user;
 
 		fetch("/api/auth/login", {
@@ -23,6 +25,10 @@ function Login() {
 		})
 			.then((data) => {
 				console.log(data);
+				if (!data.redirected) {
+					setShowToast(true);
+					setLoginError("A 404 Error Occured");
+				}
 			})
 			.catch((err) => {
 				setShowToast(true);

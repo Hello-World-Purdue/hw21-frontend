@@ -23,6 +23,10 @@ function Signup() {
 		})
 			.then((data) => {
 				console.log(data);
+				if (!data.redirected) {
+					setShowToast(true);
+					setSignupError("A 404 Error Occured");
+				}
 			})
 			.catch((err) => {
 				setShowToast(true);
