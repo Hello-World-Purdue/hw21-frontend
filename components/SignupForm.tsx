@@ -34,8 +34,9 @@ const SignupForm: React.FC<{ signupUser: (user) => void }> = (props) => {
 		}
 
 		const user = {
-			username: username,
+			email: username,
 			password: passOne,
+			passwordConfirm: passTwo
 		};
 
 		props.signupUser(user);

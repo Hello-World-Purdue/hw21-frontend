@@ -4,23 +4,29 @@ import Toast from "../../components/Toast";
 
 import styles from '../../styles/forms.module.css';
 
+interface User {
+	email: string,
+	password: string,
+	rememberUser?: boolean
+}
+
 function Login() {
 	const [showToast, setShowToast] = useState<boolean>(false);
+	const [loginError, setLoginError] = useState<string>('');
 
-	function loginUser(user) {
-		console.log(user);
+	function loginUser(user: User) {
+		const requestBody = user;
 
 		fetch("/api/auth/login", {
 			method: "POST",
+			body: JSON.stringify(requestBody),
 		})
 			.then((data) => {
 				console.log(data);
-				if (data.status === 404) {
-					setShowToast(true);
-				}
 			})
 			.catch((err) => {
 				setShowToast(true);
+				setLoginError(err.message);
 			});
 	}
 
@@ -29,8 +35,8 @@ function Login() {
 			<LoginForm loginUser={loginUser} />
 			<Toast
 				show={showToast}
-				title="Username does not exist"
-				message="The username you have entered does not exist in our database"
+				title="Login Error"
+				message={loginError}
 				comment="Please check your credentials and try again"
 				onHide={() => setShowToast(false)}
 			/>

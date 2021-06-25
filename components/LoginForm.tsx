@@ -28,7 +28,7 @@ const LoginForm: React.FC<{ loginUser: (user) => void }> = (props) => {
 		}
 
 		const user = {
-			username: login,
+			email: login,
 			password: password,
 			rememberUser: remember,
 		};
