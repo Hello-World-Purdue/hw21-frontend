@@ -3,20 +3,18 @@ import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import { Header } from '../Components/Header';
 import { Layout } from '../Components/Layout';
-export default function Home() {
+export default function Resources() {
   return (
     <div className={styles.resources}>
       <Head>
         <title>Resources</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* header stuff */}
-      <Layout>
 
-      <body style={{width:'100%'}}>
-        
-      </body>
-      </Layout>
+      <Layout>
+ 
+      {/* header stuff */}
+      <p> Index</p>
 
       {/* <main className={styles.main}>
 
@@ -61,7 +59,8 @@ export default function Home() {
             </div>
 
       </main> */}
-
-    </div>
+</Layout>
+</div>
+    
   )
 }
