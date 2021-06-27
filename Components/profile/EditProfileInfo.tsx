@@ -1,6 +1,5 @@
 import styles from "../../styles/Home.module.css";
 import Image from "next/image";
-import { useState } from "react";
 
 let image;
 
@@ -32,25 +31,19 @@ const setImage = (header) => {
   }
 };
 
-export default function ProfileInfo(props) {
-  const [email, setEmail] = useState(props.email);
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+export default function EditProfileInfo(props) {
   setImage(props.header);
   return (
-    <form onSubmit={handleSubmit}>
-      <div className={styles.profile_info}>
-        {image}
-        <div className={styles.profile_container}>
-          <div className={styles.profile_header}>
-            <h1> {props.header} </h1>
-          </div>
-          <div className={styles.profile_data}>
-            <h1>{props.placeholder}</h1>
-          </div>
+    <div className={styles.profile_info}>
+      {image}
+      <div className={styles.profile_container}>
+        <div className={styles.profile_header}>
+          <h1> {props.header} </h1>
+        </div>
+        <div className={styles.profile_data}>
+          <h1>{props.placeholder}</h1>
         </div>
       </div>
-    </form>
+    </div>
   );
 }

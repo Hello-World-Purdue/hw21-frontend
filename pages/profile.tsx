@@ -16,21 +16,9 @@ export default function Profile() {
           width="90%"
           height="90%"
         ></Image>
-        <ProfileInfo
-          image="../../images/profile/profile_face.svg"
-          header="Full Name"
-          placeholder="First Last"
-        />
-        <ProfileInfo
-          image="../../images/profile/profile_email.svg"
-          header="Email"
-          placeholder="firstlast@purdue.edu"
-        />
-        <ProfileInfo
-          image="../../images/profile/profile_status.svg"
-          header="Application Status"
-          placeholder="Pending"
-        />
+        <ProfileInfo header="Full Name" placeholder="First Last" />
+        <ProfileInfo header="Email" placeholder="firstlast@purdue.edu" />
+        <ProfileInfo header="Application Status" placeholder="Pending" />
         <button onClick={onEditButtonClicked} className={styles.profile_button}>
           EDIT PROFILE
         </button>
