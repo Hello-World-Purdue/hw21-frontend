@@ -141,6 +141,20 @@
   font-size: 2.5vmax;
 }
 
+.profile_input {
+  width: 30vmax;
+  grid-area: data;
+  font-size: 2.5vmax;
+  border: none;
+  border-bottom: 2px solid;
+}
+
+.profile_input:focus {
+  border: none;
+  outline: none;
+  border-bottom: solid 2px;
+}
+
 .profile_editbutton {
   align-self: center;
   background-color: rgba(128, 214, 255, 0.65);
@@ -190,6 +204,12 @@
 
   .profile_account {
     bottom: 8vh;
+  }
+
+  .profile_input {
+    width: 22vmax;
+    grid-area: data;
+    font-size: 1.5vmax;
   }
 }
 
