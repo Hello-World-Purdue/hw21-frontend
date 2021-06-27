@@ -2,7 +2,6 @@
   min-width: 100vh;
   position: relative;
   object-fit: contain;
-
 }
 .body{
   min-width: fit-content;
@@ -47,16 +46,17 @@
 .resources_header {
   background-image:url("../images/resources_background.png");
   background-repeat:no-repeat;
-  background-size: 100% 40%;
-  height:650px;
+  background-size: 100% 100%; 
+  width:100%;
+  height: 100%;
 }
 
 .schedules_header {
   background-image:url("../images/schedules_background.png");
   background-repeat:no-repeat;
-  background-size: 100% 40%; 
+  background-size: 100% 100%; 
   width:100%;
-  height:650px;
+  height: 100%;
 }
 
 .header_heading {
@@ -73,7 +73,7 @@
 .header_text {
   -webkit-text-stroke: 0.6px black;
   font-size:20px;
-  margin:0%;
+  margin-bottom:10%;
   font-style:italic;
   font-weight: bold;
   color:white;
@@ -170,6 +170,7 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
   background-color: black;
   position: absolute;
   bottom: 0;
+  left: 0;
 }
 
 .code {
@@ -227,3 +228,27 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
     flex-direction: column;
   }
 }
+
+.event_container_1r {
+  background-image: url("../images/event_container_1r.png");
+  width:100%;
+  background-size:125%;
+}
+.event_container_2r {
+  background-image: url("../images/event_container_2r.png");
+  width:100%;
+  background-size:125%;
+}
+.event_container_1b {
+  background-image: url("../images/event_container_1b.png");
+  width:100%;
+  background-size:125%;
+}
+.event_container_2b {
+  background-image: url("../images/event_container_2b.png");
+  width:100%;
+  background-size:125%;
+}
+/* .event_more_info {
+  
+} */
