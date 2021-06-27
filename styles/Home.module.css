@@ -87,7 +87,8 @@
   background: white;
   border: solid thick;
   width: auto;
-  height: 55%;
+  height: auto;
+  padding: 2%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -95,8 +96,26 @@
   -ms-transform: translate(-50%, -50%);
 }
 
+.profile_box > * {
+  margin: 3vmax;
+}
+
+.profile_header > h1 {
+  font-family: "Franklin Gothic Book";
+  font-size: 2vmax;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.profile_account {
+  border: 10px solid;
+  background-color: pink;
+  position: relative;
+  bottom: 6vh;
+}
+
 .profile_info {
   display: grid;
+  gap: 10%;
   grid-template-areas:
     "image header"
     "image data";
@@ -107,12 +126,6 @@
   width: fit-content;
 }
 
-.profile_header > h1 {
-  font-family: "Franklin Gothic Book";
-  font-size: 18px;
-  color: rgba(0, 0, 0, 0.5);
-}
-
 .profile_image {
   grid-area: image;
 }
@@ -120,14 +133,14 @@
 .profile_container {
   size: auto;
 }
+
 .profile_data {
-  width: 300px;
+  width: 30vmax;
   grid-area: data;
 }
 
 .profile_data > h1 {
-  grid-area: data;
-  font-size: 24px;
+  font-size: 2.5vmax;
 }
 
 .profile_editbutton {
@@ -138,21 +151,48 @@
   border-width: 2px;
   text-align: center;
   font-family: inherit;
-  font-size: 24px;
+  font-size: 1.5vw;
   outline: none;
   margin-top: 100%;
-  width: 100px;
+  width: 10vw;
 }
 
 .profile_button {
   background-color: rgba(128, 214, 255, 0.65);
   border-style: solid;
   border-color: black;
-  border-width: 2px;
+  border-width: 0.2vw;
   text-align: center;
   font-family: inherit;
-  font-size: 24px;
+  font-size: 2.5vmax;
   outline: none;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 800px) {
+  .profile_box > * {
+    margin: 1vmax;
+  }
+
+  .profile_header > h1 {
+    font-size: 1vmax;
+  }
+
+  .profile_data {
+    width: 20vmax;
+  }
+
+  .profile_data > h1 {
+    font-size: 1.5vmax;
+  }
+
+  .profile_button {
+    font-size: 1.5vmax;
+  }
+
+  .profile_account {
+    bottom: 8vh;
+  }
 }
 
 .header_text {

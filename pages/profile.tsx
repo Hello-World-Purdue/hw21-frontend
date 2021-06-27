@@ -1,10 +1,18 @@
 import styles from "../styles/Home.module.css";
 import ProfileInfo from "../Components/profile/ProfileInfo";
 
+const onEditButtonClicked = () => {
+  location.href = "/edit";
+};
+
 export default function Profile() {
   return (
     <div className={styles.profile_main}>
       <div className={styles.profile_box}>
+        <img
+          src={require("../images/profile/profile_account.svg")}
+          className={styles.profile_account}
+        ></img>
         <ProfileInfo
           image="../../images/profile/profile_face.svg"
           header="Full Name"
@@ -20,9 +28,9 @@ export default function Profile() {
           header="Application Status"
           placeholder="Pending"
         />
-        <div className={styles.profile_button}>
-          <a href="/edit">EDIT PROFILE</a>
-        </div>
+        <button onClick={onEditButtonClicked} className={styles.profile_button}>
+          EDIT PROFILE
+        </button>
       </div>
     </div>
   );
