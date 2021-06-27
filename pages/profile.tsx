@@ -23,10 +23,6 @@ export default function Profile() {
         <div className={styles.profile_button}>
           <a href="/edit">EDIT PROFILE</a>
         </div>
-        <img
-          src={require("../images/profile/profile_background.png")}
-          alt="W3Schools.com"
-        ></img>
       </div>
     </div>
   );
