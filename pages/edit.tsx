@@ -20,9 +20,7 @@ export default function Edit() {
           header="Application Status"
           placeholder="Pending"
         />
-        <div className={styles.profile_center}>
-          <button className={styles.profile_button}>SUBMIT</button>
-        </div>
+        <button className={styles.profile_button}>SUBMIT</button>
       </div>
     </div>
   );
