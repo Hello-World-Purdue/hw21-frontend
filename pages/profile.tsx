@@ -20,11 +20,13 @@ export default function Profile() {
           header="Application Status"
           placeholder="Pending"
         />
-        <div className={styles.profile_center}>
-          <div className={styles.profile_editbutton}>
-            <a href="/edit">EDIT PROFILE</a>
-          </div>
+        <div className={styles.profile_button}>
+          <a href="/edit">EDIT PROFILE</a>
         </div>
+        <img
+          src={require("../images/profile/profile_background.png")}
+          alt="W3Schools.com"
+        ></img>
       </div>
     </div>
   );
