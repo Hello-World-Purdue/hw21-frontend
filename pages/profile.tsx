@@ -1,50 +1,31 @@
 import styles from "../styles/Home.module.css";
+import ProfileInfo from "../Components/profile/ProfileInfo";
 
 export default function Profile() {
   return (
     <div className={styles.profile_main}>
-      <h1>Profile</h1>
-      <h1>Name</h1>
-      <a href="/review">
-        <h2>My Application</h2>
-      </a>
-      <a>
-        <h2>View Application Status</h2>
-      </a>
-      <a href="/edit">
-        <h2>Edit Application</h2>
-      </a>
-      <a href="/wallet">
-        <h2>Wallet Access Link</h2>
-      </a>
-      <h1>Profile</h1>
-      <h1>Name</h1>
-      <a href="/review">
-        <h2>My Application</h2>
-      </a>
-      <a>
-        <h2>View Application Status</h2>
-      </a>
-      <a href="/edit">
-        <h2>Edit Application</h2>
-      </a>
-      <a href="/wallet">
-        <h2>Wallet Access Link</h2>
-      </a>
-      <h1>Profile</h1>
-      <h1>Name</h1>
-      <a href="/review">
-        <h2>My Application</h2>
-      </a>
-      <a>
-        <h2>View Application Status</h2>
-      </a>
-      <a href="/edit">
-        <h2>Edit Application</h2>
-      </a>
-      <a href="/wallet">
-        <h2>Wallet Access Link</h2>
-      </a>
+      <div className={styles.profile_box}>
+        <ProfileInfo
+          image="../../images/profile/profile_face.svg"
+          header="Full Name"
+          placeholder="First Last"
+        />
+        <ProfileInfo
+          image="../../images/profile/profile_email.svg"
+          header="Email"
+          placeholder="firstlast@purdue.edu"
+        />
+        <ProfileInfo
+          image="../../images/profile/profile_status.svg"
+          header="Application Status"
+          placeholder="Pending"
+        />
+        <div className={styles.profile_center}>
+          <div className={styles.profile_editbutton}>
+            <a href="/edit">EDIT PROFILE</a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
