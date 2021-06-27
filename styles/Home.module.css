@@ -107,8 +107,6 @@
 }
 
 .profile_account {
-  border: 10px solid;
-  background-color: pink;
   position: relative;
   bottom: 6vh;
 }
