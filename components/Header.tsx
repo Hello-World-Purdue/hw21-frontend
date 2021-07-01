@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 
 //import 'bootstrap/dist/css/bootstrap.css';
-import styles from '../../styles/Home.module.css'
+import styles from '../styles/Home.module.css'
 
 
 type HeaderProps = {
