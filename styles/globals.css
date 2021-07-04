@@ -12,6 +12,11 @@ a {
   text-decoration: none;
 }
 
+@font-face {
+  font-family: backissues;
+  src: url('../assets/fonts/back-issues/BackIssuesBB_reg.ttf');
+}
+
 * {
   box-sizing: border-box;
 }
