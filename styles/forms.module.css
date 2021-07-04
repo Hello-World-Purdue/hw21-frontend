@@ -4,7 +4,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: url("../assets/img/bg_img.png") no-repeat;
+	background: url("../assets/img/auth/bg_img.png") no-repeat;
 	background-size: cover;
 	background-position: 50% 50%;
 }
@@ -36,7 +36,7 @@
 	left: 50%;
 	width: 27vh;
 	height: 27vh;
-	background-image: url("../assets/img/full_logo.svg");
+	background-image: url("../assets/img/auth/full_logo.svg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	transform: translate(-50%, -50%);
@@ -121,7 +121,7 @@
 .formButton div {
 	height: 70px;
 	width: 100px;
-	background-image: url("../assets/img/customButton.png");
+	background-image: url("../assets/img/auth/customButton.png");
 	background-size: cover;
 }
 
