@@ -32,6 +32,58 @@ export default function Schedule() {
           }}>
           <p>&nbsp;</p>
         </div>
+
+        <div className={styles.eventsgrid}>
+          <div className={styles.event_container_1r}>
+            <div className={styles.event_content}>
+              <p style={{color:'white'}}>EVENT NAME</p>
+              <p style={{color:'white'}}>June 28</p>
+              <p style={{color:'white'}}>Location</p>
+              <p style={{color:'yellow'}}>Details</p>
+            </div>
+          </div>
+          <div className={styles.event_container_1r}>
+            <div className={styles.event_content}>
+              <p style={{color:'white'}}>EVENT NAME</p>
+              <p style={{color:'white'}}>June 28</p>
+              <p style={{color:'white'}}>Location</p>
+              <p style={{color:'yellow'}}>Details</p>
+            </div>
+          </div>
+          <div className={styles.event_container_1r}>
+            <div className={styles.event_content}>
+              <p style={{color:'white'}}>EVENT NAME</p>
+              <p style={{color:'white'}}>June 28</p>
+              <p style={{color:'white'}}>Location</p>
+              <p style={{color:'yellow'}}>Details</p>
+            </div>
+          </div>
+          <div className={styles.event_container_1b}>
+            <div className={styles.event_content}>
+              <p style={{color:'white'}}>EVENT NAME</p>
+              <p style={{color:'white'}}>June 28</p>
+              <p style={{color:'white'}}>Location</p>
+              <p style={{color:'yellow'}}>Details</p>
+            </div>
+          </div>
+          <div className={styles.event_container_1b}>
+            <div className={styles.event_content}>
+              <p style={{color:'white'}}>EVENT NAME</p>
+              <p style={{color:'white'}}>June 28</p>
+              <p style={{color:'white'}}>Location</p>
+              <p style={{color:'yellow'}}>Details</p>
+            </div>
+          </div>
+          <div className={styles.event_container_1b}>
+            <div className={styles.event_content}>
+              <p style={{color:'white'}}>EVENT NAME</p>
+              <p style={{color:'white'}}>June 28</p>
+              <p style={{color:'white'}}>Location</p>
+              <p style={{color:'yellow'}}>Details</p>
+            </div>
+          </div>
+        </div>
+
         {/* past events */}
         <div>
           <p style={{textAlign:'left', fontWeight:'bold'}}>PAST<br></br>EVENTS</p>
@@ -40,8 +92,58 @@ export default function Schedule() {
           <p>&nbsp;</p>
         </div>
 
+        <div className={styles.eventsgrid}>
+          <div className={styles.event_container_2r}>
+            <div className={styles.event_content}>
+              <p style={{color:'white'}}>EVENT NAME</p>
+              <p style={{color:'white'}}>June 28</p>
+              <p style={{color:'white'}}>Location</p>
+              <p style={{color:'yellow'}}>Details</p>
+            </div>
+          </div>
+          <div className={styles.event_container_2r}>
+            <div className={styles.event_content}>
+              <p style={{color:'white'}}>EVENT NAME</p>
+              <p style={{color:'white'}}>June 28</p>
+              <p style={{color:'white'}}>Location</p>
+              <p style={{color:'yellow'}}>Details</p>
+            </div>
+          </div>
+          <div className={styles.event_container_2r}>
+            <div className={styles.event_content}>
+              <p style={{color:'white'}}>EVENT NAME</p>
+              <p style={{color:'white'}}>June 28</p>
+              <p style={{color:'white'}}>Location</p>
+              <p style={{color:'yellow'}}>Details</p>
+            </div>
+          </div>
+          <div className={styles.event_container_2b}>
+            <div className={styles.event_content}>
+              <p style={{color:'white'}}>EVENT NAME</p>
+              <p style={{color:'white'}}>June 28</p>
+              <p style={{color:'white'}}>Location</p>
+              <p style={{color:'yellow'}}>Details</p>
+            </div>
+          </div>
+          <div className={styles.event_container_2b}>
+            <div className={styles.event_content}>
+              <p style={{color:'white'}}>EVENT NAME</p>
+              <p style={{color:'white'}}>June 28</p>
+              <p style={{color:'white'}}>Location</p>
+              <p style={{color:'yellow'}}>Details</p>
+            </div>
+          </div>
+          <div className={styles.event_container_2b}>
+            <div className={styles.event_content}>
+              <p style={{color:'white'}}>EVENT NAME</p>
+              <p style={{color:'white'}}>June 28</p>
+              <p style={{color:'white'}}>Location</p>
+              <p style={{color:'yellow'}}>Details</p>
+            </div>
+          </div>
+        </div>
+
       </Layout>
     </div>
-
   )
 }
