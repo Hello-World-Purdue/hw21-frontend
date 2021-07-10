@@ -18,7 +18,7 @@ type NavbarProps = {
   
     return (
         <div className={styles.topNav}>
-          <a className={styles.active} href="#home">Home</a>
+          <a className={styles.active} href="/">Home</a>
           <a href="/schedule">Schedule</a>
           <a href="/faq">FAQ</a>
           <a href="/sponsors">Sponsors</a>

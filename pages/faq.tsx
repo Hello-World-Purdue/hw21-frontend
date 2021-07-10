@@ -9,9 +9,12 @@ import styles from "../styles/Home.module.css";
 export default function Faq() {
   return(
     <Layout>
-      {console.log("About to invoke header")}
-      <Header headerImgClass="index-header"></Header>
-      {console.log("After invoking header")}
+           <Header headerImgClass="index-header">
+         <div className={styles.header_text}>
+       <h1 className={styles.header_heading}>FAQ</h1>
+                <p className={styles.header_description}>FREQUENTLY ASKED QUESTIONS</p>
+                </div>
+       </Header>
     
     </Layout>
   )

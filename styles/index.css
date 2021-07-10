@@ -4,9 +4,10 @@
     flex-wrap: wrap;
     }
 
+
+    /* There's probably a lot of properties that are unnecessary in this code, but it works, although not responsively, so I'll keep it for now. Same for all other *-header */
     .index-header{
-        height:auto;
-        background-image: url(../public/blue_background.png);
+        /* height:auto; */
         background-repeat: no-repeat;
         background-size: cover;
         display: inline-block;
@@ -22,6 +23,90 @@
         background-size: 100% 900px;
      
     }
+    @media only screen and (max-width: 600px) {
+        .index-header{
+            /* Bruh the size is not changing ughhhh, TODO */
+            height:500px;
+
+        }
+    }
+
+
+
+.logo{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+    
+
+
+    .schedule-header{
+        height:auto;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: inline-block;
+        flex: 1 0 100%;
+        position: inherit;
+        min-width:100%;
+        /* Use media queries to resize the height I guess? Or figure out background image properties so that the image stays responsive */
+        height:1200px; 
+        background-image: url('../images/schedules_background.png');
+        background-repeat: no-repeat;
+        display: inline-block;
+        flex: 1 0 100%;
+        position: inherit;
+        background-size: 100% 900px;
+     
+    }
+
+    .announcements-header{
+        height:auto;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: inline-block;
+        flex: 1 0 100%;
+        position: inherit;
+        min-width:100%;
+        /* Use media queries to resize the height I guess? Or figure out background image properties so that the image stays responsive */
+        height:1200px; 
+        background-image: url(../public/orange_background.png);
+        background-repeat: no-repeat;
+        display: inline-block;
+        flex: 1 0 100%;
+        position: inherit;
+        background-size: 100% 900px;
+     
+    }
+
+    
+    .resources-header{
+        height:auto;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: inline-block;
+        flex: 1 0 100%;
+        position: inherit;
+        min-width:100%;
+        /* Use media queries to resize the height I guess? Or figure out background image properties so that the image stays responsive */
+        height:1200px; 
+        background-image:url("../images/resources_background.png");
+        background-repeat: no-repeat;
+        display: inline-block;
+        flex: 1 0 100%;
+        position: inherit;
+        background-size: 100% 900px;
+     
+    }
+
+
+
+
+
+
 
 .date-img {
     display: inline-block;

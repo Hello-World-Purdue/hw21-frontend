@@ -12,17 +12,22 @@ export default function Resources() {
       </Head>
 
       <Layout>
- 
+       <Header headerImgClass="resources-header">
+         <div className={styles.header_text}>
+       <h1 className={styles.header_heading}>RESOURCES</h1>
+                <p className={styles.header_description}>SEE WHAT OUR SPONSORS HAVE TO OFFER</p>
+                </div>
+       </Header>
+  
       {/* header stuff */}
-      <p> Index</p>
+      {/* <p> Index</p> */}
 
-        <div style={{width:'100%'}}>
+        {/* <div style={{width:'100%'}}>
               <div className={styles.resources_header}>
-                <br></br><br></br>
                 <h1 className={styles.header_heading}>RESOURCES</h1>
-                <p className={styles.header_text}>SEE WHAT OUR SPONSORS HAVE TO OFFER</p>
+                <p className={styles.header_description}>SEE WHAT OUR SPONSORS HAVE TO OFFER</p>
               </div>
-        </div>
+        </div> */}
 
         <div className={styles.grid}>
               <a href="https://nextjs.org/docs" className={styles.card}>
@@ -64,7 +69,6 @@ export default function Resources() {
               </a>
             </div>
 
-      </main> */}
 </Layout>
 </div>
     

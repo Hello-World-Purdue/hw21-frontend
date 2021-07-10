@@ -14,7 +14,6 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
   return (
     <div className="body" >
     <div className="page-container">
-      <Header></Header>
   
       {children}
       <Footer></Footer>

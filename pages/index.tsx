@@ -5,16 +5,22 @@ import styles from '../styles/Home.module.css'
 import { Header } from '../Components/Header';
 import { Layout } from '../Components/Layout';
 
-export default function Home() {
+export default function Index() {
   return (
     <div className={styles.resources}>
       <Head>
         <title>Resources</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* header stuff */}
       <Layout>
-{/* <Header headerImgClass= "index-header"></Header> */}
+      <Header headerImgClass="index-header">
+
+        {/* <img src="../images/logo.png"></img> */}
+        <div className="logo">
+      <Image src='/title.png' width={400} height={400}></Image>
+      </div>
+    {/* TODO: Add Helloworld img , rocket img and apply now button  */}
+       </Header>
       <div style={{width:'100%'}}>
         <div className="index-container">
         <div className="title-img">

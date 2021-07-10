@@ -78,6 +78,15 @@
 }
 
 .header_text {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -90%);
+  transform: translate(-50%, -90%);
+}
+
+.header_description {
   -webkit-text-stroke: 0.6px black;
   font-size:20px;
   margin:0%;

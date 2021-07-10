@@ -13,12 +13,13 @@ type HeaderProps = {
   headerImgClass: string,
   }
   
-  export const Header: FC<HeaderProps & React.HTMLAttributes<HTMLDivElement>> = ({ headerImgClass }) => {
+  export const Header: FC<HeaderProps & React.HTMLAttributes<HTMLDivElement>> = ({ headerImgClass, children }) => {
 console.log("is Header run twice?");
     return (
       
       <ImageHeader headerImgClass={headerImgClass}>
         <Navbar></Navbar>
+        {children}
         </ImageHeader>
 
       
