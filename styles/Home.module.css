@@ -370,3 +370,72 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
     flex-direction: column;
   }
 }
+
+.faq_main {
+  background-image: url("../images/faq_background.png");
+  background-size: 100vw;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background-repeat: no-repeat;
+}
+
+.faq_header {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.faq_content {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.faq_question {
+  margin-top: 8vh;
+  width: 70vw;
+  color: white;
+  text-align: center;
+  border: solid black;
+}
+
+.faq_questionText {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.faq_answer {
+  width: 70vw;
+}
+
+.faq_answerList {
+  list-style-position: inside;
+  padding: 0;
+}
+
+.faq_answerText {
+}
+
+@media (min-width: 800px) {
+  .faq_main {
+    background-image: none;
+  }
+  .faq_header {
+    color: black;
+  }
+  .faq_question {
+    width: 90vw;
+  }
+  .faq_question {
+    width: 60vw;
+  }
+  .faq_answer {
+    width: 60vw;
+  }
+  .faq_content {
+    margin-top: 0px;
+  }
+}
