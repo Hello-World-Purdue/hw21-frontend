@@ -1,8 +1,10 @@
 import Head from 'next/head'
+import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import { Header } from '../Components/Header';
 import { Layout } from '../Components/Layout';
+
 export default function Home() {
   return (
     <div className={styles.resources}>
@@ -12,10 +14,16 @@ export default function Home() {
       </Head>
       {/* header stuff */}
       <Layout>
-
-      <body style={{width:'100%'}}>
-        
-      </body>
+{/* <Header headerImgClass= "index-header"></Header> */}
+      <div style={{width:'100%'}}>
+        <div className="index-container">
+        <div className="title-img">
+        <Image src='/title.png'layout='intrinsic' width={100} height={100}></Image></div>
+        <div className="date-img">
+        <Image src='/date.png'layout='intrinsic'  width={100} height={100}></Image>
+        </div>
+</div>
+      </div>
       </Layout>
 
       {/* <main className={styles.main}>

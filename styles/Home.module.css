@@ -1,3 +1,12 @@
+.index-header{
+    height:200px;
+    background-image: url(../public/blue_background.png);
+    display: inline-block;
+    flex: 1 0 100%;
+    position: inherit;
+ 
+}
+
 .page-container {
   min-width: 100vh;
   position: relative;
@@ -8,11 +17,9 @@
   min-width: fit-content;
 }
 .resources {
-  min-height: 100vh;
   padding: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .admin_dashboard {

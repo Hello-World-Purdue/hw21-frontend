@@ -12,14 +12,14 @@ type LayoutProps = {
 };
 export const Layout: FC<LayoutProps> = ({ children }) => {
   return (
-    <body className="body" >
+    <div className="body" >
     <div className="page-container">
       <Header></Header>
   
       {children}
       <Footer></Footer>
     </div>
-    </body>
+    </div>
 
   );
 };

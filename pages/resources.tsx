@@ -16,7 +16,13 @@ export default function Resources() {
       {/* header stuff */}
       <p> Index</p>
 
-      {/* <main className={styles.main}>
+        <div style={{width:'100%'}}>
+              <div className={styles.resources_header}>
+                <br></br><br></br>
+                <h1 className={styles.header_heading}>RESOURCES</h1>
+                <p className={styles.header_text}>SEE WHAT OUR SPONSORS HAVE TO OFFER</p>
+              </div>
+        </div>
 
         <div className={styles.grid}>
               <a href="https://nextjs.org/docs" className={styles.card}>
