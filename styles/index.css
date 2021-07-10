@@ -44,6 +44,27 @@
     
 
 
+.sponsors-header{
+    height:auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    flex: 1 0 100%;
+    position: inherit;
+    min-width:100%;
+    /* Use media queries to resize the height I guess? Or figure out background image properties so that the image stays responsive */
+    height:1200px; 
+    background-image: url(../public/light_blue_background.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    flex: 1 0 100%;
+    position: inherit;
+    background-size: 100% 900px;
+ 
+}
+
+
+
     .schedule-header{
         height:auto;
         background-repeat: no-repeat;

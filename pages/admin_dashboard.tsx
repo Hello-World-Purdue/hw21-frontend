@@ -315,9 +315,7 @@ export default function Admin_Dashboard() {
               />
             </Fragment>
           </main>
-
     
-
         </div>
         </Layout>
       )
