@@ -387,6 +387,9 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
   color: white;
 }
 
+.faq_otherHeader {
+}
+
 .faq_content {
   margin-top: 50px;
   display: flex;
@@ -419,6 +422,22 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
 .faq_answerText {
 }
 
+.faq_other {
+  background-color: rgba(179, 0, 6, 255);
+  height: 40vh;
+  margin-top: vh;
+  padding: 5vw;
+}
+
+.faq_otherHeading {
+  color: white;
+  font-weight: bolder;
+}
+
+.faq_otherDescription {
+  color: rgb(255, 230, 43);
+  font-size: 50%;
+}
 @media (min-width: 800px) {
   .faq_main {
     background-image: none;

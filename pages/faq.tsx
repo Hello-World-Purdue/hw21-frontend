@@ -12,6 +12,14 @@ export default function Faq() {
         <h3 className={styles.faq_description}>FREQUENTLY ASKED QUESTIONS</h3>
       </div>
       <div className={styles.faq_content}>{faqList}</div>
+      <div className={styles.faq_other}>
+        <div className={styles.faq_otherHeader}>
+          <p className={styles.faq_otherHeading}>HAVE ANY OTHER QUESTIONS?</p>
+          <p className={styles.faq_otherDescription}>
+            ASK IT HERE OR CONTACT US ON OUR SOCIAL MEDIA
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
