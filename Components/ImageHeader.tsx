@@ -12,7 +12,6 @@ type ImageHeaderProps = {
 export const ImageHeader: FC<
   ImageHeaderProps & React.HTMLAttributes<HTMLDivElement>
 > = ({ headerImgClass, children }) => {
-console.log("Is ImageHeader class run twice?");
   if(headerImgClass){  
   var imgHeaderClasses = ` ${headerImgClass}`;
   }
@@ -20,8 +19,6 @@ console.log("Is ImageHeader class run twice?");
 
   let headerWithImg = <header className={imgHeaderClasses}>{children}</header>;
   if (headerImgClass != undefined) {
-    console.log("the header has a class");
-    console.log("headerImgClass: " + headerImgClass);
     return headerWithImg;
   }
   else {

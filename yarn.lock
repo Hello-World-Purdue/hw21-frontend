@@ -249,7 +249,7 @@
   "resolved" "https://registry.npmjs.org/bn.js/-/bn.js-5.2.0.tgz"
   "version" "5.2.0"
 
-"bootstrap@^5.0.1":
+"bootstrap@^5.0.2":
   "integrity" "sha512-1Ge963tyEQWJJ+8qtXFU6wgmAVj9gweEjibUdbmcCEYsn38tVwRk8107rk2vzt6cfQcRr3SlZ8aQBqaD8aqf+Q=="
   "resolved" "https://registry.npmjs.org/bootstrap/-/bootstrap-5.0.2.tgz"
   "version" "5.0.2"
