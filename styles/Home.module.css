@@ -436,7 +436,7 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
 
 .faq_otherDescription {
   color: rgb(255, 230, 43);
-  font-size: 50%;
+  font-size: 75%;
 }
 @media (min-width: 800px) {
   .faq_main {

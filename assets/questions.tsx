@@ -172,8 +172,10 @@ const getAnswers = (list) => {
   } else {
     content.push(
       <ul className={styles.faq_answerList}>
-        {list.map((item) => (
-          <li className={styles.faq_answerText}>{item}</li>
+        {list.map((item, index) => (
+          <li key={index} className={styles.faq_answerText}>
+            {item}
+          </li>
         ))}
       </ul>
     );
