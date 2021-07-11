@@ -1,10 +1,11 @@
 /* General Form Styling */
 .formPage {
 	min-height: 100vh;
+	min-width: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: url("../assets/img/auth/bg_img.png") no-repeat;
+	background: url("../assets/img/auth/new_bg.png") no-repeat;
 	background-size: cover;
 	background-position: 50% 50%;
 }

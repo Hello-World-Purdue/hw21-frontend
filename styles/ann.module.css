@@ -1,0 +1,64 @@
+/* Styles for announcements page */
+.announcementList {
+	display: flex;
+	flex-direction: column;
+}
+
+.announcement {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin: 2vh 4vh;
+}
+
+.annMessage {
+	font-family: 'backissues';
+	margin-left: 1vh;
+}
+
+.eventsLabel {
+	height: 40px;
+	width: 100px;
+	background-image: url("../assets/img/announcements/events-label.png");
+	background-size: cover;
+}
+
+.foodLabel {
+	height: 40px;
+	width: 80px;
+	background-image: url("../assets/img/announcements/food-label.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.judgingLabel {
+	height: 40px;
+	width: 100px;
+	background-image: url("../assets/img/announcements/judging-label.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.logisticsLabel {
+	height: 40px;
+	width: 100px;
+	background-image: url("../assets/img/announcements/logistics-label.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.sponsorLabel {
+	height: 40px;
+	width: 100px;
+	background-image: url("../assets/img/announcements/sponsor-label.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.miscLabel {
+	height: px;
+	width: 100px;
+	background-image: url("../assets/img/announcements/misc-label.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
