@@ -3,12 +3,12 @@ import React, { FC } from 'react';
 import styles from '../styles/Home.module.css'
 import { ResourcesData } from '../pages/resources';
 
-interface EventProps {
+interface ResourceProps {
     resourcesData: ResourcesData[]
     headingColumns: string[]
 }
   
-const Event: FC<EventProps> = ({resourcesData}: EventProps, headingColumns) => {
+const Event: FC<ResourceProps> = ({resourcesData}: ResourceProps, headingColumns) => {
     const event = (resourcesData as Array<ResourcesData>).map((row, index) => {
       let rowData: { key: string; val: string | number; }[] = [];
 
@@ -20,40 +20,40 @@ const Event: FC<EventProps> = ({resourcesData}: EventProps, headingColumns) => {
       });
 
       const displayDetails = (data) => {
-        alert(`${data}`);
+        window.location.href = data;
       }
 
-      return <div className={styles.event_container_1r} key={index}>
+      return <div className={styles.container_1r} key={index}>
           {rowData.slice(0,1).map((data, index) => 
-          <div className={styles.event_content} key={index} data-heading={data.key} style={{
-              color:'white'
+          <div className={styles.event_resource_content} key={index} data-heading={data.key} style={{
+              color:'white',
+              fontWeight:'bold'
           }}>
             {data.val}
           </div>)}
-          {rowData.slice(1,2).map((data, index) =>
+          {rowData.slice(1,2).map((data, index) => 
+          <div className={styles.event_resource_content} key={index} data-heading={data.key} style={{
+              color:'white',
+          }}>
+            {data.val}
+          </div>)}
+          {rowData.slice(2,3).map((data, index) =>
           <button onClick={() => {
             displayDetails(data.val);
           }} style={{
               backgroundColor:'yellow', 
-              paddingLeft:'15px', 
-              paddingRight:'15px',
               fontSize:'15px',
-              borderRadius:'5px'
+              color: '#ed4924',
+              borderColor: '#ed4924',
+              paddingLeft: '20px',
+              paddingRight: '20px'
           }}>Details</button>)}
       </div>
     });
-    // const data = (eventsData as Array<EventsData>).map((row, index) => {
-    //     return <div key={index} className={styles.event_container_1r}>
-    //         {eventsData.map((data, index) => <div className={styles.event_content} key={index}>
-    //             {data}
-    //             </div>
-    //         )}
-    //     </div>
-    // });
 
     return (
         
-        <div className={styles.eventsgrid}>
+        <div className={styles.event_resource_grid}>
             {event}
         </div>
         

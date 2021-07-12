@@ -23,9 +23,16 @@ const Event: FC<EventProps> = ({eventsData}: EventProps, headingColumns) => {
         alert(`${data}`);
       }
 
-      return <div className={styles.event_container_1r} key={index}>
-          {rowData.slice(0,3).map((data, index) => 
-          <div className={styles.event_content} key={index} data-heading={data.key} style={{
+      return <div className={styles.container_1r} key={index}>
+          {rowData.slice(0,1).map((data, index) => 
+          <div className={styles.event_resource_content} key={index} data-heading={data.key} style={{
+              color:'white',
+              fontWeight:'bold'
+          }}>
+            {data.val}
+          </div>)}
+          {rowData.slice(1,3).map((data, index) => 
+          <div className={styles.event_resource_content} key={index} data-heading={data.key} style={{
               color:'white'
           }}>
             {data.val}
@@ -35,25 +42,17 @@ const Event: FC<EventProps> = ({eventsData}: EventProps, headingColumns) => {
             displayDetails(data.val);
           }} style={{
               backgroundColor:'yellow', 
-              paddingLeft:'15px', 
-              paddingRight:'15px',
               fontSize:'15px',
-              borderRadius:'5px'
+              color: '#ed4924',
+              borderColor: '#ed4924',
+              paddingLeft: '20px',
+              paddingRight: '20px'
           }}>Details</button>)}
       </div>
     });
-    // const data = (eventsData as Array<EventsData>).map((row, index) => {
-    //     return <div key={index} className={styles.event_container_1r}>
-    //         {eventsData.map((data, index) => <div className={styles.event_content} key={index}>
-    //             {data}
-    //             </div>
-    //         )}
-    //     </div>
-    // });
-
     return (
         
-        <div className={styles.eventsgrid}>
+        <div className={styles.event_resource_grid}>
             {event}
         </div>
         

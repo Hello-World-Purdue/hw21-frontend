@@ -8,33 +8,40 @@ import React, { FC, Fragment } from 'react';
 
 export interface ResourcesData {
   name: string,
-  details: string
+  details: string,
+  link: string
 }
 
 const resourcesData: ResourcesData[] = [
   {
     name: 'RESOURCE NAME',
-    details: 'This is the details for the resource 1'
+    details: 'This is the details for the resource 1',
+    link: 'https://google.com'
   },
   {
     name: 'RESOURCE NAME',
-    details: 'This is the details for the resource 2'
+    details: 'This is the details for the resource 2',
+    link: 'https://google.com'
   },
   {
     name: 'RESOURCE NAME',
-    details: 'This is the details for the resource 3'
+    details: 'This is the details for the resource 3',
+    link: 'https://google.com'
   },
   {
     name: 'RESOURCE NAME',
-    details: 'This is the details for the resource 4'
+    details: 'This is the details for the resource 4',
+    link: 'https://google.com'
   },
   {
     name: 'RESOURCE NAME',
-    details: 'This is the details for the resource 5'
+    details: 'This is the details for the resource 5',
+    link: 'https://google.com'
   },
   {
     name: 'RESOURCE NAME',
-    details: 'This is the details for the resource 6'
+    details: 'This is the details for the resource 6',
+    link: 'https://google.com'
   },
 ]
 
@@ -47,13 +54,6 @@ export default function Resources() {
       </Head>
 
       <Layout>
- 
-        <div className={styles.resources}>
-        <Head>
-          <title>Resources</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-
         <body style={{width:'100%'}}>
               <div className={styles.resources_header}>
                 <br></br><br></br>
@@ -67,10 +67,8 @@ export default function Resources() {
               headingColumns={['name', 'details']}
           />
         </Fragment>
-
-        </div>
       </Layout>
-</div>
+    </div>
     
   )
 }
