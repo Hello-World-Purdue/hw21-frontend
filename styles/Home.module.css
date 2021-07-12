@@ -227,14 +227,16 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
   width: 10rem;
   height: 15rem;
   display: inline-block;
+  padding:40px;
+  text-align: center;
 }
 .event_container_2r {
   background-image: url("../images/event_container_1r.png");
-  filter: blur(1px);
-  -webkit-filter: blur(1px);
   width: 10rem;
   height: 15rem;
   display: inline-block;
+  padding:40px;
+  text-align: center;
 }
 .event_container_1b {
   background-image: url("../images/event_container_1b.png");
@@ -242,15 +244,17 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
   width: 10rem;
   height: 15rem;
   display: inline-block;
+  padding:40px;
+  text-align: center;
 }
 .event_container_2b {
   background-image: url("../images/event_container_1b.png");
   background-size: 100% 100%;
-  filter: blur(1px);
-  -webkit-filter: blur(1px);
   width: 10rem;
   height: 15rem;
   display: inline-block;
+  padding:40px;
+  text-align: center;
 }
 .eventsgrid {
   margin: 0 auto;
@@ -260,8 +264,12 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
   padding-bottom: 2rem;
 }
 .event_content {
-  padding: 35px;
+  padding: 10px;
   text-align: center;
+}
+.blur {
+  filter: blur(1px);
+  -webkit-filter: blur(1px);
 }
 
 @media (min-width: 600px) {
