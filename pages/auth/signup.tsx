@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import SignupForm from '../../components/SignupForm';
-import Toast from '../../components/Toast';
+import SignupForm from '../../Components/SignupForm';
+import Toast from '../../Components/Toast';
 
 import styles from '../../styles/forms.module.css';
 

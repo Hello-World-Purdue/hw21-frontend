@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
-import { Header } from '../components/Header';
+import { Header } from '../Components/Header';
 
 export default function Home() {
   return (

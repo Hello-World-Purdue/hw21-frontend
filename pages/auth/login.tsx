@@ -1,6 +1,6 @@
 import { useState } from "react";
-import LoginForm from "../../components/LoginForm";
-import Toast from "../../components/Toast";
+import LoginForm from "../../Components/LoginForm";
+import Toast from "../../Components/Toast";
 
 import styles from '../../styles/forms.module.css';
 

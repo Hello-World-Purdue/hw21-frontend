@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "../styles/ann.module.css";
 
-import AnnLabel from "../components/AnnLabel";
+import AnnLabel from "../Components/AnnLabel";
 
 interface Announcement {
 	type: "events" | "food" | "judging" | "logistics" | "sponsor" | "misc";
