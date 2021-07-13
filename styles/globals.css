@@ -14,7 +14,7 @@ a {
 
 @font-face {
   font-family: backissues;
-  src: url('../assets/fonts/back-issues/BackIssuesBB_reg.ttf');
+  src: url('../fonts/back-issues/BackIssuesBB_reg.ttf');
 }
 
 * {
