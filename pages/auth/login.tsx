@@ -2,24 +2,23 @@ import { useState } from "react";
 import LoginForm from "../../Components/LoginForm";
 import Toast from "../../Components/Toast";
 
-import styles from '../../styles/forms.module.css';
+import styles from "../../styles/forms.module.css";
 
 interface User {
-	email: string,
-	password: string,
-	rememberUser?: boolean
+	email: string;
+	password: string;
+	rememberUser?: boolean;
 }
 
 function Login() {
 	const [showToast, setShowToast] = useState<boolean>(false);
-	const [loginError, setLoginError] = useState<string>('');
+	const [loginError, setLoginError] = useState<string>("");
 
 	function loginUser(user: User) {
-
 		fetch("/api/auth/login", {
 			method: "POST",
 			headers: {
-				'Content-Type': 'application/json'
+				"Content-Type": "application/json",
 			},
 			body: JSON.stringify(user),
 		})
