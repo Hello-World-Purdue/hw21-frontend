@@ -1,8 +1,8 @@
-import Head from 'next/head';
-import Link from 'next/link';
-import styles from '../styles/Home.module.css';
+import Head from 'next/head'
+import Link from 'next/link'
+import styles from '../styles/Home.module.css'
 import { Header } from '../Components/Header';
-
+import { Layout } from '../Components/Layout';
 export default function Home() {
   return (
     <div className={styles.resources}>
@@ -10,21 +10,15 @@ export default function Home() {
         <title>Resources</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      {/* nav bar and header*/}
-      {/* nav bar */}
-      <Header></Header>
       {/* header stuff */}
+      <Layout>
+
       <body style={{width:'100%'}}>
-            <div className={styles.resources_header}>
-              <br></br><br></br>
-              <h1 className={styles.header_heading}>RESOURCES</h1>
-              <p className={styles.header_text}>SEE WHAT OUR SPONSORS HAVE TO OFFER</p>
-            </div>
+        
       </body>
+      </Layout>
 
       {/* <main className={styles.main}>
-
         <div className={styles.grid}>
               <a href="https://nextjs.org/docs" className={styles.card}>
                 <h3>Resource &rarr;</h3>
@@ -64,11 +58,8 @@ export default function Home() {
                 </p>
               </a>
             </div>
-
       </main> */}
 
-      <footer className={styles.footer}>
-      </footer>
     </div>
   )
 }

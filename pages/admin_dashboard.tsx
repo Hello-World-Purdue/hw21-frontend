@@ -3,9 +3,8 @@ import Head from 'next/head'
 
 import React, { FC, Fragment } from 'react';
 
-
 import Table from '../Components/Table';
-import { Header } from '../Components/Header';
+import { Layout } from '../Components/Layout';
 
 import styles from '../styles/Home.module.css'
 export interface HackerData {
@@ -279,17 +278,13 @@ const hackerData: HackerData[] = [
 
 export default function Admin_Dashboard() {
     return (
+      <Layout>
         <div className={styles.admin_dashboard}>
           <Head>
             <title>Admin Dashboard</title>
             <link rel="icon" href="/favicon.ico" />
           </Head>
 
-          {/* navbar */}
-          <Header></Header>
-          
-          {/* header stuff */}
-          <body style={{width:'100%'}}>
             <div className={styles.admin_dashboard_header}>
               <div style={{fontSize:30, fontStyle:'italic', paddingTop:20, paddingBottom:20}}>
                 APPLICANTS
@@ -307,7 +302,6 @@ export default function Admin_Dashboard() {
               <div style={{paddingTop:10, paddingBottom:10}}>
               </div>
             </div>
-          </body>
           
           {/* Hacker data table */}
           <main className={styles.main}>
@@ -319,10 +313,8 @@ export default function Admin_Dashboard() {
               />
             </Fragment>
           </main>
-
-          <footer className={styles.footer}>
-          </footer>
-
+    
         </div>
+        </Layout>
       )
 }
