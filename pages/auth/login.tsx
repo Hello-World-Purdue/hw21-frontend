@@ -15,11 +15,13 @@ function Login() {
 	const [loginError, setLoginError] = useState<string>('');
 
 	function loginUser(user: User) {
-		const requestBody = user;
 
 		fetch("/api/auth/login", {
 			method: "POST",
-			body: JSON.stringify(requestBody),
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(user),
 		})
 			.then((data) => {
 				console.log(data);

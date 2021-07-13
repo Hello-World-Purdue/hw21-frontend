@@ -15,11 +15,13 @@ function Signup() {
 	const [signupError, setSignupError] = useState<string>('');
 
 	function signupUser(user: User) {
-		const requestBody = user;
-
+		
 		fetch("/api/auth/signup", {
 			method: "POST",
-			body: JSON.stringify(requestBody),
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(user),
 		})
 			.then((data) => {
 				console.log(data);
