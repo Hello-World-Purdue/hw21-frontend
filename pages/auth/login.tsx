@@ -15,8 +15,6 @@ function Login() {
 	const [loginError, setLoginError] = useState<string>('');
 
 	function loginUser(user: User) {
-		console.log(user);
-
 		const requestBody = user;
 
 		fetch("/api/auth/login", {

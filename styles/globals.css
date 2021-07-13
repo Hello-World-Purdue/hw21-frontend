@@ -17,6 +17,11 @@ a {
   src: url('../fonts/back-issues/BackIssuesBB_reg.ttf');
 }
 
+@font-face {
+  font-family: badaboom;
+  src: url('../fonts/badaboom/BadaboomBB_Reg.ttf');
+}
+
 * {
   box-sizing: border-box;
 }
