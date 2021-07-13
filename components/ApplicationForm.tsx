@@ -1,171 +1,94 @@
 import React, { useState } from "react";
 import { Form, Card } from "react-bootstrap";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-	faUser,
-	faFolder,
-	faAt,
-} from "@fortawesome/free-solid-svg-icons";
+import CustomButton from "./CustomButton";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "../styles/forms.module.css";
 
-const ApplicationForm: React.FC<{
-	name: string;
-	email: string;
-	status: string;
-}> = (props) => {
-	const [buttonValue, setButtonValue] = useState<string>("EDIT PROFILE");
+const LoginForm: React.FC<{}> = (props) => {
+	const [response, setResponse] = useState<string>('');
 
-	const [fullName, setFullName] = useState<string>(props.name);
-	const [email, setEmail] = useState<string>(props.email);
+	const [responseClasses, setResponseClasses] = useState<string[]>([]);
+	const [responseIssues, setResponseIssues] = useState<boolean>(false);
 
-	const [emailIssues, setEmailIssues] = useState<boolean>(false);
-	const [emailClasses, setEmailClasses] = useState<string[]>([styles.appInput]);
-
-	const handleSubmit = (event) => {
+	function submitForm(event) {
 		event.preventDefault();
 
-		switch (buttonValue) {
-			case "EDIT PROFILE":
-				{
-					setButtonValue("SUBMIT");
-				}
-				break;
-			case "SUBMIT": {
-				if (validateEmail()) {
-					return;
-				}
+		const isInvalid = validateResponse();
 
-				setButtonValue("EDIT PROFILE");
-			}
+		if (isInvalid) {
+			return;
 		}
-	};
-
-	function validateEmail(): boolean {
-		const em = [...emailClasses];
-		const idx = em.indexOf("is-invalid");
-
-		setEmailIssues(false);
-
-		if (idx !== -1) {
-			setEmailClasses(em.filter((element) => element !== "is-invalid"));
-		}
-
-		if (email.length === 0) {
-			return false;
-		}
-
-		if (email.toLowerCase().includes("@purdue.edu")) {
-			return false;
-		}
-
-		setEmailIssues(true);
-
-		if (idx === -1) {
-			em.push("is-invalid");
-		}
-
-		setEmailClasses(em);
-
-		return true;
+		
+		console.log('Success');
 	}
 
-	const handleNameChange = (event) => {
-		setFullName(event.target.value);
-	};
+	const validateResponse  = (): boolean => {
+		const arr = [...responseClasses];
+		const idx = arr.indexOf("is-invalid");
 
-	const handleEmailChange = (event) => {
-		setEmail(event.target.value);
-	};
+		setResponseIssues(false);
+
+		if (idx !== -1) {
+			setResponseClasses(arr.filter((element) => element !== "is-invalid"));
+		}
+
+		if (response.length === 0) {
+			setResponseIssues(true);
+
+			if (idx === -1) {
+				arr.push("is-invalid");
+			}
+
+			setResponseClasses(arr);
+
+			return true;
+		}
+
+		return false;
+	}
+
+	const handleResponseChange = (e: any) => {
+		setResponse(e.target.value);
+	}
 
 	return (
-		<Card className={styles.appFormContainer}>
-			<Form className={styles.applicationForm} onSubmit={handleSubmit}>
-				<div className={styles.appField}>
-					<FontAwesomeIcon
-						color="darkturquoise"
-						fixedWidth
-						className={styles.appIcon}
-						size="3x"
-						icon={faUser}
+		<Card className={styles.formContainer}>
+			<Form className={styles.applicationForm} onSubmit={submitForm}>
+				<Form.Group className={styles.formField}>
+					<Form.Label>WHY DO YOU WANT TO ATTEND HELLO WORLD?</Form.Label>
+					<Form.Control
+						as='textarea'
+						rows={3}
+						className={responseClasses.join(" ")}
+						minLength={100}
+						onChange={handleResponseChange}
 					/>
-					<Form.Group>
-						<Form.Label className={styles.appLabel}>Full Name</Form.Label>
-						{buttonValue === "SUBMIT" && (
-							<input
-								className={styles.appInput}
-								defaultValue={fullName.toUpperCase()}
-								onChange={handleNameChange}
-								type="text"
-								name="fullname"
-							/>
-						)}
-						{buttonValue === "EDIT PROFILE" && (
-							<div className={styles.appValue}>
-								<strong>{fullName.toUpperCase()}</strong>
-							</div>
-						)}
-					</Form.Group>
-				</div>
-				<div className={styles.appField}>
-					<FontAwesomeIcon
-						color="crimson"
-						fixedWidth
-						className={styles.appIcon}
-						size="3x"
-						icon={faAt}
+					{responseIssues && (
+						<div className="invalid-feedback">Field cannot be empty</div>
+					)}
+				</Form.Group>
+
+				<Form.Group className={styles.formField}>
+					<Form.Label>TELL US A LITTLE ABOUT YOURSELF!</Form.Label>
+					<Form.Control
+						as='textarea'
+						rows={3}
+						className={responseClasses.join(" ")}
+						minLength={100}
+						onChange={handleResponseChange}
 					/>
-					<Form.Group>
-						<Form.Label className={styles.appLabel}>Email</Form.Label>
-						{buttonValue === "SUBMIT" && (
-							<div>
-								<input
-									className={emailClasses.join(" ")}
-									defaultValue={email.toUpperCase()}
-									onChange={handleEmailChange}
-									type="email"
-									name="email"
-								/>
-								{emailIssues && (
-									<div className="invalid-feedback">Must be a purdue email</div>
-								)}
-							</div>
-						)}
-						{buttonValue === "EDIT PROFILE" && (
-							<div className={styles.appValue}>
-								<strong>{email.toUpperCase()}</strong>
-							</div>
-						)}
-					</Form.Group>
-				</div>
-				<div className={styles.appField}>
-					<FontAwesomeIcon
-						color="gold"
-						fixedWidth
-						className={styles.appIcon}
-						size="3x"
-						icon={faFolder}
-					/>
-					<Form.Group>
-						<Form.Label className={styles.appLabel}>
-							Application Status
-						</Form.Label>
-						<div className={styles.appValue}>
-							<strong>{props.status.toUpperCase()}</strong>
-						</div>
-					</Form.Group>
-				</div>
+					{responseIssues && (
+						<div className="invalid-feedback">Field cannot be empty</div>
+					)}
+				</Form.Group>
 
 				<div className={styles.buttonContainer}>
-					<button className={styles.appButton} type="submit">
-						<small>{buttonValue}</small>
-					</button>
+					<CustomButton>BAM!</CustomButton>
 				</div>
 			</Form>
 		</Card>
 	);
 };
 
-export default ApplicationForm;
+export default LoginForm;

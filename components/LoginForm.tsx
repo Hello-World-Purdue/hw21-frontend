@@ -137,14 +137,6 @@ const LoginForm: React.FC<{ loginUser: (user) => void }> = (props) => {
 							type="checkbox"
 							label="REMEMBER ME"
 						/>
-						{/* <div className={styles.formCheck}>
-							<input
-								type="checkbox"
-								className={styles.formCheckInput}
-								onClick={rememberHandler}
-							/>
-							<label>REMEMBER ME</label>
-						</div> */}
 					</small>
 				</Form.Group>
 

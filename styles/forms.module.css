@@ -30,7 +30,8 @@
 }
 
 .signupForm::before,
-.loginForm::before {
+.loginForm::before,
+.applicationForm::before {
 	content: "";
 	position: absolute;
 	bottom: 62%;
