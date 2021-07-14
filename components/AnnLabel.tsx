@@ -5,30 +5,30 @@ import styles from "../styles/ann.module.css";
 const CustomButton: React.FC<{
 	annType: "events" | "food" | "judging" | "logistics" | "sponsor" | "misc";
 }> = (props) => {
-	let labelClass: any;
+	const labelClasses = [styles.label];
 
 	switch (props.annType) {
 		case "events":
-			labelClass = styles.eventsLabel;
+			labelClasses.push(styles.events);
 			break;
 		case "food":
-			labelClass = styles.foodLabel;
+			labelClasses.push(styles.food);
 			break;
 		case "judging":
-			labelClass = styles.judgingLabel;
+			labelClasses.push(styles.judging);
 			break;
 		case "logistics":
-			labelClass = styles.logisticsLabel;
+			labelClasses.push(styles.logistics);
 			break;
 		case "sponsor":
-			labelClass = styles.sponsorLabel;
+			labelClasses.push(styles.sponsor);
 			break;
 		case "misc":
-			labelClass = styles.miscLabel;
+			labelClasses.push(styles.misc);
 			break;
 	}
 
-	return <div className={labelClass}></div>;
+	return <div className={labelClasses.join(" ")}>{props.annType.toUpperCase()}</div>;
 };
 
 export default CustomButton;
