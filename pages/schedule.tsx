@@ -4,6 +4,93 @@ import styles from '../styles/Home.module.css'
 import React, { FC, Fragment } from 'react';
 import { Header } from '../Components/Header';
 import { Layout } from '../Components/Layout';
+import Event from '../Components/Event';
+
+export interface EventsData {
+  name: string,
+  times: string,
+  locations: string,
+  details: string
+}
+
+const eventsData: EventsData[] = [
+  {
+    name: 'EVENTS NAME',
+    times: 'June 28',
+    locations: 'Location',
+    details: 'This is the details for the event 1'
+  },
+  {
+    name: 'EVENTS NAME',
+    times: 'June 28',
+    locations: 'Location',
+    details: 'This is the details for the event 2'
+  },
+  {
+    name: 'EVENTS NAME',
+    times: 'June 28',
+    locations: 'Location',
+    details: 'This is the details for the event 3'
+  },
+  {
+    name: 'EVENTS NAME',
+    times: 'June 28',
+    locations: 'Location',
+    details: 'This is the details for the event 4'
+  },
+  {
+    name: 'EVENTS NAME',
+    times: 'June 28',
+    locations: 'Location',
+    details: 'This is the details for the event 5'
+  },
+  {
+    name: 'EVENTS NAME',
+    times: 'June 28',
+    locations: 'Location',
+    details: 'This is the details for the event 6'
+  }
+]
+
+const pastEventsData: EventsData[] = [
+  {
+    name: 'EVENTS NAME',
+    times: 'June 28',
+    locations: 'Location',
+    details: 'This is the details for the event 1'
+  },
+  {
+    name: 'EVENTS NAME',
+    times: 'June 28',
+    locations: 'Location',
+    details: 'This is the details for the event 2'
+  },
+  {
+    name: 'EVENTS NAME',
+    times: 'June 28',
+    locations: 'Location',
+    details: 'This is the details for the event 3'
+  },
+  {
+    name: 'EVENTS NAME',
+    times: 'June 28',
+    locations: 'Location',
+    details: 'This is the details for the event 4'
+  },
+  {
+    name: 'EVENTS NAME',
+    times: 'June 28',
+    locations: 'Location',
+    details: 'This is the details for the event 5'
+  },
+  {
+    name: 'EVENTS NAME',
+    times: 'June 28',
+    locations: 'Location',
+    details: 'This is the details for the event 6'
+  }
+]
+
 export default function Schedule() {
   return (
     <div className={styles.resources}>
@@ -32,57 +119,12 @@ export default function Schedule() {
           }}>
           <p>&nbsp;</p>
         </div>
-
-        <div className={styles.eventsgrid}>
-          <div className={styles.event_container_1r}>
-            <div className={styles.event_content}>
-              <p style={{color:'white'}}>EVENT NAME</p>
-              <p style={{color:'white'}}>June 28</p>
-              <p style={{color:'white'}}>Location</p>
-              <p style={{color:'yellow'}}>Details</p>
-            </div>
-          </div>
-          <div className={styles.event_container_1r}>
-            <div className={styles.event_content}>
-              <p style={{color:'white'}}>EVENT NAME</p>
-              <p style={{color:'white'}}>June 28</p>
-              <p style={{color:'white'}}>Location</p>
-              <p style={{color:'yellow'}}>Details</p>
-            </div>
-          </div>
-          <div className={styles.event_container_1r}>
-            <div className={styles.event_content}>
-              <p style={{color:'white'}}>EVENT NAME</p>
-              <p style={{color:'white'}}>June 28</p>
-              <p style={{color:'white'}}>Location</p>
-              <p style={{color:'yellow'}}>Details</p>
-            </div>
-          </div>
-          <div className={styles.event_container_1b}>
-            <div className={styles.event_content}>
-              <p style={{color:'white'}}>EVENT NAME</p>
-              <p style={{color:'white'}}>June 28</p>
-              <p style={{color:'white'}}>Location</p>
-              <p style={{color:'yellow'}}>Details</p>
-            </div>
-          </div>
-          <div className={styles.event_container_1b}>
-            <div className={styles.event_content}>
-              <p style={{color:'white'}}>EVENT NAME</p>
-              <p style={{color:'white'}}>June 28</p>
-              <p style={{color:'white'}}>Location</p>
-              <p style={{color:'yellow'}}>Details</p>
-            </div>
-          </div>
-          <div className={styles.event_container_1b}>
-            <div className={styles.event_content}>
-              <p style={{color:'white'}}>EVENT NAME</p>
-              <p style={{color:'white'}}>June 28</p>
-              <p style={{color:'white'}}>Location</p>
-              <p style={{color:'yellow'}}>Details</p>
-            </div>
-          </div>
-        </div>
+        
+        <Fragment>
+          <Event eventsData={eventsData} 
+            headingColumns={['name', 'times', 'locations', 'details']}
+          />
+        </Fragment>
 
         {/* past events */}
         <div>
@@ -92,56 +134,13 @@ export default function Schedule() {
           <p>&nbsp;</p>
         </div>
 
-        <div className={styles.eventsgrid}>
-          <div className={styles.event_container_2r}>
-            <div className={styles.event_content}>
-              <p style={{color:'white'}}>EVENT NAME</p>
-              <p style={{color:'white'}}>June 28</p>
-              <p style={{color:'white'}}>Location</p>
-              <p style={{color:'yellow'}}>Details</p>
-            </div>
+        <Fragment>
+          <div className={styles.blur}>
+            <Event eventsData={pastEventsData} 
+              headingColumns={['name', 'times', 'locations', 'details']}
+            />
           </div>
-          <div className={styles.event_container_2r}>
-            <div className={styles.event_content}>
-              <p style={{color:'white'}}>EVENT NAME</p>
-              <p style={{color:'white'}}>June 28</p>
-              <p style={{color:'white'}}>Location</p>
-              <p style={{color:'yellow'}}>Details</p>
-            </div>
-          </div>
-          <div className={styles.event_container_2r}>
-            <div className={styles.event_content}>
-              <p style={{color:'white'}}>EVENT NAME</p>
-              <p style={{color:'white'}}>June 28</p>
-              <p style={{color:'white'}}>Location</p>
-              <p style={{color:'yellow'}}>Details</p>
-            </div>
-          </div>
-          <div className={styles.event_container_2b}>
-            <div className={styles.event_content}>
-              <p style={{color:'white'}}>EVENT NAME</p>
-              <p style={{color:'white'}}>June 28</p>
-              <p style={{color:'white'}}>Location</p>
-              <p style={{color:'yellow'}}>Details</p>
-            </div>
-          </div>
-          <div className={styles.event_container_2b}>
-            <div className={styles.event_content}>
-              <p style={{color:'white'}}>EVENT NAME</p>
-              <p style={{color:'white'}}>June 28</p>
-              <p style={{color:'white'}}>Location</p>
-              <p style={{color:'yellow'}}>Details</p>
-            </div>
-          </div>
-          <div className={styles.event_container_2b}>
-            <div className={styles.event_content}>
-              <p style={{color:'white'}}>EVENT NAME</p>
-              <p style={{color:'white'}}>June 28</p>
-              <p style={{color:'white'}}>Location</p>
-              <p style={{color:'yellow'}}>Details</p>
-            </div>
-          </div>
-        </div>
+        </Fragment>
 
       </Layout>
     </div>
