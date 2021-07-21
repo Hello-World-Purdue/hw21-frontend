@@ -12,6 +12,8 @@
 
 .formContainer {
 	min-height: 55vh;
+	max-height: 70vh;
+	overflow: scroll;
 	min-width: 55vh;
 	padding-top: 10px;
 	padding-left: 5px;
@@ -30,8 +32,7 @@
 }
 
 .signupForm::before,
-.loginForm::before,
-.applicationForm::before {
+.loginForm::before {
 	content: "";
 	position: absolute;
 	bottom: 62%;

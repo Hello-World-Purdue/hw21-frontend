@@ -2,122 +2,179 @@ import React, { useState } from "react";
 import { Form, Card } from "react-bootstrap";
 import CustomButton from "./CustomButton";
 
+import {
+	Gender,
+	ethnicities,
+	ClassYear,
+	gradYears,
+	Referral,
+	ShirtSize,
+	Major,
+} from "../util/enums";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "../styles/forms.module.css";
 
-const ApplicationForm: React.FC<{ sendAnswers: (userData) => void }> = (props) => {
-	const [response, setResponse] = useState<string>('');
+const ApplicationForm: React.FC<{ sendAnswers: (userData) => void }> = (
+	props
+) => {
+	const initialState = {
+		hackathons: Number,
+		dietaryRestrictions: String,
+		website: String,
+		answer1: String,
+		answer2: String,
+		classYear: String,
+		graduationYear: Number,
+		ethnicity: String,
+		gender: String,
+		major: String,
+		referral: String,
+		shirtSize: Number,
+		resume: String,
+	};
+
+	const [state, setState] = useState(initialState);
+
 	const [resumeFile, setResumeFile] = useState<File>();
 
-	const [responseClasses, setResponseClasses] = useState<string[]>([]);
-	const [responseIssues, setResponseIssues] = useState<boolean>(false);
-
-	const [resumeClasses, setResumeClasses] = useState<string[]>([]);
-	const [resumeIsuues, setResumeIssues] = useState<boolean>(false);
-
-	function submitForm(event) {
+	function submitForm(event: React.FormEvent) {
 		event.preventDefault();
 
-		const responseIsInvalid = validateResponse();
-		const resumeIsInvalid = validateFile();
-
-		if (responseIsInvalid || resumeIsInvalid) {
-			return;
-		}
-
 		const userData = {
-			response: response,
-			resume: resumeFile
+			...state,
 		};
 
 		props.sendAnswers(userData);
-		console.log('Success');
+		console.log("Success");
 	}
 
-	const validateResponse  = (): boolean => {
-		const arr = [...responseClasses];
-		const idx = arr.indexOf("is-invalid");
-
-		setResponseIssues(false);
-
-		if (idx !== -1) {
-			setResponseClasses(arr.filter((element) => element !== "is-invalid"));
-		}
-
-		if (response.length === 0) {
-			setResponseIssues(true);
-
-			if (idx === -1) {
-				arr.push("is-invalid");
-			}
-
-			setResponseClasses(arr);
-
-			return true;
-		}
-
-		return false;
-	}
-
-	const validateFile = (): boolean => {
-		const arr = [...resumeClasses];
-		const idx = arr.indexOf("is-invalid");
-
-		if (idx !== -1) {
-			setResumeClasses(arr.filter((element) => element !== "is-invalid"));
-		}
-
-		if (!resumeFile) {
-			setResumeIssues(true);
-
-			if (idx === -1) {
-				arr.push("is-invalid");
-			}
-
-			setResumeClasses(arr);
-
-			return true;
-		}
-
-		return false;
-	}
-
-	const handleResponseChange = (e: any) => {
-		setResponse(e.target.value);
-	}
+	const handleChange = (e: any) => {
+		setState({
+			...state,
+			[e.target.name]: e.target.value,
+		});
+	};
 
 	const resumeUploadHandler = (e: any) => {
 		console.log(e.target.files);
 		setResumeFile(e.target.files[0]);
-	}
+	};
 
 	return (
 		<Card className={styles.formContainer}>
 			<Form className={styles.applicationForm} onSubmit={submitForm}>
+				{/* Number of hackathons */}
 				<Form.Group className={styles.formField}>
-					<Form.Label>WHY DO YOU WANT TO ATTEND HELLO WORLD?</Form.Label>
+					<Form.Label>HOW MANY HACKATHONS HAVE YOU TAKEN PART IN</Form.Label>
 					<Form.Control
-						as='textarea'
-						rows={3}
-						className={responseClasses.join(" ")}
-						minLength={100}
-						onChange={handleResponseChange}
+						type="number"
+						name="hackathons"
+						onChange={handleChange}
+						required
 					/>
-					{responseIssues && (
-						<div className="invalid-feedback">Field cannot be empty</div>
-					)}
 				</Form.Group>
 
+				{/* Dietary Restrictions */}
 				<Form.Group className={styles.formField}>
-					<Form.Label>UPLOAD YOUR RESUME</Form.Label>
+					<Form.Label>PLEASE TELL US ABOUT ANY DIETARY RESTRICTIONS</Form.Label>
+					<Form.Control
+						name="dietaryRestrictions"
+						onChange={handleChange}
+						required
+					/>
+				</Form.Group>
+
+				{/* Website Link */}
+				<Form.Group className={styles.formField}>
+					<Form.Label>LINK YOUR WEBSITE HERE IF YOU HAVE ONE</Form.Label>
+					<Form.Control type="url" name="website" onChange={handleChange} />
+				</Form.Group>
+
+				{/* Answer 1 */}
+				<Form.Group className={styles.formField}>
+					<Form.Label>QUESTION 1</Form.Label>
+					<Form.Control
+						name="answer1"
+						onChange={handleChange}
+						required
+						as="textarea"
+					/>
+				</Form.Group>
+
+				{/* Answer 2 */}
+				<Form.Group className={styles.formField}>
+					<Form.Label>QUESTION 2</Form.Label>
+					<Form.Control
+						name="answer2"
+						onChange={handleChange}
+						required
+						as="textarea"
+					/>
+				</Form.Group>
+
+				{/* Class Year (Freshman, Sophomore) */}
+				<Form.Group className={styles.formField}>
+					<Form.Label>SELECT YOUR CLASS YEAR</Form.Label>
+					<Form.Control
+						type="date"
+						name="classYear"
+						onChange={handleChange}
+						required
+					/>
+					
+				</Form.Group>
+
+				{/* Graduation Year */}
+				<Form.Group className={styles.formField}>
+					<Form.Label>SELECT YOUR GRADUATION YEAR</Form.Label>
+					<Form.Control
+						type="date"
+						name="graduationYear"
+						onChange={handleChange}
+						required
+					/>
+				</Form.Group>
+
+				{/* Ethnicity */}
+				<Form.Group className={styles.formField}>
+					<Form.Label>SELECT YOUR ETHNICITY</Form.Label>
+					<Form.Control name="ethnicity" onChange={handleChange} required />
+				</Form.Group>
+
+				{/* Gender */}
+				<Form.Group className={styles.formField}>
+					<Form.Label>SELECT YOUR GENDER</Form.Label>
+					<Form.Control name="gender" onChange={handleChange} required />
+				</Form.Group>
+
+				{/* Major */}
+				<Form.Group className={styles.formField}>
+					<Form.Label>SPECIFY YOUR MAJOR</Form.Label>
+					<Form.Control name="major" onChange={handleChange} required />
+				</Form.Group>
+
+				{/* Referral */}
+				<Form.Group className={styles.formField}>
+					<Form.Label>HOW DID YOU HEAR ABOUT HELLO WORLD?</Form.Label>
+					<Form.Control name="referral" onChange={handleChange} required />
+				</Form.Group>
+
+				{/* Shirt Size */}
+				<Form.Group className={styles.formField}>
+					<Form.Label>WHAT IS YOUR SHIRT SIZE?</Form.Label>
+					<Form.Control name="shirtSize" onChange={handleChange} required />
+				</Form.Group>
+
+				{/* Resume */}
+				<Form.Group className={styles.formField}>
+					<Form.Label>LINK YOUR RESUME HERE</Form.Label>
 					<br></br>
-					<Form.Control 
-					type='file' 
-					className={resumeClasses.join(" ")}
-					onChange={resumeUploadHandler} />
-					{resumeIsuues && (
-						<div className="invalid-feedback">Please upload a file!</div>
-					)}
+					<Form.Control
+						type="file"
+						className=""
+						onChange={resumeUploadHandler}
+						required
+					/>
 				</Form.Group>
 
 				<div className={styles.buttonContainer}>

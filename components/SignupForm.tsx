@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { Form, Card } from "react-bootstrap";
 import CustomButton from "./CustomButton";
@@ -23,7 +23,7 @@ const SignupForm: React.FC<{ signupUser: (user) => void }> = (props) => {
 	const [passOneClasses, setPassOneClasses] = useState<string[]>([]);
 	const [passTwoClasses, setPassTwoClasses] = useState<string[]>([]);
 
-	function submitForm(event) {
+	function submitForm(event: React.FormEvent) {
 		event.preventDefault();
 
 		const usernameIsInvalid = validateUsername();
@@ -42,15 +42,15 @@ const SignupForm: React.FC<{ signupUser: (user) => void }> = (props) => {
 		props.signupUser(user);
 	}
 
-	const handleUsername = (event) => {
+	const handleUsername = (event: any) => {
 		setUsername(event.target.value);
 	};
 
-	const handlePassOne = (event) => {
+	const handlePassOne = (event: any) => {
 		setPassOne(event.target.value);
 	};
 
-	const handlePassTwo = (event) => {
+	const handlePassTwo = (event: any) => {
 		setPassTwo(event.target.value);
 	};
 

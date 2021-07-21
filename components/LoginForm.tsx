@@ -17,7 +17,7 @@ const LoginForm: React.FC<{ loginUser: (user) => void }> = (props) => {
 	const [loginClasses, setLoginClasses] = useState<string[]>([]);
 	const [passwordClasses, setPasswordClasses] = useState<string[]>([]);
 
-	function submitForm(event) {
+	function submitForm(event: React.FormEvent) {
 		event.preventDefault();
 
 		const loginIsInvalid = validateLogin();
