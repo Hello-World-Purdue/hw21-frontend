@@ -86,12 +86,6 @@ const ApplicationForm: React.FC<{ sendAnswers: (userData) => void }> = (
 					/>
 				</Form.Group>
 
-				{/* Website Link */}
-				<Form.Group className={styles.formField}>
-					<Form.Label>LINK YOUR WEBSITE HERE IF YOU HAVE ONE</Form.Label>
-					<Form.Control type="url" name="website" onChange={handleChange} />
-				</Form.Group>
-
 				{/* Answer 1 */}
 				<Form.Group className={styles.formField}>
 					<Form.Label>QUESTION 1</Form.Label>
@@ -129,7 +123,7 @@ const ApplicationForm: React.FC<{ sendAnswers: (userData) => void }> = (
 				<Form.Group className={styles.formField}>
 					<Form.Label>SELECT YOUR GRADUATION YEAR</Form.Label>
 					<br></br>
-					<select name="graduationYear" onChange={handleChange}>
+					<select className="form-control" name="graduationYear" onChange={handleChange}>
 						{gradYears.map(gradYear => (
 							<option value={gradYear} key={gradYear}>{gradYear}</option>
 						))}
@@ -140,7 +134,7 @@ const ApplicationForm: React.FC<{ sendAnswers: (userData) => void }> = (
 				<Form.Group className={styles.formField}>
 					<Form.Label>SELECT YOUR ETHNICITY</Form.Label>
 					<br></br>
-					<select name="ethnicity" onChange={handleChange}>
+					<select className="form-control" name="ethnicity" onChange={handleChange}>
 						{ethnicities.map((ethnicity) => (
 							<option value={ethnicity} key={ethnicity}>
 								{ethnicity}
@@ -153,7 +147,7 @@ const ApplicationForm: React.FC<{ sendAnswers: (userData) => void }> = (
 				<Form.Group className={styles.formField}>
 					<Form.Label>SELECT YOUR GENDER</Form.Label>
 					<br></br>
-					<select name="gender" onChange={handleChange}>
+					<select className="form-control" name="gender" onChange={handleChange}>
 						{Object.values(Gender).map(gender => (
 							<option value={gender} key={gender}>{gender}</option>
 						))}
@@ -164,7 +158,7 @@ const ApplicationForm: React.FC<{ sendAnswers: (userData) => void }> = (
 				<Form.Group className={styles.formField}>
 					<Form.Label>SPECIFY YOUR MAJOR</Form.Label>
 					<br></br>
-					<select name="major" onChange={handleChange}>
+					<select className="form-control" name="major" onChange={handleChange}>
 					{Object.values(Major).map(major => (
 						<option value={major} key={major}>{major}</option>
 					))}
@@ -175,7 +169,7 @@ const ApplicationForm: React.FC<{ sendAnswers: (userData) => void }> = (
 				<Form.Group className={styles.formField}>
 					<Form.Label>HOW DID YOU HEAR ABOUT HELLO WORLD?</Form.Label>
 					<br></br>
-					<select name="referral" onChange={handleChange}>
+					<select className="form-control" name="referral" onChange={handleChange}>
 						{Object.values(Referral).map(referral => (
 							<option value={referral} key={referral}>{referral}</option>
 						))}
@@ -186,11 +180,17 @@ const ApplicationForm: React.FC<{ sendAnswers: (userData) => void }> = (
 				<Form.Group className={styles.formField}>
 					<Form.Label>WHAT IS YOUR SHIRT SIZE?</Form.Label>
 					<br></br>
-					<select name="shirtSize" onChange={handleChange}>
+					<select className="form-control" name="shirtSize" onChange={handleChange}>
 						{Object.values(ShirtSize).map(shirtSize => (
 							<option value={shirtSize} key={shirtSize}>{shirtSize}</option>
 						))}
 					</select>
+				</Form.Group>
+				
+				{/* Website Link */}
+				<Form.Group className={styles.formField}>
+					<Form.Label>LINK YOUR WEBSITE HERE IF YOU HAVE ONE</Form.Label>
+					<Form.Control type="url" name="website" onChange={handleChange} />
 				</Form.Group>
 
 				{/* Resume */}
