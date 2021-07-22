@@ -18,19 +18,19 @@ const ApplicationForm: React.FC<{ sendAnswers: (userData) => void }> = (
 	props
 ) => {
 	const initialState = {
-		hackathons: Number,
-		dietaryRestrictions: String,
-		website: String,
-		answer1: String,
-		answer2: String,
-		classYear: String,
-		graduationYear: Number,
-		ethnicity: String,
-		gender: String,
-		major: String,
-		referral: String,
-		shirtSize: Number,
-		resume: String,
+		hackathons: 0,
+		dietaryRestrictions: "",
+		website: "",
+		answer1: "",
+		answer2: "",
+		classYear: null,
+		graduationYear: null,
+		ethnicity: "",
+		gender: "",
+		major: "",
+		referral: "",
+		shirtSize: "",
+		resume: null,
 	};
 
 	const [state, setState] = useState(initialState);
@@ -42,6 +42,7 @@ const ApplicationForm: React.FC<{ sendAnswers: (userData) => void }> = (
 
 		const userData = {
 			...state,
+			resume: resumeFile,
 		};
 
 		props.sendAnswers(userData);
@@ -69,6 +70,7 @@ const ApplicationForm: React.FC<{ sendAnswers: (userData) => void }> = (
 					<Form.Control
 						type="number"
 						name="hackathons"
+						min={0}
 						onChange={handleChange}
 						required
 					/>
@@ -115,54 +117,80 @@ const ApplicationForm: React.FC<{ sendAnswers: (userData) => void }> = (
 				{/* Class Year (Freshman, Sophomore) */}
 				<Form.Group className={styles.formField}>
 					<Form.Label>SELECT YOUR CLASS YEAR</Form.Label>
-					<Form.Control
-						type="date"
-						name="classYear"
-						onChange={handleChange}
-						required
-					/>
-					
+					<br></br>
+					<select className="form-control" onChange={handleChange} name="classYear" required>
+						{Object.values(ClassYear).map(classYear => (
+							<option value={classYear} key={classYear}>{classYear}</option>
+						))}
+					</select>
 				</Form.Group>
 
 				{/* Graduation Year */}
 				<Form.Group className={styles.formField}>
 					<Form.Label>SELECT YOUR GRADUATION YEAR</Form.Label>
-					<Form.Control
-						type="date"
-						name="graduationYear"
-						onChange={handleChange}
-						required
-					/>
+					<br></br>
+					<select name="graduationYear" onChange={handleChange}>
+						{gradYears.map(gradYear => (
+							<option value={gradYear} key={gradYear}>{gradYear}</option>
+						))}
+					</select>
 				</Form.Group>
 
 				{/* Ethnicity */}
 				<Form.Group className={styles.formField}>
 					<Form.Label>SELECT YOUR ETHNICITY</Form.Label>
-					<Form.Control name="ethnicity" onChange={handleChange} required />
+					<br></br>
+					<select name="ethnicity" onChange={handleChange}>
+						{ethnicities.map((ethnicity) => (
+							<option value={ethnicity} key={ethnicity}>
+								{ethnicity}
+							</option>
+						))}
+					</select>
 				</Form.Group>
 
 				{/* Gender */}
 				<Form.Group className={styles.formField}>
 					<Form.Label>SELECT YOUR GENDER</Form.Label>
-					<Form.Control name="gender" onChange={handleChange} required />
+					<br></br>
+					<select name="gender" onChange={handleChange}>
+						{Object.values(Gender).map(gender => (
+							<option value={gender} key={gender}>{gender}</option>
+						))}
+					</select>
 				</Form.Group>
 
 				{/* Major */}
 				<Form.Group className={styles.formField}>
 					<Form.Label>SPECIFY YOUR MAJOR</Form.Label>
-					<Form.Control name="major" onChange={handleChange} required />
+					<br></br>
+					<select name="major" onChange={handleChange}>
+					{Object.values(Major).map(major => (
+						<option value={major} key={major}>{major}</option>
+					))}
+					</select>
 				</Form.Group>
 
 				{/* Referral */}
 				<Form.Group className={styles.formField}>
 					<Form.Label>HOW DID YOU HEAR ABOUT HELLO WORLD?</Form.Label>
-					<Form.Control name="referral" onChange={handleChange} required />
+					<br></br>
+					<select name="referral" onChange={handleChange}>
+						{Object.values(Referral).map(referral => (
+							<option value={referral} key={referral}>{referral}</option>
+						))}
+					</select>
 				</Form.Group>
 
 				{/* Shirt Size */}
 				<Form.Group className={styles.formField}>
 					<Form.Label>WHAT IS YOUR SHIRT SIZE?</Form.Label>
-					<Form.Control name="shirtSize" onChange={handleChange} required />
+					<br></br>
+					<select name="shirtSize" onChange={handleChange}>
+						{Object.values(ShirtSize).map(shirtSize => (
+							<option value={shirtSize} key={shirtSize}>{shirtSize}</option>
+						))}
+					</select>
 				</Form.Group>
 
 				{/* Resume */}
