@@ -14,25 +14,25 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "../styles/forms.module.css";
 
+const initialState = {
+	hackathons: 0,
+	dietaryRestrictions: "",
+	website: "",
+	answer1: "",
+	answer2: "",
+	classYear: null,
+	graduationYear: null,
+	ethnicity: "",
+	gender: "",
+	major: "",
+	referral: "",
+	shirtSize: "",
+	resume: null,
+};
+
 const ApplicationForm: React.FC<{ sendAnswers: (userData) => void }> = (
 	props
 ) => {
-	const initialState = {
-		hackathons: 0,
-		dietaryRestrictions: "",
-		website: "",
-		answer1: "",
-		answer2: "",
-		classYear: null,
-		graduationYear: null,
-		ethnicity: "",
-		gender: "",
-		major: "",
-		referral: "",
-		shirtSize: "",
-		resume: null,
-	};
-
 	const [state, setState] = useState(initialState);
 
 	const [resumeFile, setResumeFile] = useState<File>();
