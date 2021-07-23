@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 const initialState = {
     isAuthenticated: false,
     user: null,
+    token: null
 }
 
 const AuthContext = React.createContext({
-    isAuthenticated: false,
-    user: null,
+    ...initialState,
     login: (user: any) => {},
     logout: () => {},
     signup: (user: any) => {}
@@ -18,25 +18,57 @@ export const AuthProvider = (props: any) => {
 
     const loginHandler = async (user: any) => {
         try {
+            const res = await fetch('/api/auth/login', {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                method: 'POST',
+                body: JSON.stringify(user)
+            })
 
+            const data = await res.json();
+
+            setState({
+                isAuthenticated: true,
+                user: data.user,
+                token: data.token
+            })
         } catch (err) {
-
+            throw new Error(err.message);
         }
     }
 
     const logoutHandler = async () => {
         try {
-            const res = await fetch('/api/logout');
+            setState({
+                isAuthenticated: false,
+                user: null,
+                token: null
+            })
         } catch (err) {
-            console.error(err.message);
+            throw new Error(err.message);
         }
     }
 
     const signupHandler = async (user: any) => {
         try {
+            const res = await fetch('/api/auth/signup', {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                method: 'POST',
+                body: JSON.stringify(user)
+            })
 
+            const data = await res.json();
+
+            setState({
+                isAuthenticated: true,
+                user: data.user,
+                token: data.token
+            })
         } catch (err) {
-
+            throw new Error(err.message);
         }
     }
 
@@ -44,6 +76,7 @@ export const AuthProvider = (props: any) => {
         <AuthContext.Provider value={{
             isAuthenticated: state.isAuthenticated,
             user: state.user,
+            token: state.token,
             login: loginHandler,
             logout: logoutHandler,
             signup: signupHandler
@@ -52,3 +85,5 @@ export const AuthProvider = (props: any) => {
         </AuthContext.Provider>
     )
 }
+
+export default AuthContext;

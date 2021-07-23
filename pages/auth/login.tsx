@@ -1,38 +1,23 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import LoginForm from "../../Components/LoginForm";
 import Toast from "../../Components/Toast";
+import AuthContext from "../../context/AuthContext";
 
 import styles from "../../styles/forms.module.css";
 
-interface User {
-	email: string;
-	password: string;
-	rememberUser?: boolean;
-}
-
-function Login() {
+function Login({ history }) {
+	const { login } = useContext(AuthContext);
 	const [showToast, setShowToast] = useState<boolean>(false);
 	const [loginError, setLoginError] = useState<string>("");
 
-	function loginUser(user: User) {
-		fetch("/api/auth/login", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(user),
-		})
-			.then((data) => {
-				console.log(data);
-				if (!data.redirected) {
-					setShowToast(true);
-					setLoginError("A 404 Error Occured");
-				}
-			})
-			.catch((err) => {
-				setShowToast(true);
-				setLoginError(err.message);
-			});
+	function loginUser(user: any) {
+		try {
+			login(user);
+			history.push('/');
+		} catch (err) {
+			setShowToast(true);
+			setLoginError(err.message);
+		}
 	}
 
 	return (
