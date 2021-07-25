@@ -221,15 +221,7 @@ display: inline-block;
   padding-bottom: 40px;
   text-align: center;
 }
-.container_2r {
-  background-image: url("../images/event_container_2r.png");
-  width: 10rem;
-  height: 15rem;
-  display: inline-block;
-  padding-top:40px;
-  padding-bottom: 40px;
-  text-align: center;
-}
+
 .container_1b {
   background-image: url("../images/event_container_1b.png");
   background-size: 100% 100%;
@@ -240,16 +232,24 @@ display: inline-block;
   padding-bottom: 40px;
   text-align: center;
 }
-.container_2b {
-  background-image: url("../images/event_container_2b.png");
-  background-size: 100% 100%;
-  width: 10rem;
-  height: 15rem;
-  display: inline-block;
-  padding-top:40px;
-  padding-bottom: 40px;
-  text-align: center;
+
+.event_button {
+  background-color: yellow;
+  font-size:'15px';
+  color: '#ed4924';
+  border-color: '#ed4924';
+  padding-left: '20px';
+  padding-right: '20px';
 }
+
+.event_name {
+  color: white;
+  font-weight: bold;
+}
+.event_text {
+  color:white;
+}
+
 .event_resource_grid {
   margin: 0 auto;
   display: grid;
