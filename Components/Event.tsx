@@ -24,15 +24,36 @@ const Event: FC<EventProps> = ({eventsData}: EventProps, headingColumns) => {
         alert(`${data}`);
       }
       
+     /* var color = "black";
+      var orientation = "left";
+      
+      var resources = [];
+
+      rowData.map((data, index) => {
+        if(index % 3 == 1) {
+          color = "red";
+        }
+        else {
+
+        }
+        if(color == "red") {
+          resources
+        }
+
+      })
+      if(index % 3 == 1) {
+        
+      }*/
       return <div>
         {rowData.map((data, index) => {
-          <div>
+          <div key={index}>
           {(() => {
             var color = 'red'
             var orientation = 'left'
-                  
+                  console.log(index);
             if ((index + 1) % 3 == 1) {
               if (color == 'red') {
+              
                 color = 'black'
               } else {
                 color = 'red'
@@ -60,7 +81,7 @@ const Event: FC<EventProps> = ({eventsData}: EventProps, headingColumns) => {
                     {data.val}
                   </div>)}
                 {rowData.slice(3,4).map((data, index) =>
-                  <button onClick={() => {
+                  <button key={index} onClick={() => {
                     displayDetails(data.val);
                   }} style={{
                       backgroundColor:'yellow', 
@@ -89,7 +110,7 @@ const Event: FC<EventProps> = ({eventsData}: EventProps, headingColumns) => {
                     {data.val}
                   </div>)}
                 {rowData.slice(3,4).map((data, index) =>
-                  <button onClick={() => {
+                  <button key={index} onClick={() => {
                     displayDetails(data.val);
                   }} style={{
                       backgroundColor:'yellow', 
@@ -118,7 +139,7 @@ const Event: FC<EventProps> = ({eventsData}: EventProps, headingColumns) => {
                     {data.val}
                   </div>)}
                 {rowData.slice(3,4).map((data, index) =>
-                  <button onClick={() => {
+                  <button key={index} onClick={() => {
                     displayDetails(data.val);
                   }} style={{
                       backgroundColor:'yellow', 
@@ -147,7 +168,7 @@ const Event: FC<EventProps> = ({eventsData}: EventProps, headingColumns) => {
                   {data.val}
                 </div>)}
               {rowData.slice(3,4).map((data, index) =>
-                <button onClick={() => {
+                <button key={index} onClick={() => {
                   displayDetails(data.val);
                 }} style={{
                     backgroundColor:'yellow', 
