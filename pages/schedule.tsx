@@ -103,13 +103,13 @@ export default function Schedule() {
       
       {/* nav bar */}
       <Layout>
-        {/* header stuff */}
-        <div className={styles.schedules_header}>
-          <br></br><br></br>
-          <h1 className={styles.header_heading}>SCHEDULES</h1>
-          <p className={styles.header_text}>SEE WHAT'S COMING UP AND DON'T MISS OUT!</p>
-        </div>
-
+      <Header headerImgClass="schedule-header">
+         <div className={styles.header_text}>
+       <h1 className={styles.header_heading}>SCHEDULE</h1>
+                <p className={styles.header_description}>SEE WHAT OUR SPONSORS HAVE TO OFFER</p>
+                </div>
+       </Header>
+       
         {/* upcoming events */}
         <div>
           <p style={{textAlign:'right', fontWeight:'bold'}}>UPCOMING<br></br>EVENTS</p>

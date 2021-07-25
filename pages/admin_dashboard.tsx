@@ -6,7 +6,7 @@ import React, { FC, Fragment } from 'react';
 
 import Table from '../Components/Table';
 import { Layout } from '../Components/Layout';
-
+import { Header } from '../Components/Header';
 import styles from '../styles/Home.module.css'
 export interface HackerData {
   name: string,
@@ -280,6 +280,7 @@ const hackerData: HackerData[] = [
 export default function Admin_Dashboard() {
     return (
       <Layout>
+   
         <div className={styles.admin_dashboard}>
           <Head>
             <title>Admin Dashboard</title>
