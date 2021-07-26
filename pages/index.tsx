@@ -4,6 +4,8 @@ import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import { Header } from "../Components/Header";
 import { Layout } from "../Components/Layout";
+import { SponsorList } from "../Components/SponsorList";
+
 
 export default function Index() {
   return (
@@ -60,12 +62,16 @@ export default function Index() {
           <h1 className="sponsors-h1">SPONSORS</h1>
           {/* List of sponsors */}
           {/* Make img array and display them dynamically */}
-          <Image src="/circle.png" height={150} width={150}></Image>
-          <Image src="/circle.png" height={150} width={150}></Image>
-          <Image src="/circle.png" height={150} width={150}></Image>
-          <Image src="/circle.png" height={150} width={150}></Image>
+
+         <div className="sponsors-list">
+          <img className=""src={require("../images/circle.svg")} /> 
+          <img className=""src={require("../images/circle.svg")} /> 
+          <img className=""src={require("../images/circle.svg")} /> 
+          <img className=""src={require("../images/circle.svg")} /> 
+          <img className=""src={require("../images/circle.svg")} /> 
           <button className="learn-more-button">LEARN MORE</button>
         </div></div>
+        </div>
       </Layout>
 
       {/* <main className={styles.main}>

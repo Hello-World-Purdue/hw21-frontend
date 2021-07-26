@@ -15,7 +15,7 @@
 }
 
 .navbar-dark .navbar-toggler-icon{
-    background-image: url("../images/hamburger_menu.png");
+    background-image: url(../images/hamburger_menu.png);
 }
 
 .navbar-dark .navbar-toggler{
