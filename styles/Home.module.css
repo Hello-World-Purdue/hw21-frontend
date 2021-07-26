@@ -102,13 +102,12 @@
   background-color: hsl(0,0%,4%, 0.5);
   overflow: hidden;
   font-family: BackIssuesBB;
-  text-align: center;
+  padding: 0 20px;
+}
 
-}
-.topNav ul {
-  display: inline-block;
-  list-style-type: none;
-}
+
+
+
 
 /* Style the links inside the navigation bar */
 .topNav a {
