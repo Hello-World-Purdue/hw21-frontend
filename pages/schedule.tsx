@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css'
 import React, { FC, Fragment } from 'react';
 import { Header } from '../Components/Header';
 import { Layout } from '../Components/Layout';
-import Event from '../Components/Event';
+import {Event} from '../Components/Event';
 
 export interface EventsData {
   name: string,
@@ -49,7 +49,43 @@ const eventsData: EventsData[] = [
     times: 'June 28',
     locations: 'Location',
     details: 'This is the details for the event 6'
-  }
+  },
+  {
+    name: 'EVENTS NAME',
+    times: 'June 28',
+    locations: 'Location',
+    details: 'This is the details for the event 1'
+  },
+  {
+    name: 'EVENTS NAME',
+    times: 'June 28',
+    locations: 'Location',
+    details: 'This is the details for the event 2'
+  },
+  {
+    name: 'EVENTS NAME',
+    times: 'June 28',
+    locations: 'Location',
+    details: 'This is the details for the event 3'
+  },
+  {
+    name: 'EVENTS NAME',
+    times: 'June 28',
+    locations: 'Location',
+    details: 'This is the details for the event 1'
+  },
+  {
+    name: 'EVENTS NAME',
+    times: 'June 28',
+    locations: 'Location',
+    details: 'This is the details for the event 2'
+  },
+  {
+    name: 'EVENTS NAME',
+    times: 'June 28',
+    locations: 'Location',
+    details: 'This is the details for the event 3'
+  },
 ]
 
 const pastEventsData: EventsData[] = [
