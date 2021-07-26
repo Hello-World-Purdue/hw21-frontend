@@ -3,7 +3,7 @@ import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import { Header } from '../Components/Header';
 import { Layout } from '../Components/Layout';
-import Resource from '../Components/Resource';
+import {Resource} from '../Components/Resource';
 import React, { FC, Fragment } from 'react';
 
 export interface ResourcesData {
@@ -66,7 +66,6 @@ export default function Resources() {
               headingColumns={['name', 'details']}
           />
         </Fragment>
-
 </Layout>
 </div>
     
