@@ -54,21 +54,21 @@ export default function Resources() {
       </Head>
 
       <Layout>
-        <body style={{width:'100%'}}>
-              <div className={styles.resources_header}>
-                <br></br><br></br>
-                <h1 className={styles.header_heading}>RESOURCES</h1>
-                <p className={styles.header_text}>SEE WHAT OUR SPONSORS HAVE TO OFFER</p>
-              </div>
-        </body>
-
-        <Fragment>
+       <Header headerImgClass="resources-header">
+         <div className={styles.header_text}>
+       <h1 className={styles.header_heading}>RESOURCES</h1>
+                <p className={styles.header_description}>SEE WHAT OUR SPONSORS HAVE TO OFFER</p>
+                </div>
+       </Header>
+  
+       <Fragment>
           <Resource resourcesData={resourcesData} 
               headingColumns={['name', 'details']}
           />
         </Fragment>
-      </Layout>
-    </div>
+
+</Layout>
+</div>
     
   )
 }

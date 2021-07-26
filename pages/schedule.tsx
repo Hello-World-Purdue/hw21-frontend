@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css'
 import React, { FC, Fragment } from 'react';
 import { Header } from '../Components/Header';
 import { Layout } from '../Components/Layout';
-import Event from '../Components/Event';
+import {Event} from '../Components/Event';
 
 export interface EventsData {
   name: string,
@@ -49,7 +49,43 @@ const eventsData: EventsData[] = [
     times: 'June 28',
     locations: 'Location',
     details: 'This is the details for the event 6'
-  }
+  },
+  {
+    name: 'EVENTS NAME',
+    times: 'June 28',
+    locations: 'Location',
+    details: 'This is the details for the event 1'
+  },
+  {
+    name: 'EVENTS NAME',
+    times: 'June 28',
+    locations: 'Location',
+    details: 'This is the details for the event 2'
+  },
+  {
+    name: 'EVENTS NAME',
+    times: 'June 28',
+    locations: 'Location',
+    details: 'This is the details for the event 3'
+  },
+  {
+    name: 'EVENTS NAME',
+    times: 'June 28',
+    locations: 'Location',
+    details: 'This is the details for the event 1'
+  },
+  {
+    name: 'EVENTS NAME',
+    times: 'June 28',
+    locations: 'Location',
+    details: 'This is the details for the event 2'
+  },
+  {
+    name: 'EVENTS NAME',
+    times: 'June 28',
+    locations: 'Location',
+    details: 'This is the details for the event 3'
+  },
 ]
 
 const pastEventsData: EventsData[] = [
@@ -103,13 +139,13 @@ export default function Schedule() {
       
       {/* nav bar */}
       <Layout>
-        {/* header stuff */}
-        <div className={styles.schedules_header}>
-          <br></br><br></br>
-          <h1 className={styles.header_heading}>SCHEDULES</h1>
-          <p className={styles.header_text}>SEE WHAT'S COMING UP AND DON'T MISS OUT!</p>
-        </div>
-
+      <Header headerImgClass="schedule-header">
+         <div className={styles.header_text}>
+       <h1 className={styles.header_heading}>SCHEDULE</h1>
+                <p className={styles.header_description}>SEE WHAT OUR SPONSORS HAVE TO OFFER</p>
+                </div>
+       </Header>
+       
         {/* upcoming events */}
         <div>
           <p style={{textAlign:'right', fontWeight:'bold'}}>UPCOMING<br></br>EVENTS</p>
