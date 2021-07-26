@@ -14,4 +14,14 @@
     color:white;
 }
 
+.navbar-dark .navbar-toggler-icon{
+    background-image: url("../images/hamburger_menu.png");
+}
 
+.navbar-dark .navbar-toggler{
+    border:none;
+}
+
+.collapse .navbar-collapse{
+    /*what even im tired */
+}
