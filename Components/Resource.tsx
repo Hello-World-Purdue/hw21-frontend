@@ -8,56 +8,62 @@ interface ResourceProps {
     headingColumns: string[]
 }
   
-const Event: FC<ResourceProps> = ({resourcesData}: ResourceProps, headingColumns) => {
-    const event = (resourcesData as Array<ResourcesData>).map((row, index) => {
-      let rowData: { key: string; val: string | number; }[] = [];
+export const Resource: FC<ResourceProps> = ({resourcesData}: ResourceProps, headingColumns) => {
+  const displayDetails = (data) => {
+    alert(`${data}`);
+  }
 
-      Object.entries(row).forEach((data, i) => {
-        rowData.push({
-        key: headingColumns[i],
-        val: data[1]
-        });
-      });
+  var color = "black";
+  var resourcesDivs = [];
 
-      const displayDetails = (data) => {
-        window.location.href = data;
+  resourcesData.map((data, index) => {
+    if(index % 3 == 0) {
+      if(color == "black"){
+        color = "red";
       }
+      else {
+        color = "black";
+      }
+    }
+      
+    if(color == "red") {
+      resourcesDivs[index] = 
 
-      return <div className={styles.container_1r} key={index}>
-          {rowData.slice(0,1).map((data, index) => 
-          <div className={styles.event_resource_content} key={index} data-heading={data.key} style={{
-              color:'white',
-              fontWeight:'bold'
-          }}>
-            {data.val}
-          </div>)}
-          {rowData.slice(1,2).map((data, index) => 
-          <div className={styles.event_resource_content} key={index} data-heading={data.key} style={{
-              color:'white',
-          }}>
-            {data.val}
-          </div>)}
-          {rowData.slice(2,3).map((data, index) =>
-          <button onClick={() => {
-            displayDetails(data.val);
-          }} style={{
-              backgroundColor:'yellow', 
-              fontSize:'15px',
-              color: '#ed4924',
-              borderColor: '#ed4924',
-              paddingLeft: '20px',
-              paddingRight: '20px'
-          }}>Details</button>)}
-      </div>
-    });
+        <div className={styles.container_1r}>
 
-    return (
-        
-        <div className={styles.event_resource_grid}>
-            {event}
+        <div className={styles.event_resource_content} >
+          <br></br>
+          <div className={styles.event_name}> {data.name}</div>
         </div>
-        
-    );
-};
+          <br></br>
+        <button key={index} onClick={() => {displayDetails(data.details)}}
+        className={styles.event_button_1r}>
+          DETAILS
+        </button>
 
-export default Event
+        </div>
+      }
+      else { //color == black
+        resourcesDivs[index] = 
+      <div className={styles.container_1b}>
+        <div className={styles.event_resource_content} >
+        <br></br>
+        <div className={styles.event_name}> {data.name}</div>
+        </div>
+        <br></br>
+        <button key={index} onClick={() => {displayDetails(data.details)}}
+        className={styles.event_button_1b}>
+          DETAILS
+        </button>
+        </div>
+      }
+     })
+  
+     return (
+        <div className={styles.event_resource_grid}>
+          {resourcesDivs.map((r) => (
+          <div>{r}</div> 
+          ))}
+        </div>
+    )
+}

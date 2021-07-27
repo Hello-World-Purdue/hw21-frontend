@@ -227,23 +227,32 @@ display: inline-block;
   width: 10rem;
   height: 15rem;
   display: inline-block;
-  padding-top:40px;
+  padding-top:20px;
   padding-bottom: 40px;
   text-align: center;
 }
 
-.event_button {
+.event_button_1r {
   background-color: yellow;
-  font-size:'15px';
-  color: '#ed4924';
-  border-color: '#ed4924';
-  padding-left: '20px';
-  padding-right: '20px';
+  color: #ed4924;
+  border-color: #ed4924;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.event_button_1b {
+  background-color: yellow;
+  color: black;
+  border-color:black;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .event_name {
+  font-size: 20px;
   color: white;
   font-weight: bold;
+  font-family: "franklingothic";
 }
 .event_text {
   color:white;
@@ -257,10 +266,8 @@ display: inline-block;
   padding-bottom: 2rem;
 }
 .event_resource_content {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   text-align: center;
 }
 .blur {
@@ -270,6 +277,11 @@ display: inline-block;
 
 @media (min-width: 600px) {
   .event_resource_grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@font-face {
+  font-family: "franklingothic";
+  src: url('../fonts/ITC Franklin Gothic Demi Condensed.otf') format('truetype');
 }
 
 /* .event_more_info {
