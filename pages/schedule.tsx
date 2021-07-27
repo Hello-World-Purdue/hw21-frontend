@@ -10,7 +10,8 @@ export interface EventsData {
   name: string,
   times: string,
   locations: string,
-  details: string
+  details: string,
+  happened: boolean
 }
 
 const eventsData: EventsData[] = [
@@ -18,113 +19,72 @@ const eventsData: EventsData[] = [
     name: 'EVENTS NAME',
     times: 'June 28',
     locations: 'Location',
-    details: 'This is the details for the event 1'
+    details: 'This is the details for the event 1',
+    happened: false
   },
   {
     name: 'EVENTS NAME',
     times: 'June 28',
     locations: 'Location',
-    details: 'This is the details for the event 2'
+    details: 'This is the details for the event 2',
+    happened: false
   },
   {
     name: 'EVENTS NAME',
     times: 'June 28',
     locations: 'Location',
-    details: 'This is the details for the event 3'
+    details: 'This is the details for the event 3',
+    happened: false
   },
   {
     name: 'EVENTS NAME',
     times: 'June 28',
     locations: 'Location',
-    details: 'This is the details for the event 4'
+    details: 'This is the details for the event 5',
+    happened: false
   },
   {
     name: 'EVENTS NAME',
     times: 'June 28',
     locations: 'Location',
-    details: 'This is the details for the event 5'
+    details: 'This is the details for the event 6',
+    happened: false
   },
   {
     name: 'EVENTS NAME',
     times: 'June 28',
     locations: 'Location',
-    details: 'This is the details for the event 6'
+    details: 'This is the details for the event 1',
+    happened: true
   },
   {
     name: 'EVENTS NAME',
     times: 'June 28',
     locations: 'Location',
-    details: 'This is the details for the event 1'
+    details: 'This is the details for the event 2',
+    happened: true
   },
   {
     name: 'EVENTS NAME',
     times: 'June 28',
     locations: 'Location',
-    details: 'This is the details for the event 2'
+    details: 'This is the details for the event 1',
+    happened: true
   },
   {
     name: 'EVENTS NAME',
     times: 'June 28',
     locations: 'Location',
-    details: 'This is the details for the event 3'
+    details: 'This is the details for the event 2',
+    happened: true
   },
   {
     name: 'EVENTS NAME',
     times: 'June 28',
     locations: 'Location',
-    details: 'This is the details for the event 1'
+    details: 'This is the details for the event 3',
+    happened: true
   },
-  {
-    name: 'EVENTS NAME',
-    times: 'June 28',
-    locations: 'Location',
-    details: 'This is the details for the event 2'
-  },
-  {
-    name: 'EVENTS NAME',
-    times: 'June 28',
-    locations: 'Location',
-    details: 'This is the details for the event 3'
-  },
-]
-
-const pastEventsData: EventsData[] = [
-  {
-    name: 'EVENTS NAME',
-    times: 'June 28',
-    locations: 'Location',
-    details: 'This is the details for the event 1'
-  },
-  {
-    name: 'EVENTS NAME',
-    times: 'June 28',
-    locations: 'Location',
-    details: 'This is the details for the event 2'
-  },
-  {
-    name: 'EVENTS NAME',
-    times: 'June 28',
-    locations: 'Location',
-    details: 'This is the details for the event 3'
-  },
-  {
-    name: 'EVENTS NAME',
-    times: 'June 28',
-    locations: 'Location',
-    details: 'This is the details for the event 4'
-  },
-  {
-    name: 'EVENTS NAME',
-    times: 'June 28',
-    locations: 'Location',
-    details: 'This is the details for the event 5'
-  },
-  {
-    name: 'EVENTS NAME',
-    times: 'June 28',
-    locations: 'Location',
-    details: 'This is the details for the event 6'
-  }
 ]
 
 export default function Schedule() {
@@ -146,38 +106,11 @@ export default function Schedule() {
                 </div>
        </Header>
        
-        {/* upcoming events */}
-        <div>
-          <p style={{textAlign:'right', fontWeight:'bold'}}>UPCOMING<br></br>EVENTS</p>
-        </div>
-        <div style={{
-          backgroundColor:'orange', maxWidth:'10%', marginLeft:'auto'
-          }}>
-          <p>&nbsp;</p>
-        </div>
-        
-        <Fragment>
+       <Fragment>
           <Event eventsData={eventsData} 
-            headingColumns={['name', 'times', 'locations', 'details']}
+              headingColumns={['name', 'times', 'locations', 'details']}
           />
         </Fragment>
-
-        {/* past events */}
-        <div>
-          <p style={{textAlign:'left', fontWeight:'bold'}}>PAST<br></br>EVENTS</p>
-        </div>
-        <div style={{backgroundColor:'skyblue', maxWidth:'10%'}}>
-          <p>&nbsp;</p>
-        </div>
-
-        <Fragment>
-          <div className={styles.blur}>
-            <Event eventsData={pastEventsData} 
-              headingColumns={['name', 'times', 'locations', 'details']}
-            />
-          </div>
-        </Fragment>
-
       </Layout>
     </div>
   )
