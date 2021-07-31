@@ -13,7 +13,7 @@ const AuthContext = React.createContext({
     signup: (user: any) => {}
 });
 
-export const AuthProvider = (props: any) => {
+export const AuthContextProvider = (props: any) => {
     const [state, setState] = useState(initialState);
 
     const loginHandler = async (user: any) => {
