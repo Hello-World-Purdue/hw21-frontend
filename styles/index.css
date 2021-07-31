@@ -1,0 +1,311 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@600;800&display=swap');
+.index-container {
+    display: flex;
+    flex-wrap: wrap;
+    }
+
+
+    /* There's probably a lot of properties that are unnecessary in this code, but it works, although not responsively, so I'll keep it for now. Same for all other *-header */
+    .index-header{
+        /* height:auto; */
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: inline-block;
+        flex: 1 0 100%;
+        position: inherit;
+        min-width:100%;
+        height:500px; /*Mobile devices */
+        background-image: url(../public/index_background.png);
+        background-repeat: no-repeat;
+        display: inline-block;
+        flex: 1 0 100%;
+        position: inherit;
+        background-size: 100% auto;
+     
+    }
+
+    .apply-now-button {
+        /* Reset button styles */
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+        /*  */
+        border: 3px solid black;
+        background-color: #FF0009;
+        font-size:25px;
+        font-family: BackIssuesBB;
+        padding:10px 15px;
+        color:white;
+
+        /* Positioning */
+        position: absolute;
+        left: 50%;
+        top: 28%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        
+    }
+
+/*TABLET*/
+    @media only screen and (min-width: 600px) {
+        .index-header{
+            /* Bruh the size is not changing ughhhh, TODO */
+            height:400px;
+        }
+        .apply-now-button{
+            border: 4px solid black;
+            background-color: #FF0009;
+            font-size:30px;
+            font-family: BackIssuesBB;
+            padding:5px 10px;
+            color:white;
+            position: absolute;
+            left: 50%;
+            top: 30%;
+            -webkit-transform: translate(-50%, -30%);
+            transform: translate(-50%, -30%);
+
+        }
+    } 
+
+/*DESKTOP*/
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .index-header{
+        /* Bruh the size is not changing ughhhh, TODO */
+        height:900px;
+    }
+    
+    .apply-now-button {
+        /* Reset button styles */
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+        /*  */
+        border: 4px solid black;
+        background-color: #FF0009;
+        font-size:40px;
+        font-family: BackIssuesBB;
+        padding:15px 20px;
+        color:white;
+
+        /* Positioning */
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        
+    }
+    
+}
+
+
+    
+
+
+   
+    .date-section{
+        font-family: 'Libre Franklin', sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    /* text-align: center; */
+    }
+.date-h1 {
+    font-size: 120px;
+    font-weight:800;
+    margin:0;
+}
+.date-paragraph{
+    margin:0;
+}
+
+.date-button{
+  /* Reset button styles */
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  /*  */
+    font-size: 36px;
+    border: rgba(255,92,0,0.5) solid 6px;
+    padding: 10px 50px;
+}
+
+.why-us-section{
+    height:900px;
+    background-repeat: no-repeat;
+
+    background-image: url(../public/why_us_background.png);
+    background-size: 100% 900px;
+
+}
+.why-us-h1{
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 800;
+    font-size: 48px;
+    text-shadow: 0 4px 4px rgba(0,0,0,0.25);
+    
+
+}
+.why-us-paragraph{
+    font-family: "Franklin Gothic Demi Condensed";
+    color:#FFE62B;
+}
+.why-us-a:hover{
+    color:#FFE62B;
+    text-decoration: underline;
+}
+.sponsors-h1{
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 800;
+    font-size: 48px;
+}
+.learn-more-button{
+        /* Reset button styles */
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+        /*  */
+        background-color: #FFE62B;
+        color:#FF4621;
+    font-family: "Franklin Gothic";
+    font-weight:600;
+    font-size:36px;
+    padding:15px 45px;
+    margin:15px;
+    border: 3px solid black; 
+
+
+}
+
+
+
+
+.logo{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.rocket{
+
+}
+    
+
+
+.sponsors-header{
+    height:auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    flex: 1 0 100%;
+    position: inherit;
+    min-width:100%;
+    /* Use media queries to resize the height I guess? Or figure out background image properties so that the image stays responsive */
+    height:1200px; 
+    background-image: url(../public/light_blue_background.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    flex: 1 0 100%;
+    position: inherit;
+    background-size: 100% 900px;
+ 
+}
+
+
+
+    .schedule-header{
+        height:auto;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: inline-block;
+        flex: 1 0 100%;
+        position: inherit;
+        min-width:100%;
+        /* Use media queries to resize the height I guess? Or figure out background image properties so that the image stays responsive */
+        height:1200px; 
+        background-image: url('../images/schedules_background.png');
+        background-repeat: no-repeat;
+        display: inline-block;
+        flex: 1 0 100%;
+        position: inherit;
+        background-size: 100% 900px;
+     
+    }
+
+    .announcements-header{
+        height:auto;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: inline-block;
+        flex: 1 0 100%;
+        position: inherit;
+        min-width:100%;
+        /* Use media queries to resize the height I guess? Or figure out background image properties so that the image stays responsive */
+        height:1200px; 
+        background-image: url(../public/orange_background.png);
+        background-repeat: no-repeat;
+        display: inline-block;
+        flex: 1 0 100%;
+        position: inherit;
+        background-size: 100% 900px;
+     
+    }
+
+    
+    .resources-header{
+        height:auto;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: inline-block;
+        flex: 1 0 100%;
+        position: inherit;
+        min-width:100%;
+        /* Use media queries to resize the height I guess? Or figure out background image properties so that the image stays responsive */
+        height:1200px; 
+        background-image:url("../images/resources_background.png");
+        background-repeat: no-repeat;
+        display: inline-block;
+        flex: 1 0 100%;
+        position: inherit;
+        background-size: 100% 900px;
+     
+    }
+
+
+
+
+
+
+
+.date-img {
+    display: inline-block;
+    flex: 1 0 100%;
+    position: inherit;
+}
+
+.title-img {
+    display: inline-block;
+    flex: 1 0 100%;
+    position: inherit;
+}
