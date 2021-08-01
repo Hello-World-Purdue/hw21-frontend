@@ -253,7 +253,7 @@
   overflow: hidden;
   font-family: BackIssuesBB;
   text-align: center;
-  height: 10vh;
+  height: auto;
 }
 .topNav ul {
   display: inline-block;
