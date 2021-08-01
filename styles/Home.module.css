@@ -441,20 +441,66 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
 
 .faq_other {
   background-color: rgba(179, 0, 6, 255);
-  height: 40vh;
-  margin-top: vh;
+  height: auto;
+  margin-top: 2vh;
   padding: 5vw;
 }
 
 .faq_otherHeading {
   color: white;
-  font-weight: bolder;
+  font-weight: 800;
 }
 
 .faq_otherDescription {
   color: rgb(255, 230, 43);
   font-size: 75%;
+  font-weight: 600;
 }
+.faq_formContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.faq_inputContainer {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+}
+
+.faq_input {
+  padding: 0.5vw;
+  margin-bottom: 3vh;
+  height: 4vh;
+}
+
+.faq_textArea {
+  margin-left: 3vw;
+  margin-right: 3vw;
+  height: 11vh;
+  width: 50vw;
+}
+
+.faq_submitContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.faq_submit {
+  margin-top: 2vw;
+  text-align: center;
+  background-color: rgb(255, 230, 43);
+  border: none;
+  padding: 1vw 2vw 1vw 2vw;
+  color: rgba(179, 0, 6, 255);
+  font-size: 75%;
+  font-weight: 600;
+}
+
+.faq_submit:hover {
+  outline: solid rgba(179, 0, 6, 255);
+  outline-offset: -0.3vw;
+}
+
 @media (min-width: 800px) {
   .faq_main {
     background-image: none;
@@ -473,6 +519,9 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
   }
   .faq_content {
     margin-top: 0px;
+  }
+  .faq_submit {
+    margin-top: 0vw;
   }
 }
 .event_container_2b {
