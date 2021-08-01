@@ -408,11 +408,11 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
   color: white;
   text-align: center;
   border: solid black;
+  font-size: large;
 }
 
 .faq_questionText {
   text-transform: uppercase;
-  font-weight: bold;
 }
 
 .faq_answer {
