@@ -229,7 +229,7 @@
 .header_text {
   margin: 0;
   position: absolute;
-  top: 60%;
+  top: 65%;
   left: 50%;
   -ms-transform: translate(-50%, -90%);
   transform: translate(-50%, -90%);
@@ -253,10 +253,12 @@
   overflow: hidden;
   font-family: BackIssuesBB;
   text-align: center;
+  height: 10vh;
 }
 .topNav ul {
   display: inline-block;
   list-style-type: none;
+  margin-top: 2vh;
 }
 
 /* Style the links inside the navigation bar */
