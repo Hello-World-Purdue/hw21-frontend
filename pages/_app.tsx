@@ -5,7 +5,7 @@ import '../styles/globals.css'
 import '../styles/index.css'
 import '../styles/navbar.css'
 
-import '../styles/index.module.scss'
+import '../styles/index.module.css'
 function MyApp({ Component, pageProps }) {
     return (
         <AuthContextProvider>

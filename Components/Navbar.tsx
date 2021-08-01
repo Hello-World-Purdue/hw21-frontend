@@ -48,7 +48,9 @@ export const Navbar: FC<NavbarProps> = () => {
         </div>
       </div>
       {/* ELSE */}
-      <button className="login-register-button"> LOGIN/REGISTER</button>
+      <button className="login-register-button">
+        <Link href="/auth/login">LOGIN/REGISTER</Link>
+      </button>
       </ul>
     </div>
   );

@@ -13,7 +13,6 @@
 .formContainer {
 	min-height: 55vh;
 	max-height: 70vh;
-	overflow: scroll;
 	min-width: 55vh;
 	padding-top: 10px;
 	padding-left: 5px;
@@ -21,6 +20,23 @@
 	padding-bottom: 5px;
 	border: 5px solid black;
 }
+
+.appFormContainer {
+	min-height: 55vh;
+	max-height: 70vh;
+	min-width: 55vh;
+	padding-top: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	border: 5px solid black;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.appFormContainer::-webkit-scrollbar {
+	display: none;
+  }
 
 .signupForm,
 .loginForm,

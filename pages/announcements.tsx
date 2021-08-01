@@ -42,8 +42,6 @@ function Announcements() {
                 <p className={styles.header_description}>KEEP YOURSELF UPDATED WITH WHAT'S HAPPENING</p>
                 </div>
        </Header>
-    
-    </Layout>
 		<div className={styles.announcementList}>
 			{annList.map((announcement) => {
 				return (
@@ -54,6 +52,7 @@ function Announcements() {
 				);
 			})}
 		</div>
+    </Layout>
 		</Fragment>
 	);
 }
