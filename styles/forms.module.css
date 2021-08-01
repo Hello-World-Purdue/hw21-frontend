@@ -1,0 +1,205 @@
+/* General Form Styling */
+.formNav {
+	position: fixed;
+	top: 0;
+}
+
+.formPage {
+	min-height: 100vh;
+	min-width: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: url("../images/auth/new_bg.png") no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+}
+
+.formContainer {
+	min-height: 55vh;
+	max-height: 70vh;
+	min-width: 55vh;
+	padding-top: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	border: 5px solid black;
+}
+
+.appFormContainer {
+	min-height: 55vh;
+	max-height: 70vh;
+	min-width: 55vh;
+	padding-top: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	border: 5px solid black;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.appFormContainer::-webkit-scrollbar {
+	display: none;
+}
+
+.signupForm,
+.loginForm,
+.applicationForm {
+	margin-top: 5vh;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 10px;
+}
+
+.signupForm::before,
+.loginForm::before {
+	content: "";
+	position: absolute;
+	bottom: 62%;
+	left: 50%;
+	width: 27vh;
+	height: 27vh;
+	background-image: url("../images/auth/full_logo.svg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	transform: translate(-50%, -50%);
+	border-bottom: inherit;
+	border-bottom-color: transparent;
+}
+
+/* .applicationForm::before {
+    content: '';
+    position: absolute;
+    bottom: 82%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    background-image: url('../assets/img/user_avatar.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 1px solid black;
+    border-radius: 55%;
+    transform: translate(-50%, -50%);
+    border-bottom: inherit;
+    border-bottom-color: transparent; 
+ } */
+
+.imgContainer {
+	text-align: center;
+}
+
+.formField {
+	margin-top: 10px;
+	margin-bottom: 5px;
+	font-family: "backissues";
+}
+
+.formLabel {
+	margin-bottom: none;
+}
+
+.formInputField {
+	margin-top: none;
+}
+
+.formCheck {
+	/* display: block; */
+	font-size: smaller;
+}
+
+.formCheckInput {
+	background-color: red;
+	margin: 2px;
+}
+
+.linkContainer {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.linkContainer a {
+	color: black;
+	margin-top: 5px;
+	margin-bottom: 2px;
+	font-size: smaller;
+	font-family: "backissues";
+}
+
+.linkContainer a:hover {
+	color: salmon;
+}
+
+.buttonContainer {
+	margin-top: 15px;
+	display: flex;
+	justify-content: center;
+}
+
+.formButton {
+	border: none;
+	background-color: white;
+}
+
+.formButton div {
+	height: 70px;
+	width: 100px;
+	background-image: url("../images/auth/customButton.png");
+	background-size: cover;
+}
+
+/* Application Form Styling */
+.appFormContainer {
+	padding: 20px;
+	border: 3px solid black;
+}
+
+.appField {
+	display: flex;
+	flex-direction: row;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.appIcon {
+	margin-left: 10px;
+	margin-right: 20px;
+}
+
+.appInput {
+	display: block;
+	margin: 1px 0px;
+	border: none;
+	outline: none;
+	font-weight: lighter;
+	border-bottom: 1px solid gray;
+}
+
+.appInput:hover,
+.appInput:focus {
+	border-bottom: 1px solid lightblue;
+}
+
+.appLabel {
+	font-weight: lighter;
+	font-size: smaller;
+	margin-bottom: 1px;
+}
+
+.appValue {
+	align-self: auto;
+}
+
+.appButton {
+	background-color: skyblue;
+	color: black;
+	border: 2px solid black;
+	padding: 5px 15px;
+}
+
+.appButton:hover {
+	color: rgba(255, 255, 255, 0.753);
+	background-color: skyblue;
+	border: 2px solid black;
+}

@@ -1,288 +1,286 @@
-.index-header{
-    height:200px;
-    background-image: url(../public/index_background.png);
-    display: inline-block;
-    flex: 1 0 100%;
-    position: inherit;
- 
+.index-header {
+	height: 200px;
+	background-image: url(../public/index_background.png);
+	display: inline-block;
+	flex: 1 0 100%;
+	position: inherit;
 }
 
 .page-container {
-  min-width: 100vh;
-  position: relative;
-  object-fit: contain;
+	min-width: 100vh;
+	position: relative;
+	object-fit: contain;
 }
-.body{
-  min-width: fit-content;
+.body {
+	min-width: fit-content;
 }
 .resources {
-  padding: 0;
-  display: flex;
-  flex-direction: column;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
 }
 
 .admin_dashboard {
-  min-height: 100vh;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-image:url("../images/admin_dashboard_background.jpg");
-  background-repeat:repeat;
-  background-size:125%;
+	min-height: 100vh;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-image: url("../images/admin_dashboard_background.jpg");
+	background-repeat: repeat;
+	background-size: 125%;
 }
 
 .admin_dashboard_header {
-  background-color: #fa3c3c;
-  color: black;
-  font-weight: bold;
-  text-align: center;
-  border: 2px solid black;
-  width: 100%;
+	background-color: #fa3c3c;
+	color: black;
+	font-weight: bold;
+	text-align: center;
+	border: 2px solid black;
+	width: 100%;
 }
 
 .main {
-  width:95%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	width: 95%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .resources_header {
-  background-image:url("../images/resources_background.png");
-  background-repeat:no-repeat;
-  background-size: 100% 100%; 
-  width:100%;
-  height: 100%;
+	background-image: url("../images/resources_background.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	width: 100%;
+	height: 100%;
 }
 
 .schedules_header {
-  background-image:url("../images/schedules_background.png");
-  background-repeat:no-repeat;
-  background-size: 100% 100%; 
-  width:100%;
-  height: 100%;
+	background-image: url("../images/schedules_background.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	width: 100%;
+	height: 100%;
 }
 
 .header_heading {
-  -webkit-text-stroke: 1.5px black;
-  font-size:50px;
-  margin:0%;
-  font-style:italic;
-  font-weight: bold;
-  color:white;
-  text-align: center;
-  text-shadow: 2px 2px gray;
+	-webkit-text-stroke: 1.5px black;
+	font-size: 50px;
+	margin: 0%;
+	font-style: italic;
+	font-weight: bold;
+	color: white;
+	text-align: center;
+	text-shadow: 2px 2px gray;
 }
 
 .header_text {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -90%);
-  transform: translate(-50%, -90%);
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -90%);
+	transform: translate(-50%, -90%);
 }
 
 .header_description {
-  -webkit-text-stroke: 0.6px black;
-  font-size:20px;
-  margin-bottom:10%;
-  font-style:italic;
-  font-weight: bold;
-  color:white;
-  text-align: center;
-  text-shadow: 2px 2px gray;
+	-webkit-text-stroke: 0.6px black;
+	font-size: 20px;
+	margin-bottom: 10%;
+	font-style: italic;
+	font-weight: bold;
+	color: white;
+	text-align: center;
+	text-shadow: 2px 2px gray;
 }
 
 /*https://www.w3schools.com/howto/howto_js_topnav.asp*/
 .topNav {
-  background-color: hsl(0,0%,4%, 0.5);
-  overflow: hidden;
-  font-family: BackIssuesBB;
-  text-align: center;
-
+	background-color: hsl(0, 0%, 4%, 0.5);
+	overflow: hidden;
+	font-family: BackIssuesBB;
+	text-align: center;
 }
 .topNav ul {
-  display: inline-block;
-  list-style-type: none;
+	display: inline-block;
+	list-style-type: none;
 }
 
 /* Style the links inside the navigation bar */
 .topNav a {
-  float: left;
-color: #ffff;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+	float: left;
+	color: #ffff;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
 }
 /* Change the color of links on hover */
 .topNav a:hover {
-  background-color: #ddd;
-  color: black;
+	background-color: #ddd;
+	color: black;
 }
 /* Add a color to the active/current link */
 .topNav a.active {
-  background-color: #044caa;
-  color: white;
+	background-color: #044caa;
+	color: white;
 }
 /* The dropdown container */
 .dropdown {
-  float: left;
-  overflow: hidden;
+	float: left;
+	overflow: hidden;
 }
 /* Dropdown button */
 .dropdown .dropbtn {
-  font-size: 16px; 
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit; /* Important for vertical align on mobile phones */
-  margin: 0; /* Important for vertical align on mobile phones */
+	font-size: 16px;
+	border: none;
+	outline: none;
+	color: white;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit; /* Important for vertical align on mobile phones */
+	margin: 0; /* Important for vertical align on mobile phones */
 }
 .dropdownContent {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  border-radius: 10px 10px 10px 10px;
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+	border-radius: 10px 10px 10px 10px;
 }
 /* Links inside the dropdown */
 .dropdownContent a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
+	float: none;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
 }
 /* Add a grey background color to dropdown links on hover */
 .dropdownContent a:hover {
-  background-color: #ddd;
-  border-radius: 10px 10px 10px 10px;
+	background-color: #ddd;
+	border-radius: 10px 10px 10px 10px;
 }
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdownContent {
-  display: block;
+	display: block;
 }
 .tabs {
-    width: 100%;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	width: 100%;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 /* todo: sticky footer
 https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relative-position */
 .footer {
-  width: 100%;
-  height: 180px;
-  border-top: 1px solid #eaeaea;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: black;
-  position: relative;
-  bottom: 0;
-  left: 0;
+	width: 100%;
+	height: 180px;
+	border-top: 1px solid #eaeaea;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: black;
+	position: relative;
+	bottom: 0;
+	left: 0;
 }
 
-
-.footer-social-media{
-text-align: center;
-display: inline-block;
-
+.footer-social-media {
+	text-align: center;
+	display: inline-block;
 }
 
 .code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+	background: #fafafa;
+	border-radius: 5px;
+	padding: 0.75rem;
+	font-size: 1.1rem;
+	font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+		Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
 .container_1r {
-  background-image: url("../images/event_container_1r.png");
-  width: 10rem;
-  height: 15rem;
-  display: inline-block;
-  padding-top:40px;
-  padding-bottom: 40px;
-  text-align: center;
+	background-image: url("../images/event_container_1r.png");
+	width: 10rem;
+	height: 15rem;
+	display: inline-block;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	text-align: center;
 }
 
 .container_1b {
-  background-image: url("../images/event_container_1b.png");
-  background-size: 100% 100%;
-  width: 10rem;
-  height: 15rem;
-  display: inline-block;
-  padding-top:20px;
-  padding-bottom: 40px;
-  text-align: center;
+	background-image: url("../images/event_container_1b.png");
+	background-size: 100% 100%;
+	width: 10rem;
+	height: 15rem;
+	display: inline-block;
+	padding-top: 20px;
+	padding-bottom: 40px;
+	text-align: center;
 }
 
 .event_button_1r {
-  background-color: yellow;
-  color: #ed4924;
-  border-color: #ed4924;
-  padding-left: 30px;
-  padding-right: 30px;
+	background-color: yellow;
+	color: #ed4924;
+	border-color: #ed4924;
+	padding-left: 30px;
+	padding-right: 30px;
 }
 
 .event_button_1b {
-  background-color: yellow;
-  color: black;
-  border-color:black;
-  padding-left: 30px;
-  padding-right: 30px;
+	background-color: yellow;
+	color: black;
+	border-color: black;
+	padding-left: 30px;
+	padding-right: 30px;
 }
 
 .event_name {
-  font-size: 20px;
-  color: white;
-  font-weight: bold;
-  font-family: "franklingothic";
+	font-size: 20px;
+	color: white;
+	font-weight: bold;
+	font-family: "franklingothic";
 }
 .event_text {
-  color:white;
+	color: white;
 }
 
 .event_resource_grid {
-  margin: 0 auto;
-  display: grid;
-  grid-gap: 1rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+	margin: 0 auto;
+	display: grid;
+	grid-gap: 1rem;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
 }
 .event_resource_content {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: center;
 }
 .blur {
-  filter: blur(1px);
-  -webkit-filter: blur(1px);
+	filter: blur(1px);
+	-webkit-filter: blur(1px);
 }
 
 @media (min-width: 600px) {
-  .event_resource_grid { grid-template-columns: repeat(3, 1fr); }
+	.event_resource_grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
 }
 
 @font-face {
-  font-family: "franklingothic";
-  src: url('../fonts/ITC Franklin Gothic Demi Condensed.otf') format('truetype');
+	font-family: "franklingothic";
+	src: url("../fonts/ITC Franklin Gothic Demi Condensed.otf") format("truetype");
 }
 
 /* .event_more_info {

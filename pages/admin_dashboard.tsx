@@ -3,7 +3,6 @@ import Head from 'next/head'
 
 import React, { FC, Fragment } from 'react';
 
-
 import Table from '../Components/Table';
 import { Layout } from '../Components/Layout';
 import { Header } from '../Components/Header';
