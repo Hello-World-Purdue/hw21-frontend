@@ -1,7 +1,8 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, Fragment } from "react";
 import SignupForm from "../../Components/SignupForm";
 import Toast from "../../Components/Toast";
-import AuthContext from '../../context/AuthContext';
+
+import AuthContext from "../../context/AuthContext";
 
 import styles from "../../styles/forms.module.css";
 
@@ -13,7 +14,7 @@ function Signup({ history }) {
 	function signupUser(user: any) {
 		try {
 			signup(user);
-			history.push('/');
+			history.push("/");
 		} catch (err) {
 			setShowToast(true);
 			setSignupError(err.message);

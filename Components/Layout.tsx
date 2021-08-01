@@ -8,16 +8,15 @@ import { Footer } from "../Components/Footer";
 import styles from "../styles/Home.module.css";
 
 type LayoutProps = {
-  children?: React.ReactNode;
+	children?: React.ReactNode;
 };
 export const Layout: FC<LayoutProps> = ({ children }) => {
-  return (
-    <div className="body" >
-    <div className="page-container">
-      {children}
-      <Footer></Footer>
-    </div>
-    </div>
-
-  );
+	return (
+		<div className="body">
+			<div className="page-container">
+				{children}
+				<Footer></Footer>
+			</div>
+		</div>
+	);
 };

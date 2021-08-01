@@ -1,10 +1,10 @@
 import React, { Fragment, useState } from "react";
 import styles from "../styles/ann.module.css";
-
+import homeStyles from '../styles/Home.module.css';
 import AnnLabel from "../Components/AnnLabel";
 
 import { Layout } from "../Components/Layout";
-import { Header } from '../Components/Header';
+import { Header } from "../Components/Header";
 
 interface Announcement {
 	type: "events" | "food" | "judging" | "logistics" | "sponsor" | "misc";
@@ -35,24 +35,26 @@ function Announcements() {
 
 	return (
 		<Fragment>
-		<Layout>
-           <Header headerImgClass="announcements-header">
-         <div className={styles.header_text}>
-       <h1 className={styles.header_heading}>ANNOUNCEMENTS</h1>
-                <p className={styles.header_description}>KEEP YOURSELF UPDATED WITH WHAT'S HAPPENING</p>
-                </div>
-       </Header>
-		<div className={styles.announcementList}>
-			{annList.map((announcement) => {
-				return (
-					<div className={styles.announcement}>
-							<AnnLabel annType={announcement.type} />
-						<div className={styles.annMessage}>{announcement.message}</div>
+			<Layout>
+				<Header headerImgClass="announcements-header">
+					<div className={homeStyles.header_text}>
+						<h1 className={homeStyles.header_heading}>ANNOUNCEMENTS</h1>
+						<p className={homeStyles.header_description}>
+							KEEP YOURSELF UPDATED WITH WHAT'S HAPPENING
+						</p>
 					</div>
-				);
-			})}
-		</div>
-    </Layout>
+				</Header>
+				<div className={styles.announcementList}>
+					{annList.map((announcement) => {
+						return (
+							<div className={styles.announcement}>
+								<AnnLabel annType={announcement.type} />
+								<div className={styles.annMessage}>{announcement.message}</div>
+							</div>
+						);
+					})}
+				</div>
+			</Layout>
 		</Fragment>
 	);
 }

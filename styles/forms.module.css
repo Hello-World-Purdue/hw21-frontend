@@ -1,4 +1,9 @@
 /* General Form Styling */
+.formNav {
+	position: fixed;
+	top: 0;
+}
+
 .formPage {
 	min-height: 100vh;
 	min-width: 100vh;
@@ -36,7 +41,7 @@
 
 .appFormContainer::-webkit-scrollbar {
 	display: none;
-  }
+}
 
 .signupForm,
 .loginForm,
@@ -87,7 +92,7 @@
 .formField {
 	margin-top: 10px;
 	margin-bottom: 5px;
-	font-family: 'backissues';
+	font-family: "backissues";
 }
 
 .formLabel {
@@ -119,13 +124,13 @@
 	margin-top: 5px;
 	margin-bottom: 2px;
 	font-size: smaller;
-	font-family: 'backissues';
+	font-family: "backissues";
 }
 
 .linkContainer a:hover {
 	color: salmon;
 }
- 
+
 .buttonContainer {
 	margin-top: 15px;
 	display: flex;

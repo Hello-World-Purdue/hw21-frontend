@@ -1,4 +1,6 @@
 import { AuthContextProvider } from '../context/AuthContext';
+import { Navbar } from '../Components/Navbar';
+
 import '../styles/globals.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/globals.css'

@@ -15,7 +15,9 @@ export default function Index() {
       <Layout>
         <Header headerImgClass="index-header">
           {/* <img src="../images/logo.png"></img> */}
-          <button className="apply-now-button">Apply now!</button>
+          <button className="apply-now-button">
+            <a style={{ textDecoration: 'none', color: 'white' }} href="/appPage">Apply now!</a>
+          </button>
           {/* TODO: Add Helloworld img , rocket img and apply now button  */}
         </Header>
 

@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import LoginForm from "../../Components/LoginForm";
 import Toast from "../../Components/Toast";
+
 import AuthContext from "../../context/AuthContext";
 
 import styles from "../../styles/forms.module.css";
@@ -13,7 +14,7 @@ function Login({ history }) {
 	function loginUser(user: any) {
 		try {
 			login(user);
-			history.push('/');
+			history.push("/");
 		} catch (err) {
 			setShowToast(true);
 			setLoginError(err.message);
