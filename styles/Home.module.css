@@ -48,16 +48,17 @@
 .resources_header {
   background-image: url("../images/resources_background.png");
   background-repeat: no-repeat;
-  background-size: 100% 40%;
-  height: 650px;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .schedules_header {
   background-image: url("../images/schedules_background.png");
   background-repeat: no-repeat;
-  background-size: 100% 40%;
+  background-size: 100% 100%;
   width: 100%;
-  height: 650px;
+  height: 100%;
 }
 
 .header_heading {
@@ -216,7 +217,7 @@
 .header_text {
   -webkit-text-stroke: 0.6px black;
   font-size: 20px;
-  margin: 0%;
+  margin-bottom: 10%;
   font-style: italic;
   font-weight: bold;
   color: white;
@@ -311,8 +312,9 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
   justify-content: center;
   align-items: center;
   background-color: black;
-  position: absolute;
+  position: relative;
   bottom: 0;
+  left: 0;
 }
 
 .code {
@@ -364,11 +366,26 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
   height: 1em;
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
+.event_container_1r {
+  background-image: url("../images/event_container_1r.png");
+  width: 10rem;
+  height: 15rem;
+  display: inline-block;
+}
+.event_container_2r {
+  background-image: url("../images/event_container_1r.png");
+  filter: blur(1px);
+  -webkit-filter: blur(1px);
+  width: 10rem;
+  height: 15rem;
+  display: inline-block;
+}
+.event_container_1b {
+  background-image: url("../images/event_container_1b.png");
+  background-size: 100% 100%;
+  width: 10rem;
+  height: 15rem;
+  display: inline-block;
 }
 
 .faq_main {
@@ -458,3 +475,33 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
     margin-top: 0px;
   }
 }
+.event_container_2b {
+  background-image: url("../images/event_container_1b.png");
+  background-size: 100% 100%;
+  filter: blur(1px);
+  -webkit-filter: blur(1px);
+  width: 10rem;
+  height: 15rem;
+  display: inline-block;
+}
+.eventsgrid {
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.event_content {
+  padding: 35px;
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+  .eventsgrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* .event_more_info {
+  
+} */
