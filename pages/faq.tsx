@@ -4,6 +4,7 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import { Header } from "../Components/Header";
 import faqList from "../assets/questions";
+import { Layout } from "../Components/Layout";
 
 const submitHandler = (e) => {
   e.preventDefault();
@@ -11,7 +12,7 @@ const submitHandler = (e) => {
 
 export default function Faq() {
   return (
-    <>
+    <div className="faq">
       <Header headerImgClass="faq-header">
         <div className={styles.header_text}>
           <h1 className={styles.header_heading}>FAQ</h1>
@@ -61,6 +62,6 @@ export default function Faq() {
           </form>
         </div>
       </div>
-    </>
+    </div>
   );
 }

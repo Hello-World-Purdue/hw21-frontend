@@ -15,7 +15,14 @@
 .body {
   min-width: fit-content;
 }
+
 .resources {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.faq {
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -395,6 +402,7 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
 }
 
 .faq_question {
+  font-family: BackIssuesBB;
   margin-top: 8vh;
   width: 70vw;
   color: white;
@@ -408,6 +416,7 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
 }
 
 .faq_answer {
+  font-family: BackIssuesBB;
   width: 70vw;
 }
 
