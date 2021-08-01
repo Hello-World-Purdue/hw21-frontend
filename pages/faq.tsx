@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import styles from "../styles/Home.module.css";
 
 import { Header } from "../Components/Header";
-import faqList from "../assets/questions";
+import { faqList } from "../assets/questions";
 import { Layout } from "../Components/Layout";
 
 const submitHandler = (e) => {

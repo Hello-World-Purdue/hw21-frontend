@@ -77,11 +77,11 @@
   -webkit-text-stroke: 1.5px black;
   font-size: 50px;
   margin: 0%;
-  font-style: italic;
   font-weight: bold;
+  font-size: 6rem;
+  font-family: "badaboombbregular";
   color: white;
   text-align: center;
-  text-shadow: 2px 2px gray;
 }
 
 .profile_main {
@@ -229,7 +229,7 @@
 .header_text {
   margin: 0;
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   -ms-transform: translate(-50%, -90%);
   transform: translate(-50%, -90%);
@@ -237,13 +237,14 @@
 
 .header_description {
   -webkit-text-stroke: 0.6px black;
-  font-size: 20px;
-  margin-bottom: 10%;
+  font-size: 2rem;
+  font-family: "backissuesbb";
   font-style: italic;
+  margin-bottom: 10%;
   font-weight: bold;
   color: white;
   text-align: center;
-  text-shadow: 2px 2px gray;
+  text-shadow: 0px 1px black;
 }
 
 /*https://www.w3schools.com/howto/howto_js_topnav.asp*/
@@ -404,17 +405,18 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
   margin-top: 8vh;
   width: 70vw;
   color: white;
-  text-align: center;
   border: solid black;
-  font-size: large;
+  padding-left: 1vw;
 }
 
 .faq_questionText {
+  margin-bottom: 0;
   text-transform: uppercase;
 }
 
 .faq_answer {
   font-family: BackIssuesBB;
+  font-size: 0.9rem;
   width: 70vw;
 }
 
@@ -429,20 +431,23 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
 .faq_other {
   background-color: rgba(179, 0, 6, 255);
   height: auto;
-  margin-top: 2vh;
+  margin-top: 15vh;
   padding: 5vw;
 }
 
 .faq_otherHeading {
+  font-family: "franklingothicheavy";
+  font-size: 2rem;
   color: white;
   font-weight: 800;
+  margin-bottom: 0vh;
 }
 
 .faq_otherDescription {
+  font-family: "franklingothicmedium";
   color: rgb(255, 230, 43);
-  font-size: 75%;
-  font-weight: 600;
 }
+
 .faq_formContainer {
   display: flex;
   flex-direction: row;
@@ -455,12 +460,14 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
 }
 
 .faq_input {
+  font-family: "franklingothicbook";
   padding: 0.5vw;
   margin-bottom: 3vh;
   height: 4vh;
 }
 
 .faq_textArea {
+  font-family: "franklingothicbook";
   margin-left: 3vw;
   margin-right: 3vw;
   height: 11vh;
@@ -477,10 +484,10 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
   text-align: center;
   background-color: rgb(255, 230, 43);
   border: none;
+  font-family: "franklingothicmedium";
   padding: 1vw 2vw 1vw 2vw;
   color: rgba(179, 0, 6, 255);
-  font-size: 75%;
-  font-weight: 600;
+  font-size: 2rem;
 }
 
 .faq_submit:hover {
@@ -500,8 +507,10 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
   }
   .faq_question {
     width: 60vw;
+    font-size: 1.5rem;
   }
   .faq_answer {
+    font-size: 1rem;
     width: 60vw;
   }
   .faq_content {
@@ -575,6 +584,26 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
 @font-face {
   font-family: "franklingothic";
   src: url("../fonts/ITC Franklin Gothic Demi Condensed.otf") format("truetype");
+}
+@font-face {
+  font-family: "franklingothicnormal";
+  src: url("../fonts/ITC Franklin Gothic Demi.otf") format("truetype");
+}
+@font-face {
+  font-family: "franklingothicheavy";
+  src: url("../fonts/ITC Franklin Gothic Heavy Regular.otf") format("truetype");
+}
+@font-face {
+  font-family: "franklingothicbook";
+  src: url("../fonts/ITC Franklin Gothic Book.otf") format("truetype");
+}
+@font-face {
+  font-family: "franklingothicmedium";
+  src: url("../fonts/ITC Franklin Gothic Medium.otf") format("truetype");
+}
+@font-face {
+  font-family: "badaboombbregular";
+  src: url("../fonts/BadaBoom BB Regular.ttf") format("truetype");
 }
 
 /* .event_more_info {
