@@ -2,19 +2,13 @@ import React, { FC } from "react";
 import styles from "../styles/Home.module.css";
 
 import Link from "next/link";
-<<<<<<< HEAD
 import faqList from "../assets/questions";
 
 const submitHandler = (e) => {
   e.preventDefault();
 };
-=======
-import { Layout } from "../Components/Layout";
-import { Header } from '../Components/Header';
->>>>>>> 12ff6382d95d84e5967fb7b6d21b339505d14581
 
 export default function Faq() {
-<<<<<<< HEAD
   return (
     <div className={styles.faq_main}>
       <div className={styles.faq_header}>
@@ -62,17 +56,4 @@ export default function Faq() {
       </div>
     </div>
   );
-=======
-  return(
-    <Layout>
-           <Header headerImgClass="index-header">
-         <div className={styles.header_text}>
-       <h1 className={styles.header_heading}>FAQ</h1>
-                <p className={styles.header_description}>FREQUENTLY ASKED QUESTIONS</p>
-                </div>
-       </Header>
-    
-    </Layout>
-  )
->>>>>>> 12ff6382d95d84e5967fb7b6d21b339505d14581
 }

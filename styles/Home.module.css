@@ -1,15 +1,11 @@
-<<<<<<< HEAD
 @import url(https://allfont.net/allfont.css?fonts=franklin-gothic-book);
-=======
-.index-header{
-    height:200px;
-    background-image: url(../public/index_background.png);
-    display: inline-block;
-    flex: 1 0 100%;
-    position: inherit;
- 
+.index-header {
+  height: 200px;
+  background-image: url(../public/index_background.png);
+  display: inline-block;
+  flex: 1 0 100%;
+  position: inherit;
 }
->>>>>>> 12ff6382d95d84e5967fb7b6d21b339505d14581
 
 .page-container {
   min-width: 100vh;
@@ -245,11 +241,10 @@
 
 /*https://www.w3schools.com/howto/howto_js_topnav.asp*/
 .topNav {
-  background-color: hsl(0,0%,4%, 0.5);
+  background-color: hsl(0, 0%, 4%, 0.5);
   overflow: hidden;
   font-family: BackIssuesBB;
   text-align: center;
-
 }
 .topNav ul {
   display: inline-block;
@@ -259,7 +254,7 @@
 /* Style the links inside the navigation bar */
 .topNav a {
   float: left;
-color: #ffff;
+  color: #ffff;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -342,11 +337,9 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
   left: 0;
 }
 
-
-.footer-social-media{
-text-align: center;
-display: inline-block;
-
+.footer-social-media {
+  text-align: center;
+  display: inline-block;
 }
 
 .code {
@@ -363,7 +356,7 @@ display: inline-block;
   width: 10rem;
   height: 15rem;
   display: inline-block;
-  padding-top:40px;
+  padding-top: 40px;
   padding-bottom: 40px;
   text-align: center;
 }
@@ -374,12 +367,11 @@ display: inline-block;
   width: 10rem;
   height: 15rem;
   display: inline-block;
-  padding-top:20px;
+  padding-top: 20px;
   padding-bottom: 40px;
   text-align: center;
 }
 
-<<<<<<< HEAD
 .faq_main {
   background-image: url("../images/faq_background.png");
   background-size: 100vw;
@@ -524,7 +516,7 @@ display: inline-block;
   width: 10rem;
   height: 15rem;
   display: inline-block;
-=======
+}
 .event_button_1r {
   background-color: yellow;
   color: #ed4924;
@@ -536,7 +528,7 @@ display: inline-block;
 .event_button_1b {
   background-color: yellow;
   color: black;
-  border-color:black;
+  border-color: black;
   padding-left: 30px;
   padding-right: 30px;
 }
@@ -546,10 +538,9 @@ display: inline-block;
   color: white;
   font-weight: bold;
   font-family: "franklingothic";
->>>>>>> 12ff6382d95d84e5967fb7b6d21b339505d14581
 }
 .event_text {
-  color:white;
+  color: white;
 }
 
 .event_resource_grid {
@@ -570,18 +561,17 @@ display: inline-block;
 }
 
 @media (min-width: 600px) {
-<<<<<<< HEAD
   .eventsgrid {
     grid-template-columns: repeat(3, 1fr);
   }
-=======
-  .event_resource_grid { grid-template-columns: repeat(3, 1fr); }
+  .event_resource_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @font-face {
   font-family: "franklingothic";
-  src: url('../fonts/ITC Franklin Gothic Demi Condensed.otf') format('truetype');
->>>>>>> 12ff6382d95d84e5967fb7b6d21b339505d14581
+  src: url("../fonts/ITC Franklin Gothic Demi Condensed.otf") format("truetype");
 }
 
 /* .event_more_info {
