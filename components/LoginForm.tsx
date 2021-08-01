@@ -6,7 +6,7 @@ import CustomButton from "./CustomButton";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "../styles/forms.module.css";
 
-const LoginForm: React.FC<{ loginUser: (user) => void }> = (props) => {
+const LoginForm: React.FC<{ loginUser: (user) => void, forgotPassword: () => void }> = (props) => {
 	const [login, setLogin] = useState<string>("");
 	const [password, setPassword] = useState<string>("");
 	const [remember, setRemember] = useState<boolean>(false);
@@ -98,6 +98,10 @@ const LoginForm: React.FC<{ loginUser: (user) => void }> = (props) => {
 		setRemember(event.target.checked);
 	};
 
+	const forgotHandler = () => {
+		props.forgotPassword();
+	}
+
 	return (
 		<Card className={styles.formContainer}>
 			<Form className={styles.loginForm} onSubmit={submitForm}>
@@ -147,7 +151,7 @@ const LoginForm: React.FC<{ loginUser: (user) => void }> = (props) => {
 
 			<div className={styles.linkContainer}>
 				<Link href="/api/auth/forgot">
-					<a>FORGOT PASSWORD</a>
+					<a onClick={forgotHandler}>FORGOT PASSWORD</a>
 				</Link>
 				<Link href="/auth/signup">
 					<a>CREATE A NEW ACCOUNT</a>

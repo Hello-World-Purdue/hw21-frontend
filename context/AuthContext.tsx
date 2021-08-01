@@ -10,7 +10,8 @@ const AuthContext = React.createContext({
     ...initialState,
     login: (user: any) => {},
     logout: () => {},
-    signup: (user: any) => {}
+    signup: (user: any) => {},
+    forgot: (user: any) => {}
 });
 
 export const AuthContextProvider = (props: any) => {
@@ -72,6 +73,38 @@ export const AuthContextProvider = (props: any) => {
         }
     }
 
+    const forgotHandler = async (email: String) => {
+        const requestBody = {
+            email
+        }
+
+        try {
+            const res = await fetch('/api/auth/forgot', {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                method: 'POST',
+                body: JSON.stringify(requestBody)
+            });
+        } catch (err) {
+            throw new Error(err);
+        }
+    }
+
+    const resetHandler = async (formData: any) => {
+        try {
+            const res = await fetch('/api/auth/reset', {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                method: 'POST',
+                body: JSON.stringify(formData)
+            });
+        } catch (err) {
+            throw new Error(err);
+        }
+    }
+
     return (
         <AuthContext.Provider value={{
             isAuthenticated: state.isAuthenticated,
@@ -79,7 +112,8 @@ export const AuthContextProvider = (props: any) => {
             token: state.token,
             login: loginHandler,
             logout: logoutHandler,
-            signup: signupHandler
+            signup: signupHandler,
+            forgot: forgotHandler
         }}>
             {props.children}
         </AuthContext.Provider>
