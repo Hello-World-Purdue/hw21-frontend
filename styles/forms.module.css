@@ -43,9 +43,18 @@
 	display: none;
 }
 
+.appFormTitle {
+	align-self: center;
+	font-family: "badaboom";
+	font-weight: bold;
+	font-size: xx-large;
+}
+
 .signupForm,
 .loginForm,
-.applicationForm {
+.applicationForm,
+.resetForm,
+.forgotForm {
 	margin-top: 5vh;
 	margin-left: 5px;
 	margin-right: 5px;
@@ -53,7 +62,9 @@
 }
 
 .signupForm::before,
-.loginForm::before {
+.loginForm::before,
+.forgotForm::before,
+.resetForm::before {
 	content: "";
 	position: absolute;
 	bottom: 62%;
@@ -137,6 +148,7 @@
 	justify-content: center;
 }
 
+/* Button Styling */
 .formButton {
 	border: none;
 	background-color: white;

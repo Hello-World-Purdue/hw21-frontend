@@ -75,9 +75,9 @@ const ResetForm: React.FC<{ updatePassword: (password) => void }> = (props) => {
 
     return (
         <Card className={styles.formContainer}>
-			<Form className={styles.loginForm} onSubmit={submitForm}>
+			<Form className={styles.resetForm} onSubmit={submitForm}>
 				<Form.Group className={styles.formField}>
-					<Form.Label>PASSWORD</Form.Label>
+					<Form.Label>ENTER NEW PASSWORD</Form.Label>
 					<Form.Control
 						minLength={5}
 						className={passOneClasses.join(" ")}
@@ -89,7 +89,7 @@ const ResetForm: React.FC<{ updatePassword: (password) => void }> = (props) => {
 				</Form.Group>
 
 				<Form.Group className={styles.formField}>
-					<Form.Label>RETYPE PASSWORD</Form.Label>
+					<Form.Label>RETYPE NEW PASSWORD</Form.Label>
 					<Form.Control
 						className={passTwoClasses.join(" ")}
 						onChange={handlePassTwo}

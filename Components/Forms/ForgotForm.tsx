@@ -21,7 +21,7 @@ const ForgotForm: React.FC<{ sendEmail: (email) => void }> = (props) => {
 
     return (
         <Card className={styles.formContainer}>
-			<Form className={styles.loginForm} onSubmit={submitForm}>
+			<Form className={styles.forgotForm} onSubmit={submitForm}>
 				<Form.Group className={styles.formField}>
 					<Form.Label>ENTER EMAIL</Form.Label>
 					<Form.Control						
