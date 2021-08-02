@@ -87,7 +87,7 @@
   background-image: url("../images/profile/profile_background.svg");
   background-size: 100vw;
   height: 100vh;
-  width: 100vw;
+  width: 98.9vw;
   position: relative;
 }
 
@@ -98,8 +98,6 @@
   justify-content: center;
   background: white;
   border: solid thick;
-  width: auto;
-  height: auto;
   padding: 2%;
   position: absolute;
   top: 50%;
@@ -110,13 +108,16 @@
 
 .profile_header > h1 {
   font-family: "franklingothicbook";
-  font-size: 2vmax;
+  font-size: 1.7vmax;
   color: rgba(0, 0, 0, 0.5);
 }
 
 .profile_account {
   position: relative;
+  width: 10vmax;
+  height: 10vmax;
   bottom: 6vh;
+  margin-bottom: -6vw;
 }
 
 .profile_info {
@@ -137,7 +138,8 @@
 }
 
 .profile_container {
-  width: 20vmax;
+  width: auto;
+  height: 15vmax;
 }
 
 .profile_data {
@@ -151,9 +153,9 @@
 }
 
 .profile_input {
-  width: 30vmax;
+  width: 25vmax;
   grid-area: data;
-  font-size: 2.5vmax;
+  font-size: 1.8vmax;
   font-family: "backissuesbb";
   border: none;
   border-bottom: 2px solid;
@@ -163,21 +165,6 @@
   border: none;
   outline: none;
   border-bottom: solid 2px;
-}
-
-.profile_editbutton {
-  align-self: center;
-  background-color: rgba(128, 214, 255, 0.65);
-  border-style: solid;
-  border-color: black;
-  border-width: 0.2vw;
-  text-align: center;
-  font-family: "backissuesbb";
-  font-size: 1.5vw;
-  outline: none;
-  cursor: pointer;
-  padding: 0 2vmax 0 2vmax;
-  width: 20vw;
 }
 
 .profile_button {
@@ -192,7 +179,7 @@
   outline: none;
   cursor: pointer;
   padding: 0 1vmax 0 1vmax;
-  width: 15vw;
+  width: 20vw;
 }
 
 @media only screen and (min-width: 800px) {
@@ -214,16 +201,23 @@
 
   .profile_button {
     font-size: 1.5vmax;
+    width: 15vw;
   }
 
   .profile_account {
-    bottom: 8vh;
+    bottom: 16vh;
+    margin-bottom: -6vw;
   }
 
   .profile_input {
     width: 19.5vmax;
     grid-area: data;
     font-size: 1.5vmax;
+  }
+
+  .profile_container {
+    width: 20vmax;
+    height: 5vmax;
   }
 }
 
