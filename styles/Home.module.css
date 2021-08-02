@@ -403,8 +403,8 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
   width: 70vw;
   color: white;
   border: solid black;
+  padding: 0.5vw;
   padding-left: 1vw;
-  font-size: 100px;
 }
 
 .faq_questionText {
@@ -414,8 +414,9 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
 
 .faq_answer {
   font-family: BackIssuesBB;
-  height: auto;
-  margin-top: 2.5vh;
+  font-size: 0.9rem;
+  width: 70vw;
+  margin-top: 4vh;
 }
 
 .faq_answerList {
@@ -424,7 +425,7 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
 }
 
 .faq_answerText {
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
 .faq_other {
@@ -517,6 +518,9 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
   }
   .faq_submit {
     margin-top: 0vw;
+  }
+  .faq_answerText {
+    font-size: 1.3rem;
   }
 }
 .event_container_2b {
