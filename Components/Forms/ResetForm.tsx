@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "../../styles/forms.module.css";
 
 const ResetForm: React.FC<{ updatePassword: (password) => void }> = (props) => {
+	const [resetLink, setResetLink] = useState<string>('');
     const [passOne, setPassOne] = useState<string>("");
 	const [passTwo, setPassTwo] = useState<string>("");
 
@@ -22,6 +23,10 @@ const ResetForm: React.FC<{ updatePassword: (password) => void }> = (props) => {
 
 	const handlePassTwo = (event: any) => {
 		setPassTwo(event.target.value);
+	};
+
+	const handleResetLink = (event: any) => {
+		setResetLink(event.taget.value);
 	};
 
     function validatePassword(): boolean {
@@ -70,12 +75,27 @@ const ResetForm: React.FC<{ updatePassword: (password) => void }> = (props) => {
 			return;
 		}
 
+		const formData = {
+			resetLink,
+			password: passOne
+		}
+
 		props.updatePassword(passOne);
 	}
 
     return (
         <Card className={styles.formContainer}>
 			<Form className={styles.resetForm} onSubmit={submitForm}>
+			<Form.Group className={styles.formField}>
+					<Form.Label>ENTER RESET LINK</Form.Label>
+					<Form.Control
+						onChange={handleResetLink}
+						type="text"
+						name="resetLink"
+						required
+					/>
+				</Form.Group>
+
 				<Form.Group className={styles.formField}>
 					<Form.Label>ENTER NEW PASSWORD</Form.Label>
 					<Form.Control
