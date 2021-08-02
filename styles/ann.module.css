@@ -1,0 +1,107 @@
+/* Styles for announcements page */
+.announcementList {
+	min-width: 20vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.announcement {
+	border: 1px solid gray;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin: 2vh 4vh;
+	padding: 2vh 4vh;
+}
+
+.annMessage {
+	font-family: 'backissues';
+	margin-left: 1vh;
+}
+
+.label {
+	height: 40px;
+	width: 100px;
+	border: 2px solid black;
+	font-family: 'backissues';
+	font-weight: 600;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.events {
+	background-color: #1594D9;
+	color: white;
+}
+
+.judging {
+	background-color: #FF5C00;
+	color: white;
+}
+
+.sponsor {
+	background-color: #FFE62B;
+	color: black;
+}
+
+.misc {
+	background-color: #000000;
+	color: white;
+}
+
+.food,
+.logistics {
+	background-color: #FF0000;
+	color: white;
+}
+
+
+.eventsLabel {
+	height: 40px;
+	width: 100px;
+	background-image: url("../images/announcements/events-label.png"); 
+	background-size: cover;
+}
+
+.foodLabel {
+	height: 40px;
+	width: 80px;
+	background-image: url("../images/announcements/food-label.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.judgingLabel {
+	height: 40px;
+	width: 100px;
+	background-image: url("../images/announcements/judging-label.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.logisticsLabel {
+	height: 40px;
+	width: 100px;
+	background-image: url("../images/announcements/logistics-label.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.sponsorLabel {
+	height: 40px;
+	width: 100px;
+	background-image: url("../images/announcements/sponsor-label.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.miscLabel {
+	height: px;
+	width: 100px;
+	background-image: url("../images/announcements/misc-label.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}

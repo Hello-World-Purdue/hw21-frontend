@@ -11,6 +11,7 @@ html,
 body {
   padding: 0;
   margin: 0;
+  min-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -21,6 +22,16 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+@font-face {
+  font-family: backissues;
+  src: url('../fonts/back-issues/BackIssuesBB_reg.ttf');
+}
+
+@font-face {
+  font-family: badaboom;
+  src: url('../fonts/badaboom/BadaboomBB_Reg.ttf');
 }
 
 * {
