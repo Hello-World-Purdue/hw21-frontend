@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { Form, Card } from "react-bootstrap";
-import CustomButton from "./CustomButton";
+import CustomButton from "../CustomButton";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import styles from "../styles/forms.module.css";
+import styles from "../../styles/forms.module.css";
 
 const SignupForm: React.FC<{ signupUser: (user) => void }> = (props) => {
 	const [username, setUsername] = useState<string>("");
@@ -12,11 +12,9 @@ const SignupForm: React.FC<{ signupUser: (user) => void }> = (props) => {
 	const [passTwo, setPassTwo] = useState<string>("");
 
 	const [usernameWarning, setUsernameWarning] = useState<string>("");
-	const [passOneWarning, setPassOneWarning] = useState<string>("");
 	const [passTwoWarning, setPassTwoWarning] = useState<string>("");
 
 	const [usernameIssues, setUsernameIssues] = useState<boolean>(false);
-	const [passOneIssues, setPassOneIssues] = useState<boolean>(false);
 	const [passTwoIssues, setPassTwoIssues] = useState<boolean>(false);
 
 	const [usernameClasses, setUsernameClasses] = useState<string[]>([]);
@@ -64,19 +62,6 @@ const SignupForm: React.FC<{ signupUser: (user) => void }> = (props) => {
 			setUsernameClasses(usr.filter((element) => element !== "is-invalid"));
 		}
 
-		if (username.length === 0) {
-			setUsernameIssues(true);
-
-			if (idx === -1) {
-				usr.push("is-invalid");
-			}
-
-			setUsernameClasses(usr);
-			setUsernameWarning("Username cannot be empty");
-
-			return true;
-		}
-
 		if (!username.includes("@purdue.edu")) {
 			setUsernameIssues(true);
 
@@ -100,7 +85,6 @@ const SignupForm: React.FC<{ signupUser: (user) => void }> = (props) => {
 		const idx1 = p1.indexOf("is-invalid");
 		const idx2 = p2.indexOf("is-invalid");
 
-		setPassOneIssues(false);
 		setPassTwoIssues(false);
 
 		if (idx1 !== -1) {
@@ -109,32 +93,6 @@ const SignupForm: React.FC<{ signupUser: (user) => void }> = (props) => {
 
 		if (idx2 !== -1) {
 			setPassTwoClasses(p2.filter((element) => element !== "is-invalid"));
-		}
-
-		if (passOne.length === 0 || passTwo.length === 0) {
-			if (passOne.length === 0) {
-				setPassOneIssues(true);
-				setPassOneWarning("Password cannot be empty");
-
-				if (idx1 === -1) {
-					p1.push("is-invalid");
-				}
-
-				setPassOneClasses(p1);
-			}
-
-			if (passTwo.length === 0) {
-				setPassTwoIssues(true);
-				setPassTwoWarning("Password cannot be empty");
-
-				if (idx2 === -1) {
-					p2.push("is-invalid");
-				}
-
-				setPassTwoClasses(p2);
-			}
-
-			return true;
 		}
 
 		if (passOne !== passTwo) {
@@ -167,6 +125,7 @@ const SignupForm: React.FC<{ signupUser: (user) => void }> = (props) => {
 						onChange={handleUsername}
 						type="text"
 						name="username"
+						required
 					/>
 					{usernameIssues && (
 						<div className="invalid-feedback">{usernameWarning}</div>
@@ -181,10 +140,8 @@ const SignupForm: React.FC<{ signupUser: (user) => void }> = (props) => {
 						onChange={handlePassOne}
 						type="password"
 						name="password"
+						required
 					/>
-					{passOneIssues && (
-						<div className="invalid-feedback">{passOneWarning}</div>
-					)}
 				</Form.Group>
 
 				<Form.Group className={styles.formField}>
@@ -194,6 +151,7 @@ const SignupForm: React.FC<{ signupUser: (user) => void }> = (props) => {
 						onChange={handlePassTwo}
 						type="password"
 						name="password"
+						required
 					/>
 					{passTwoIssues && (
 						<div className="invalid-feedback">{passTwoWarning}</div>

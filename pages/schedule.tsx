@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 import React, { FC, Fragment } from 'react';
 import { Layout } from '../Components/Layout';
 import {Event} from '../Components/Event';
+import { Header } from '../Components/Header';
 
 export interface EventsData {
   name: string,

@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import LoginForm from "../../Components/LoginForm";
+import LoginForm from "../../Components/Forms/LoginForm";
 import Toast from "../../Components/Toast";
 
 import AuthContext from "../../context/AuthContext";

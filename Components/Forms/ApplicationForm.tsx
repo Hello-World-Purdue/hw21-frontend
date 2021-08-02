@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form, Card } from "react-bootstrap";
-import CustomButton from "./CustomButton";
+import CustomButton from "../CustomButton";
 
 import {
 	Gender,
@@ -10,9 +10,9 @@ import {
 	Referral,
 	ShirtSize,
 	Major,
-} from "../util/enums";
+} from "../../util/enums";
 import "bootstrap/dist/css/bootstrap.min.css";
-import styles from "../styles/forms.module.css";
+import styles from "../../styles/forms.module.css";
 
 const initialState = {
 	hackathons: 0,

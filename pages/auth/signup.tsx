@@ -1,5 +1,5 @@
 import React, { useState, useContext, Fragment } from "react";
-import SignupForm from "../../Components/SignupForm";
+import SignupForm from "../../Components/Forms/SignupForm";
 import Toast from "../../Components/Toast";
 
 import AuthContext from "../../context/AuthContext";
