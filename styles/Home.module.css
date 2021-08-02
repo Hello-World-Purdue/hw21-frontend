@@ -75,10 +75,9 @@
 
 .header_heading {
   -webkit-text-stroke: 1.5px black;
-  font-size: 50px;
   margin: 0%;
   font-weight: bold;
-  font-size: 6rem;
+  font-size: 10rem;
   font-family: "badaboombbregular";
   color: white;
   text-align: center;
@@ -109,12 +108,8 @@
   -ms-transform: translate(-50%, -50%);
 }
 
-.profile_box > * {
-  margin: 3vmax;
-}
-
 .profile_header > h1 {
-  font-family: "Franklin Gothic Book";
+  font-family: "franklingothicbook";
   font-size: 2vmax;
   color: rgba(0, 0, 0, 0.5);
 }
@@ -134,7 +129,7 @@
 
 .profile_header {
   grid-area: header;
-  width: fit-content;
+  width: 30vmax;
 }
 
 .profile_image {
@@ -142,22 +137,24 @@
 }
 
 .profile_container {
-  size: auto;
+  width: 20vmax;
 }
 
 .profile_data {
+  font-family: "backissuesbb";
   width: 30vmax;
   grid-area: data;
 }
 
 .profile_data > h1 {
-  font-size: 2.5vmax;
+  font-size: 2vmax;
 }
 
 .profile_input {
   width: 30vmax;
   grid-area: data;
   font-size: 2.5vmax;
+  font-family: "backissuesbb";
   border: none;
   border-bottom: 2px solid;
 }
@@ -173,25 +170,29 @@
   background-color: rgba(128, 214, 255, 0.65);
   border-style: solid;
   border-color: black;
-  border-width: 2px;
+  border-width: 0.2vw;
   text-align: center;
-  font-family: inherit;
+  font-family: "backissuesbb";
   font-size: 1.5vw;
   outline: none;
-  margin-top: 100%;
-  width: 10vw;
+  cursor: pointer;
+  padding: 0 2vmax 0 2vmax;
+  width: 20vw;
 }
 
 .profile_button {
+  align-self: center;
   background-color: rgba(128, 214, 255, 0.65);
   border-style: solid;
   border-color: black;
   border-width: 0.2vw;
   text-align: center;
-  font-family: inherit;
-  font-size: 2.5vmax;
+  font-family: "backissuesbb";
+  font-size: 1.5vmax;
   outline: none;
   cursor: pointer;
+  padding: 0 1vmax 0 1vmax;
+  width: 15vw;
 }
 
 @media only screen and (min-width: 800px) {
@@ -220,7 +221,7 @@
   }
 
   .profile_input {
-    width: 22vmax;
+    width: 19.5vmax;
     grid-area: data;
     font-size: 1.5vmax;
   }
@@ -237,7 +238,7 @@
 
 .header_description {
   -webkit-text-stroke: 0.6px black;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-family: "backissuesbb";
   font-style: italic;
   margin-bottom: 10%;
@@ -409,6 +410,7 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
   color: white;
   border: solid black;
   padding-left: 1vw;
+  font-size: 100px;
 }
 
 .faq_questionText {
@@ -418,8 +420,8 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
 
 .faq_answer {
   font-family: BackIssuesBB;
-  font-size: 0.9rem;
-  width: 70vw;
+  height: auto;
+  margin-top: 2.5vh;
 }
 
 .faq_answerList {
@@ -428,6 +430,7 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
 }
 
 .faq_answerText {
+  font-size: 1.3rem;
 }
 
 .faq_other {

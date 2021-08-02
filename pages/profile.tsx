@@ -15,7 +15,7 @@ export default function Profile() {
           className={styles.profile_account}
           width="90%"
           height="90%"
-        ></Image>
+        />
         <ProfileInfo header="Full Name" placeholder="First Last" />
         <ProfileInfo header="Email" placeholder="firstlast@purdue.edu" />
         <ProfileInfo header="Application Status" placeholder="Pending" />

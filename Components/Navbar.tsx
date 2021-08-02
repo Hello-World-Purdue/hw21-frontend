@@ -8,6 +8,10 @@ import styles from "../styles/Home.module.css";
 
 type NavbarProps = {};
 
+const onLoginRegisterClicked = () => {
+  location.href = "/profile";
+};
+
 export const Navbar: FC<NavbarProps> = () => {
   return (
     <div className={styles.topNav}>
@@ -43,7 +47,13 @@ export const Navbar: FC<NavbarProps> = () => {
           </div>
         </div>
         {/* ELSE */}
-        <button className="login-register-button"> LOGIN/REGISTER</button>
+        <button
+          className="login-register-button"
+          onClick={onLoginRegisterClicked}
+        >
+          {" "}
+          LOGIN/REGISTER
+        </button>
       </ul>
     </div>
   );

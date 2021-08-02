@@ -5,7 +5,7 @@ const getQuestions = (list) => {
   let content = [];
   for (let i = 0; i < list.length; i += 3) {
     content.push(
-      <>
+      <div className={styles.faq_questionDiv}>
         <div
           className={styles.faq_question}
           style={{ backgroundColor: "rgb(255,0,9)", color: "white" }}
@@ -39,7 +39,7 @@ const getQuestions = (list) => {
             {getAnswers(list[i + 2]["a"])}
           </div>
         )}
-      </>
+      </div>
     );
   }
   return content;
@@ -51,7 +51,7 @@ const getAnswers = (list) => {
     content.push(<p className={styles.faq_answerText}>ANS: {list[0]}</p>);
   } else {
     content.push(
-      <p>
+      <p className={styles.faq_answerText}>
         ANS:
         <ul className={styles.faq_answerList}>
           {list.map((item, index) => (
