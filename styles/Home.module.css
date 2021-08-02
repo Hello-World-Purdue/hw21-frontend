@@ -224,7 +224,7 @@
 .header_text {
   margin: 0;
   position: absolute;
-  top: 65%;
+  top: 75%;
   left: 50%;
   -ms-transform: translate(-50%, -90%);
   transform: translate(-50%, -90%);
@@ -236,10 +236,12 @@
   font-family: "backissuesbb";
   font-style: italic;
   margin-bottom: 10%;
-  font-weight: bold;
+  font-weight: 2000;
   color: white;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2.5px;
+  -webkit-text-stroke-color: black;
   text-align: center;
-  text-shadow: 0px 1px black;
 }
 
 /*https://www.w3schools.com/howto/howto_js_topnav.asp*/
