@@ -27,6 +27,7 @@ export const AuthContextProvider = (props: any) => {
                 body: JSON.stringify(user)
             })
 
+            console.log('res', res);
             const data = await res.json();
 
             setState({
@@ -35,7 +36,7 @@ export const AuthContextProvider = (props: any) => {
                 token: data.token
             })
         } catch (err) {
-            throw new Error(err.message);
+            throw new Error(err.error);
         }
     }
 
@@ -47,7 +48,7 @@ export const AuthContextProvider = (props: any) => {
                 token: null
             })
         } catch (err) {
-            throw new Error(err.message);
+            throw new Error(err.error);
         }
     }
 
@@ -61,6 +62,7 @@ export const AuthContextProvider = (props: any) => {
                 body: JSON.stringify(user)
             })
 
+            console.log(res);
             const data = await res.json();
 
             setState({
@@ -69,7 +71,7 @@ export const AuthContextProvider = (props: any) => {
                 token: data.token
             })
         } catch (err) {
-            throw new Error(err.message);
+            throw new Error(err.error);
         }
     }
 
