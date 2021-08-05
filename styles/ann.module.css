@@ -1,6 +1,7 @@
 /* Styles for announcements page */
 .announcementList {
-	min-width: 20vh;
+	min-width: 80vh;
+	margin-bottom: 10vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -19,14 +20,16 @@
 .annMessage {
 	font-family: 'backissues';
 	margin-left: 1vh;
+	font-size: larger;
 }
 
 .label {
-	height: 40px;
-	width: 100px;
+	height: 80px;
+	width: 200px;
 	border: 2px solid black;
 	font-family: 'backissues';
 	font-weight: 600;
+	font-size: x-large;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -56,52 +59,4 @@
 .logistics {
 	background-color: #FF0000;
 	color: white;
-}
-
-
-.eventsLabel {
-	height: 40px;
-	width: 100px;
-	background-image: url("../images/announcements/events-label.png"); 
-	background-size: cover;
-}
-
-.foodLabel {
-	height: 40px;
-	width: 80px;
-	background-image: url("../images/announcements/food-label.png");
-	background-size: contain;
-	background-repeat: no-repeat;
-}
-
-.judgingLabel {
-	height: 40px;
-	width: 100px;
-	background-image: url("../images/announcements/judging-label.png");
-	background-size: contain;
-	background-repeat: no-repeat;
-}
-
-.logisticsLabel {
-	height: 40px;
-	width: 100px;
-	background-image: url("../images/announcements/logistics-label.png");
-	background-size: contain;
-	background-repeat: no-repeat;
-}
-
-.sponsorLabel {
-	height: 40px;
-	width: 100px;
-	background-image: url("../images/announcements/sponsor-label.png");
-	background-size: contain;
-	background-repeat: no-repeat;
-}
-
-.miscLabel {
-	height: px;
-	width: 100px;
-	background-image: url("../images/announcements/misc-label.png");
-	background-size: contain;
-	background-repeat: no-repeat;
 }
