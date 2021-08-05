@@ -1,6 +1,7 @@
 /* Styles for announcements page */
 .announcementList {
 	min-width: 80vh;
+	margin-top: -30vh;
 	margin-bottom: 10vh;
 	display: flex;
 	flex-direction: column;
