@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form, Card } from "react-bootstrap";
-import CustomButton from "../CustomButton";
+import CustomButton from "./CustomButton";
 
 import {
 	Gender,

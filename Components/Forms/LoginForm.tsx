@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { Form, Card } from "react-bootstrap";
-import CustomButton from "../CustomButton";
+import CustomButton from "./CustomButton";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "../../styles/forms.module.css";
