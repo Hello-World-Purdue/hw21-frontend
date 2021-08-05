@@ -1,9 +1,10 @@
+@import url(https://allfont.net/allfont.css?fonts=franklin-gothic-book);
 .index-header {
-	height: 200px;
-	background-image: url(../public/index_background.png);
-	display: inline-block;
-	flex: 1 0 100%;
-	position: inherit;
+  height: 200px;
+  background-image: url(../public/index_background.png);
+  display: inline-block;
+  flex: 1 0 100%;
+  position: inherit;
 }
 
 .page-container {
@@ -14,10 +15,17 @@
 .body {
 	min-width: fit-content;
 }
+
 .resources {
 	padding: 0;
 	display: flex;
 	flex-direction: column;
+}
+
+.faq {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .admin_dashboard {
@@ -42,70 +50,212 @@
 }
 
 .main {
-	width: 95%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .resources_header {
-	background-image: url("../images/resources_background.png");
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	width: 100%;
-	height: 100%;
+  background-image: url("../images/resources_background.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .schedules_header {
-	background-image: url("../images/schedules_background.png");
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	width: 100%;
-	height: 100%;
+  background-image: url("../images/schedules_background.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .header_heading {
-	-webkit-text-stroke: 1.5px black;
-	font-size: 50px;
-	margin: 0%;
-	font-style: italic;
-	font-weight: bold;
-	color: white;
-	text-align: center;
-	text-shadow: 2px 2px gray;
+  -webkit-text-stroke: 1.5px black;
+  margin: 0%;
+  font-weight: bold;
+  font-size: 10rem;
+  font-family: "badaboombbregular";
+  color: white;
+  text-align: center;
+}
+
+.profile_main {
+  background-image: url("../images/profile/profile_background.svg");
+  background-size: 100vw;
+  height: 100vh;
+  width: 98.9vw;
+  position: relative;
+}
+
+.profile_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: solid thick;
+  padding: 2%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.profile_header > h1 {
+  font-family: "franklingothicbook";
+  font-size: 1.7vmax;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.profile_account {
+  position: relative;
+  width: 10vmax;
+  height: 10vmax;
+  bottom: 6vh;
+  margin-bottom: -6vw;
+}
+
+.profile_info {
+  display: grid;
+  gap: 10%;
+  grid-template-areas:
+    "image header"
+    "image data";
+}
+
+.profile_header {
+  grid-area: header;
+  width: 30vmax;
+}
+
+.profile_image {
+  grid-area: image;
+}
+
+.profile_container {
+  width: auto;
+  height: 15vmax;
+}
+
+.profile_data {
+  font-family: "backissuesbb";
+  width: 30vmax;
+  grid-area: data;
+}
+
+.profile_data > h1 {
+  font-size: 2vmax;
+}
+
+.profile_input {
+  width: 25vmax;
+  grid-area: data;
+  font-size: 1.8vmax;
+  font-family: "backissuesbb";
+  border: none;
+  border-bottom: 2px solid;
+}
+
+.profile_input:focus {
+  border: none;
+  outline: none;
+  border-bottom: solid 2px;
+}
+
+.profile_button {
+  align-self: center;
+  background-color: rgba(128, 214, 255, 0.65);
+  border-style: solid;
+  border-color: black;
+  border-width: 0.2vw;
+  text-align: center;
+  font-family: "backissuesbb";
+  font-size: 1.5vmax;
+  outline: none;
+  cursor: pointer;
+  padding: 0 1vmax 0 1vmax;
+  width: 20vw;
+}
+
+@media only screen and (min-width: 800px) {
+  .profile_box > * {
+    margin: 1vmax;
+  }
+
+  .profile_header > h1 {
+    font-size: 1vmax;
+  }
+
+  .profile_data {
+    width: 20vmax;
+  }
+
+  .profile_data > h1 {
+    font-size: 1.5vmax;
+  }
+
+  .profile_button {
+    font-size: 1.5vmax;
+    width: 15vw;
+  }
+
+  .profile_account {
+    bottom: 16vh;
+    margin-bottom: -6vw;
+  }
+
+  .profile_input {
+    width: 19.5vmax;
+    grid-area: data;
+    font-size: 1.5vmax;
+  }
+
+  .profile_container {
+    width: 20vmax;
+    height: 5vmax;
+  }
 }
 
 .header_text {
-	margin: 0;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	-ms-transform: translate(-50%, -90%);
-	transform: translate(-50%, -90%);
+  margin: 0;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  -ms-transform: translate(-50%, -90%);
+  transform: translate(-50%, -90%);
 }
 
 .header_description {
-	-webkit-text-stroke: 0.6px black;
-	font-size: 20px;
-	margin-bottom: 10%;
-	font-style: italic;
-	font-weight: bold;
-	color: white;
-	text-align: center;
-	text-shadow: 2px 2px gray;
+  -webkit-text-stroke: 0.6px black;
+  font-size: 2.5rem;
+  font-family: "backissuesbb";
+  font-style: italic;
+  margin-bottom: 10%;
+  font-weight: 2000;
+  color: white;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2.5px;
+  -webkit-text-stroke-color: black;
+  text-align: center;
 }
 
 /*https://www.w3schools.com/howto/howto_js_topnav.asp*/
 .topNav {
-	background-color: hsl(0, 0%, 4%, 0.5);
-	overflow: hidden;
-	font-family: BackIssuesBB;
-	text-align: center;
+  background-color: hsl(0, 0%, 4%, 0.5);
+  overflow: hidden;
+  font-family: BackIssuesBB;
+  text-align: center;
+  height: auto;
 }
 .topNav ul {
-	display: inline-block;
-	list-style-type: none;
+  display: inline-block;
+  list-style-type: none;
+  margin-top: 2vh;
 }
 
 /* Style the links inside the navigation bar */
@@ -134,23 +284,23 @@
 }
 /* Dropdown button */
 .dropdown .dropbtn {
-	font-size: 16px;
-	border: none;
-	outline: none;
-	color: white;
-	padding: 14px 16px;
-	background-color: inherit;
-	font-family: inherit; /* Important for vertical align on mobile phones */
-	margin: 0; /* Important for vertical align on mobile phones */
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
 }
 .dropdownContent {
-	display: none;
-	position: absolute;
-	background-color: #f9f9f9;
-	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-	z-index: 1;
-	border-radius: 10px 10px 10px 10px;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 10px 10px 10px 10px;
 }
 /* Links inside the dropdown */
 .dropdownContent a {
@@ -229,6 +379,161 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
 	text-align: center;
 }
 
+.faq_main {
+  margin-top: -35vh;
+  background-repeat: no-repeat;
+}
+
+.faq_header {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.faq_otherHeader {
+}
+
+.faq_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.faq_question {
+  font-family: BackIssuesBB;
+  margin-top: 8vh;
+  width: 70vw;
+  color: white;
+  border: solid black;
+  padding: 0.5vw;
+  padding-left: 1vw;
+}
+
+.faq_questionText {
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+
+.faq_answer {
+  font-family: BackIssuesBB;
+  font-size: 0.9rem;
+  width: 70vw;
+  margin-top: 4vh;
+}
+
+.faq_answerList {
+  list-style-position: inside;
+  padding: 0;
+}
+
+.faq_answerText {
+  font-size: 1rem;
+}
+
+.faq_other {
+  background-color: rgba(179, 0, 6, 255);
+  height: auto;
+  margin-top: 15vh;
+  padding: 5vw;
+}
+
+.faq_otherHeading {
+  font-family: "franklingothicheavy";
+  font-size: 2rem;
+  color: white;
+  font-weight: 800;
+  margin-bottom: 0vh;
+}
+
+.faq_otherDescription {
+  font-family: "franklingothicmedium";
+  color: rgb(255, 230, 43);
+}
+
+.faq_formContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.faq_inputContainer {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+}
+
+.faq_input {
+  font-family: "franklingothicbook";
+  padding: 0.5vw;
+  margin-bottom: 3vh;
+  height: 4vh;
+}
+
+.faq_textArea {
+  font-family: "franklingothicbook";
+  margin-left: 3vw;
+  margin-right: 3vw;
+  height: 11vh;
+  width: 50vw;
+}
+
+.faq_submitContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.faq_submit {
+  margin-top: 2vw;
+  text-align: center;
+  background-color: rgb(255, 230, 43);
+  border: none;
+  font-family: "franklingothicmedium";
+  padding: 1vw 2vw 1vw 2vw;
+  color: rgba(179, 0, 6, 255);
+  font-size: 2rem;
+}
+
+.faq_submit:hover {
+  outline: solid rgba(179, 0, 6, 255);
+  outline-offset: -0.3vw;
+}
+
+@media (min-width: 800px) {
+  .faq_main {
+    background-image: none;
+  }
+  .faq_header {
+    color: black;
+  }
+  .faq_question {
+    width: 90vw;
+  }
+  .faq_question {
+    width: 60vw;
+    font-size: 1.5rem;
+  }
+  .faq_answer {
+    font-size: 1rem;
+    width: 60vw;
+  }
+  .faq_content {
+    margin-top: 0px;
+  }
+  .faq_submit {
+    margin-top: 0vw;
+  }
+  .faq_answerText {
+    font-size: 1.3rem;
+  }
+}
+.event_container_2b {
+  background-image: url("../images/event_container_1b.png");
+  background-size: 100% 100%;
+  filter: blur(1px);
+  -webkit-filter: blur(1px);
+  width: 10rem;
+  height: 15rem;
+  display: inline-block;
+}
 .event_button_1r {
 	background-color: yellow;
 	color: #ed4924;
@@ -273,14 +578,37 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
 }
 
 @media (min-width: 600px) {
-	.event_resource_grid {
-		grid-template-columns: repeat(3, 1fr);
-	}
+  .eventsgrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .event_resource_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @font-face {
-	font-family: "franklingothic";
-	src: url("../fonts/ITC Franklin Gothic Demi Condensed.otf") format("truetype");
+  font-family: "franklingothic";
+  src: url("../fonts/ITC Franklin Gothic Demi Condensed.otf") format("truetype");
+}
+@font-face {
+  font-family: "franklingothicnormal";
+  src: url("../fonts/ITC Franklin Gothic Demi.otf") format("truetype");
+}
+@font-face {
+  font-family: "franklingothicheavy";
+  src: url("../fonts/ITC Franklin Gothic Heavy Regular.otf") format("truetype");
+}
+@font-face {
+  font-family: "franklingothicbook";
+  src: url("../fonts/ITC Franklin Gothic Book.otf") format("truetype");
+}
+@font-face {
+  font-family: "franklingothicmedium";
+  src: url("../fonts/ITC Franklin Gothic Medium.otf") format("truetype");
+}
+@font-face {
+  font-family: "badaboombbregular";
+  src: url("../fonts/BadaBoom BB Regular.ttf") format("truetype");
 }
 
 /* .event_more_info {
