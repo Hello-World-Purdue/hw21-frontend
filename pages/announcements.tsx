@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
-import styles from "../styles/ann.module.css";
+import styles from "../styles/announcements.module.css";
 import homeStyles from '../styles/Home.module.css';
-import AnnLabel from "../Components/AnnLabel";
+import AnnouncementLabel from "../Components/AnnouncementLabel";
 
 import { Layout } from "../Components/Layout";
 import { Header } from "../Components/Header";
@@ -48,7 +48,7 @@ function Announcements() {
 					{annList.map((announcement) => {
 						return (
 							<div className={styles.announcement}>
-								<AnnLabel annType={announcement.type} />
+								<AnnouncementLabel annType={announcement.type} />
 								<div className={styles.annMessage}>{announcement.message}</div>
 							</div>
 						);

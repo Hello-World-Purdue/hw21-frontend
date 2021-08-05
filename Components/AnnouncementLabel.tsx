@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import styles from "../styles/ann.module.css";
+import styles from "../styles/announcements.module.css";
 
 const CustomButton: React.FC<{
 	annType: "events" | "food" | "judging" | "logistics" | "sponsor" | "misc";
