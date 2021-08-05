@@ -117,7 +117,7 @@ const SignupForm: React.FC<{ signupUser: (user) => void }> = (props) => {
 
 	return (
 		<Card className={styles.formContainer}>
-			<Form className={styles.signupForm} onSubmit={submitForm}>
+			<Form className={styles.form} onSubmit={submitForm}>
 				<Form.Group className={styles.formField}>
 					<Form.Label>USERNAME</Form.Label>
 					<Form.Control

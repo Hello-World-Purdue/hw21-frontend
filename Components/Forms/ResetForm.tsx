@@ -85,7 +85,7 @@ const ResetForm: React.FC<{ updatePassword: (password) => void }> = (props) => {
 
     return (
         <Card className={styles.formContainer}>
-			<Form className={styles.resetForm} onSubmit={submitForm}>
+			<Form className={styles.form} onSubmit={submitForm}>
 			<Form.Group className={styles.formField}>
 					<Form.Label>ENTER RESET LINK</Form.Label>
 					<Form.Control

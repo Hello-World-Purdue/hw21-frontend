@@ -37,7 +37,7 @@ const LoginForm: React.FC<{ loginUser: (user) => void }> = (props) => {
 
 	return (
 		<Card className={styles.formContainer}>
-			<Form className={styles.loginForm} onSubmit={submitForm}>
+			<Form className={styles.form} onSubmit={submitForm}>
 				<Form.Group className={styles.formField}>
 					<Form.Label>LOGIN</Form.Label>
 					<Form.Control						

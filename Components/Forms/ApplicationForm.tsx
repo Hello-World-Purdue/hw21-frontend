@@ -62,7 +62,7 @@ const ApplicationForm: React.FC<{ sendAnswers: (userData) => void }> = (
 	};
 
 	return (
-		<Card className={styles.appFormContainer}>
+		<Card className={[styles.formContainer, styles.appFormContainer].join(" ")}>
 			<div className={styles.appFormTitle}>APPLICATION FORM</div>
 			<Form className={styles.applicationForm} onSubmit={submitForm}>
 				{/* Number of hackathons */}

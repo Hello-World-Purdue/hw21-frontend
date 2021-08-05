@@ -62,7 +62,6 @@ export const AuthContextProvider = (props: any) => {
                 body: JSON.stringify(user)
             })
 
-            console.log(res);
             const data = await res.json();
 
             setState({

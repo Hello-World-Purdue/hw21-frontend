@@ -12,7 +12,7 @@
 	justify-content: center;
 	background: url("../images/auth/new_bg.png") no-repeat;
 	background-size: cover;
-	background-position: 50% 50%;
+	/* background-position: 50% 50%; */
 }
 
 .formContainer {
@@ -26,45 +26,14 @@
 	border: 5px solid black;
 }
 
-.appFormContainer {
-	min-height: 55vh;
-	max-height: 70vh;
-	min-width: 70vh;
-	padding-top: 10px;
-	padding-left: 5px;
-	padding-right: 5px;
-	padding-bottom: 5px;
-	border: 5px solid black;
-	overflow-y: scroll;
-	overflow-x: hidden;
-}
-
-.appFormContainer::-webkit-scrollbar {
-	display: none;
-}
-
-.appFormTitle {
-	align-self: center;
-	font-family: "badaboom";
-	font-weight: bold;
-	font-size: xx-large;
-}
-
-.signupForm,
-.loginForm,
-.applicationForm,
-.resetForm,
-.forgotForm {
+.form {
 	margin-top: 5vh;
 	margin-left: 5px;
 	margin-right: 5px;
 	margin-bottom: 10px;
 }
 
-.signupForm::before,
-.loginForm::before,
-.forgotForm::before,
-.resetForm::before {
+.form::before {
 	content: "";
 	position: absolute;
 	bottom: 62%;
@@ -78,23 +47,6 @@
 	border-bottom: inherit;
 	border-bottom-color: transparent;
 }
-
-/* .applicationForm::before {
-    content: '';
-    position: absolute;
-    bottom: 82%;
-    left: 50%;
-    width: 80px;
-    height: 80px;
-    background-image: url('../assets/img/user_avatar.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    border: 1px solid black;
-    border-radius: 55%;
-    transform: translate(-50%, -50%);
-    border-bottom: inherit;
-    border-bottom-color: transparent; 
- } */
 
 .imgContainer {
 	text-align: center;
@@ -114,8 +66,8 @@
 	margin-top: none;
 }
 
+/* Checkbox Styles */
 .formCheck {
-	/* display: block; */
 	font-size: smaller;
 }
 
@@ -124,6 +76,7 @@
 	margin: 2px;
 }
 
+/* Form Link Styles */
 .linkContainer {
 	text-align: center;
 	display: flex;
@@ -142,13 +95,18 @@
 	color: salmon;
 }
 
+/* Button Container Styles */
 .buttonContainer {
 	margin-top: 15px;
 	display: flex;
 	justify-content: center;
 }
 
-/* Button Styling */
+.forgotButtonContainer {
+	margin-top: 100px;
+}
+
+/* Button Styles */
 .formButton {
 	border: none;
 	background-color: white;
@@ -163,55 +121,27 @@
 
 /* Application Form Styling */
 .appFormContainer {
+	border: 5px solid black;
 	padding: 20px;
-	border: 3px solid black;
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
-.appField {
-	display: flex;
-	flex-direction: row;
-	margin-top: 20px;
-	margin-bottom: 20px;
+.appFormContainer::-webkit-scrollbar {
+	display: none;
 }
 
-.appIcon {
-	margin-left: 10px;
-	margin-right: 20px;
+.appFormTitle {
+	align-self: center;
+	font-family: "badaboom";
+	font-weight: bold;
+	font-size: xx-large;
+	margin-bottom: 10px;
 }
 
-.appInput {
-	display: block;
-	margin: 1px 0px;
-	border: none;
-	outline: none;
-	font-weight: lighter;
-	border-bottom: 1px solid gray;
-}
-
-.appInput:hover,
-.appInput:focus {
-	border-bottom: 1px solid lightblue;
-}
-
-.appLabel {
-	font-weight: lighter;
-	font-size: smaller;
-	margin-bottom: 1px;
-}
-
-.appValue {
-	align-self: auto;
-}
-
-.appButton {
-	background-color: skyblue;
-	color: black;
-	border: 2px solid black;
-	padding: 5px 15px;
-}
-
-.appButton:hover {
-	color: rgba(255, 255, 255, 0.753);
-	background-color: skyblue;
-	border: 2px solid black;
+/* Mobile devices */
+@media (max-width: 640px) {
+	.formPage {
+		min-height: 100vh;
+	}
 }

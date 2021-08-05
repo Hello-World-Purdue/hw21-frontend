@@ -21,7 +21,7 @@ const ForgotForm: React.FC<{ sendEmail: (email) => void }> = (props) => {
 
     return (
         <Card className={styles.formContainer}>
-			<Form className={styles.forgotForm} onSubmit={submitForm}>
+			<Form className={styles.form} onSubmit={submitForm}>
 				<Form.Group className={styles.formField}>
 					<Form.Label>ENTER EMAIL</Form.Label>
 					<Form.Control						
@@ -32,7 +32,7 @@ const ForgotForm: React.FC<{ sendEmail: (email) => void }> = (props) => {
 					/>
 				</Form.Group>
 
-				<div className={styles.buttonContainer}>
+				<div className={[styles.buttonContainer, styles.forgotButtonContainer].join(" ")}>
 					<CustomButton>BAM!</CustomButton>
 				</div>
 			</Form>
