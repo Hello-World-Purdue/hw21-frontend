@@ -11,7 +11,8 @@ const AuthContext = React.createContext({
     login: (user: any) => {},
     logout: () => {},
     signup: (user: any) => {},
-    forgot: (user: any) => {}
+    forgot: (user: any) => {},
+    reset: (formData: any) => {},
 });
 
 export const AuthContextProvider = (props: any) => {
@@ -19,22 +20,22 @@ export const AuthContextProvider = (props: any) => {
 
     const loginHandler = async (user: any) => {
         try {
-            const res = await fetch('/api/auth/login', {
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                method: 'POST',
-                body: JSON.stringify(user)
-            })
+            // const res = await fetch('/api/auth/login', {
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     },
+            //     method: 'POST',
+            //     body: JSON.stringify(user)
+            // })
 
-            console.log('res', res);
-            const data = await res.json();
+            // console.log('res', res);
+            // const data = await res.json();
 
-            setState({
-                isAuthenticated: true,
-                user: data.user,
-                token: data.token
-            })
+            // setState({
+            //     isAuthenticated: true,
+            //     user: data.user,
+            //     token: data.token
+            // })
         } catch (err) {
             throw new Error(err.error);
         }
@@ -54,21 +55,21 @@ export const AuthContextProvider = (props: any) => {
 
     const signupHandler = async (user: any) => {
         try {
-            const res = await fetch('/api/auth/signup', {
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                method: 'POST',
-                body: JSON.stringify(user)
-            })
+            // const res = await fetch('/api/auth/signup', {
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     },
+            //     method: 'POST',
+            //     body: JSON.stringify(user)
+            // })
 
-            const data = await res.json();
+            // const data = await res.json();
 
-            setState({
-                isAuthenticated: true,
-                user: data.user,
-                token: data.token
-            })
+            // setState({
+            //     isAuthenticated: true,
+            //     user: data.user,
+            //     token: data.token
+            // })
         } catch (err) {
             throw new Error(err.error);
         }
@@ -80,13 +81,13 @@ export const AuthContextProvider = (props: any) => {
         }
 
         try {
-            const res = await fetch('/api/auth/forgot', {
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                method: 'POST',
-                body: JSON.stringify(requestBody)
-            });
+            // const res = await fetch('/api/auth/forgot', {
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     },
+            //     method: 'POST',
+            //     body: JSON.stringify(requestBody)
+            // });
         } catch (err) {
             throw new Error(err);
         }
@@ -94,13 +95,13 @@ export const AuthContextProvider = (props: any) => {
 
     const resetHandler = async (formData: any) => {
         try {
-            const res = await fetch('/api/auth/reset', {
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                method: 'POST',
-                body: JSON.stringify(formData)
-            });
+            // const res = await fetch('/api/auth/reset', {
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     },
+            //     method: 'POST',
+            //     body: JSON.stringify(formData)
+            // });
         } catch (err) {
             throw new Error(err);
         }
@@ -114,7 +115,8 @@ export const AuthContextProvider = (props: any) => {
             login: loginHandler,
             logout: logoutHandler,
             signup: signupHandler,
-            forgot: forgotHandler
+            forgot: forgotHandler,
+            reset: resetHandler
         }}>
             {props.children}
         </AuthContext.Provider>

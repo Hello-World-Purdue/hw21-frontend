@@ -1,14 +1,17 @@
 import React, { useState, useContext } from "react";
+import { useRouter } from 'next/router';
 import ApplicationForm from "../Components/Forms/ApplicationForm";
 import Toast from "../Components/Toast";
 import AuthContext from "../context/AuthContext";
 
 import styles from '../styles/forms.module.css';
 
-function appPage({ history }) {
+function appPage() {
 	const { user } = useContext(AuthContext);
 	const [showToast, setShowToast] = useState<boolean>(false);
 	const [applicationError, setApplicationError] = useState<string>("");
+
+	const router = useRouter();
 
 	const submitAnswers = (userData) => {
 		fetch(`/api/users/${user._id}/apply`, {
@@ -19,7 +22,7 @@ function appPage({ history }) {
 			body: JSON.stringify(userData)
 		}).then(res => {
 			console.log(res.json());
-			history.push('/');
+			router.push('/');
 		}).catch(err => {
 			setApplicationError(err.message);
 			setShowToast(true);
