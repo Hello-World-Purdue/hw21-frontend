@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const initialState = {
     isAuthenticated: false,
@@ -20,22 +21,17 @@ export const AuthContextProvider = (props: any) => {
 
     const loginHandler = async (user: any) => {
         try {
-            // const res = await fetch('/api/auth/login', {
-            //     headers: {
-            //         'Content-Type': 'application/json'
-            //     },
-            //     method: 'POST',
-            //     body: JSON.stringify(user)
-            // })
+            const res = await axios.post('/api/auth/login', user, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
 
-            // console.log('res', res);
-            // const data = await res.json();
-
-            // setState({
-            //     isAuthenticated: true,
-            //     user: data.user,
-            //     token: data.token
-            // })
+            setState({
+                isAuthenticated: true,
+                user: res.data.user,
+                token: res.data.token
+            })
         } catch (err) {
             throw new Error(err.error);
         }
@@ -55,21 +51,17 @@ export const AuthContextProvider = (props: any) => {
 
     const signupHandler = async (user: any) => {
         try {
-            // const res = await fetch('/api/auth/signup', {
-            //     headers: {
-            //         'Content-Type': 'application/json'
-            //     },
-            //     method: 'POST',
-            //     body: JSON.stringify(user)
-            // })
+            const res = await axios.post('/api/auth/signup', user, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
 
-            // const data = await res.json();
-
-            // setState({
-            //     isAuthenticated: true,
-            //     user: data.user,
-            //     token: data.token
-            // })
+            setState({
+                isAuthenticated: true,
+                user: res.data.user,
+                token: res.data.token
+            })
         } catch (err) {
             throw new Error(err.error);
         }
@@ -81,13 +73,12 @@ export const AuthContextProvider = (props: any) => {
         }
 
         try {
-            // const res = await fetch('/api/auth/forgot', {
-            //     headers: {
-            //         'Content-Type': 'application/json'
-            //     },
-            //     method: 'POST',
-            //     body: JSON.stringify(requestBody)
-            // });
+            await axios.post('/api/auth/forgot', requestBody, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
         } catch (err) {
             throw new Error(err);
         }
@@ -95,13 +86,11 @@ export const AuthContextProvider = (props: any) => {
 
     const resetHandler = async (formData: any) => {
         try {
-            // const res = await fetch('/api/auth/reset', {
-            //     headers: {
-            //         'Content-Type': 'application/json'
-            //     },
-            //     method: 'POST',
-            //     body: JSON.stringify(formData)
-            // });
+            await axios.post('/api/auth/reset', formData, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
         } catch (err) {
             throw new Error(err);
         }
