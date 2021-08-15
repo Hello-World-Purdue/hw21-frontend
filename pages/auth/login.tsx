@@ -21,9 +21,11 @@ function Login({ history }) {
 		}
 	}
 
+  function forgotPassword() {}
+
 	return (
 		<div className={styles.formPage}>
-			<LoginForm loginUser={loginUser} />
+			<LoginForm loginUser={loginUser} forgotPassword={forgotPassword} />
 			<Toast
 				show={showToast}
 				title="Login Error"
