@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form, Card } from "react-bootstrap";
-import CustomButton from "./CustomButton";
+import CustomButton from "../CustomButton";
 
 import {
 	Gender,
@@ -10,9 +10,9 @@ import {
 	Referral,
 	ShirtSize,
 	Major,
-} from "../util/enums";
+} from "../../util/enums";
 import "bootstrap/dist/css/bootstrap.min.css";
-import styles from "../styles/forms.module.css";
+import styles from "../../styles/forms.module.css";
 
 const initialState = {
 	hackathons: 0,
@@ -62,7 +62,8 @@ const ApplicationForm: React.FC<{ sendAnswers: (userData) => void }> = (
 	};
 
 	return (
-		<Card className={styles.appFormContainer}>
+		<Card className={[styles.formContainer, styles.appFormContainer].join(" ")}>
+			<div className={styles.appFormTitle}>APPLICATION FORM</div>
 			<Form className={styles.applicationForm} onSubmit={submitForm}>
 				{/* Number of hackathons */}
 				<Form.Group className={styles.formField}>

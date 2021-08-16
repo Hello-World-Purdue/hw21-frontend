@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import styles from "../styles/ann.module.css";
+import styles from "../styles/announcements.module.css";
 
-const CustomButton: React.FC<{
+const CustomLabel: React.FC<{
 	annType: "events" | "food" | "judging" | "logistics" | "sponsor" | "misc";
 }> = (props) => {
 	const labelClasses = [styles.label];
@@ -31,4 +31,4 @@ const CustomButton: React.FC<{
 	return <div className={labelClasses.join(" ")}>{props.annType.toUpperCase()}</div>;
 };
 
-export default CustomButton;
+export default CustomLabel;
