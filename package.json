@@ -3,16 +3,18 @@
     "version": "0.1.0",
     "private": true,
     "main": "admin_dashboard.tsx",
+    "proxy": "http://localhost:5000/",
     "scripts": {
         "dev": "next dev",
         "build": "next build",
         "start": "next start"
     },
     "dependencies": {
+        "axios": "^0.21.1",
         "bootstrap": "^5.0.2",
         "next": "^11.1.0",
         "next-images": "^1.8.1",
-        "node-sass": "^5.0.0",
+        "node-sass": "^6.0.1",
         "react": "^17.0.2",
         "react-bootstrap": "^1.6.1",
         "react-dom": "17.0.2",

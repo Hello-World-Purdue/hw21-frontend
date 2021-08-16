@@ -1,29 +1,24 @@
 import React, { useState, useContext } from "react";
-import ApplicationForm from "../Components/ApplicationForm";
+import { useRouter } from 'next/router';
+import ApplicationForm from "../Components/Forms/ApplicationForm";
 import Toast from "../Components/Toast";
 import AuthContext from "../context/AuthContext";
 
 import styles from '../styles/forms.module.css';
 
-function appPage({ history }) {
+function appPage() {
 	const { user } = useContext(AuthContext);
 	const [showToast, setShowToast] = useState<boolean>(false);
 	const [applicationError, setApplicationError] = useState<string>("");
 
+	const router = useRouter();
+
 	const submitAnswers = (userData) => {
-		fetch(`/api/users/${user._id}/apply`, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify(userData)
-		}).then(res => {
-			console.log(res.json());
-			history.push('/');
-		}).catch(err => {
-			setApplicationError(err.message);
-			setShowToast(true);
-		})
+		try {
+			console.log(userData);
+		} catch (err) {
+			console.log(err);
+		}
 	}
 
 	return (

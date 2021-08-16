@@ -1,31 +1,31 @@
 import { useState, useContext } from "react";
-import LoginForm from "../../Components/LoginForm";
+import { useRouter } from 'next/router';
+import LoginForm from "../../Components/Forms/LoginForm";
 import Toast from "../../Components/Toast";
 
 import AuthContext from "../../context/AuthContext";
 
 import styles from "../../styles/forms.module.css";
-
-function Login({ history }) {
+function Login() {
 	const { login } = useContext(AuthContext);
 	const [showToast, setShowToast] = useState<boolean>(false);
 	const [loginError, setLoginError] = useState<string>("");
 
-	function loginUser(user: any) {
+	const router = useRouter();
+
+	const loginUser = async (user: any) => {
 		try {
 			login(user);
-			history.push("/");
+			router.push('/');
 		} catch (err) {
 			setShowToast(true);
 			setLoginError(err.message);
 		}
 	}
 
-  function forgotPassword() {}
-
 	return (
 		<div className={styles.formPage}>
-			<LoginForm loginUser={loginUser} forgotPassword={forgotPassword} />
+			<LoginForm loginUser={loginUser} />
 			<Toast
 				show={showToast}
 				title="Login Error"
