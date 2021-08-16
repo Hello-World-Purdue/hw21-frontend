@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import styles from "../../styles/forms.module.css";
+import styles from "../styles/forms.module.css";
 
 const CustomButton: React.FC<{ onClick?: () => void }> = (props) => {
 	return (
