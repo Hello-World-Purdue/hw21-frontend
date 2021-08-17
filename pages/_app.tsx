@@ -1,6 +1,8 @@
 import { AuthContextProvider } from "../context/AuthContext";
 import { UserContextProvider } from "../context/UserContext";
-import { Navbar } from "../Components/Navbar";
+import { AlertContextProvider } from "../context/AlertContext";
+
+import Alert from "../Components/Alert";
 
 import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -13,7 +15,10 @@ function MyApp({ Component, pageProps }) {
 	return (
 		<AuthContextProvider>
 			<UserContextProvider>
-				<Component {...pageProps} />
+				<AlertContextProvider>
+					<Component {...pageProps} />
+					<Alert />
+				</AlertContextProvider>
 			</UserContextProvider>
 		</AuthContextProvider>
 	);
