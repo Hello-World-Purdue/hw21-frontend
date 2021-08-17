@@ -13,7 +13,7 @@ const UserContext = React.createContext({
     getUser: (id: String) => {},
     getUserApp: (id: String) => {},
     getAuthApp: () => {},
-    editProfile: (formData: any) => {},
+    updateProfile: (id: String, formData: any) => {},
     apply: (id: String, appData: any) => {}
 });
 
@@ -26,23 +26,63 @@ export const UserContextProvider = (props: any) => {
     }
     
     // Get the user by id
-    const getUser = (id: String) => {
+    const getUser = async (id: String) => {
+        try {
+            const res = await axios.get(`/api/users/${id}`);
 
+            setState({
+                ...state,
+                user: res.data
+            })
+        } catch (err) {
+            console.error(err.message);
+        }
     }
 
     // Get application (user id)
-    const getUserApp = (id: String) => {
+    const getUserApp = async (id: String) => {
+        try {
+            const res = await axios.get(`/api/users/${id}/application`);
 
+            setState({
+                ...state,
+                application: res.data
+            });
+        } catch (err) {
+            console.error(err.message);
+        }
     }
 
     // Get application (authorized user)
-    const getAuthApp = () => {
+    const getAuthApp = async () => {
+        try {
+            const res = await axios.get('/api/users/application');
 
+            setState({
+                ...state,
+                application: res.data
+            });
+        } catch (err) {
+            console.error(err.message);
+        }
     }
     
     // Edit profile
-    const editProfile = (formData: any) => {
-    
+    const updateProfile = async (id: String, formData: any) => {
+        try {
+            const res = await axios.put(`/api/users/${id}`, formData, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            setState({
+                ...state,
+                user: res.data
+            })
+        } catch (err) {
+            console.error(err.message);
+        }
     }
 
     // Apply for application
@@ -72,7 +112,7 @@ export const UserContextProvider = (props: any) => {
             getUser,
             getUserApp,
             getAuthApp,
-            editProfile,
+            updateProfile,
             apply
         }}>
             {props.children}
