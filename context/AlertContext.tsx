@@ -3,28 +3,31 @@ import React, { useState } from 'react';
 const initialState = {
     title: null, // What the error corresponds to (Login error, Application error)
     message: null, // The error message to display
+    type: null // error or success
 }
 
 const AlertContext = React.createContext({
     ...initialState,
-    setError: (title: string, message: string) => {},
-    clearError: () => {}
+    setAlert: (type: string, title: string, message: string) => {},
+    clearAlert: () => {}
 });
 
 export const AlertContextProvider = (props: any) => {
     const [state, setState] = useState(initialState);
 
     // Set error
-    const setError = (title: string, message: string) => {
+    const setAlert = (type: string, title: string, message: string) => {
         setState({
+            type,
             title,
             message
         });
     }
 
     // Clear error
-    const clearError = () => {
+    const clearAlert = () => {
         setState({
+            type: null,
             title: null,
             message: null
         })
@@ -32,10 +35,11 @@ export const AlertContextProvider = (props: any) => {
 
     return (
         <AlertContext.Provider value={{
+            type: state.type,
             title: state.title,
             message: state.message,
-            setError,
-            clearError
+            setAlert,
+            clearAlert
         }}>
             {props.children}
         </AlertContext.Provider>

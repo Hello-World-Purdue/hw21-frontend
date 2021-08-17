@@ -9,16 +9,17 @@ import styles from "../../styles/forms.module.css";
 
 function Login() {
 	const { login } = useContext(AuthContext);
-	const { setError } = useContext(AlertContext);
+	const { setAlert } = useContext(AlertContext);
 
 	const router = useRouter();
 
 	const loginUser = async (user: any) => {
 		try {
 			await login(user);
+			setAlert('success', 'Login Success', 'You are logged in');
 			router.push('/');
 		} catch (err) {
-			setError('Login Error', err.message);
+			setAlert('error', 'Login Error', err.message);
 		}
 	}
 

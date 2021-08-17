@@ -9,16 +9,17 @@ import styles from "../../styles/forms.module.css";
 
 function Signup() {
 	const { signup } = useContext(AuthContext);
-	const { setError } = useContext(AlertContext);
+	const { setAlert } = useContext(AlertContext);
 
 	const router = useRouter();
 
 	const signupUser = async (user: any) => {
 		try {
 			await signup(user);
+			setAlert('success', 'Singup Success', 'You have been registered');
 			router.push('/');
 		} catch (err) {
-			setError('Signup Error', err.message);
+			setAlert('error', 'Signup Error', err.message);
 		}
 	}
 

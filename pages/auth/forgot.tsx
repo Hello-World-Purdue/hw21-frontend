@@ -10,16 +10,17 @@ import styles from "../../styles/forms.module.css";
 
 const Forgot = () => {
     const { forgot } = useContext(AuthContext);
-    const { setError } = useContext(AlertContext);
+    const { setAlert } = useContext(AlertContext);
 
     const router = useRouter();
 
     const sendEmail = async (email: String) => {
         try {
             await forgot(email);
+            setAlert('success', 'Email Sent', 'An email has been sent with the reset link');
             router.push('/auth/reset');
         } catch (err) {
-            setError('Email Error', err.message);
+            setAlert('error', 'Email Error', err.message);
         }
     }
 

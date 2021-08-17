@@ -14,10 +14,10 @@ const Alert = () => {
         }
     }, [alertContext]);
 
-    const { title, message, clearError } = alertContext;
+    const { title, message, type, clearAlert } = alertContext;
 
     const handleClose = () => {
-        clearError();
+        clearAlert();
         setShowToast(false);
     }
 
@@ -26,7 +26,7 @@ const Alert = () => {
 				show={showToast}
 				title={title}
 				message={message}
-				comment="Please try again"
+				comment={type === 'error' ? 'Please try again' : null}
 				onHide={handleClose}
 			/>
     )

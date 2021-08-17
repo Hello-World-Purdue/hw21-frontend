@@ -10,16 +10,17 @@ import styles from "../../styles/forms.module.css";
 
 const Reset = () => {
     const { reset } = useContext(AuthContext);
-    const { setError } = useContext(AlertContext);
+    const { setAlert } = useContext(AlertContext);
 
     const router = useRouter();
 
     const updatePassword = (password: String) => {
         try {
             reset(password);
+            setAlert('success', 'Verification Success', 'Password updated successfully');
             router.push('/auth/login');
         } catch (err) {
-            setError('Verification Error', err.message);
+            setAlert('error', 'Verification Error', err.message);
         }
     }
 

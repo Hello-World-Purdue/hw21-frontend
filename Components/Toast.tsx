@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const Toast: React.FC<{
 	title: string;
 	message: string;
-	comment: string;
+	comment: string | undefined;
 	onHide: () => void;
 	show?: boolean;
 }> = (props) => {
@@ -15,9 +15,11 @@ const Toast: React.FC<{
 			</Modal.Header>
 			<Modal.Body>
 				<p>{props.message}</p>
-				<p>
-					<small>{props.comment}</small>
-				</p>
+				{props.comment && (
+					<p>
+						<small>{props.comment}</small>
+					</p>
+				)}
 			</Modal.Body>
 			<Modal.Footer className="text-center">
 				<Button onClick={props.onHide}>Ok</Button>
