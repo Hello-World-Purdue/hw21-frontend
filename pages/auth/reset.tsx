@@ -14,9 +14,9 @@ const Reset = () => {
 
     const router = useRouter();
 
-    const updatePassword = (password: String) => {
+    const updatePassword = async (formData: any) => {
         try {
-            reset(password);
+            await reset(formData);
             setAlert('success', 'Verification Success', 'Password updated successfully');
             router.push('/auth/login');
         } catch (err) {

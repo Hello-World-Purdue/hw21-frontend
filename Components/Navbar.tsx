@@ -9,7 +9,7 @@ import styles from "../styles/Home.module.css";
 type NavbarProps = {};
 
 const onLoginRegisterClicked = () => {
-  location.href = "/profile";
+  location.href = "/auth/login";
 };
 
 export const Navbar: FC<NavbarProps> = () => {
