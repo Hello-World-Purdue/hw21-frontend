@@ -49,7 +49,8 @@ export const UserContextProvider = (props: any) => {
                 application: res.data
             });
         } catch (err) {
-            console.error(err.message);
+            console.error(err);
+            throw new Error(err);
         }
     }
 
@@ -63,7 +64,8 @@ export const UserContextProvider = (props: any) => {
                 application: res.data
             });
         } catch (err) {
-            console.error(err.message);
+            console.error(err);
+            throw new Error(err);
         }
     }
     
@@ -81,7 +83,8 @@ export const UserContextProvider = (props: any) => {
                 user: res.data
             })
         } catch (err) {
-            console.error(err.message);
+            console.error(err);
+            throw new Error(err);
         }
     }
 
@@ -99,7 +102,7 @@ export const UserContextProvider = (props: any) => {
                 application: res.data
             })
         } catch (err) {
-            console.error(err.message);
+            throw new Error(err);
         }
     }
 
