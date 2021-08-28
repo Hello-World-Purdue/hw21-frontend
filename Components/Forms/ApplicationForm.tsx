@@ -16,7 +16,7 @@ import styles from "../../styles/forms.module.css";
 
 const initialState = {
 	hackathons: 0,
-	dietaryRestrictions: "",
+	dietaryRestrictions: "None",
 	website: "",
 	answer1: "",
 	answer2: "",
