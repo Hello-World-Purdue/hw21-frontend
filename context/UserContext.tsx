@@ -99,6 +99,7 @@ export const UserContextProvider = (props: any) => {
 
     // Apply for hackathon
     const apply = async (id: String, appData: any) => {
+        console.log(appData);
         try {
             const res = await axios.post(`/api/users/${id}/apply`, appData, {
                 headers: {
