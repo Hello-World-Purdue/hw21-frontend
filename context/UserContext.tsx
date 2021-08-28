@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
+import AuthContext from './AuthContext';
 import axios from 'axios';
 
 const initialState = {
     application: null,
-    profile: null,
     user: null
 };
 
@@ -18,7 +18,16 @@ const UserContext = React.createContext({
 });
 
 export const UserContextProvider = (props: any) => {
+    const authContext = useContext(AuthContext);
+
     const [state, setState] = useState(initialState);
+
+    useEffect(() => {
+        setState({
+            ...state,
+            user: authContext.user
+        })
+    }, [authContext]);
 
     // Get all users
     const getUsers = () => {
@@ -88,7 +97,7 @@ export const UserContextProvider = (props: any) => {
         }
     }
 
-    // Apply for application
+    // Apply for hackathon
     const apply = async (id: String, appData: any) => {
         try {
             const res = await axios.post(`/api/users/${id}/apply`, appData, {
@@ -110,7 +119,6 @@ export const UserContextProvider = (props: any) => {
         <UserContext.Provider value={{
             user: state.user,
             application: state.application,
-            profile: state.profile,
             getUsers,
             getUser,
             getUserApp,

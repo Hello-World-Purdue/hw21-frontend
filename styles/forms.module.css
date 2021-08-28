@@ -5,13 +5,13 @@
 }
 
 .formPage {
-	min-height: 100vh;
-	min-width: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: url("../images/auth/new_bg.png") no-repeat;
-	background-size: cover;
+	background-image: url("../images/auth/new_bg.png");
+	background-size: 100vw;
+	height: 100vh;
+	position: relative;
 	/* background-position: 50% 50%; */
 }
 
