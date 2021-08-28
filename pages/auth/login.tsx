@@ -17,7 +17,7 @@ function Login() {
 		try {
 			await login(user);
 			setAlert('success', 'Login Success', 'You are logged in');
-			router.push('/');
+			router.push('/profile');
 		} catch (err) {
 			setAlert('error', 'Login Error', err.message);
 		}
