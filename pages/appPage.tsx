@@ -1,36 +1,31 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { useRouter } from 'next/router';
 import ApplicationForm from "../Components/Forms/ApplicationForm";
-import Toast from "../Components/Toast";
-import AuthContext from "../context/AuthContext";
+
+import AlertContext from "../context/AlertContext";
+import UserContext from "../context/UserContext";
 
 import styles from '../styles/forms.module.css';
 
-function appPage() {
-	const { user } = useContext(AuthContext);
-	const [showToast, setShowToast] = useState<boolean>(false);
-	const [applicationError, setApplicationError] = useState<string>("");
+function appPage() {	
+	const { apply } = useContext(UserContext);
+	const { setAlert } = useContext(AlertContext);
 
 	const router = useRouter();
 
-	const submitAnswers = (userData) => {
+	const submitAnswers = async (userData) => {
 		try {
-			console.log(userData);
+			await apply("id", userData);
+			setAlert('success', 'Application Success', 'Thank you for applying!');
+			router.push('/profile');
 		} catch (err) {
-			console.log(err);
+			setAlert('error', 'Application Error', err.message);
 		}
 	}
 
 	return (
 		<div className={styles.formPage}>
 			<ApplicationForm  sendAnswers={submitAnswers} />
-			<Toast
-				show={showToast}
-				title="Application Error"
-				message={applicationError}
-				comment="Please check your answers and try again"
-				onHide={() => setShowToast(false)}
-			/>
 		</div>
 	);
 };

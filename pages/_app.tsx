@@ -1,19 +1,27 @@
-import { AuthContextProvider } from '../context/AuthContext';
-import { Navbar } from '../Components/Navbar';
+import { AuthContextProvider } from "../context/AuthContext";
+import { UserContextProvider } from "../context/UserContext";
+import { AlertContextProvider } from "../context/AlertContext";
 
-import '../styles/globals.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/globals.css'
-import '../styles/index.css'
-import '../styles/navbar.css'
+import Alert from "../Components/Alert";
 
-import '../styles/index.module.css'
+import "../styles/globals.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../styles/globals.css";
+import "../styles/index.css";
+import "../styles/navbar.css";
+
+import "../styles/index.module.css";
 function MyApp({ Component, pageProps }) {
-    return (
-        <AuthContextProvider>
-            <Component {...pageProps} />
-        </AuthContextProvider>
-    )
+	return (
+		<AuthContextProvider>
+			<UserContextProvider>
+				<AlertContextProvider>
+					<Component {...pageProps} />
+					<Alert />
+				</AlertContextProvider>
+			</UserContextProvider>
+		</AuthContextProvider>
+	);
 }
 
-export default MyApp
+export default MyApp;

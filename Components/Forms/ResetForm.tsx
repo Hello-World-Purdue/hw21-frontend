@@ -25,7 +25,7 @@ const ResetForm: React.FC<{ updatePassword: (password) => void }> = (props) => {
 	};
 
 	const handleResetLink = (event: any) => {
-		setResetLink(event.taget.value);
+		setResetLink(event.target.value);
 	};
 
     function validatePassword(): boolean {
@@ -75,11 +75,12 @@ const ResetForm: React.FC<{ updatePassword: (password) => void }> = (props) => {
 		}
 
 		const formData = {
-			resetLink,
-			password: passOne
+			password: passOne,
+			passwordConfirm: passTwo,
+			token: resetLink,
 		}
 
-		props.updatePassword(passOne);
+		props.updatePassword(formData);
 	}
 
     return (
