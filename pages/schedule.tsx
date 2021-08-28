@@ -2,9 +2,9 @@ import Link from 'next/link'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import React, { FC, Fragment } from 'react';
-import { Header } from '../Components/Header';
 import { Layout } from '../Components/Layout';
 import {Event} from '../Components/Event';
+import { Header } from '../Components/Header';
 
 export interface EventsData {
   name: string,

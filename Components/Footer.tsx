@@ -11,13 +11,7 @@ type FooterProps = {};
 export const Footer: FC<FooterProps> = () => {
   return (
     <footer className={styles.footer}>
-
-        <Image
-          src="/logo.png"
-          layout="intrinsic"
-          width={50}
-          height={50}
-        ></Image>
+      <Image src="/logo.png" layout="intrinsic" width={50} height={50}></Image>
       <div className={styles.topNav}>
         {/* className was previously styles.topNav*/}
 
@@ -34,11 +28,12 @@ export const Footer: FC<FooterProps> = () => {
         <a href="/sponsors">Sponsors</a>
       </div>
       <div className="footer-social-media">
-      <a href="https://www.facebook.com/helloworldpurdue/"><Image src="/facebook.png" height={30} width={30}></Image>
-      </a>
-      <a href="https://www.instagram.com/helloworldpurdue/?hl=en">
-      <Image src="/instagram.png" height={30} width={30}></Image>
-      </a>
+        <a href="https://www.facebook.com/helloworldpurdue/">
+          <Image src="/facebook.png" height={30} width={30}></Image>
+        </a>
+        <a href="https://www.instagram.com/helloworldpurdue/?hl=en">
+          <Image src="/instagram.png" height={30} width={30}></Image>
+        </a>
       </div>
     </footer>
   );

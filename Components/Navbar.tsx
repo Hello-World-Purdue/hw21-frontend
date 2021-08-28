@@ -12,6 +12,10 @@ import styles from "../styles/Home.module.css";
 
 type NavbarProps = {};
 
+const onLoginRegisterClicked = () => {
+  location.href = "/auth/login";
+};
+
 export const Navbar: FC<NavbarProps> = () => {
   function toggleNavbar() {
     
@@ -25,6 +29,7 @@ export const Navbar: FC<NavbarProps> = () => {
       <span className="navbar-toggler-icon "></span>
     </button>
       {/* className was previously styles.topNav*/}
+<<<<<<< HEAD
      
       {/* We'll deal with active pages after */}
       {/* <a className={styles.active} href="/">Home</a> */}
@@ -66,6 +71,46 @@ export const Navbar: FC<NavbarProps> = () => {
         </div>
       </div>
       {/* ELSE */}
+=======
+      <ul>
+        {/* We'll deal with active pages after */}
+        {/* <a className={styles.active} href="/">Home</a> */}
+        <a href="/schedule">Schedule</a>
+        <a href="/announcements">Announcements</a>
+
+        <a href="/faq">FAQ's</a>
+        {/* Find a way to center big old logo img vertically */}
+        {/* the issue of vertical alignment only happens when I wrap the img with an <a>*/}
+        <a href="/">
+          <Image src="/logo.png" width={50} height={50}></Image>
+        </a>
+
+        <Link href="/resources">
+          <a>Resources</a>
+        </Link>
+        <a href="/sponsors">Sponsors</a>
+
+        {/* IF ADMIN */}
+        <div className={styles.dropdown}>
+          <button className={styles.dropbtn}>Manage</button>
+          <div className={styles.dropdownContent}>
+            <Link href="/admin_dashboard">
+              <a>Admin Dashboard</a>
+            </Link>
+            <Link href="#">
+              <a>Announcements</a>
+            </Link>
+          </div>
+        </div>
+        {/* ELSE */}
+        <button
+          className="login-register-button"
+          onClick={onLoginRegisterClicked}
+        >
+          {" "}
+          LOGIN/REGISTER
+        </button>
+>>>>>>> 4d8ec26eaf12a17d7cde866136e0f5e0e308384b
       </ul>
       </div>
       <button className="login-register-button"> LOGIN/REGISTER</button>

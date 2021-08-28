@@ -1,0 +1,147 @@
+/* General Form Styling */
+.formNav {
+	position: fixed;
+	top: 0;
+}
+
+.formPage {
+	min-height: 100vh;
+	min-width: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: url("../images/auth/new_bg.png") no-repeat;
+	background-size: cover;
+	/* background-position: 50% 50%; */
+}
+
+.formContainer {
+	min-height: 55vh;
+	max-height: 70vh;
+	min-width: 55vh;
+	padding-top: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	border: 5px solid black;
+}
+
+.form {
+	margin-top: 5vh;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 10px;
+}
+
+.form::before {
+	content: "";
+	position: absolute;
+	bottom: 62%;
+	left: 50%;
+	width: 27vh;
+	height: 27vh;
+	background-image: url("../images/auth/full_logo.svg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	transform: translate(-50%, -50%);
+	border-bottom: inherit;
+	border-bottom-color: transparent;
+}
+
+.imgContainer {
+	text-align: center;
+}
+
+.formField {
+	margin-top: 10px;
+	margin-bottom: 5px;
+	font-family: "backissues";
+}
+
+.formLabel {
+	margin-bottom: none;
+}
+
+.formInputField {
+	margin-top: none;
+}
+
+/* Checkbox Styles */
+.formCheck {
+	font-size: smaller;
+}
+
+.formCheckInput {
+	background-color: red;
+	margin: 2px;
+}
+
+/* Form Link Styles */
+.linkContainer {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.linkContainer a {
+	color: black;
+	margin-top: 5px;
+	margin-bottom: 2px;
+	font-size: smaller;
+	font-family: "backissues";
+}
+
+.linkContainer a:hover {
+	color: salmon;
+}
+
+/* Button Container Styles */
+.buttonContainer {
+	margin-top: 15px;
+	display: flex;
+	justify-content: center;
+}
+
+.forgotButtonContainer {
+	margin-top: 100px;
+}
+
+/* Button Styles */
+.formButton {
+	border: none;
+	background-color: white;
+}
+
+.formButton div {
+	height: 70px;
+	width: 100px;
+	background-image: url("../images/auth/customButton.png");
+	background-size: cover;
+}
+
+/* Application Form Styling */
+.appFormContainer {
+	border: 5px solid black;
+	padding: 20px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.appFormContainer::-webkit-scrollbar {
+	display: none;
+}
+
+.appFormTitle {
+	align-self: center;
+	font-family: "badaboom";
+	font-weight: bold;
+	font-size: xx-large;
+	margin-bottom: 10px;
+}
+
+/* Mobile devices */
+@media (max-width: 640px) {
+	.formPage {
+		min-height: 100vh;
+	}
+}
