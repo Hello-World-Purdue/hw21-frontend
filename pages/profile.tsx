@@ -1,17 +1,35 @@
-import React, { useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import UserContext from "../context/UserContext";
 import ProfileInfo from "../Components/profile/ProfileInfo";
 import { Layout } from "../Components/Layout";
+
+import UserContext from "../context/UserContext";
+import AlertContext from "../context/AlertContext";
 
 import styles from "../styles/Home.module.css";
 
 export default function Profile() {
 	const router = useRouter();
 	const userContext = useContext(UserContext);
+  const alertContext = useContext(AlertContext);
 
-	const { name, email, application } = userContext.user;
+  useEffect(() => {
+		if (!userContext.user) {
+			alertContext.setAlert('error', 'Woah There', 'You are not logged in.');
+			router.push('/auth/login');
+		}
+	}, [userContext]);
+
+  const user = userContext.user;
+
+  const userState = {
+    name: user?.name || '',
+    email: user?.email || '',
+    status: user?.application || 'Not Applied'
+  };
+
+  const { name, email, status } = userState;
 
 	const onEdit = () => {
 		router.push("/edit");
@@ -31,7 +49,7 @@ export default function Profile() {
 					<ProfileInfo header="Email" placeholder={email} />
 					<ProfileInfo
 						header="Application Status"
-						placeholder={application ? application.status : "Not Applied"}
+						placeholder={status}
 					/>
 					<button
 						onClick={onEdit}
