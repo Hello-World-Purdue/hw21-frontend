@@ -8,20 +8,18 @@ const EditProfileForm: React.FC<{
 	name: string;
 	email: string;
 	status: string;
-    editProfile: (formData: any) => void;
+	editProfile: (formData: any) => void;
 }> = (props) => {
-	const [email, setEmail] = useState(props.email);
 	const [name, setName] = useState(props.name);
 
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
-		
-        const formData = {
-            name,
-            email
-        }
 
-        props.editProfile(formData);
+		const formData = {
+			name,
+		};
+
+		props.editProfile(formData);
 	};
 
 	return (
@@ -62,13 +60,9 @@ const EditProfileForm: React.FC<{
 							<div className={styles.profile_header}>
 								<h1>Email</h1>
 							</div>
-							<input
-								type="email"
-								value={email}
-								onChange={(e) => setEmail(e.target.value)}
-								className={styles.profile_input}
-								placeholder="firstlast@purdue.edu"
-							></input>
+							<div className={styles.profile_data}>
+								<h1>{props.email}</h1>
+							</div>
 						</div>
 					</div>
 					<div className={styles.profile_info}>

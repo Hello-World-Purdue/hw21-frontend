@@ -18,7 +18,7 @@ function Login() {
 			await login(user);
 			router.push('/profile');
 		} catch (err) {
-			setAlert('error', 'Login Error', err.error.message);
+			setAlert('error', 'Login Error', 'Invalid username or password');
 		}
 	}
 

@@ -13,7 +13,7 @@ function appPage() {
 
 	const router = useRouter();
 
-	const submitAnswers = async (userData) => {
+	const submitAnswers = async (userData: FormData) => {
 		try {
 			await apply("id", userData);
 			setAlert('success', 'Application Success', 'Thank you for applying!');
