@@ -249,14 +249,12 @@
   background-color: hsl(0, 0%, 4%, 0.5);
   overflow: hidden;
   font-family: BackIssuesBB;
-  text-align: center;
-  height: auto;
+  padding: 0 20px;
 }
-.topNav ul {
-  display: inline-block;
-  list-style-type: none;
-  margin-top: 2vh;
-}
+
+
+
+
 
 /* Style the links inside the navigation bar */
 .topNav a {
@@ -269,7 +267,7 @@
 }
 /* Change the color of links on hover */
 .topNav a:hover {
-	background-color: #ddd;
+	/* background-color: #ddd; */
 	color: black;
 }
 /* Add a color to the active/current link */
