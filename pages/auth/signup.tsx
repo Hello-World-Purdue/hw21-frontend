@@ -18,7 +18,7 @@ function Signup() {
 			await signup(user);
 			router.push('/profile');
 		} catch (err) {
-			setAlert('error', 'Signup Error', err.message);
+			setAlert('error', 'Signup Error', 'Looks like something went wrong.');
 		}
 	}
 

@@ -56,7 +56,6 @@ export const UserContextProvider = (props: any) => {
 				application: res.data,
 			});
 		} catch (err) {
-			console.error(err);
 			throw new Error(err);
 		}
 	};
@@ -92,14 +91,13 @@ export const UserContextProvider = (props: any) => {
 				user: res.data.user,
 			});
 		} catch (err) {
-			console.error(err);
 			throw new Error(err);
 		}
 	};
 
 	// Apply for hackathon
 	const apply = async (id: String, appData: any) => {
-		console.log(appData);
+		
 		try {
 			const res = await axios.post(`/api/users/${id}/apply`, appData, {
 				headers: {

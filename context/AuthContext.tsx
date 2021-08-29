@@ -90,7 +90,6 @@ export const AuthContextProvider = (props: any) => {
 				token: res.data.token,
 			});
 		} catch (err) {
-			console.log(err);
 			throw new Error(err.message);
 		}
 	};

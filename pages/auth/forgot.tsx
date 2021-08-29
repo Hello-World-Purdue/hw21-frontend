@@ -20,7 +20,7 @@ const Forgot = () => {
             setAlert('success', 'Email Sent', `An email with the reset link has been sent to ${email}`);
             router.push('/auth/reset');
         } catch (err) {
-            setAlert('error', 'Email Error', err.message);
+            setAlert('error', 'Email Error', 'Looks like something went wrong.');
         }
     }
 
