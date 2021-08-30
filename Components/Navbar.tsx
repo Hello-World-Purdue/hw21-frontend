@@ -5,69 +5,69 @@ import Image from 'next/image';
 
 import styles from '../styles/Home.module.css';
 
-type NavbarProps = {};
+import { useRouter } from 'next/router';
 
-const onLoginRegisterClicked = () => {
-  location.href = '/auth/login';
-};
+type NavbarProps = {};
 
 export const Navbar: FC<NavbarProps> = () => {
 
   const {isAuthenticated, user} = useContext(AuthContext);
+  const router = useRouter();
 
-  return (
-    <div className={styles.topNav}>
-      <nav className="navbar navbar-expand-lg navbar-dark  ">
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbar"
-          aria-controls="navbar"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon "></span>
-        </button>
-        {/* className was previously styles.topNav*/}
+	function toggleNavbar() {}
 
-        {/* We'll deal with active pages after */}
-        {/* <a className={styles.active} href="/">Home</a> */}
-        <div className="collapse navbar-collapse" id="navbar">
-          <ul className="navbar-nav">
-            {/* <li className="nav-item">
-              <a className="nav-link" href="/schedule">
-                Schedule
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/announcements">
-                Announcements
-              </a>
-            </li> */}
-            <li className="nav-item">
-              <a className="nav-link" href="/faq">
-                FAQ's
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/resources">
-                Resources
-              </a>
-            </li>
-          </ul>
-        </div>
-        {/* Find a way to center big old logo img vertically */}
-        {/* the issue of vertical alignment only happens when I wrap the img with an <a>*/}
+	const onLoginRegisterClicked = () => {
+    router.push('/auth/login');
+	};
 
-        <a className="navbar-brand d-flex" href="/">
-          <Image
-            src="/logo.png"
-            layout="intrinsic"
-            width={50}
-            height={50}
-          ></Image>
-        </a>
+	return (
+		<div className={styles.topNav}>
+			<nav className="navbar navbar-expand-lg navbar-dark  ">
+				<button
+					className="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbar"
+					aria-controls="navbar"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span className="navbar-toggler-icon "></span>
+				</button>
+				{/* className was previously styles.topNav*/}
+
+				{/* We'll deal with active pages after */}
+				{/* <a className={styles.active} href="/">Home</a> */}
+				<div className="collapse navbar-collapse" id="navbar">
+					<ul className="navbar-nav">
+						<li className="nav-item">
+							<a className="nav-link" href="/schedule">
+								Schedule
+							</a>
+						</li>
+						<li className="nav-item">
+							<a className="nav-link" href="/announcements">
+								Announcements
+							</a>
+						</li>
+						<li className="nav-item">
+							<a className="nav-link" href="/faq">
+								FAQ's
+							</a>
+						</li>
+					</ul>
+				</div>
+				{/* Find a way to center big old logo img vertically */}
+				{/* the issue of vertical alignment only happens when I wrap the img with an <a>*/}
+
+				<a className="navbar-brand d-flex" href="/">
+					<Image
+						src="/logo.png"
+						layout="intrinsic"
+						width={50}
+						height={50}
+					></Image>
+				</a>
 
         <div className="collapse navbar-collapse" id="navbar">
           <ul className="navbar-nav">

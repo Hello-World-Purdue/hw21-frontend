@@ -1,5 +1,5 @@
 // Import head to add <script> tag to every page for Bootstrap JS and Popper.JS
-import Head from 'next/head'
+import Head from "next/head";
 
 import { AuthContextProvider } from "../context/AuthContext";
 import { UserContextProvider } from "../context/UserContext";
@@ -11,10 +11,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/globals.css";
 import "../styles/index.css";
 import "../styles/navbar.css";
-
 import "../styles/index.module.css";
 import { Footer } from '../Components/Footer';
 import { Navbar } from '../Components/Navbar';
+
 function MyApp({ Component, pageProps }) {
 	return (
 		<AuthContextProvider>

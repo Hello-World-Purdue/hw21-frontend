@@ -16,10 +16,9 @@ function Login() {
 	const loginUser = async (user: any) => {
 		try {
 			await login(user);
-			setAlert('success', 'Login Success', 'You are logged in');
-			router.push('/');
+			router.push('/profile');
 		} catch (err) {
-			setAlert('error', 'Login Error', err.message);
+			setAlert('error', 'Login Error', 'Invalid username or password');
 		}
 	}
 
