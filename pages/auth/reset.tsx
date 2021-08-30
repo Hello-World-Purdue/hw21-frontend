@@ -20,7 +20,7 @@ const Reset = () => {
             setAlert('success', 'Verification Success', 'Password updated successfully');
             router.push('/auth/login');
         } catch (err) {
-            setAlert('error', 'Verification Error', err.message);
+            setAlert('error', 'Verification Error', 'Looks like something went wrong.');
         }
     }
 

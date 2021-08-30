@@ -8,19 +8,18 @@ import UserContext from "../context/UserContext";
 import styles from '../styles/forms.module.css';
 
 function appPage() {
-	const { apply } = useContext(UserContext);
+	const { apply, user } = useContext(UserContext);
 	const { setAlert } = useContext(AlertContext);
 
 	const router = useRouter();
 
-	const submitAnswers = async (userData) => {
+	const submitAnswers = async (userData: FormData) => {
 		try {
-			// await apply("id", userData);
-			await apply("612bb6e646cd0f01d1101d8e", userData);
+			await apply(user._id, userData);
 			setAlert('success', 'Application Success', 'Thank you for applying!');
 			router.push('/profile');
 		} catch (err) {
-			setAlert('error', 'Application Error', err.message);
+			setAlert('error', 'Application Error', 'Looks like something went wrong.');
 		}
 	}
 

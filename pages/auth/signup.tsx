@@ -16,10 +16,9 @@ function Signup() {
 	const signupUser = async (user: any) => {
 		try {
 			await signup(user);
-			setAlert('success', 'Singup Success', 'You have been registered');
-			router.push('/');
+			router.push('/profile');
 		} catch (err) {
-			setAlert('error', 'Signup Error', err.message);
+			setAlert('error', 'Signup Error', 'Looks like something went wrong.');
 		}
 	}
 

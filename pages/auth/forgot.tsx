@@ -17,10 +17,10 @@ const Forgot = () => {
     const sendEmail = async (email: String) => {
         try {
             await forgot(email);
-            setAlert('success', 'Email Sent', 'An email has been sent with the reset link');
+            setAlert('success', 'Email Sent', `An email with the reset link has been sent to ${email}`);
             router.push('/auth/reset');
         } catch (err) {
-            setAlert('error', 'Email Error', err.message);
+            setAlert('error', 'Email Error', 'Looks like something went wrong.');
         }
     }
 

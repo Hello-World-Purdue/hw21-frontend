@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "../../styles/forms.module.css";
 
 const SignupForm: React.FC<{ signupUser: (user) => void }> = (props) => {
+	const [name, setName] = useState<string>("");
 	const [username, setUsername] = useState<string>("");
 	const [passOne, setPassOne] = useState<string>("");
 	const [passTwo, setPassTwo] = useState<string>("");
@@ -32,6 +33,7 @@ const SignupForm: React.FC<{ signupUser: (user) => void }> = (props) => {
 		}
 
 		const user = {
+			name: name,
 			email: username,
 			password: passOne,
 			passwordConfirm: passTwo
@@ -118,6 +120,16 @@ const SignupForm: React.FC<{ signupUser: (user) => void }> = (props) => {
 	return (
 		<Card className={styles.formContainer}>
 			<Form className={styles.form} onSubmit={submitForm}>
+			<Form.Group className={styles.formField}>
+					<Form.Label>FULL NAME</Form.Label>
+					<Form.Control
+						onChange={(e) => setName(e.target.value)}
+						type="text"
+						name="name"
+						required
+					/>
+				</Form.Group>
+
 				<Form.Group className={styles.formField}>
 					<Form.Label>USERNAME</Form.Label>
 					<Form.Control
