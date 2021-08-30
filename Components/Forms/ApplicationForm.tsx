@@ -16,17 +16,17 @@ import styles from "../../styles/forms.module.css";
 
 const initialState = {
 	hackathons: 0,
-	dietaryRestrictions: "",
+	dietaryRestrictions: "None",
 	website: "",
 	answer1: "",
 	answer2: "",
-	classYear: null,
-	graduationYear: null,
-	ethnicity: "",
-	gender: "",
-	major: "",
-	referral: "",
-	shirtSize: "",
+	classYear: ClassYear.FRESHMAN,
+	graduationYear: 2019,
+	ethnicity: ethnicities[0],
+	gender: Gender.MALE,
+	major: Major.COMPUTER_SCIENCE,
+	referral: Referral.SOCIAL_MEDIA,
+	shirtSize: ShirtSize.SMALL,
 	resume: null,
 };
 
@@ -50,10 +50,12 @@ const ApplicationForm: React.FC<{ sendAnswers: (userData) => void }> = (
 	}
 
 	const handleChange = (e: any) => {
+		console.log(e.target.name, e.target.value)
 		setState({
 			...state,
 			[e.target.name]: e.target.value,
 		});
+		console.log(state)
 	};
 
 	const resumeUploadHandler = (e: any) => {
@@ -81,6 +83,7 @@ const ApplicationForm: React.FC<{ sendAnswers: (userData) => void }> = (
 				<Form.Group className={styles.formField}>
 					<Form.Label>PLEASE TELL US ABOUT ANY DIETARY RESTRICTIONS</Form.Label>
 					<Form.Control
+						placeholder="None"
 						name="dietaryRestrictions"
 						onChange={handleChange}
 						required
@@ -160,9 +163,9 @@ const ApplicationForm: React.FC<{ sendAnswers: (userData) => void }> = (
 					<Form.Label>SPECIFY YOUR MAJOR</Form.Label>
 					<br></br>
 					<select className="form-control" name="major" onChange={handleChange}>
-					{Object.values(Major).map(major => (
-						<option value={major} key={major}>{major}</option>
-					))}
+						{Object.values(Major).map(major => (
+							<option value={major} key={major}>{major}</option>
+						))}
 					</select>
 				</Form.Group>
 
@@ -187,7 +190,7 @@ const ApplicationForm: React.FC<{ sendAnswers: (userData) => void }> = (
 						))}
 					</select>
 				</Form.Group>
-				
+
 				{/* Website Link */}
 				<Form.Group className={styles.formField}>
 					<Form.Label>LINK YOUR WEBSITE HERE IF YOU HAVE ONE</Form.Label>

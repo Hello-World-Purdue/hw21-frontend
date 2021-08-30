@@ -7,7 +7,7 @@ import UserContext from "../context/UserContext";
 
 import styles from '../styles/forms.module.css';
 
-function appPage() {	
+function appPage() {
 	const { apply } = useContext(UserContext);
 	const { setAlert } = useContext(AlertContext);
 
@@ -15,7 +15,8 @@ function appPage() {
 
 	const submitAnswers = async (userData) => {
 		try {
-			await apply("id", userData);
+			// await apply("id", userData);
+			await apply("612bb6e646cd0f01d1101d8e", userData);
 			setAlert('success', 'Application Success', 'Thank you for applying!');
 			router.push('/profile');
 		} catch (err) {
@@ -25,7 +26,7 @@ function appPage() {
 
 	return (
 		<div className={styles.formPage}>
-			<ApplicationForm  sendAnswers={submitAnswers} />
+			<ApplicationForm sendAnswers={submitAnswers} />
 		</div>
 	);
 };

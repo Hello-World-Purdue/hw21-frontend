@@ -9,12 +9,12 @@ const initialState = {
 
 const UserContext = React.createContext({
     ...initialState,
-    getUsers: () => {},
-    getUser: (id: String) => {},
-    getUserApp: (id: String) => {},
-    getAuthApp: () => {},
-    updateProfile: (id: String, formData: any) => {},
-    apply: (id: String, appData: any) => {}
+    getUsers: () => { },
+    getUser: (id: String) => { },
+    getUserApp: (id: String) => { },
+    getAuthApp: () => { },
+    updateProfile: (id: String, formData: any) => { },
+    apply: (id: String, appData: any) => { }
 });
 
 export const UserContextProvider = (props: any) => {
@@ -24,7 +24,7 @@ export const UserContextProvider = (props: any) => {
     const getUsers = () => {
 
     }
-    
+
     // Get the user by id
     const getUser = async (id: String) => {
         try {
@@ -68,7 +68,7 @@ export const UserContextProvider = (props: any) => {
             throw new Error(err);
         }
     }
-    
+
     // Edit profile
     const updateProfile = async (id: String, formData: any) => {
         try {
@@ -91,9 +91,17 @@ export const UserContextProvider = (props: any) => {
     // Apply for application
     const apply = async (id: String, appData: any) => {
         try {
-            const res = await axios.post(`/api/users/${id}/apply`, appData, {
+            //appending as form data
+            let data = new FormData();
+            for (let key of Object.keys(appData)) {
+                console.log(key, appData[key])
+                data.append(`${key}`, appData[key])
+            }
+
+            const res = await axios.post(`/api/users/${id}/apply`, data, {
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'multipart/form-data',
+                    'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTJiYjZlNjQ2Y2QwZjAxZDExMDFkOGUiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTYzMDI2MTUzNCwiZXhwIjoxOTkwMjYxNTM0fQ.AHokXvrf_23VtAtPVkyEbXFmy9khS3omreUNbGS7jZY',
                 }
             });
 
@@ -102,6 +110,7 @@ export const UserContextProvider = (props: any) => {
                 application: res.data
             })
         } catch (err) {
+            console.log(err);
             throw new Error(err);
         }
     }
