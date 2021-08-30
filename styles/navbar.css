@@ -14,4 +14,22 @@
     color:white;
 }
 
+.navbar-dark .navbar-toggler-icon{
+    background-image: url("../images/hamburger_menu.png");
+}
+
+.navbar-dark .navbar-toggler-icon{
+}
+.navbar-dark .navbar-toggler{
+    border:none;
+}
+
+
+    .navbar-toggler:focus {
+        text-decoration: none;
+        outline: 0;
+        box-shadow: 0 0 0 0rem;
+        filter: brightness(70%);
+     }
+
 
