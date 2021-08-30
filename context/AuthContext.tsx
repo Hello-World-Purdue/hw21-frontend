@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
+
+// const userData = localStorage.getItem('userdata');
 
 const initialState = {
 	isAuthenticated: false,
@@ -14,10 +16,34 @@ const AuthContext = React.createContext({
 	signup: (user: any) => {},
 	forgot: (email: String) => {},
 	reset: (formData: any) => {},
+	update: (user: any) => {},
 });
 
 export const AuthContextProvider = (props: any) => {
+	let userdatastring = "";
+	let userData = null;
+
 	const [state, setState] = useState(initialState);
+
+	useEffect(() => {
+		console.log("page reloaded");
+		if (typeof window !== "undefined") {
+			userdatastring = localStorage.getItem("userdata");
+		}
+
+		if (userdatastring !== "") {
+			userData = JSON.parse(userdatastring);
+		}
+
+		console.log("userData", userData);
+		setState({
+			isAuthenticated: userData ? true : false,
+			user: userData ? userData.user : null,
+			token: userData ? userData.token : null,
+		});
+
+		console.log("state set");
+	}, []);
 
 	const loginHandler = async (user: any) => {
 		try {
@@ -27,17 +53,20 @@ export const AuthContextProvider = (props: any) => {
 				},
 			});
 
+			localStorage.setItem("userdata", JSON.stringify(res.data));
+
 			setState({
 				isAuthenticated: true,
 				user: res.data.user,
 				token: res.data.token,
 			});
 		} catch (err) {
-			throw new Error(err.message);
+			throw new Error(err);
 		}
 	};
 
 	const logoutHandler = () => {
+		localStorage.removeItem("userdata");
 		setState({
 			isAuthenticated: false,
 			user: null,
@@ -53,13 +82,14 @@ export const AuthContextProvider = (props: any) => {
 				},
 			});
 
+			localStorage.setItem("userdata", JSON.stringify(res.data));
+
 			setState({
 				isAuthenticated: true,
 				user: res.data.user,
 				token: res.data.token,
 			});
 		} catch (err) {
-			console.log(err);
 			throw new Error(err.message);
 		}
 	};
@@ -78,6 +108,13 @@ export const AuthContextProvider = (props: any) => {
 		} catch (err) {
 			throw new Error(err);
 		}
+	};
+
+	const updateUser = (user: any) => {
+		setState({
+			...state,
+			user: user,
+		});
 	};
 
 	const resetHandler = async (formData: any) => {
@@ -103,6 +140,7 @@ export const AuthContextProvider = (props: any) => {
 				signup: signupHandler,
 				forgot: forgotHandler,
 				reset: resetHandler,
+				update: updateUser,
 			}}
 		>
 			{props.children}

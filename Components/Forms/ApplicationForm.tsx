@@ -16,17 +16,17 @@ import styles from "../../styles/forms.module.css";
 
 const initialState = {
 	hackathons: 0,
-	dietaryRestrictions: "",
+	dietaryRestrictions: "None",
 	website: "",
 	answer1: "",
 	answer2: "",
-	classYear: null,
-	graduationYear: null,
-	ethnicity: "",
-	gender: "",
-	major: "",
-	referral: "",
-	shirtSize: "",
+	classYear: Object.values(ClassYear)[0],
+	graduationYear: gradYears[0],
+	ethnicity: ethnicities[0],
+	gender: Object.values(Gender)[0],
+	major: Object.values(Major)[0],
+	referral: Object.values(Referral)[0],
+	shirtSize: Object.values(ShirtSize)[0],
 	resume: null,
 };
 
