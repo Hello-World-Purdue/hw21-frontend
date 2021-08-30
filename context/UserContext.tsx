@@ -99,9 +99,15 @@ export const UserContextProvider = (props: any) => {
     const apply = async (id: String, appData: any) => {
 
         try {
-            const res = await axios.post(`/api/users/${id}/apply`, appData, {
+            //appending as form data
+            let data = new FormData();
+            for (let key of Object.keys(appData)) {
+                data.append(`${key}`, appData[key])
+            }
+
+            const res = await axios.post(`/api/users/${id}/apply`, data, {
                 headers: {
-                    "Content-Type": "application/json",
+                    "Content-Type": "multipart/form-data",
                     Authorization: `Bearer ${authContext.token}`,
                 },
             });
