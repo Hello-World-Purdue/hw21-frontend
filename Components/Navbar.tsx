@@ -1,17 +1,17 @@
-import React, { FC } from "react";
+import React, { FC, useContext } from 'react';
+import AuthContext from "../context/AuthContext";
 
-import Link from "next/link";
-import Image from "next/image";
+import Image from 'next/image';
+
+import styles from '../styles/Home.module.css';
+
 import { useRouter } from 'next/router';
-
-import $ from "jquery";
-import Popper from "popper.js";
-
-import styles from "../styles/Home.module.css";
 
 type NavbarProps = {};
 
 export const Navbar: FC<NavbarProps> = () => {
+
+  const {isAuthenticated, user} = useContext(AuthContext);
   const router = useRouter();
 
 	function toggleNavbar() {}
@@ -69,55 +69,48 @@ export const Navbar: FC<NavbarProps> = () => {
 					></Image>
 				</a>
 
-				<div className="collapse navbar-collapse" id="navbar">
-					<ul className="navbar-nav">
-						<li className="nav-item">
-							{" "}
-							<a className="nav-link" href="/resources">
-								Resources
-							</a>
-						</li>
-						<li className="nav-item">
-							<a className="nav-link" href="/sponsors">
-								Sponsors
-							</a>
-						</li>
-						{/* IF ADMIN */}
-						<li className="nav-item dropdown">
-							<a
-								className="nav-link dropdown-toggle"
-								href="#"
-								id="navbarDropdown"
-								role="button"
-								data-bs-toggle="dropdown"
-								aria-expanded="false"
-							>
-								Dropdown
-							</a>
-							<ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li>
-									<Link href="/admin_dashboard">
-										<a className="dropdown-item">Admin Dashboard</a>
-									</Link>
-								</li>
-								<li>
-									<Link href="#">
-										<a className="dropdown-item">Announcements</a>
-									</Link>
-								</li>
-							</ul>
-						</li>
-						{/* ELSE */}
-					</ul>
-				</div>
-				<button
-					className="login-register-button"
-					onClick={onLoginRegisterClicked}
-				>
-					{" "}
-					LOGIN/REGISTER
-				</button>
-			</nav>
-		</div>
-	);
+        <div className="collapse navbar-collapse" id="navbar">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <a className="nav-link" href="/sponsors">
+                Sponsors
+              </a>
+            </li>
+            {isAuthenticated && user.role === "Admin" && <li className="nav-item">
+              <a className="nav-link" href="/sponsors">
+                Admin
+              </a>
+            </li>}
+            
+            {/* <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropdown
+              </a>
+              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <Link href="/admin_dashboard">
+                    <a className="dropdown-item">Admin Dashboard</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#">
+                    <a className="dropdown-item">Announcements</a>
+                  </Link>
+                </li>
+              </ul>
+            </li> */}
+            {/* ELSE */}
+          </ul>
+        </div>
+        {!isAuthenticated && <button className="login-register-button"> LOGIN/REGISTER</button>}
+      </nav>
+    </div>
+  );
 };

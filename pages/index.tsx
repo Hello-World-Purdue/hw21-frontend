@@ -8,10 +8,6 @@ import { Layout } from "../Components/Layout";
 export default function Index() {
   return (
     <div className={styles.resources}>
-      <Head>
-        <title>Resources</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <Layout>
         <Header headerImgClass="index-header">
           {/* <img src="../images/logo.png"></img> */}
