@@ -1,10 +1,7 @@
-import React, { FC } from 'react';
+import React, { FC, useContext } from 'react';
+import AuthContext from "../context/AuthContext";
 
-import Link from 'next/link';
 import Image from 'next/image';
-
-import $ from 'jquery';
-import Popper from 'popper.js';
 
 import styles from '../styles/Home.module.css';
 
@@ -15,7 +12,8 @@ const onLoginRegisterClicked = () => {
 };
 
 export const Navbar: FC<NavbarProps> = () => {
-  function toggleNavbar() {}
+
+  const {isAuthenticated, user} = useContext(AuthContext);
 
   return (
     <div className={styles.topNav}>
@@ -37,7 +35,7 @@ export const Navbar: FC<NavbarProps> = () => {
         {/* <a className={styles.active} href="/">Home</a> */}
         <div className="collapse navbar-collapse" id="navbar">
           <ul className="navbar-nav">
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a className="nav-link" href="/schedule">
                 Schedule
               </a>
@@ -46,10 +44,15 @@ export const Navbar: FC<NavbarProps> = () => {
               <a className="nav-link" href="/announcements">
                 Announcements
               </a>
-            </li>
+            </li> */}
             <li className="nav-item">
               <a className="nav-link" href="/faq">
                 FAQ's
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/resources">
+                Resources
               </a>
             </li>
           </ul>
@@ -69,18 +72,17 @@ export const Navbar: FC<NavbarProps> = () => {
         <div className="collapse navbar-collapse" id="navbar">
           <ul className="navbar-nav">
             <li className="nav-item">
-              {' '}
-              <a className="nav-link" href="/resources">
-                Resources
-              </a>
-            </li>
-            <li className="nav-item">
               <a className="nav-link" href="/sponsors">
                 Sponsors
               </a>
             </li>
-            {/* IF ADMIN */}
-            <li className="nav-item dropdown">
+            {isAuthenticated && user.role === "Admin" && <li className="nav-item">
+              <a className="nav-link" href="/sponsors">
+                Admin
+              </a>
+            </li>}
+            
+            {/* <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"
                 href="#"
@@ -103,11 +105,11 @@ export const Navbar: FC<NavbarProps> = () => {
                   </Link>
                 </li>
               </ul>
-            </li>
+            </li> */}
             {/* ELSE */}
           </ul>
         </div>
-        <button className="login-register-button"> LOGIN/REGISTER</button>
+        {!isAuthenticated && <button className="login-register-button"> LOGIN/REGISTER</button>}
       </nav>
     </div>
   );

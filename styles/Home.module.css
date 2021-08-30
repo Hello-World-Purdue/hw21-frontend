@@ -252,10 +252,6 @@
   padding: 0 20px;
 }
 
-
-
-
-
 /* Style the links inside the navigation bar */
 .topNav a {
 	float: left;
@@ -386,9 +382,6 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
   position: relative;
   text-align: center;
   color: white;
-}
-
-.faq_otherHeader {
 }
 
 .faq_content {

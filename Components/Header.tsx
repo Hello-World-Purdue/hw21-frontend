@@ -16,7 +16,7 @@ export const Header: FC<HeaderProps & React.HTMLAttributes<HTMLDivElement>> = ({
 }) => {
   return (
     <ImageHeader headerImgClass={headerImgClass}>
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
       {children}
     </ImageHeader>
   );
