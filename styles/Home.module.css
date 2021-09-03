@@ -305,6 +305,13 @@
   display: block;
   text-align: left;
 }
+
+.orange-rectangle {
+  width: 20%;
+  height: 2vh;
+  background-color: orangered;
+}
+
 /* Add a grey background color to dropdown links on hover */
 .dropdownContent a:hover {
   background-color: #ddd;

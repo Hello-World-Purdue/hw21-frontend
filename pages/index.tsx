@@ -4,6 +4,7 @@ import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import { Header } from "../Components/Header";
 import { Layout } from "../Components/Layout";
+import {Row} from 'react-bootstrap';
 
 export default function Index() {
   return (
@@ -21,10 +22,12 @@ export default function Index() {
           <div className="date-section ">
             <div className="container">
             <h1 className="date-h1">
-              SEP. <br></br>11TH
+              SEPTEMBER <br></br>18TH-19TH
             </h1>
-            <div className="orange-rectangle"></div>
-            <p className="date-paragraph">Meet us there.</p>
+            <Row style={{width: '100%'}}>
+              <p className="date-paragraph"><div className={styles["orange-rectangle"]}></div>Meet us there.</p>
+            </Row>
+            <br/>
             <button className="date-button">VIEW SCHEDULE</button>
             {/* <Image src="/planet.png"layout='fill'
              objectFit='contain'></Image> */}
