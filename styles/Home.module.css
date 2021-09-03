@@ -246,7 +246,7 @@
 
 /*https://www.w3schools.com/howto/howto_js_topnav.asp*/
 .topNav {
-  background-color: hsl(0, 0%, 4%, 0.5);
+  background-color: rgba(0, 0, 0, 0.9);
   overflow: hidden;
   font-family: BackIssuesBB;
   padding: 0 20px;

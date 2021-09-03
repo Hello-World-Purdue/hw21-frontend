@@ -109,7 +109,8 @@ export const Navbar: FC<NavbarProps> = () => {
             {/* ELSE */}
           </ul>
         </div>
-        {!isAuthenticated && <button className="login-register-button"> LOGIN/REGISTER</button>}
+        {!isAuthenticated && <button onClick={onLoginRegisterClicked} className="login-register-button"> LOGIN/REGISTER</button>}
+		{isAuthenticated && <button className="login-register-button"> LOGOUT</button>}
       </nav>
     </div>
   );
