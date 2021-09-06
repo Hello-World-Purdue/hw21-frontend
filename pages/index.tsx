@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css";
 import { Header } from "../Components/Header";
 import { Layout } from "../Components/Layout";
 import {Row} from 'react-bootstrap';
-
+import { sponsors } from "../util/sponsors";
 export default function Index() {
   return (
     <div className={styles.resources}>
@@ -17,6 +17,7 @@ export default function Index() {
           </button>
           {/* TODO: Add Helloworld img , rocket img and apply now button  */}
         </Header>
+        {/* <LandingPage /> */}
 
         <div className="date-and-why-us-section">
           <div className="date-section ">
@@ -57,16 +58,18 @@ export default function Index() {
           </div>
         </div>
         <div className="sponsors-section">
-          <div className="container">
           <h1 className="sponsors-h1">SPONSORS</h1>
-          {/* List of sponsors */}
-          {/* Make img array and display them dynamically */}
-          <Image src="/circle.png" height={150} width={150}></Image>
-          <Image src="/circle.png" height={150} width={150}></Image>
-          <Image src="/circle.png" height={150} width={150}></Image>
-          <Image src="/circle.png" height={150} width={150}></Image>
-          <button className="learn-more-button">LEARN MORE</button>
-        </div></div>
+          <div className="container sponsors-sec-container">
+            {/* List of sponsors */}
+            {
+              sponsors.map(sponsor => {
+                return <Image className="sponsors-sec-img" src={`/sponsors/${sponsor.name}_logo.png`} height={sponsor.height} width={sponsor.width}></Image>
+              })
+            }
+            <br/>
+            <button className="learn-more-button">LEARN MORE</button>
+          </div>
+        </div>
       </Layout>
 
       {/* <main className={styles.main}>
