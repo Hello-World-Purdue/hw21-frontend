@@ -42,7 +42,10 @@ export const UserContextProvider = (props: any) => {
                 user: res.data,
             });
         } catch (err) {
-            console.error(err.message);
+            if (err.response) {
+				return Promise.reject(err.response.data.error)
+			}
+			return Promise.reject(err.message)
         }
     };
 
@@ -56,7 +59,10 @@ export const UserContextProvider = (props: any) => {
                 application: res.data,
             });
         } catch (err) {
-            throw new Error(err);
+            if (err.response) {
+				return Promise.reject(err.response.data.error)
+			}
+			return Promise.reject(err.message)
         }
     };
 
@@ -70,7 +76,10 @@ export const UserContextProvider = (props: any) => {
                 application: res.data,
             });
         } catch (err) {
-            throw new Error(err);
+            if (err.response) {
+				return Promise.reject(err.response.data.error)
+			}
+			return Promise.reject(err.message)
         }
     };
 
@@ -91,7 +100,10 @@ export const UserContextProvider = (props: any) => {
                 user: res.data.user,
             });
         } catch (err) {
-            throw new Error(err);
+            if (err.response) {
+				return Promise.reject(err.response.data.error)
+			}
+			return Promise.reject(err.message)
         }
     };
 
@@ -117,7 +129,10 @@ export const UserContextProvider = (props: any) => {
                 application: res.data,
             });
         } catch (err) {
-            throw new Error(err);
+            if (err.response) {
+				return Promise.reject(err.response.data.error)
+			}
+			return Promise.reject(err.message)
         }
     };
 

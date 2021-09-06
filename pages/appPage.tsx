@@ -35,7 +35,8 @@ function appPage() {
 			setAlert('success', 'Application Success', 'Thank you for applying!');
 			router.push('/profile');
 		} catch (err) {
-			setAlert('error', 'Application Error', 'Looks like something went wrong.');
+			console.log(err)
+			setAlert('error', 'Application Error', err.message);
 		}
 	}
 

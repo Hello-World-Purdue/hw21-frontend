@@ -57,9 +57,17 @@ export default function Profile() {
 					<ProfileInfo header="Full Name" placeholder={name} />
 					<ProfileInfo header="Email" placeholder={email} />
 					<ProfileInfo header="Application Status" placeholder={status} />
-					<button onClick={onEdit} className={styles.profile_button}>
-						EDIT PROFILE
-					</button>
+					<div className="d-flex flex-column">
+						<button onClick={onEdit} className={styles.profile_button}>
+							EDIT PROFILE
+						</button>
+						<button className={styles.profile_button} style={{margin: '10px', background: 'red'}}>
+							<a style={{ textDecoration: 'none', color: 'white' }} href="/appPage">Apply now!</a>
+						</button>
+						<button className={styles.profile_button} style={{margin: '10px',  padding: '1px'}}>
+							<a style={{ textDecoration: 'none', color: 'black', fontSize: 'smaller' }} href="/auth/forgot">Change Password</a>
+						</button>
+					</div>
 				</div>
 			</div>
 		</Layout>

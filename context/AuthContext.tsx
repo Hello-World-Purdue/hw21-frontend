@@ -61,7 +61,10 @@ export const AuthContextProvider = (props: any) => {
 				token: res.data.token,
 			});
 		} catch (err) {
-			throw new Error(err);
+			if (err.response) {
+				return Promise.reject(err.response.data.error)
+			}
+			return Promise.reject(err.message)
 		}
 	};
 
@@ -90,7 +93,10 @@ export const AuthContextProvider = (props: any) => {
 				token: res.data.token,
 			});
 		} catch (err) {
-			throw new Error(err.message);
+			if (err.response) {
+				return Promise.reject(err.response.data.error)
+			}
+			return Promise.reject(err.message)
 		}
 	};
 
@@ -106,7 +112,10 @@ export const AuthContextProvider = (props: any) => {
 				},
 			});
 		} catch (err) {
-			throw new Error(err);
+			if (err.response) {
+				return Promise.reject(err.response.data.error)
+			}
+			return Promise.reject(err.message)
 		}
 	};
 
@@ -125,7 +134,10 @@ export const AuthContextProvider = (props: any) => {
 				},
 			});
 		} catch (err) {
-			throw new Error(err);
+			if (err.response) {
+				return Promise.reject(err.response.data.error)
+			}
+			return Promise.reject(err.message)
 		}
 	};
 

@@ -92,7 +92,7 @@ const ApplicationForm: React.FC<{ sendAnswers: (userData) => void }> = (
 
 				{/* Answer 1 */}
 				<Form.Group className={styles.formField}>
-					<Form.Label>QUESTION 1</Form.Label>
+					<Form.Label>What do you hope to gain from participating in Hello World?</Form.Label>
 					<Form.Control
 						name="answer1"
 						onChange={handleChange}
@@ -103,7 +103,7 @@ const ApplicationForm: React.FC<{ sendAnswers: (userData) => void }> = (
 
 				{/* Answer 2 */}
 				<Form.Group className={styles.formField}>
-					<Form.Label>QUESTION 2</Form.Label>
+					<Form.Label>What part of hackathons are you looking most forward to?</Form.Label>
 					<Form.Control
 						name="answer2"
 						onChange={handleChange}
