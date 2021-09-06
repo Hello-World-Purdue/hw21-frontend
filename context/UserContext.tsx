@@ -2,6 +2,8 @@ import React, { useState, useContext, useEffect } from "react";
 import AuthContext from "./AuthContext";
 import axios from "axios";
 
+axios.defaults.baseURL = (process.env.NODE_ENV === 'production') ? 'http://helloworldpurdue-api.herokuapp.com': ''
+
 const initialState = {
     application: null,
     user: null,
