@@ -35,7 +35,7 @@ export default function Profile() {
 	const userState = {
 		name: user?.name || "",
 		email: user?.email || "",
-		status: user?.application || "Not Applied",
+		status: user?.status || "Not Applied",
 	};
 
 	const { name, email, status } = userState;
