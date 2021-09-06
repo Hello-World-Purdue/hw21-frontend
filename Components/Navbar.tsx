@@ -50,6 +50,14 @@ export const Navbar: FC<NavbarProps> = () => {
 								Announcements
 							</a>
 						</li>
+						{
+							isAuthenticated &&
+							<li className="nav-item">
+							<a className="nav-link" href="/profile">
+								Profile
+							</a>
+							</li>
+						}
 					</ul>
 				</div>
 				{/* Find a way to center big old logo img vertically */}
@@ -76,8 +84,8 @@ export const Navbar: FC<NavbarProps> = () => {
 					FAQ's
 				</a>
 			</li>
-            {isAuthenticated && user.role === "Admin" && <li className="nav-item">
-              <a className="nav-link" href="/sponsors">
+            {isAuthenticated && user.role === "ADMIN" && <li className="nav-item">
+              <a className="nav-link" href="/admin_dashboard">
                 Admin
               </a>
             </li>}
