@@ -271,6 +271,42 @@
   background-color: #044caa;
   color: white;
 }
+
+.footerNav {
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow: hidden;
+  font-family: BackIssuesBB;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* Style the links inside the navigation bar */
+.footerNav a {
+  float: left;
+  color: #ffff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+@media screen and (max-width: 700px) {
+  .footerNav a {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
+/* Change the color of links on hover */
+.footerNav a:hover {
+  /* background-color: #ddd; */
+  color: grey;
+}
+/* Add a color to the active/current link */
+.footerNav a.active {
+  background-color: #044caa;
+  color: white;
+}
+
 /* The dropdown container */
 .dropdown {
   float: left;
@@ -333,7 +369,7 @@
 https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relative-position */
 .footer {
   width: 100%;
-  height: 180px;
+  /* height: 180px; */
   border-top: 1px solid #eaeaea;
   display: flex;
   flex-direction: column;
