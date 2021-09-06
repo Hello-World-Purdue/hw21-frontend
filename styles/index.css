@@ -189,6 +189,32 @@
   font-size: 48px;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
+
+.about-us-container {
+  display: flex;
+}
+
+.description {
+  width: 50%;
+}
+
+.about-us-paragraph {
+  font-size: 1.3em;
+}
+
+@media (max-width: 500px) {
+  .description {
+    width: 100%;
+  }
+
+  .about-us-paragraph {
+    font-size: 0.7em;
+  }
+  .about-us-container {
+    display: block;
+  }
+}
+
 .why-us-paragraph {
   font-family: "Franklin Gothic Demi Condensed";
   color: #ffe62b;
@@ -223,12 +249,20 @@
   /*  */
   background-color: #ffe62b;
   color: #ff4621;
-  font-family: "Franklin Gothic";
   font-weight: 600;
   font-size: 36px;
   padding: 15px 45px;
   margin: 15px;
   border: 3px solid black;
+}
+
+@media only screen and (max-width: 500px) {
+  .learn-more-button {
+    font-weight: 600;
+    font-size: 18px;
+    padding: 10px 30px;
+    margin: 10px;
+  }
 }
 
 .logo {

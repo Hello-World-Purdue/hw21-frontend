@@ -6,6 +6,7 @@ import { Header } from "../Components/Header";
 import { Layout } from "../Components/Layout";
 import {Row} from 'react-bootstrap';
 import { sponsors } from "../util/sponsors";
+import { aboutUs } from "../util/about";
 export default function Index() {
   return (
     <div className={styles.resources}>
@@ -44,16 +45,23 @@ export default function Index() {
               <br></br>
               <br></br>
 
-            <h1 className="why-us-h1">WHY US?</h1>
-            <div className="why-us-picture"></div>
-            <p className="why-us-paragraph">
-              <a className="why-us-a"href="/faq">
-              Have questions? Check out some FAQ's
-              <span>
-                <Image src="/arrow_button.png" width={20} height={20}></Image>
-              </span>
-              </a>
-            </p>
+            <div className="about-us-container">
+              <div className="description">
+                <div>
+                <h1 className="why-us-h1">ABOUT US</h1>
+                <p className="why-us-paragraph">
+                  <a className="why-us-a"href="/faq">
+                  Have questions? Check out some FAQ's
+                  <span>
+                    <Image src="/arrow_button.png" width={20} height={20}></Image>
+                  </span>
+                  </a>
+                </p>
+                <div className="about-us-paragraph">{aboutUs}</div>
+                </div>
+              </div>
+              <Image className="sponsors-sec-img" src='/about-us.png' height={650} width={650}></Image>
+            </div>
           </div>
           </div>
         </div>
@@ -63,10 +71,11 @@ export default function Index() {
             {/* List of sponsors */}
             {
               sponsors.map(sponsor => {
-                return <Image className="sponsors-sec-img" src={`/sponsors/${sponsor.name}_logo.png`} height={sponsor.height} width={sponsor.width}></Image>
+                return <Image className="sponsors-sec-img" key={sponsor.name} src={`/sponsors/${sponsor.name}_logo.png`} height={sponsor.height} width={sponsor.width}></Image>
               })
             }
             <br/>
+            <br />
             <button className="learn-more-button">LEARN MORE</button>
           </div>
         </div>
