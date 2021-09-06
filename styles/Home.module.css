@@ -613,6 +613,17 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
   -webkit-filter: blur(1px);
 }
 
+.sponsor_card {
+  font-family: BackIssuesBB;
+  margin: auto;
+  margin-bottom: 20px;
+  width: 70vw;
+  color: white;
+  border: solid black;
+  padding: 10px;
+  padding-left: 1vw;
+}
+
 @media (min-width: 600px) {
   .eventsgrid {
     grid-template-columns: repeat(3, 1fr);
