@@ -76,7 +76,7 @@ export default function Index() {
             }
             <br/>
             <br />
-            <button className="learn-more-button">LEARN MORE</button>
+            <button className="learn-more-button"><a href="/sponsors" style={{ textDecoration: 'none'}}>LEARN MORE</a></button>
           </div>
         </div>
       </Layout>

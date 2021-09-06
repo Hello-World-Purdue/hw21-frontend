@@ -6,12 +6,14 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 
 import { useRouter } from 'next/router';
+import AlertContext from '../context/AlertContext';
 
 type NavbarProps = {};
 
 export const Navbar: FC<NavbarProps> = () => {
 
-  const {isAuthenticated, user} = useContext(AuthContext);
+  const {isAuthenticated, user, logout} = useContext(AuthContext);
+  const {setAlert} = useContext(AlertContext)
   const router = useRouter();
 
 	function toggleNavbar() {}
@@ -19,6 +21,12 @@ export const Navbar: FC<NavbarProps> = () => {
 	const onLoginRegisterClicked = () => {
     router.push('/auth/login');
 	};
+
+	const onLogoutClicked = () => {
+		logout()
+		setAlert('success', 'Logout Successful', 'You have been successfully logged out!');
+		router.push('/')		
+	}
 
 	return (
 		<div className={styles.topNav}>
@@ -118,7 +126,7 @@ export const Navbar: FC<NavbarProps> = () => {
           </ul>
         </div>
         {!isAuthenticated && <button onClick={onLoginRegisterClicked} className="login-register-button"> LOGIN/REGISTER</button>}
-		{isAuthenticated && <button className="login-register-button"> LOGOUT</button>}
+		{isAuthenticated && <button onClick={onLogoutClicked} className="login-register-button"> LOGOUT</button>}
       </nav>
     </div>
   );

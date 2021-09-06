@@ -322,6 +322,7 @@
 
 .learn-more-button {
   /* Reset button styles */
+  cursor: pointer;
   background: none;
   color: inherit;
   border: none;
@@ -337,6 +338,11 @@
   padding: 15px 45px;
   margin: 15px;
   border: 3px solid black;
+}
+
+.learn-more-button a:hover {
+  /* Reset button styles */
+  color: #ff4621;
 }
 
 @media only screen and (max-width: 500px) {
