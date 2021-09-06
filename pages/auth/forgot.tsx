@@ -17,8 +17,7 @@ const Forgot = () => {
     const sendEmail = async (email: String) => {
         try {
             await forgot(email);
-            setAlert('success', 'Email Sent', `An email with the reset link has been sent to ${email}`);
-            router.push('/auth/reset');
+            setAlert('success', 'Email Sent', `An email with the reset link has been sent to ${email}. Follow the instructions to reset your password`);
         } catch (err) {
             setAlert('error', 'Email Error', 'Looks like something went wrong.');
         }
