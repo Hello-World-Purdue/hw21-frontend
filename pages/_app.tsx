@@ -14,8 +14,10 @@ import "../styles/navbar.css";
 import "../styles/index.module.css";
 import { Footer } from '../Components/Footer';
 import { Navbar } from '../Components/Navbar';
+import axios from "axios";
 
 function MyApp({ Component, pageProps }) {
+	axios.defaults.baseURL = (process.env.NODE_ENV !== 'production') ? 'http://helloworldpurdue-api.herokuapp.com': ''
 	return (
 		<AuthContextProvider>
 			<UserContextProvider>
