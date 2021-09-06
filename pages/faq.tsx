@@ -1,15 +1,30 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import styles from "../styles/Home.module.css";
 
 import { Header } from "../Components/Header";
 import { faqList } from "../assets/questions";
 import { Layout } from "../Components/Layout";
 
-const submitHandler = (e) => {
-  e.preventDefault();
-};
-
 export default function Faq() {
+  const [state, setState] = useState({
+    name: '',
+    email: '',
+    question: ''
+  });
+
+  const handleChange = (e: any) => {
+    setState({
+      ...state,
+      [e.target.name]: e.target.value
+    })
+  };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    location.href = `mailto:helloworldpurdue@gmail.com?subject=Query%20About%20Hello%20World&body=${state.question}`
+  };
+
+
   return (
     <Layout>
       <div className="faq">
@@ -41,6 +56,7 @@ export default function Faq() {
                     name="name"
                     id="name"
                     placeholder="YOUR NAME"
+                    onChange={handleChange}
                   />
                   <input
                     className={styles.faq_input}
@@ -48,9 +64,10 @@ export default function Faq() {
                     name="email"
                     id="email"
                     placeholder="EMAIL ADDRESS"
+                    onChange={handleChange}
                   />
                 </div>
-                <textarea className={styles.faq_textArea}></textarea>
+                <textarea name='question' onChange={handleChange} className={styles.faq_textArea} />
               </div>
               <div className={styles.faq_submitContainer}>
                 <button
