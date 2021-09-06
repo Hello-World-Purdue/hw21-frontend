@@ -45,7 +45,7 @@ export const sponsors = [
     height: 150,
     width: 150,
     about:
-      "We are a community of students who collaborate, learn, and build kick-ass technical projects.",
+      "We are a community of students who collaborate, learn, and build kick-ass technical projects. We strive to create an environment where it's easy to meet some of the students at the forefront of innovation at Purdue. Every few weeks we hosts events where people hang out, work on projects, share ideas, and learn about cool new technologies.",
     background: "rgb(0,141,179)",
   },
 ];
