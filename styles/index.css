@@ -199,17 +199,18 @@
 }
 
 .about-us-paragraph {
-  font-size: 1.3em;
+  font-size: 1.3em !important;
 }
 
-@media (max-width: 500px) {
+@media screen and (max-width: 500px) {
   .description {
     width: 100%;
   }
 
   .about-us-paragraph {
-    font-size: 0.7em;
+    font-size: 0.7em !important;
   }
+
   .about-us-container {
     display: block;
   }

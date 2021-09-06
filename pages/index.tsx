@@ -57,8 +57,8 @@ export default function Index() {
                   </span>
                   </a>
                 </p>
-                <div className="about-us-paragraph">{aboutUs}</div>
                 </div>
+                <div className="about-us-paragraph">{aboutUs}</div>
               </div>
               <Image className="sponsors-sec-img" src='/about-us.png' height={650} width={650}></Image>
             </div>
