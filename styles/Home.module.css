@@ -368,6 +368,7 @@
 /* todo: sticky footer
 https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relative-position */
 .footer {
+  padding-top: 15px;
   width: 100%;
   /* height: 180px; */
   border-top: 1px solid #eaeaea;

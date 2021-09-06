@@ -38,7 +38,7 @@ export const Navbar: FC<NavbarProps> = () => {
 
 				{/* We'll deal with active pages after */}
 				{/* <a className={styles.active} href="/">Home</a> */}
-				<div className="collapse navbar-collapse" id="navbar">
+				<div className="collapse navbar-collapse" style={{justifyContent: 'flex-end'}} id="navbar">
 					<ul className="navbar-nav">
 						<li className="nav-item">
 							<a className="nav-link" href="/schedule">
@@ -50,17 +50,12 @@ export const Navbar: FC<NavbarProps> = () => {
 								Announcements
 							</a>
 						</li>
-						<li className="nav-item">
-							<a className="nav-link" href="/faq">
-								FAQ's
-							</a>
-						</li>
 					</ul>
 				</div>
 				{/* Find a way to center big old logo img vertically */}
 				{/* the issue of vertical alignment only happens when I wrap the img with an <a>*/}
 
-				<a className="navbar-brand d-flex" href="/">
+				<a className="navbar-brand d-flex" style={{marginRight: '0px'}} href="/">
 					<Image
 						src="/logo.png"
 						layout="intrinsic"
@@ -76,6 +71,11 @@ export const Navbar: FC<NavbarProps> = () => {
                 Sponsors
               </a>
             </li>
+			<li className="nav-item">
+				<a className="nav-link" href="/faq">
+					FAQ's
+				</a>
+			</li>
             {isAuthenticated && user.role === "Admin" && <li className="nav-item">
               <a className="nav-link" href="/sponsors">
                 Admin
