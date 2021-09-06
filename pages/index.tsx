@@ -9,8 +9,10 @@ import { sponsors } from "../util/sponsors";
 import { aboutUs } from "../util/about";
 import AuthContext from "../context/AuthContext";
 import { useContext } from "react";
+import { useRouter } from "next/router";
 export default function Index() {
   const {isAuthenticated} = useContext(AuthContext)
+  const router = useRouter()
   return (
     <div className={styles.resources}>
       <Layout>
@@ -33,7 +35,7 @@ export default function Index() {
               <p className="date-paragraph"><div className={styles["orange-rectangle"]}></div>Meet us there.</p>
             </Row>
             <br/>
-            <button className="date-button">VIEW SCHEDULE</button>
+            <button className="date-button" onClick={() => {router.push('/schedule')}}>VIEW SCHEDULE</button>
             {/* <Image src="/planet.png"layout='fill'
              objectFit='contain'></Image> */}
           </div>
