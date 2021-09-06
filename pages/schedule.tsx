@@ -1,92 +1,92 @@
-import Link from 'next/link'
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import React, { FC, Fragment } from 'react';
-import { Layout } from '../Components/Layout';
-import {Event} from '../Components/Event';
-import { Header } from '../Components/Header';
-import Image from 'next/image';
+import Link from "next/link";
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
+import React, { FC, Fragment } from "react";
+import { Layout } from "../Components/Layout";
+import { Event } from "../Components/Event";
+import { Header } from "../Components/Header";
+import Image from "next/image";
 
 export interface EventsData {
-  name: string,
-  times: string,
-  locations: string,
-  details: string,
-  happened: boolean
+  name: string;
+  times: string;
+  locations: string;
+  details: string;
+  happened: boolean;
 }
 
 const eventsData: EventsData[] = [
   {
-    name: 'EVENTS NAME',
-    times: 'June 28',
-    locations: 'Location',
-    details: 'This is the details for the event 1',
-    happened: false
+    name: "EVENTS NAME",
+    times: "June 28",
+    locations: "Location",
+    details: "This is the details for the event 1",
+    happened: false,
   },
   {
-    name: 'EVENTS NAME',
-    times: 'June 28',
-    locations: 'Location',
-    details: 'This is the details for the event 2',
-    happened: false
+    name: "EVENTS NAME",
+    times: "June 28",
+    locations: "Location",
+    details: "This is the details for the event 2",
+    happened: false,
   },
   {
-    name: 'EVENTS NAME',
-    times: 'June 28',
-    locations: 'Location',
-    details: 'This is the details for the event 3',
-    happened: false
+    name: "EVENTS NAME",
+    times: "June 28",
+    locations: "Location",
+    details: "This is the details for the event 3",
+    happened: false,
   },
   {
-    name: 'EVENTS NAME',
-    times: 'June 28',
-    locations: 'Location',
-    details: 'This is the details for the event 5',
-    happened: false
+    name: "EVENTS NAME",
+    times: "June 28",
+    locations: "Location",
+    details: "This is the details for the event 5",
+    happened: false,
   },
   {
-    name: 'EVENTS NAME',
-    times: 'June 28',
-    locations: 'Location',
-    details: 'This is the details for the event 6',
-    happened: false
+    name: "EVENTS NAME",
+    times: "June 28",
+    locations: "Location",
+    details: "This is the details for the event 6",
+    happened: false,
   },
   {
-    name: 'EVENTS NAME',
-    times: 'June 28',
-    locations: 'Location',
-    details: 'This is the details for the event 1',
-    happened: true
+    name: "EVENTS NAME",
+    times: "June 28",
+    locations: "Location",
+    details: "This is the details for the event 1",
+    happened: true,
   },
   {
-    name: 'EVENTS NAME',
-    times: 'June 28',
-    locations: 'Location',
-    details: 'This is the details for the event 2',
-    happened: true
+    name: "EVENTS NAME",
+    times: "June 28",
+    locations: "Location",
+    details: "This is the details for the event 2",
+    happened: true,
   },
   {
-    name: 'EVENTS NAME',
-    times: 'June 28',
-    locations: 'Location',
-    details: 'This is the details for the event 1',
-    happened: true
+    name: "EVENTS NAME",
+    times: "June 28",
+    locations: "Location",
+    details: "This is the details for the event 1",
+    happened: true,
   },
   {
-    name: 'EVENTS NAME',
-    times: 'June 28',
-    locations: 'Location',
-    details: 'This is the details for the event 2',
-    happened: true
+    name: "EVENTS NAME",
+    times: "June 28",
+    locations: "Location",
+    details: "This is the details for the event 2",
+    happened: true,
   },
   {
-    name: 'EVENTS NAME',
-    times: 'June 28',
-    locations: 'Location',
-    details: 'This is the details for the event 3',
-    happened: true
+    name: "EVENTS NAME",
+    times: "June 28",
+    locations: "Location",
+    details: "This is the details for the event 3",
+    happened: true,
   },
-]
+];
 
 export default function Schedule() {
   return (
@@ -97,24 +97,29 @@ export default function Schedule() {
       </Head>
 
       {/* nav bar and header*/}
-      
+
       {/* nav bar */}
       <Layout>
-      <Header headerImgClass="schedule-header">
-         {/* <div className={styles.header_text}>
+        <Header headerImgClass="schedule-header">
+          {/* <div className={styles.header_text}>
        <h1 className={styles.header_heading}>SCHEDULE</h1>
                 <p className={styles.header_description}>SEE WHAT OUR SPONSORS HAVE TO OFFER</p>
                 </div> */}
-       </Header>
-       <div style={{textAlign: 'center'}}>
-          <Image className="coming-soon" src='/coming_soon.png' height={700} width={700}></Image>
-       </div>
-       {/* <Fragment>
+        </Header>
+        <div style={{ textAlign: "center" }}>
+          <Image
+            className="coming-soon"
+            src="/coming_soon.png"
+            height={700}
+            width={700}
+          ></Image>
+        </div>
+        {/* <Fragment>
           <Event eventsData={eventsData} 
               headingColumns={['name', 'times', 'locations', 'details']}
           />
         </Fragment> */}
       </Layout>
     </div>
-  )
+  );
 }
