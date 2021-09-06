@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-axios.defaults.baseURL = (process.env.NODE_ENV == 'production') ? 'http://helloworldpurdue-api.herokuapp.com': ''
+axios.defaults.baseURL = (process.env.NODE_ENV == 'production') ? 'https://helloworldpurdue-api.herokuapp.com': ''
 
 const initialState = {
 	isAuthenticated: false,
