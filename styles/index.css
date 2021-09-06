@@ -439,6 +439,41 @@
   background-size: 100% 900px;
 }
 
+.announcements-header {
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  flex: 1 0 100%;
+  position: inherit;
+  min-width: 100%;
+  /* Use media queries to resize the height I guess? Or figure out background image properties so that the image stays responsive */
+  height: 800px;
+  background-image: url("../images/announcements_new.png");
+  background-repeat: no-repeat;
+  display: inline-block;
+  flex: 1 0 100%;
+  position: inherit;
+  background-size: 100% 900px;
+}
+
+.resources-header {
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  flex: 1 0 100%;
+  position: inherit;
+  min-width: 100%;
+  /* Use media queries to resize the height I guess? Or figure out background image properties so that the image stays responsive */
+  height: 1200px;
+  background-image: url("../images/resources_background.png");
+  background-repeat: no-repeat;
+  display: inline-block;
+  flex: 1 0 100%;
+  position: inherit;
+  background-size: 100% 900px;
+}
 @media screen and (max-width: 1030px) {
   .faq-header {
     height: 900px;
@@ -494,42 +529,6 @@
     height: 30vh;
     background-size: contain;
   }
-}
-
-.announcements-header {
-  height: auto;
-  background-repeat: no-repeat;
-  background-size: contain;
-  display: inline-block;
-  flex: 1 0 100%;
-  position: inherit;
-  min-width: 100%;
-  /* Use media queries to resize the height I guess? Or figure out background image properties so that the image stays responsive */
-  height: 1200px;
-  background-image: url("../images/announcements_new.png");
-  background-repeat: no-repeat;
-  display: inline-block;
-  flex: 1 0 100%;
-  position: inherit;
-  background-size: 100% 900px;
-}
-
-.resources-header {
-  height: auto;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: inline-block;
-  flex: 1 0 100%;
-  position: inherit;
-  min-width: 100%;
-  /* Use media queries to resize the height I guess? Or figure out background image properties so that the image stays responsive */
-  height: 1200px;
-  background-image: url("../images/resources_background.png");
-  background-repeat: no-repeat;
-  display: inline-block;
-  flex: 1 0 100%;
-  position: inherit;
-  background-size: 100% 900px;
 }
 
 .date-img {
