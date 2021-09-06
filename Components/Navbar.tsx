@@ -6,12 +6,14 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 
 import { useRouter } from 'next/router';
+import AlertContext from '../context/AlertContext';
 
 type NavbarProps = {};
 
 export const Navbar: FC<NavbarProps> = () => {
 
-  const {isAuthenticated, user} = useContext(AuthContext);
+  const {isAuthenticated, user, logout} = useContext(AuthContext);
+  const {setAlert} = useContext(AlertContext)
   const router = useRouter();
 
 	function toggleNavbar() {}
@@ -19,6 +21,12 @@ export const Navbar: FC<NavbarProps> = () => {
 	const onLoginRegisterClicked = () => {
     router.push('/auth/login');
 	};
+
+	const onLogoutClicked = () => {
+		logout()
+		setAlert('success', 'Logout Successful', 'You have been successfully logged out!');
+		router.push('/')		
+	}
 
 	return (
 		<div className={styles.topNav}>
@@ -38,7 +46,7 @@ export const Navbar: FC<NavbarProps> = () => {
 
 				{/* We'll deal with active pages after */}
 				{/* <a className={styles.active} href="/">Home</a> */}
-				<div className="collapse navbar-collapse" id="navbar">
+				<div className="collapse navbar-collapse" style={{justifyContent: 'flex-end'}} id="navbar">
 					<ul className="navbar-nav">
 						<li className="nav-item">
 							<a className="nav-link" href="/schedule">
@@ -50,17 +58,20 @@ export const Navbar: FC<NavbarProps> = () => {
 								Announcements
 							</a>
 						</li>
-						<li className="nav-item">
-							<a className="nav-link" href="/faq">
-								FAQ's
+						{
+							isAuthenticated &&
+							<li className="nav-item">
+							<a className="nav-link" href="/profile">
+								Profile
 							</a>
-						</li>
+							</li>
+						}
 					</ul>
 				</div>
 				{/* Find a way to center big old logo img vertically */}
 				{/* the issue of vertical alignment only happens when I wrap the img with an <a>*/}
 
-				<a className="navbar-brand d-flex" href="/">
+				<a className="navbar-brand d-flex" style={{marginRight: '0px'}} href="/">
 					<Image
 						src="/logo.png"
 						layout="intrinsic"
@@ -76,8 +87,13 @@ export const Navbar: FC<NavbarProps> = () => {
                 Sponsors
               </a>
             </li>
-            {isAuthenticated && user.role === "Admin" && <li className="nav-item">
-              <a className="nav-link" href="/sponsors">
+			<li className="nav-item">
+				<a className="nav-link" href="/faq">
+					FAQ's
+				</a>
+			</li>
+            {isAuthenticated && user.role === "ADMIN" && <li className="nav-item">
+              <a className="nav-link" href="/admin_dashboard">
                 Admin
               </a>
             </li>}
@@ -109,7 +125,8 @@ export const Navbar: FC<NavbarProps> = () => {
             {/* ELSE */}
           </ul>
         </div>
-        {!isAuthenticated && <button className="login-register-button"> LOGIN/REGISTER</button>}
+        {!isAuthenticated && <button onClick={onLoginRegisterClicked} className="login-register-button"> LOGIN/REGISTER</button>}
+		{isAuthenticated && <button onClick={onLogoutClicked} className="login-register-button"> LOGOUT</button>}
       </nav>
     </div>
   );

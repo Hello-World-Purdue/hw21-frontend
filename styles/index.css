@@ -6,18 +6,32 @@
 
 /* There's probably a lot of properties that are unnecessary in this code, but it works, although not responsively, so I'll keep it for now. Same for all other *-header */
 .index-header {
-  /* height:auto; */
+  /* height: auto; */
   background-repeat: no-repeat;
   background-size: cover;
   display: inline-block;
   flex: 1 0 100%;
-  position: inherit;
+  position: relative;
   min-width: 100%;
-  height: 500px; /*Mobile devices */
+  min-height: 35vh; /*Mobile devices*/
   background-image: url(../public/index_background.png);
   background-repeat: no-repeat;
   display: inline-block;
   flex: 1 0 100%;
+  /* position: inherit; */
+  background-size: 100% auto;
+}
+
+.sponsors-sec-container {
+  text-align: center;
+}
+
+.landing-page {
+  background-image: url(../public/blue_background.png);
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
   position: inherit;
   background-size: 100% auto;
 }
@@ -47,11 +61,26 @@
   transform: translate(-50%, -50%);
 }
 
+/*MOBILE*/
+@media only screen and (max-width: 600px) {
+  .apply-now-button {
+    border: 2px solid black;
+    background-color: #ff0009;
+    font-size: 14px;
+    font-family: BackIssuesBB;
+    padding: 5px 10px;
+    color: white;
+    position: absolute;
+    top: auto;
+    bottom: 28%;
+  }
+}
+
 /*TABLET*/
 @media only screen and (min-width: 600px) {
   .index-header {
     /* Bruh the size is not changing ughhhh, TODO */
-    height: 400px;
+    height: 600px;
   }
   .apply-now-button {
     border: 4px solid black;
@@ -61,19 +90,45 @@
     padding: 5px 10px;
     color: white;
     position: absolute;
-    left: 50%;
-    top: 30%;
-    -webkit-transform: translate(-50%, -30%);
-    transform: translate(-50%, -30%);
+    top: auto;
+    bottom: 22%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .apply-now-button {
+    border: 2px solid black;
+    background-color: #ff0009;
+    font-size: 13px;
+    font-family: BackIssuesBB;
+    padding: 2px 5px;
+    color: white;
+    position: absolute;
+    top: auto;
+    bottom: 21%;
+  }
+}
+
+@media screen and (width: 375px) and (height: 812px) {
+  .apply-now-button {
+    border: 2px solid black;
+    background-color: #ff0009;
+    font-size: 13px;
+    font-family: BackIssuesBB;
+    padding: 2px 5px;
+    color: white;
+    position: absolute;
+    top: auto;
+    bottom: 35%;
   }
 }
 
 /*DESKTOP*/
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1100px) {
   /* For desktop: */
   .index-header {
     /* Bruh the size is not changing ughhhh, TODO */
-    height: 900px;
+    height: 800px;
   }
 
   .apply-now-button {
@@ -96,9 +151,30 @@
     /* Positioning */
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: auto;
+    bottom: 15%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .faq-header {
+    height: 110vh;
+  }
+  .index-header {
+    /* Bruh the size is not changing ughhhh, TODO */
+    min-height: 110vh;
+  }
+}
+
+@media screen and (min-width: 2500px) {
+  .faq-header {
+    height: 150vh;
+  }
+  .index-header {
+    /* Bruh the size is not changing ughhhh, TODO */
+    min-height: 150vh;
   }
 }
 
@@ -113,6 +189,32 @@
   font-weight: 800;
   margin: 0;
 }
+
+@media (max-width: 900px) {
+  .date-h1 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+}
+
+@media (max-width: 500px) {
+  .date-h1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+
+  .date-paragraph {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  .date-button {
+    font-size: 1.5rem !important;
+    border: rgba(255, 92, 0, 0.5) solid 4px !important;
+    padding: 5px !important;
+  }
+}
+
 .date-paragraph {
   margin: 0;
 }
@@ -132,6 +234,10 @@
   padding: 10px 50px;
 }
 
+.row {
+  display: inline-flex;
+}
+
 .why-us-section {
   height: 900px;
   background-repeat: no-repeat;
@@ -145,6 +251,53 @@
   font-size: 48px;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
+
+.about-us-container {
+  display: flex;
+}
+
+.description {
+  width: 50%;
+}
+
+.about-us-paragraph {
+  font-size: 1.3em !important;
+}
+
+@media screen and (max-width: 500px) {
+  .description {
+    width: 100%;
+  }
+
+  .about-us-paragraph {
+    font-size: 0.7em !important;
+  }
+
+  .about-us-container {
+    display: block;
+  }
+}
+
+.date-and-why-us-section {
+  position: relative;
+}
+
+@media screen and (min-width: 800px) {
+  .date-section::after {
+    content: url("/planet.png");
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .why-us-section::after {
+    content: url("/planet-left.png");
+    position: absolute;
+    left: 0;
+    bottom: -2.5%;
+  }
+}
+
 .why-us-paragraph {
   font-family: "Franklin Gothic Demi Condensed";
   color: #ffe62b;
@@ -157,9 +310,19 @@
   font-family: "Libre Franklin", sans-serif;
   font-weight: 800;
   font-size: 48px;
+  padding: 10px;
 }
+
+.sponsors-sec-img {
+  margin: 10px !important;
+  padding: 10px !important;
+  max-width: 300px !important;
+  max-height: 100px !important;
+}
+
 .learn-more-button {
   /* Reset button styles */
+  cursor: pointer;
   background: none;
   color: inherit;
   border: none;
@@ -170,12 +333,25 @@
   /*  */
   background-color: #ffe62b;
   color: #ff4621;
-  font-family: "Franklin Gothic";
   font-weight: 600;
   font-size: 36px;
   padding: 15px 45px;
   margin: 15px;
   border: 3px solid black;
+}
+
+.learn-more-button a:hover {
+  /* Reset button styles */
+  color: #ff4621;
+}
+
+@media only screen and (max-width: 500px) {
+  .learn-more-button {
+    font-weight: 600;
+    font-size: 18px;
+    padding: 10px 30px;
+    margin: 10px;
+  }
 }
 
 .logo {
@@ -205,17 +381,39 @@
   background-size: 100% 900px;
 }
 
+.coming-soon {
+  align-items: center;
+}
+
 .schedule-header {
   height: auto;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   display: inline-block;
   flex: 1 0 100%;
   position: inherit;
   min-width: 100%;
   /* Use media queries to resize the height I guess? Or figure out background image properties so that the image stays responsive */
-  height: 1200px;
-  background-image: url("../images/schedules_background.png");
+  height: 800px;
+  background-image: url("../images/schedule.png");
+  background-repeat: no-repeat;
+  display: inline-block;
+  flex: 1 0 100%;
+  position: inherit;
+  background-size: 100% 900px;
+}
+
+.sponsor-header {
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  flex: 1 0 100%;
+  position: inherit;
+  min-width: 100%;
+  /* Use media queries to resize the height I guess? Or figure out background image properties so that the image stays responsive */
+  height: 800px;
+  background-image: url("../images/sponsors_new.png");
   background-repeat: no-repeat;
   display: inline-block;
   flex: 1 0 100%;
@@ -226,14 +424,14 @@
 .faq-header {
   height: auto;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   display: inline-block;
   flex: 1 0 100%;
   position: inherit;
   min-width: 100%;
   /* Use media queries to resize the height I guess? Or figure out background image properties so that the image stays responsive */
   height: 1200px;
-  background-image: url("../images/faq_background.png");
+  background-image: url("../images/faq_new.png");
   background-repeat: no-repeat;
   display: inline-block;
   flex: 1 0 100%;
@@ -241,17 +439,74 @@
   background-size: 100% 900px;
 }
 
+@media screen and (max-width: 1030px) {
+  .faq-header {
+    height: 900px;
+    background-size: contain;
+  }
+  .sponsor-header {
+    height: 900px;
+    background-size: contain;
+  }
+  .schedule-header {
+    height: 900px;
+    background-size: contain;
+  }
+  .announcements-header {
+    height: 900px;
+    background-size: contain;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .faq-header {
+    height: 700px;
+    background-size: contain;
+  }
+  .schedule-header {
+    height: 700px;
+    background-size: contain;
+  }
+  .sponsor-header {
+    height: 700px;
+    background-size: contain;
+  }
+  .announcements-header {
+    height: 700px;
+    background-size: contain;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .faq-header {
+    height: 60vh;
+    background-size: contain;
+  }
+  .sponsor-header {
+    height: 30vh;
+    background-size: contain;
+  }
+  .schedule-header {
+    height: 30vh;
+    background-size: contain;
+  }
+  .announcements-header {
+    height: 30vh;
+    background-size: contain;
+  }
+}
+
 .announcements-header {
   height: auto;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   display: inline-block;
   flex: 1 0 100%;
   position: inherit;
   min-width: 100%;
   /* Use media queries to resize the height I guess? Or figure out background image properties so that the image stays responsive */
   height: 1200px;
-  background-image: url(../public/orange_background.png);
+  background-image: url("../images/announcements_new.png");
   background-repeat: no-repeat;
   display: inline-block;
   flex: 1 0 100%;

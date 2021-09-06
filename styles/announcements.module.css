@@ -1,63 +1,63 @@
 /* Styles for announcements page */
 .announcementList {
-	min-width: 80vh;
-	margin-top: -30vh;
-	margin-bottom: 10vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+  max-width: 100%;
+  /* margin-top: -30vh; */
+  margin-bottom: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .announcement {
-	border: 1px solid gray;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	margin: 2vh 4vh;
-	padding: 2vh 4vh;
+  border: 1px solid gray;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 2vh 4vh;
+  padding: 2vh 4vh;
 }
 
 .annMessage {
-	font-family: 'backissues';
-	margin-left: 1vh;
-	font-size: larger;
+  font-family: "backissues";
+  margin-left: 1vh;
+  font-size: larger;
 }
 
 .label {
-	height: 80px;
-	width: 200px;
-	border: 2px solid black;
-	font-family: 'backissues';
-	font-weight: 600;
-	font-size: x-large;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  height: 80px;
+  width: 200px;
+  border: 2px solid black;
+  font-family: "backissues";
+  font-weight: 600;
+  font-size: x-large;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .events {
-	background-color: #1594D9;
-	color: white;
+  background-color: #1594d9;
+  color: white;
 }
 
 .judging {
-	background-color: #FF5C00;
-	color: white;
+  background-color: #ff5c00;
+  color: white;
 }
 
 .sponsor {
-	background-color: #FFE62B;
-	color: black;
+  background-color: #ffe62b;
+  color: black;
 }
 
 .misc {
-	background-color: #000000;
-	color: white;
+  background-color: #000000;
+  color: white;
 }
 
 .food,
 .logistics {
-	background-color: #FF0000;
-	color: white;
+  background-color: #ff0000;
+  color: white;
 }
