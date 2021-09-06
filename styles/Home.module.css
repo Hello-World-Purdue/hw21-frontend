@@ -246,10 +246,10 @@
 
 /*https://www.w3schools.com/howto/howto_js_topnav.asp*/
 .topNav {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 1);
   overflow: hidden;
   font-family: BackIssuesBB;
-  padding: 0 20px;
+  padding: 10px 10px;
 }
 
 /* Style the links inside the navigation bar */
@@ -533,8 +533,9 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
   outline-offset: -0.3vw;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 500px) {
   .faq_main {
+    margin-top: -40vh;
     background-image: none;
   }
   .faq_header {
