@@ -7,14 +7,17 @@ import { Layout } from "../Components/Layout";
 import {Row} from 'react-bootstrap';
 import { sponsors } from "../util/sponsors";
 import { aboutUs } from "../util/about";
+import AuthContext from "../context/AuthContext";
+import { useContext } from "react";
 export default function Index() {
+  const {isAuthenticated} = useContext(AuthContext)
   return (
     <div className={styles.resources}>
       <Layout>
         <Header headerImgClass="index-header">
           {/* <img src="../images/logo.png"></img> */}
           <button className="apply-now-button">
-            <a style={{ textDecoration: 'none', color: 'white' }} href="/appPage">Apply now!</a>
+            <a style={{ textDecoration: 'none', color: 'white' }} href={isAuthenticated ? "/appPage": "/auth/login"}>Apply now!</a>
           </button>
           {/* TODO: Add Helloworld img , rocket img and apply now button  */}
         </Header>
