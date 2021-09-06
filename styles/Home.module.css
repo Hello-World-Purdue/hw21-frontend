@@ -246,10 +246,10 @@
 
 /*https://www.w3schools.com/howto/howto_js_topnav.asp*/
 .topNav {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 1);
   overflow: hidden;
   font-family: BackIssuesBB;
-  padding: 0 20px;
+  padding: 10px 10px;
 }
 
 /* Style the links inside the navigation bar */

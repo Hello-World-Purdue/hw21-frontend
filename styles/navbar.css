@@ -7,7 +7,6 @@
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
-    /*  */
     background-color: #FF5C00;
     font-family: BackIssuesBB;
     padding:6px 10px;
@@ -18,18 +17,16 @@
     background-image: url("../images/hamburger_menu.png");
 }
 
-.navbar-dark .navbar-toggler-icon{
-}
 .navbar-dark .navbar-toggler{
     border:none;
 }
 
 
-    .navbar-toggler:focus {
-        text-decoration: none;
-        outline: 0;
-        box-shadow: 0 0 0 0rem;
-        filter: brightness(70%);
-     }
+.navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0;
+    box-shadow: 0 0 0 0rem;
+    filter: brightness(70%);
+}
 
 
