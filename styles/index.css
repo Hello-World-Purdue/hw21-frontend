@@ -215,6 +215,26 @@
   }
 }
 
+.date-and-why-us-section {
+  position: relative;
+}
+
+@media screen and (min-width: 800px) {
+  .date-section::after {
+    content: url("/planet.png");
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .why-us-section::after {
+    content: url("/planet-left.png");
+    position: absolute;
+    left: 0;
+    bottom: -2.5%;
+  }
+}
+
 .why-us-paragraph {
   font-family: "Franklin Gothic Demi Condensed";
   color: #ffe62b;
