@@ -375,17 +375,39 @@
   background-size: 100% 900px;
 }
 
+.coming-soon {
+  align-items: center;
+}
+
 .schedule-header {
   height: auto;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+  display: inline-block;
+  flex: 1 0 100%;
+  position: inherit;
+  min-width: 100%;
+  /* Use media queries to resize the height I guess? Or figure out background image properties so that the image stays responsive */
+  height: 800px;
+  background-image: url("../images/schedule.png");
+  background-repeat: no-repeat;
+  display: inline-block;
+  flex: 1 0 100%;
+  position: inherit;
+  background-size: 100% 900px;
+}
+
+.sponsor-header {
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: contain;
   display: inline-block;
   flex: 1 0 100%;
   position: inherit;
   min-width: 100%;
   /* Use media queries to resize the height I guess? Or figure out background image properties so that the image stays responsive */
   height: 1200px;
-  background-image: url("../images/schedules_background.png");
+  background-image: url("../images/sponsors_new.png");
   background-repeat: no-repeat;
   display: inline-block;
   flex: 1 0 100%;
@@ -416,10 +438,34 @@
     height: 900px;
     background-size: contain;
   }
+  .sponsor-header {
+    height: 900px;
+    background-size: contain;
+  }
+  .schedule-header {
+    height: 900px;
+    background-size: contain;
+  }
+  .announcements-header {
+    height: 900px;
+    background-size: contain;
+  }
 }
 
 @media screen and (max-width: 900px) {
   .faq-header {
+    height: 700px;
+    background-size: contain;
+  }
+  .schedule-header {
+    height: 700px;
+    background-size: contain;
+  }
+  .sponsor-header {
+    height: 700px;
+    background-size: contain;
+  }
+  .announcements-header {
     height: 700px;
     background-size: contain;
   }
@@ -430,19 +476,31 @@
     height: 60vh;
     background-size: contain;
   }
+  .sponsor-header {
+    height: 60vh;
+    background-size: contain;
+  }
+  .schedule-header {
+    height: 30vh;
+    background-size: contain;
+  }
+  .announcements-header {
+    height: 30vh;
+    background-size: contain;
+  }
 }
 
 .announcements-header {
   height: auto;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   display: inline-block;
   flex: 1 0 100%;
   position: inherit;
   min-width: 100%;
   /* Use media queries to resize the height I guess? Or figure out background image properties so that the image stays responsive */
   height: 1200px;
-  background-image: url(../public/orange_background.png);
+  background-image: url("../images/announcements_new.png");
   background-repeat: no-repeat;
   display: inline-block;
   flex: 1 0 100%;

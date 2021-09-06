@@ -5,6 +5,7 @@ import React, { FC, Fragment } from 'react';
 import { Layout } from '../Components/Layout';
 import {Event} from '../Components/Event';
 import { Header } from '../Components/Header';
+import Image from 'next/image';
 
 export interface EventsData {
   name: string,
@@ -100,17 +101,19 @@ export default function Schedule() {
       {/* nav bar */}
       <Layout>
       <Header headerImgClass="schedule-header">
-         <div className={styles.header_text}>
+         {/* <div className={styles.header_text}>
        <h1 className={styles.header_heading}>SCHEDULE</h1>
                 <p className={styles.header_description}>SEE WHAT OUR SPONSORS HAVE TO OFFER</p>
-                </div>
+                </div> */}
        </Header>
-       
-       <Fragment>
+       <div style={{textAlign: 'center'}}>
+          <Image className="coming-soon" src='/coming_soon.png' height={700} width={700}></Image>
+       </div>
+       {/* <Fragment>
           <Event eventsData={eventsData} 
               headingColumns={['name', 'times', 'locations', 'details']}
           />
-        </Fragment>
+        </Fragment> */}
       </Layout>
     </div>
   )

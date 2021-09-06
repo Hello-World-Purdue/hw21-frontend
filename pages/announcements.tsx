@@ -37,12 +37,12 @@ function Announcements() {
 		<Fragment>
 			<Layout>
 				<Header headerImgClass="announcements-header">
-					<div className={homeStyles.header_text}>
+					{/* <div className={homeStyles.header_text}>
 						<h1 className={homeStyles.header_heading}>ANNOUNCEMENTS</h1>
 						<p className={homeStyles.header_description}>
 							KEEP YOURSELF UPDATED WITH WHAT'S HAPPENING
 						</p>
-					</div>
+					</div> */}
 				</Header>
 				<div className={styles.announcementList}>
 					{annList.map((announcement) => {

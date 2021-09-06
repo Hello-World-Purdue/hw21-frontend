@@ -12,11 +12,11 @@ export default function Sponsors() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-      <Header headerImgClass="schedule-header">
-         <div className={styles.header_text}>
+      <Header headerImgClass="sponsor-header">
+         {/* <div className={styles.header_text}>
        <h1 className={styles.header_heading}>SPONSORS</h1>
                 <p className={styles.header_description}>SEE WHAT OUR SPONSORS HAVE TO OFFER</p>
-                </div>
+                </div> */}
        </Header>
     
       </Layout>
