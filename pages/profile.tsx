@@ -58,7 +58,7 @@ export default function Profile() {
 					<ProfileInfo header="Email" placeholder={email} />
 					<ProfileInfo header="Application Status" placeholder={status} />
 					<div className="d-flex flex-column">
-						<button onClick={onEdit} className={styles.profile_button}>
+						<button onClick={onEdit} style={{margin: '10px'}} className={styles.profile_button}>
 							EDIT PROFILE
 						</button>
 						<button className={styles.profile_button} style={{margin: '10px', background: 'red'}}>
