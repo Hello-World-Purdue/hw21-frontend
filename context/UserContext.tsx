@@ -128,7 +128,7 @@ export const UserContextProvider = (props: any) => {
 
             setState({
                 ...state,
-                application: res.data,
+                application: res.data.app,
             });
         } catch (err) {
             if (err.response) {

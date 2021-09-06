@@ -32,7 +32,7 @@ export default function Edit() {
 	const userState = {
 		name: user?.name || "",
 		email: user?.email || "",
-		status: user?.status || "Not Applied",
+		status: user?.application?.statusPublic || "Not Applied",
 	};
 
 	const { name, email, status } = userState;
