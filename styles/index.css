@@ -159,6 +159,9 @@
 }
 
 @media screen and (min-width: 1500px) {
+  .faq-header {
+    height: 110vh;
+  }
   .index-header {
     /* Bruh the size is not changing ughhhh, TODO */
     min-height: 110vh;
@@ -166,6 +169,9 @@
 }
 
 @media screen and (min-width: 2500px) {
+  .faq-header {
+    height: 150vh;
+  }
   .index-header {
     /* Bruh the size is not changing ughhhh, TODO */
     min-height: 150vh;
@@ -390,19 +396,40 @@
 .faq-header {
   height: auto;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   display: inline-block;
   flex: 1 0 100%;
   position: inherit;
   min-width: 100%;
   /* Use media queries to resize the height I guess? Or figure out background image properties so that the image stays responsive */
   height: 1200px;
-  background-image: url("../images/faq_background.png");
+  background-image: url("../images/faq_new.png");
   background-repeat: no-repeat;
   display: inline-block;
   flex: 1 0 100%;
   position: inherit;
   background-size: 100% 900px;
+}
+
+@media screen and (max-width: 1030px) {
+  .faq-header {
+    height: 900px;
+    background-size: contain;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .faq-header {
+    height: 700px;
+    background-size: contain;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .faq-header {
+    height: 60vh;
+    background-size: contain;
+  }
 }
 
 .announcements-header {

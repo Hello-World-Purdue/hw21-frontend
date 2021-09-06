@@ -14,12 +14,12 @@ export default function Faq() {
     <Layout>
       <div className="faq">
         <Header headerImgClass="faq-header">
-          <div className={styles.header_text}>
+          {/* <div className={styles.header_text}>
             <h1 className={styles.header_heading}>FAQ</h1>
             <p className={styles.header_description}>
               FREQUENTLY ASKED QUESTIONS
             </p>
-          </div>
+          </div> */}
         </Header>
         <div className={styles.faq_main}>
           <div className={styles.faq_content}>{faqList}</div>
