@@ -7,14 +7,19 @@ import { Layout } from "../Components/Layout";
 import {Row} from 'react-bootstrap';
 import { sponsors } from "../util/sponsors";
 import { aboutUs } from "../util/about";
+import AuthContext from "../context/AuthContext";
+import { useContext } from "react";
+import { useRouter } from "next/router";
 export default function Index() {
+  const {isAuthenticated} = useContext(AuthContext)
+  const router = useRouter()
   return (
     <div className={styles.resources}>
       <Layout>
         <Header headerImgClass="index-header">
           {/* <img src="../images/logo.png"></img> */}
           <button className="apply-now-button">
-            <a style={{ textDecoration: 'none', color: 'white' }} href="/appPage">Apply now!</a>
+            <a style={{ textDecoration: 'none', color: 'white' }} href={isAuthenticated ? "/appPage": "/auth/login"}>Apply now!</a>
           </button>
           {/* TODO: Add Helloworld img , rocket img and apply now button  */}
         </Header>
@@ -30,7 +35,7 @@ export default function Index() {
               <p className="date-paragraph"><div className={styles["orange-rectangle"]}></div>Meet us there.</p>
             </Row>
             <br/>
-            <button className="date-button">VIEW SCHEDULE</button>
+            <button className="date-button" onClick={() => {router.push('/schedule')}}>VIEW SCHEDULE</button>
             {/* <Image src="/planet.png"layout='fill'
              objectFit='contain'></Image> */}
           </div>

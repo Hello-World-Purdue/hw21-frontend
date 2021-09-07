@@ -2,6 +2,8 @@ import React, { useState, useContext, useEffect } from "react";
 import AuthContext from "./AuthContext";
 import axios from "axios";
 
+axios.defaults.baseURL = (process.env.NODE_ENV === 'production') ? 'https://helloworldpurdue-api.herokuapp.com': ''
+
 const initialState = {
     application: null,
     user: null,
@@ -42,7 +44,10 @@ export const UserContextProvider = (props: any) => {
                 user: res.data,
             });
         } catch (err) {
-            console.error(err.message);
+            if (err.response) {
+				return Promise.reject(err.response.data.error)
+			}
+			return Promise.reject(err.message)
         }
     };
 
@@ -56,7 +61,10 @@ export const UserContextProvider = (props: any) => {
                 application: res.data,
             });
         } catch (err) {
-            throw new Error(err);
+            if (err.response) {
+				return Promise.reject(err.response.data.error)
+			}
+			return Promise.reject(err.message)
         }
     };
 
@@ -70,7 +78,10 @@ export const UserContextProvider = (props: any) => {
                 application: res.data,
             });
         } catch (err) {
-            throw new Error(err);
+            if (err.response) {
+				return Promise.reject(err.response.data.error)
+			}
+			return Promise.reject(err.message)
         }
     };
 
@@ -91,7 +102,10 @@ export const UserContextProvider = (props: any) => {
                 user: res.data.user,
             });
         } catch (err) {
-            throw new Error(err);
+            if (err.response) {
+				return Promise.reject(err.response.data.error)
+			}
+			return Promise.reject(err.message)
         }
     };
 
@@ -114,10 +128,13 @@ export const UserContextProvider = (props: any) => {
 
             setState({
                 ...state,
-                application: res.data,
+                application: res.data.app,
             });
         } catch (err) {
-            throw new Error(err);
+            if (err.response) {
+				return Promise.reject(err.response.data.error)
+			}
+			return Promise.reject(err.message)
         }
     };
 

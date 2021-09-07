@@ -131,7 +131,7 @@ const SignupForm: React.FC<{ signupUser: (user) => void }> = (props) => {
 				</Form.Group>
 
 				<Form.Group className={styles.formField}>
-					<Form.Label>USERNAME</Form.Label>
+					<Form.Label>PURDUE EMAIL</Form.Label>
 					<Form.Control
 						className={usernameClasses.join(" ")}
 						onChange={handleUsername}

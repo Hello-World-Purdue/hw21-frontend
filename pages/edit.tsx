@@ -4,17 +4,26 @@ import UserContext from "../context/UserContext";
 import AlertContext from "../context/AlertContext";
 
 import EditProfileForm from "../Components/Forms/EditProfileForm";
+import AuthContext from "../context/AuthContext";
 
 export default function Edit() {
 	const router = useRouter();
 
 	const userContext = useContext(UserContext);
 	const alertContext = useContext(AlertContext);
+	const authContext = useContext(AuthContext);
 
 	useEffect(() => {
-		if (!userContext.user) {
-			alertContext.setAlert("error", "Woah There", "You are not logged in.");
+		if (!localStorage.getItem('userdata')) {
 			router.push("/auth/login");
+		}
+		if (typeof window !== "undefined") {
+			let userdata = "";
+			userdata = localStorage.getItem("userdata");
+
+			if (userdata !== "") {
+				return;
+			}
 		}
 	}, [userContext]);
 
@@ -23,7 +32,7 @@ export default function Edit() {
 	const userState = {
 		name: user?.name || "",
 		email: user?.email || "",
-		status: user?.application || "Not Applied",
+		status: user?.application?.statusPublic || "Not Applied",
 	};
 
 	const { name, email, status } = userState;

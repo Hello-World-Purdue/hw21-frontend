@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-// const userData = localStorage.getItem('userdata');
+axios.defaults.baseURL = (process.env.NODE_ENV == 'production') ? 'https://helloworldpurdue-api.herokuapp.com': ''
 
 const initialState = {
 	isAuthenticated: false,
@@ -61,7 +61,10 @@ export const AuthContextProvider = (props: any) => {
 				token: res.data.token,
 			});
 		} catch (err) {
-			throw new Error(err);
+			if (err.response) {
+				return Promise.reject(err.response.data.error)
+			}
+			return Promise.reject(err.message)
 		}
 	};
 
@@ -90,7 +93,10 @@ export const AuthContextProvider = (props: any) => {
 				token: res.data.token,
 			});
 		} catch (err) {
-			throw new Error(err.message);
+			if (err.response) {
+				return Promise.reject(err.response.data.error)
+			}
+			return Promise.reject(err.message)
 		}
 	};
 
@@ -106,7 +112,10 @@ export const AuthContextProvider = (props: any) => {
 				},
 			});
 		} catch (err) {
-			throw new Error(err);
+			if (err.response) {
+				return Promise.reject(err.response.data.error)
+			}
+			return Promise.reject(err.message)
 		}
 	};
 
@@ -125,7 +134,10 @@ export const AuthContextProvider = (props: any) => {
 				},
 			});
 		} catch (err) {
-			throw new Error(err);
+			if (err.response) {
+				return Promise.reject(err.response.data.error)
+			}
+			return Promise.reject(err.message)
 		}
 	};
 

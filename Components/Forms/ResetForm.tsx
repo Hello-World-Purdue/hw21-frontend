@@ -4,8 +4,10 @@ import CustomButton from "../CustomButton";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "../../styles/forms.module.css";
+import { useRouter } from 'next/router';
 
 const ResetForm: React.FC<{ updatePassword: (password) => void }> = (props) => {
+	const {query} = useRouter()
 	const [resetLink, setResetLink] = useState<string>('');
     const [passOne, setPassOne] = useState<string>("");
 	const [passTwo, setPassTwo] = useState<string>("");
@@ -77,7 +79,7 @@ const ResetForm: React.FC<{ updatePassword: (password) => void }> = (props) => {
 		const formData = {
 			password: passOne,
 			passwordConfirm: passTwo,
-			token: resetLink,
+			token: query.token
 		}
 
 		props.updatePassword(formData);
@@ -86,7 +88,7 @@ const ResetForm: React.FC<{ updatePassword: (password) => void }> = (props) => {
     return (
         <Card className={styles.formContainer}>
 			<Form className={styles.form} onSubmit={submitForm}>
-			<Form.Group className={styles.formField}>
+			{/* <Form.Group className={styles.formField}>
 					<Form.Label>ENTER RESET LINK</Form.Label>
 					<Form.Control
 						onChange={handleResetLink}
@@ -94,7 +96,7 @@ const ResetForm: React.FC<{ updatePassword: (password) => void }> = (props) => {
 						name="resetLink"
 						required
 					/>
-				</Form.Group>
+				</Form.Group> */}
 
 				<Form.Group className={styles.formField}>
 					<Form.Label>ENTER NEW PASSWORD</Form.Label>

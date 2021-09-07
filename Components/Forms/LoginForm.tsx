@@ -39,7 +39,7 @@ const LoginForm: React.FC<{ loginUser: (user) => void }> = (props) => {
 		<Card className={styles.formContainer}>
 			<Form className={styles.form} onSubmit={submitForm}>
 				<Form.Group className={styles.formField}>
-					<Form.Label>LOGIN</Form.Label>
+					<Form.Label>EMAIL</Form.Label>
 					<Form.Control
 						onChange={loginHandler}
 						type="text"
