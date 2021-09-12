@@ -50,6 +50,7 @@ function Announcements() {
       console.log("Received: '" + message.data + "'");
       console.log("received: %s", message);
       const msg = JSON.parse(message.data + "");
+      console.log(annList);
       setAnnList([...annList, msg]);
       // }
     };
