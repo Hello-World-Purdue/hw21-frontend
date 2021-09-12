@@ -99,18 +99,14 @@ export const UserContextProvider = (props: any) => {
         }
       );
 
-      let userData: any = localStorage.getItem("userdata");
-      if (userData) {
-        userData = JSON.parse(userData);
-        userData.application = res.data;
-        localStorage.setItem("userdata", JSON.stringify(userData));
-      }
+      let userData = res.data.user;
+      localStorage.setItem("userdata", JSON.stringify(userData));
 
       setState({
         ...state,
         user: userData,
       });
-      return Promise.resolve(res.data.rsvp);
+      return Promise.resolve(res.data.user.rsvp);
     } catch (err) {
       if (err.response) {
         return Promise.reject(err.response.data.error);
