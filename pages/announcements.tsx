@@ -29,6 +29,7 @@ function Announcements() {
   const { getAnnouncements } = useContext(UserContext);
   const { isAuthenticated, user, logout } = useContext(AuthContext);
   const [annList, setAnnList] = useState<Announcement[]>(list);
+  const [ws, setWs] = useState<any>();
 
   const setupWS = () => {
     const url =
@@ -46,28 +47,40 @@ function Announcements() {
     };
 
     ws.onmessage = function (message) {
-      // if (message === 'utf8') {
       console.log("Received: '" + message.data + "'");
       console.log("received: %s", message);
       const msg = JSON.parse(message.data + "");
       console.log(annList);
       setAnnList([...annList, msg]);
-      // }
     };
 
     ws.onclose = function () {
       console.log("echo-protocol Connection Closed");
     };
+
+    setWs(ws);
   };
 
   useEffect(() => {
-    setupWS();
     console.log("use effect - announcement");
     getAnnouncements().then((d) => {
       console.log(d.announcements);
-      setAnnList(d.announcements);
+      setAnnList([...annList, ...d.announcements]);
     });
+    setupWS();
   }, []);
+
+  useEffect(() => {
+    if (ws) {
+      ws.onmessage = function (message) {
+        console.log("Received: '" + message.data + "'");
+        console.log("received: %s", message);
+        const msg = JSON.parse(message.data + "");
+        console.log(annList);
+        setAnnList([...annList, msg]);
+      };
+    }
+  }, [annList]);
 
   return (
     <div className={styles.announcementContainer}>
