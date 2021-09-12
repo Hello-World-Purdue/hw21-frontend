@@ -11,27 +11,27 @@ interface Announcement {
 	message: string;
 }
 
-// const list: Announcement[] = [
-//   {
-//     type: "food",
-//     message: "LUNCH - AVAILABLE IN ROOM 3084",
-//   },
-//   {
-//     type: "sponsor",
-//     message: "SPONSOR EVENT - ROOM 2124",
-//   },
-//   {
-//     type: "events",
-//     message: "SMASH TOURNAMENT - ROOM 1140",
-//   },
-//   {
-//     type: "judging",
-//     message: "JUDGING WILL BEGIN IN 1 HOUR",
-//   },
-// ];
+const list: Announcement[] = [
+  {
+    type: "food",
+    message: "LUNCH - AVAILABLE IN ROOM 3084",
+  },
+  {
+    type: "sponsor",
+    message: "SPONSOR EVENT - ROOM 2124",
+  },
+  {
+    type: "events",
+    message: "SMASH TOURNAMENT - ROOM 1140",
+  },
+  {
+    type: "judging",
+    message: "JUDGING WILL BEGIN IN 1 HOUR",
+  },
+];
 
 function Announcements() {
-	//   const [annList, setAnnList] = useState<Announcement[]>(list);
+	  const [annList, setAnnList] = useState<Announcement[]>(list);
 
 	return (
 		<div className={styles.announcementContainer}>
@@ -44,7 +44,7 @@ function Announcements() {
 						</p>
 					</div> */}
 				</Header>
-				{/* <div className={styles.announcementList}>
+				<div className={styles.announcementList}>
           {annList.map((announcement) => {
             return (
               <div className={styles.announcement}>
@@ -53,10 +53,10 @@ function Announcements() {
               </div>
             );
           })}
-        </div> */}
-				<div style={{ textAlign: "center", marginBottom: '10vh' }}>
+        </div>
+				{/* <div style={{ textAlign: "center", marginBottom: '10vh' }}>
 					<h4 style={{ fontFamily: "backissues" }}>NO ANNOUNCEMENTS YET.</h4>
-				</div>
+				</div> */}
 			</Layout>
 		</div>
 	);
