@@ -11,6 +11,8 @@ const initialState = {
 
 const UserContext = React.createContext({
     ...initialState,
+    makeAnnouncement: (ancmnt: any) => {},
+    getAnnouncements: (): any => {},
     getUsers: () => { },
     getUser: (id: String) => { },
     getUserApp: (id: String) => { },
@@ -67,6 +69,36 @@ export const UserContextProvider = (props: any) => {
 			return Promise.reject(err.message)
         }
     };
+    
+    // Get application (user id)
+    const getAnnouncements = async () => {
+        try {
+            const res = await axios.get(`/api/announcement/`);
+            return Promise.resolve(res.data)
+        } catch (err) {
+            if (err.response) {
+				return Promise.reject(err.response.data.error)
+			}
+			return Promise.reject(err.message)
+        }
+    };
+
+    const newAnnouncementHandler = async (ancmnt: any) => {
+		try {
+			const res = await axios.post("/api/announcement", ancmnt, {
+				headers: {
+					"Content-Type": "application/json",
+				},
+			});
+
+			return Promise.resolve(res);
+		} catch (err) {
+			if (err.response) {
+				return Promise.reject(err.response.data.error)
+			}
+			return Promise.reject(err.message)
+		}
+	};
 
     // Get application (authorized user)
     const getAuthApp = async () => {
@@ -141,6 +173,8 @@ export const UserContextProvider = (props: any) => {
     return (
         <UserContext.Provider
             value={{
+                getAnnouncements: getAnnouncements,
+                makeAnnouncement: newAnnouncementHandler,
                 user: state.user,
                 application: state.application,
                 getUsers,
