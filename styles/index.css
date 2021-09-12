@@ -14,7 +14,7 @@
   position: relative;
   min-width: 100%;
   min-height: 35vh; /*Mobile devices*/
-  background-image: url(../public/index_background.png);
+  background-image: url(../public/landing.png);
   background-repeat: no-repeat;
   display: inline-block;
   flex: 1 0 100%;
@@ -162,7 +162,7 @@
   /* For desktop: */
   .index-header {
     /* Bruh the size is not changing ughhhh, TODO */
-    height: 800px;
+    height: 900px; /* was 800px in the previous picture*/
   }
 
   .apply-now-button {
