@@ -20,6 +20,7 @@ interface Announcement {
     | "Sponsor"
     | "Miscellaneous";
   body: string;
+  updatedAt: string;
 }
 
 const list: Announcement[] = [];
@@ -49,13 +50,7 @@ function Announcements() {
       console.log("Received: '" + message.data + "'");
       console.log("received: %s", message);
       const msg = JSON.parse(message.data + "");
-      setAnnList([
-        {
-          label: msg.label,
-          body: msg.body,
-        },
-        ...annList,
-      ]);
+      setAnnList([...annList, msg]);
       // }
     };
 
@@ -83,14 +78,41 @@ function Announcements() {
 
         {annList && annList.length > 0 ? (
           <div className={styles.announcementList}>
-            {annList.map((announcement) => {
-              return (
-                <div className={styles.announcement}>
-                  <AnnouncementLabel annType={announcement.label} />
-                  <div className={styles.annMessage}>{announcement.body}</div>
-                </div>
-              );
-            })}
+            {annList
+              .sort((a, b) => Date.parse(b.updatedAt) - Date.parse(a.updatedAt))
+              .map((announcement) => {
+                return (
+                  <div className={styles.announcement}>
+                    <div className="row" style={{ width: "100%" }}>
+                      <div className="col">
+                        <AnnouncementLabel annType={announcement.label} />
+                      </div>
+                      <div className="w-100"></div>
+                      <div
+                        className="col announcements-time"
+                        // style={{
+                        //   textAlign: "right",
+                        //   fontFamily: "backissues",
+                        //   fontWeight: 600,
+                        // }}
+                      >
+                        {new Date(announcement.updatedAt).toLocaleString(
+                          "en-US",
+                          {
+                            weekday: "short", // long, short, narrow
+                            day: "numeric", // numeric, 2-digit
+                            year: "numeric", // numeric, 2-digit
+                            month: "short", // numeric, 2-digit, long, short, narrow
+                            hour: "numeric", // numeric, 2-digit
+                            minute: "numeric", // numeric, 2-digit
+                          }
+                        )}
+                      </div>
+                    </div>
+                    <div className={styles.annMessage}>{announcement.body}</div>
+                  </div>
+                );
+              })}
           </div>
         ) : (
           <div style={{ textAlign: "center", marginBottom: "10vh" }}>

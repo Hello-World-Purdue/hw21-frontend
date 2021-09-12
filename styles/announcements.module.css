@@ -31,6 +31,11 @@
   font-size: larger;
 }
 
+.dateTime {
+  font-family: "backissues";
+  font-weight: 600;
+}
+
 .label {
   /* height: 80px; */
   /* width: 200px; */
@@ -42,6 +47,7 @@
   font-size: 1.2em;
   display: flex;
   align-items: center;
+  margin-bottom: 5px;
   justify-content: center;
 }
 

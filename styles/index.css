@@ -83,8 +83,20 @@
   margin-bottom: 20px;
 }
 
+.announcements-time {
+  text-align: right;
+  font-family: "backissues";
+  font-weight: 600;
+}
+
 /*MOBILE*/
 @media only screen and (max-width: 600px) {
+  .announcements-time {
+    text-align: left;
+    font-family: "backissues";
+    font-weight: 600;
+  }
+
   .apply-now-button {
     border: 2px solid black;
     background-color: #ff0009;
