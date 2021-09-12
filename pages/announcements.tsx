@@ -12,6 +12,7 @@ interface Announcement {
   message: string;
 }
 
+
 const list: Announcement[] = [];
 
 function Announcements() {
@@ -48,6 +49,7 @@ function Announcements() {
           </div>
         </Header>
         <div className={styles.announcementList}>
+
           {annList.map((announcement) => {
             return (
               <div className={styles.announcement}>
@@ -57,12 +59,12 @@ function Announcements() {
             );
           })}
         </div>
-        <div style={{ textAlign: "center", marginBottom: "10vh" }}>
-          <h4 style={{ fontFamily: "backissues" }}>NO ANNOUNCEMENTS YET.</h4>
-        </div>
-      </Layout>
-    </div>
-  );
+				{/* <div style={{ textAlign: "center", marginBottom: '10vh' }}>
+					<h4 style={{ fontFamily: "backissues" }}>NO ANNOUNCEMENTS YET.</h4>
+				</div> */}
+			</Layout>
+		</div>
+	);
 }
 
 export default Announcements;

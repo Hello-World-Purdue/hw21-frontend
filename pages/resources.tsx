@@ -5,6 +5,7 @@ import { Header } from "../Components/Header";
 import { Layout } from "../Components/Layout";
 import { Resource } from "../Components/Resource";
 import React, { FC, Fragment } from "react";
+import Image from "next/image";
 
 export interface ResourcesData {
   name: string;
@@ -55,20 +56,29 @@ export default function Resources() {
 
       <Layout>
         <Header headerImgClass="resources-header">
-          <div className={styles.header_text}>
+          {/* <div className={styles.header_text}>
             <h1 className={styles.header_heading}>RESOURCES</h1>
             <p className={styles.header_description}>
               SEE WHAT OUR SPONSORS HAVE TO OFFER
             </p>
-          </div>
+          </div> */}
         </Header>
 
-        <Fragment>
+        <div style={{ textAlign: "center" }}>
+          <Image
+            className="coming-soon"
+            src="/coming_soon.png"
+            height={700}
+            width={700}
+          ></Image>
+        </div>
+
+        {/* <Fragment>
           <Resource
             resourcesData={resourcesData}
             headingColumns={["name", "details"]}
           />
-        </Fragment>
+        </Fragment> */}
       </Layout>
     </div>
   );

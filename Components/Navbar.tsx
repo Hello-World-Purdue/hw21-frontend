@@ -12,6 +12,11 @@ export const Navbar: FC<NavbarProps> = () => {
 	const { isAuthenticated, user, logout } = useContext(AuthContext);
 	const { setAlert } = useContext(AlertContext)
 	const router = useRouter();
+
+	const onProfileClicked = () => {
+		router.push('/profile')
+	}
+
 	const onLoginRegisterClicked = () => {
 		router.push('/auth/login');
 	};
@@ -70,19 +75,22 @@ export const Navbar: FC<NavbarProps> = () => {
 									FAQ's
 								</a>
 							</li>
-							{isAuthenticated && user.role === "ADMIN" && <li className="nav-item">
+							{(isAuthenticated && user.role === "ADMIN") && <li className="nav-item">
 								<a className="nav-link" href="/admin_dashboard">
 									Admin
 								</a>
 							</li>}
-							{isAuthenticated && <li className="nav-item">
+							{/* {isAuthenticated && <li className="nav-item">
 								<a className="nav-link" href="/profile">
 									Profile
 								</a>
-							</li>}
+							</li>} */}
 						</ul>
-						<div className="d-flex">{!isAuthenticated && <button onClick={onLoginRegisterClicked} className="login-register-button "> LOGIN/REGISTER</button>}
-							{isAuthenticated && <button onClick={onLogoutClicked} className="login-register-button"> LOGOUT</button>}</div>
+						<div className="d-flex">
+							{isAuthenticated && <button onClick={onProfileClicked} className="login-register-button" style={{marginRight: '10px'}}> PROFILE</button>}
+							{!isAuthenticated && <button onClick={onLoginRegisterClicked} className="login-register-button "> LOGIN/REGISTER</button>}
+							{isAuthenticated && <button onClick={onLogoutClicked} className="login-register-button"> LOGOUT</button>}
+						</div>
 					</div>
 				</div>
 			</nav>
