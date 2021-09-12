@@ -40,7 +40,9 @@ export default function Sponsors() {
                   height={sponsor.height / 2}
                 ></Image>
               </div>
-              <p className={styles.faq_questionText}>{sponsor.about}</p>
+              <p className={`${styles.faq_questionText} text-break`}>
+                {sponsor.about}
+              </p>
             </div>
           ))}
         </div>

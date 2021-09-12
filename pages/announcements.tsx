@@ -123,7 +123,9 @@ function Announcements() {
                         )}
                       </div>
                     </div>
-                    <div className={styles.annMessage}>{announcement.body}</div>
+                    <div className={`${styles.annMessage} text-break`}>
+                      {announcement.body}
+                    </div>
                   </div>
                 );
               })}
