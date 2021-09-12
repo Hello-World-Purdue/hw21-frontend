@@ -99,7 +99,7 @@ export const Navbar: FC<NavbarProps> = () => {
                 <button
                   onClick={onProfileClicked}
                   className="login-register-button"
-                  style={{ marginRight: "10px" }}
+                  style={{ marginRight: "10px", marginBottom: "4px" }}
                 >
                   {" "}
                   PROFILE
@@ -109,6 +109,7 @@ export const Navbar: FC<NavbarProps> = () => {
                 <button
                   onClick={onLoginRegisterClicked}
                   className="login-register-button "
+                  style={{ marginBottom: "4px" }}
                 >
                   {" "}
                   LOGIN/REGISTER
@@ -118,6 +119,7 @@ export const Navbar: FC<NavbarProps> = () => {
                 <button
                   onClick={onLogoutClicked}
                   className="login-register-button"
+                  style={{ marginBottom: "4px" }}
                 >
                   {" "}
                   LOGOUT

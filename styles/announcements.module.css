@@ -71,8 +71,12 @@
   color: white;
 }
 
-.food,
 .logistics {
   background-color: #ff0000;
+  color: white;
+}
+
+.food {
+  background-color: green;
   color: white;
 }
