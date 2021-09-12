@@ -30,15 +30,27 @@ export default function Profile() {
     }
   }, [userContext]);
 
+  const toggleRsvp = () => {
+    const { rsvp } = useContext(UserContext);
+    rsvp(user._id)
+      .then((isRsvp) => {
+        userState.rsvp = isRsvp;
+      })
+      .catch((e) => {
+        alertContext.setAlert("error", "Cannot RSVP", e.message);
+      });
+  };
+
   const user = userContext.user;
 
   const userState = {
     name: user?.name || "",
     email: user?.email || "",
     status: user?.application?.statusPublic || "Not Applied",
+    rsvp: user?.application?.rsvp || false,
   };
 
-  const { name, email, status } = userState;
+  const { name, email, status, rsvp } = userState;
 
   const onEdit = () => {
     router.push("/edit");
@@ -65,9 +77,15 @@ export default function Profile() {
             >
               EDIT PROFILE
             </button>
-            {/* <button className={styles.profile_button} style={{margin: '10px', background: 'red'}}>
-							<a style={{ textDecoration: 'none', color: 'white' }} href="/appPage">Apply now!</a>
-						</button> */}
+            {status === "Accepted" && (
+              <button
+                onClick={toggleRsvp}
+                className={styles.profile_button}
+                style={{ margin: "10px", background: "red", color: "white" }}
+              >
+                {rsvp ? "Remove RSVP" : "RSVP"}
+              </button>
+            )}
             <button
               className={styles.profile_button}
               style={{ margin: "10px", padding: "1px" }}
