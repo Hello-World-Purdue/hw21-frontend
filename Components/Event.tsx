@@ -172,7 +172,7 @@ export const Event: FC<EventProps> = (
     <div>
       {/* upcoming */}
       <div>
-        <p style={{ textAlign: "right", fontWeight: "bold", fontSize: "30px" }}>
+        <p style={{ textAlign: "right", fontWeight: "bold", fontSize: "2.5vh" }}>
           UPCOMING<br></br>EVENTS
         </p>
       </div>
@@ -194,7 +194,7 @@ export const Event: FC<EventProps> = (
 
       {/* past */}
       <div>
-        <p style={{ textAlign: "left", fontWeight: "bold", fontSize: "30px" }}>
+        <p style={{ textAlign: "left", fontWeight: "bold", fontSize: "2.5vh" }}>
           PAST<br></br>EVENTS
         </p>
       </div>
