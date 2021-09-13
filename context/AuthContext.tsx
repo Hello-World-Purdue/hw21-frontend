@@ -32,7 +32,7 @@ export const AuthContextProvider = (props: any) => {
   const [state, setState] = useState(initialState);
 
   useEffect(() => {
-    console.log("page reloaded");
+    // console.log("page reloaded");
     if (typeof window !== "undefined") {
       userdatastring = localStorage.getItem("userdata");
     }
@@ -41,14 +41,14 @@ export const AuthContextProvider = (props: any) => {
       userData = JSON.parse(userdatastring);
     }
 
-    console.log("userData", userData);
+    // console.log("userData", userData);
     setState({
       isAuthenticated: userData ? true : false,
       user: userData ? userData.user : null,
       token: userData ? userData.token : null,
     });
 
-    console.log("state set");
+    // console.log("state set");
   }, []);
 
   const loginHandler = async (user: any) => {

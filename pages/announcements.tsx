@@ -47,10 +47,10 @@ function Announcements() {
     };
 
     ws.onmessage = function (message) {
-      console.log("Received: '" + message.data + "'");
-      console.log("received: %s", message);
+      // console.log("Received: '" + message.data + "'");
+      // console.log("received: %s", message);
       const msg = JSON.parse(message.data + "");
-      console.log(annList);
+      // console.log(annList);
       setAnnList([...annList, msg]);
     };
 
@@ -64,7 +64,7 @@ function Announcements() {
   useEffect(() => {
     console.log("use effect - announcement");
     getAnnouncements().then((d) => {
-      console.log(d.announcements);
+      // console.log(d.announcements);
       setAnnList([...annList, ...d.announcements]);
     });
     setupWS();
@@ -73,10 +73,10 @@ function Announcements() {
   useEffect(() => {
     if (ws) {
       ws.onmessage = function (message) {
-        console.log("Received: '" + message.data + "'");
-        console.log("received: %s", message);
+        // console.log("Received: '" + message.data + "'");
+        // console.log("received: %s", message);
         const msg = JSON.parse(message.data + "");
-        console.log(annList);
+        // console.log(annList);
         setAnnList([...annList, msg]);
       };
     }
