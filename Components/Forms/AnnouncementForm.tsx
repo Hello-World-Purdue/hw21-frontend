@@ -19,7 +19,7 @@ export const announcementLabel = [
 
 const AnnouncementsForm: React.FC<{}> = (props) => {
   const [body, setBody] = useState<string>("");
-  const [label, setLabel] = useState<string>("");
+  const [label, setLabel] = useState<string>("Events");
   const { makeAnnouncement } = useContext(UserContext);
   const { setAlert } = useContext(AlertContext);
 
@@ -39,6 +39,7 @@ const AnnouncementsForm: React.FC<{}> = (props) => {
   };
 
   const labelHandler = (event) => {
+    console.log(label);
     setLabel(event.target.value);
   };
 
@@ -98,7 +99,7 @@ export const CreateAnnouncementsButton = () => (
       <div className="modal-dialog">
         <div className="modal-content">
           <div className="modal-header">
-            <h5 className="modal-title">Create Announcement</h5>
+            <h5 className="modal-title"></h5>
             <button
               type="button"
               className="btn-close"
