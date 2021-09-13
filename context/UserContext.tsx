@@ -22,7 +22,6 @@ const UserContext = React.createContext({
   getAuthApp: () => {},
   updateProfile: (id: String, formData: any) => {},
   apply: (id: String, appData: any) => {},
-  rsvp: (id: String): any => {},
 });
 
 export const UserContextProvider = (props: any) => {
@@ -79,34 +78,6 @@ export const UserContextProvider = (props: any) => {
     try {
       const res = await axios.get(`/api/announcement/`);
       return Promise.resolve(res.data);
-    } catch (err) {
-      if (err.response) {
-        return Promise.reject(err.response.data.error);
-      }
-      return Promise.reject(err.message);
-    }
-  };
-
-  const rsvp = async (id: String) => {
-    try {
-      const res = await axios.post(
-        "/api/users/${id}",
-        {},
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-
-      let userData = res.data.user;
-      localStorage.setItem("userdata", JSON.stringify(userData));
-
-      setState({
-        ...state,
-        user: userData,
-      });
-      return Promise.resolve(res.data.user.rsvp);
     } catch (err) {
       if (err.response) {
         return Promise.reject(err.response.data.error);
@@ -214,7 +185,6 @@ export const UserContextProvider = (props: any) => {
         getAuthApp,
         updateProfile,
         apply,
-        rsvp,
       }}
     >
       {props.children}

@@ -81,7 +81,7 @@ export const Navbar: FC<NavbarProps> = () => {
                   FAQ's
                 </a>
               </li>
-              {isAuthenticated && user.role === "ADMIN" && (
+              {isAuthenticated && user?.role === "ADMIN" && (
                 <li className="nav-item">
                   <a className="nav-link" href="/admin_dashboard">
                     Admin

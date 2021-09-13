@@ -86,9 +86,10 @@ function Announcements() {
     <div className={styles.announcementContainer}>
       <Layout>
         <Header headerImgClass="announcements-header"></Header>
-        {isAuthenticated && (user.role === "ADMIN" || user.role === "EXEC") && (
-          <CreateAnnouncementsButton />
-        )}
+        {isAuthenticated &&
+          (user?.role === "ADMIN" || user?.role === "EXEC") && (
+            <CreateAnnouncementsButton />
+          )}
 
         {annList && annList.length > 0 ? (
           <div className={styles.announcementList}>

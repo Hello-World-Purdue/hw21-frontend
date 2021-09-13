@@ -31,10 +31,21 @@ export default function Profile() {
   }, [userContext]);
 
   const toggleRsvp = () => {
-    const { rsvp } = useContext(UserContext);
+    const { rsvp } = authContext;
     rsvp(user._id)
       .then((isRsvp) => {
         userState.rsvp = isRsvp;
+        isRsvp
+          ? alertContext.setAlert(
+              "success",
+              "RSVP Successful",
+              "Yay!!! You have successfully RSVPed for HelloWorld 2021"
+            )
+          : alertContext.setAlert(
+              "success",
+              "Sorry to see you go...",
+              "You have taken revoked your RSVP for HelloWorld 2021"
+            );
       })
       .catch((e) => {
         alertContext.setAlert("error", "Cannot RSVP", e.message);
@@ -47,7 +58,7 @@ export default function Profile() {
     name: user?.name || "",
     email: user?.email || "",
     status: user?.application?.statusPublic || "Not Applied",
-    rsvp: user?.application?.rsvp || false,
+    rsvp: user?.rsvp || false,
   };
 
   const { name, email, status, rsvp } = userState;
