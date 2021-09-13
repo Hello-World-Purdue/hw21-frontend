@@ -57,19 +57,19 @@ export const Event: FC<EventProps> = (
 
     if (color == "red") {
       pastEventsDivs[index] = (
-        <div className={styles.blur}>
+        <div className={styles.blur} key={index}>
           <div className={styles.container_1r}>
             <div className={styles.event_resource_content}>
               <div className={styles.event_name}> {data.name}</div>
             </div>
-            <div className={styles.event_resource_content} key={index}>
+            <div className={styles.event_resource_content} >
               <div className={styles.event_text}>
                 <p>{data.times}</p>
                 <p>{data.locations}</p>
               </div>
             </div>
             <button
-              key={index}
+              // key={index}
               onClick={() => {
                 displayDetails(data.details);
               }}
@@ -83,19 +83,19 @@ export const Event: FC<EventProps> = (
     } else {
       //color == black
       pastEventsDivs[index] = (
-        <div className={styles.blur}>
+        <div className={styles.blur} key={index + 100}>
           <div className={styles.container_1b}>
             <div className={styles.event_resource_content}>
               <div className={styles.event_name}> {data.name}</div>
             </div>
-            <div className={styles.event_resource_content} key={index}>
+            <div className={styles.event_resource_content} >
               <div className={styles.event_text}>
                 <p>{data.times}</p>
                 <p>{data.locations}</p>
               </div>
             </div>
             <button
-              key={index}
+              // key={index}
               onClick={() => {
                 displayDetails(data.details);
               }}
@@ -120,18 +120,18 @@ export const Event: FC<EventProps> = (
 
     if (color == "red") {
       currEventsDivs[index] = (
-        <div className={styles.container_1r}>
+        <div className={styles.container_1r} key={index}>
           <div className={styles.event_resource_content}>
             <div className={styles.event_name}> {data.name}</div>
           </div>
-          <div className={styles.event_resource_content} key={index}>
+          <div className={styles.event_resource_content} >
             <div className={styles.event_text}>
               <p>{data.times}</p>
               <p>{data.locations}</p>
             </div>
           </div>
           <button
-            key={index}
+            // key={index}
             onClick={() => {
               displayDetails(data.details);
             }}
@@ -144,18 +144,18 @@ export const Event: FC<EventProps> = (
     } else {
       //color == black
       currEventsDivs[index] = (
-        <div className={styles.container_1b}>
+        <div className={styles.container_1b} key={index + 100}>
           <div className={styles.event_resource_content}>
             <div className={styles.event_name}> {data.name}</div>
           </div>
-          <div className={styles.event_resource_content} key={index}>
+          <div className={styles.event_resource_content} >
             <div className={styles.event_text}>
               <p>{data.times}</p>
               <p>{data.locations}</p>
             </div>
           </div>
           <button
-            key={index}
+            // key={index}
             onClick={() => {
               displayDetails(data.details);
             }}
@@ -172,7 +172,7 @@ export const Event: FC<EventProps> = (
     <div>
       {/* upcoming */}
       <div>
-        <p style={{ textAlign: "right", fontWeight: "bold" }}>
+        <p style={{ textAlign: "right", fontWeight: "bold", fontSize: "30px" }}>
           UPCOMING<br></br>EVENTS
         </p>
       </div>
@@ -187,14 +187,14 @@ export const Event: FC<EventProps> = (
       </div>
 
       <div className={styles.event_resource_grid}>
-        {currEventsDivs.map((r) => (
-          <div>{r}</div>
+        {currEventsDivs.map((r, index) => (
+          <div key={index}>{r}</div>
         ))}
       </div>
 
       {/* past */}
       <div>
-        <p style={{ textAlign: "left", fontWeight: "bold" }}>
+        <p style={{ textAlign: "left", fontWeight: "bold", fontSize: "30px" }}>
           PAST<br></br>EVENTS
         </p>
       </div>
@@ -203,160 +203,10 @@ export const Event: FC<EventProps> = (
       </div>
 
       <div className={styles.event_resource_grid}>
-        {pastEventsDivs.map((r) => (
-          <div>{r}</div>
+        {pastEventsDivs.map((r, index) => (
+          <div key={index}>{r}</div>
         ))}
       </div>
     </div>
   );
-
-  // return <div>
-  //         {rowData.map((data, index) => {
-  //           <div key={index}>
-  //           {(() => {
-  //             var color = 'red'
-  //             var orientation = 'left'
-  //                   console.log(index);
-  //             if ((index + 1) % 3 == 1) {
-  //               if (color == 'red') {
-
-  //                 color = 'black'
-  //               } else {
-  //                 color = 'red'
-  //               }
-  //               if (orientation == 'left') {
-  //                 orientation = 'right'
-  //               } else {
-  //                 orientation = 'left'
-  //               }
-  //             }
-
-  //             if ((color == 'red') && (orientation == 'right')) {
-  //               return (<div className={styles.container_1r} key={index}>
-  //                 {rowData.slice(0,1).map((data, index) =>
-  //                   <div className={styles.event_resource_content} key={index} data-heading={data.key} style={{
-  //                       color:'white',
-  //                       fontWeight:'bold'
-  //                     }}>
-  //                     {data.val}
-  //                   </div>)})
-  //                 {rowData.slice(1,3).map((data, index) =>
-  //                   <div className={styles.event_resource_content} key={index} data-heading={data.key} style={{
-  //                       color:'white'
-  //                     }}>
-  //                     {data.val}
-  //                   </div>)}
-  //                 {rowData.slice(3,4).map((data, index) =>
-  //                   <button key={index} onClick={() => {
-  //                     displayDetails(data.val);
-  //                   }} style={{
-  //                       backgroundColor:'yellow',
-  //                       fontSize:'15px',
-  //                       color: '#ed4924',
-  //                       borderColor: '#ed4924',
-  //                       paddingLeft: '20px',
-  //                       paddingRight: '20px'
-  //                   }}>
-  //                     Details
-  //                   </button>)}
-  //               </div>)
-  //             } else if ((color == 'red') && (orientation == 'left')) {
-  //               return(<div className={styles.container_2r} key={index}>
-  //                 {rowData.slice(0,1).map((data, index) =>
-  //                   <div className={styles.event_resource_content} key={index} data-heading={data.key} style={{
-  //                       color:'white',
-  //                       fontWeight:'bold'
-  //                     }}>
-  //                     {data.val}
-  //                   </div>)}
-  //                 {rowData.slice(1,3).map((data, index) =>
-  //                   <div className={styles.event_resource_content} key={index} data-heading={data.key} style={{
-  //                       color:'white'
-  //                     }}>
-  //                     {data.val}
-  //                   </div>)}
-  //                 {rowData.slice(3,4).map((data, index) =>
-  //                   <button key={index} onClick={() => {
-  //                     displayDetails(data.val);
-  //                   }} style={{
-  //                       backgroundColor:'yellow',
-  //                       fontSize:'15px',
-  //                       color: '#ed4924',
-  //                       borderColor: '#ed4924',
-  //                       paddingLeft: '20px',
-  //                       paddingRight: '20px'
-  //                   }}>
-  //                     Details
-  //                   </button>)}
-  //               </div>)
-  //             } else if ((color == 'black') && (orientation == 'left')) {
-  //               return (<div className={styles.container_1b} key={index}>
-  //                 {rowData.slice(0,1).map((data, index) =>
-  //                   <div className={styles.event_resource_content} key={index} data-heading={data.key} style={{
-  //                       color:'white',
-  //                       fontWeight:'bold'
-  //                     }}>
-  //                     {data.val}
-  //                   </div>)}
-  //                 {rowData.slice(1,3).map((data, index) =>
-  //                   <div className={styles.event_resource_content} key={index} data-heading={data.key} style={{
-  //                       color:'white'
-  //                     }}>
-  //                     {data.val}
-  //                   </div>)}
-  //                 {rowData.slice(3,4).map((data, index) =>
-  //                   <button key={index} onClick={() => {
-  //                     displayDetails(data.val);
-  //                   }} style={{
-  //                       backgroundColor:'yellow',
-  //                       fontSize:'15px',
-  //                       color: '#ed4924',
-  //                       borderColor: '#ed4924',
-  //                       paddingLeft: '20px',
-  //                       paddingRight: '20px'
-  //                   }}>
-  //                     Details
-  //                   </button>)}
-  //               </div>)
-  //             } else if ((color == 'black') && (orientation == 'right')) {
-  //               return(<div className={styles.container_2b} key={index}>
-  //               {rowData.slice(0,1).map((data, index) =>
-  //                 <div className={styles.event_resource_content} key={index} data-heading={data.key} style={{
-  //                     color:'white',
-  //                     fontWeight:'bold'
-  //                   }}>
-  //                   {data.val}
-  //                 </div>)}
-  //               {rowData.slice(1,3).map((data, index) =>
-  //                 <div className={styles.event_resource_content} key={index} data-heading={data.key} style={{
-  //                     color:'white'
-  //                   }}>
-  //                   {data.val}
-  //                 </div>)}
-  //               {rowData.slice(3,4).map((data, index) =>
-  //                 <button key={index} onClick={() => {
-  //                   displayDetails(data.val);
-  //                 }} style={{
-  //                     backgroundColor:'yellow',
-  //                     fontSize:'15px',
-  //                     color: '#ed4924',
-  //                     borderColor: '#ed4924',
-  //                     paddingLeft: '20px',
-  //                     paddingRight: '20px'
-  //                 }}>
-  //                   Details
-  //                 </button>)}
-  //               </div>)
-  //             }
-  //             })()}
-  //           </div>
-  //         })}
-  //       </div>
-  //     });
-
-  // return (
-  //     <div className={styles.event_resource_grid}>
-  //         {event}
-  //     </div>
-  // );
 };
