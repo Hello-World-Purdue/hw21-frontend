@@ -23,7 +23,7 @@ export default function Schedule() {
       times: "Sept 13, 7:00 to 8:00 PM",
       locations: "LWSN B155",
       details: "Organised by IEEE",
-      happened: (Date.now() > Date.parse("2021-09-13, 18:38:00") ? true : false),
+      happened: (Date.now() > Date.parse("2021-09-13, 20:00:00") ? true : false),
     },
     {
       name: "Intro to React",
