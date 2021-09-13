@@ -68,7 +68,7 @@ export const Navbar: FC<NavbarProps> = () => {
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="/sponsors">
-                  Sponsors
+                  Partners
                 </a>
               </li>
               <li className="nav-item">

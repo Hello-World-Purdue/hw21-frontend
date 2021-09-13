@@ -25,13 +25,21 @@ export const Footer: FC<FooterProps> = () => {
         {/* Find a way to center big old logo img vertically */}
         {/* the issue of vertical alignment only happens when I wrap the img with an <a>*/}
 
-        <a href="/sponsors">Sponsors</a>
+        <a href="/sponsors">Partners</a>
       </div>
-      <div className={styles['footer-social-media']}>
-        <a href="https://www.facebook.com/helloworldpurdue/" target="_blank" style={{margin: '10px'}}>
+      <div className={styles["footer-social-media"]}>
+        <a
+          href="https://www.facebook.com/helloworldpurdue/"
+          target="_blank"
+          style={{ margin: "10px" }}
+        >
           <Image src="/facebook.png" height={30} width={30}></Image>
         </a>
-        <a href="https://www.instagram.com/helloworldpurdue/?hl=en" target="_blank" style={{margin: '10px'}}>
+        <a
+          href="https://www.instagram.com/helloworldpurdue/?hl=en"
+          target="_blank"
+          style={{ margin: "10px" }}
+        >
           <Image src="/instagram.png" height={30} width={30}></Image>
         </a>
       </div>

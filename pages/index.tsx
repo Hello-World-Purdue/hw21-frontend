@@ -90,7 +90,7 @@ export default function Index() {
           </div>
         </div>
         <div className="sponsors-section">
-          <h1 className="sponsors-h1">SPONSORS</h1>
+          <h1 className="sponsors-h1">PARTNERS</h1>
           <div className="container sponsors-sec-container">
             {/* List of sponsors */}
             {sponsors.map((sponsor) => {
