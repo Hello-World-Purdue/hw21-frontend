@@ -6,6 +6,7 @@ import CustomButton from "../CustomButton";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "../../styles/forms.module.css";
 import UserContext from "../../context/UserContext";
+import AlertContext from "../../context/AlertContext";
 
 export const announcementLabel = [
   "Events",
@@ -20,6 +21,7 @@ const AnnouncementsForm: React.FC<{}> = (props) => {
   const [body, setBody] = useState<string>("");
   const [label, setLabel] = useState<string>("");
   const { makeAnnouncement } = useContext(UserContext);
+  const { setAlert } = useContext(AlertContext);
 
   function submitForm(event: React.FormEvent) {
     event.preventDefault();
@@ -29,7 +31,6 @@ const AnnouncementsForm: React.FC<{}> = (props) => {
       title: "Announcement",
       label: label,
     };
-
     makeAnnouncement(ancmt);
   }
 

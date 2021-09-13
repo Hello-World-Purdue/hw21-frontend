@@ -91,6 +91,7 @@ export const UserContextProvider = (props: any) => {
       const res = await axios.post("/api/announcement", ancmnt, {
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${authContext.token}`,
         },
       });
 
