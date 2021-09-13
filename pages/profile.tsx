@@ -44,7 +44,7 @@ export default function Profile() {
           : alertContext.setAlert(
               "success",
               "Sorry to see you go...",
-              "You have taken revoked your RSVP for HelloWorld 2021"
+              "You have revoked your RSVP for HelloWorld 2021"
             );
       })
       .catch((e) => {
