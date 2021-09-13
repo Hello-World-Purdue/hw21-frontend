@@ -56,12 +56,6 @@ export default function Schedule() {
       details: "None",
       happened: (Date.now() > Date.parse("2021-09-18, 09:30:00") ? true : false),
     }, {
-      name: "Check-in / Last minute team building",
-      times: "Sept 18, 8:30 to 9:30 AM",
-      locations: "WALC",
-      details: "None",
-      happened: (Date.now() > Date.parse("2021-09-18, 09:30:00") ? true : false),
-    }, {
       name: "Opening Ceremony",
       times: "Sept 18, 9:30 to 10:00 AM",
       locations: "WALC",
