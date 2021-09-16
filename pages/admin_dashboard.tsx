@@ -16,6 +16,7 @@ export interface HackerData {
   // st_int: string,
   // st_ext: string
   rsvp: string,
+  checkedIn: string,
   role: string,
   updatedAt: string,
 
@@ -36,13 +37,15 @@ export default function Admin_Dashboard() {
           }
         })
         console.log("COUNT: ", count);
+        let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         setAllUsers(users.users.map((user) => {
           return {
             name: user.name,
             email: user.email,
             rsvp: user.rsvp ? "True" : "False",
+            checkedIn: user.checkedIn ? "True" : "False",
             role: user.role,
-            updatedAt: user.updatedAt
+            updatedAt: user.updatedAt.toLocaleString('en-US', options)
           }
         }))
       })
@@ -81,7 +84,7 @@ export default function Admin_Dashboard() {
           <Fragment>
             <Table
               tableData={allUsers}
-              headingColumns={['Name', 'Email', 'RSVP', 'Role', 'Updated At']}
+              headingColumns={['Name', 'Email', 'RSVP', 'Checked In', 'Role', 'Updated At']}
               title="APPLICANTS"
             />
           </Fragment>

@@ -34,7 +34,7 @@ const Table: FC<TableProps> = ({
 							border: "solid 1px grey",
 							paddingLeft: 5,
 							paddingRight: 5,
-							width: "100%",
+							// width: "100%",
 							textAlign: "center",
 						}}
 					>
@@ -64,7 +64,7 @@ const Table: FC<TableProps> = ({
 					fontSize: "1vw",
 				}}
 			>
-				<thead style={{ color: "black", backgroundColor: "#58D3F7" }}>
+				<thead style={{ color: "black", backgroundColor: "#58D3F7", textAlign: "center" }}>
 					<tr>
 						{headingColumns.map((col, index) => (
 							<th key={index} style={{ padding: 10, fontWeight: 500 }}>
