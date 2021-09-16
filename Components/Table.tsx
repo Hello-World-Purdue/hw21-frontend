@@ -1,9 +1,4 @@
-//https://www.youtube.com/watch?v=p1CFRiif7I0
-
-//dependency imports
 import React, { FC } from "react";
-//import 'bootstrap/dist/css/bootstrap.css';
-//component imports
 import { HackerData } from "../pages/admin_dashboard";
 
 interface TableProps {
@@ -19,16 +14,6 @@ const Table: FC<TableProps> = ({
 	headingColumns,
 	breakOn = "medium",
 }) => {
-	// let tableClass = 'table-container__table';
-
-	// if (breakOn === 'small') {
-	//   tableClass += ' table-container__table--break-sm';
-	// } else if (breakOn === 'medium') {
-	//   tableClass += ' table-container__table--break-md';
-	// } else if (breakOn === 'large') {
-	//   tableClass += ' table-container__table--break-lg';
-	// }
-
 	const data = (tableData as Array<HackerData>).map((row, index) => {
 		let rowData: { key: string; val: string | number }[] = [];
 
