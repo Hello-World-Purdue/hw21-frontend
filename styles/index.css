@@ -448,7 +448,7 @@
   min-width: 100%;
   /* Use media queries to resize the height I guess? Or figure out background image properties so that the image stays responsive */
   height: 1000px;
-  background-image: url("../images/sponsors.png");
+  background-image: url("../images/partners.png");
   background-repeat: no-repeat;
   display: inline-block;
   flex: 1 0 100%;
