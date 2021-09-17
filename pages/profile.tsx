@@ -83,11 +83,13 @@ export default function Profile() {
           <ProfileInfo header="Full Name" placeholder={name} />
           <ProfileInfo header="Email" placeholder={email} />
           <ProfileInfo header="Application Status" placeholder={status} />
-          <ProfileInfoCreds
-            header="Helpq Credential"
-            userName={`${email}`.split("@", 1)[0]}
-            password={helpq}
-          />
+          {helpq && (
+            <ProfileInfoCreds
+              header="Helpq Credential"
+              userName={`${email}`.split("@", 1)[0]}
+              password={helpq}
+            />
+          )}
           <div className="d-flex flex-column">
             <button
               onClick={onEdit}
