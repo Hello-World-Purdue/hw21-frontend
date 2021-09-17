@@ -10,18 +10,19 @@ axios.defaults.baseURL =
 const initialState = {
   application: null,
   user: null,
+  // allUsers: null,
 };
 
 const UserContext = React.createContext({
   ...initialState,
-  makeAnnouncement: (ancmnt: any) => {},
-  getAnnouncements: (): any => {},
-  getUsers: () => {},
-  getUser: (id: String) => {},
-  getUserApp: (id: String) => {},
-  getAuthApp: () => {},
-  updateProfile: (id: String, formData: any) => {},
-  apply: (id: String, appData: any) => {},
+  makeAnnouncement: (ancmnt: any) => { },
+  getAnnouncements: (): any => { },
+  getUsers: (): any => { },
+  getUser: (id: String) => { },
+  getUserApp: (id: String) => { },
+  getAuthApp: () => { },
+  updateProfile: (id: String, formData: any) => { },
+  apply: (id: String, appData: any) => { },
 });
 
 export const UserContextProvider = (props: any) => {
@@ -37,7 +38,24 @@ export const UserContextProvider = (props: any) => {
   }, [authContext]);
 
   // Get all users
-  const getUsers = () => {};
+  const getUsers = async (): Promise<any> => {
+    try {
+      console.log("TOKEN", authContext.token);
+      const res = await axios.get(`/api/users/`, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${authContext.token}`,
+        },
+      })
+
+      return Promise.resolve(res.data);
+    } catch (err) {
+      if (err.response) {
+        return Promise.reject(err.response.data.error);
+      }
+      return Promise.reject(err.message);
+    }
+  };
 
   // Get the user by id
   const getUser = async (id: String) => {
@@ -180,6 +198,7 @@ export const UserContextProvider = (props: any) => {
         makeAnnouncement: newAnnouncementHandler,
         user: state.user,
         application: state.application,
+        // allUsers: state.allUsers,
         getUsers,
         getUser,
         getUserApp,

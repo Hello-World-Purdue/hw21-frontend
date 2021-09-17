@@ -8,30 +8,12 @@ interface EventProps {
 }
 
 export const Event: FC<EventProps> = (
-  { eventsData }: EventProps,
-  headingColumns
-) => {
-  // console.log("eventsData[0]:" + eventsData[0].name);
-
-  /*const event = (eventsData as Array<EventsData>).map((row, index) => {
-      let rowData: { key: string; val: string | number; }[] = [];
-      
-      // build rowData
-      Object.entries(row).forEach((data, i) => {
-        rowData.push({
-        key: headingColumns[i],
-        val: data[1]
-        });
-      });
-      */
-  // define displayDetails - Idk what this does in typescript/jsx
+  { eventsData }: EventProps) => {
   const displayDetails = (data) => {
     alert(`${data}`);
   };
 
   var color = "black";
-  var orientation = "left";
-
   var pastEvents = [];
   var currEvents = [];
   var pastEventsDivs = [];
@@ -68,7 +50,7 @@ export const Event: FC<EventProps> = (
                 <p>{data.locations}</p>
               </div>
             </div>
-            <button
+            {/* <button
               // key={index}
               onClick={() => {
                 displayDetails(data.details);
@@ -76,7 +58,8 @@ export const Event: FC<EventProps> = (
               className={styles.event_button_1r}
             >
               DETAILS
-            </button>
+            </button> */}
+            {data.details}
           </div>
         </div>
       );
@@ -128,17 +111,9 @@ export const Event: FC<EventProps> = (
             <div className={styles.event_text}>
               <p>{data.times}</p>
               <p>{data.locations}</p>
+              <p>{data.details}</p>
             </div>
           </div>
-          <button
-            // key={index}
-            onClick={() => {
-              displayDetails(data.details);
-            }}
-            className={styles.event_button_1r}
-          >
-            DETAILS
-          </button>
         </div>
       );
     } else {
@@ -152,17 +127,9 @@ export const Event: FC<EventProps> = (
             <div className={styles.event_text}>
               <p>{data.times}</p>
               <p>{data.locations}</p>
+              <p>{data.details}</p>{ }
             </div>
           </div>
-          <button
-            // key={index}
-            onClick={() => {
-              displayDetails(data.details);
-            }}
-            className={styles.event_button_1b}
-          >
-            DETAILS
-          </button>
         </div>
       );
     }

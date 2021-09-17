@@ -45,10 +45,10 @@ export default function Schedule() {
       happened: (Date.now() > Date.parse("2021-09-16, 19:00:00") ? true : false),
     }, {
       name: "Intro to Python",
-      times: "Sept 17, 4:00 to 6:30 PM",
+      times: "Sept 17, 4:00 to 5:30 PM",
       locations: "LWSN B151",
       details: "Organised by AMCS",
-      happened: (Date.now() > Date.parse("2021-09-17, 18:30:00") ? true : false),
+      happened: (Date.now() > Date.parse("2021-09-17, 17:30:00") ? true : false),
     }, {
       name: "Check-in / Last minute team building",
       times: "Sept 18, 8:30 to 9:30 AM",
@@ -167,14 +167,6 @@ export default function Schedule() {
       <Layout>
         <Header headerImgClass="schedule-header">
         </Header>
-        {/* <div style={{ textAlign: "center" }}>
-          <Image
-            className="coming-soon"
-            src="/coming_soon.png"
-            height={700}
-            width={700}
-          ></Image>
-        </div> */}
         <Fragment>
           <Event eventsData={eventsData}
             headingColumns={['name', 'times', 'locations', 'details']}
