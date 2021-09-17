@@ -1,7 +1,9 @@
 import React, { useState, useContext, useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import ProfileInfo from "../Components/profile/ProfileInfo";
+import ProfileInfo, {
+  ProfileInfoCreds,
+} from "../Components/profile/ProfileInfo";
 import { Layout } from "../Components/Layout";
 
 import UserContext from "../context/UserContext";
@@ -81,7 +83,11 @@ export default function Profile() {
           <ProfileInfo header="Full Name" placeholder={name} />
           <ProfileInfo header="Email" placeholder={email} />
           <ProfileInfo header="Application Status" placeholder={status} />
-          <ProfileInfo header="Helpq Credential" placeholder={helpq} />
+          <ProfileInfoCreds
+            header="Helpq Credential"
+            userName={`${email}`.split("@", 1)[0]}
+            password={helpq}
+          />
           <div className="d-flex flex-column">
             <button
               onClick={onEdit}
