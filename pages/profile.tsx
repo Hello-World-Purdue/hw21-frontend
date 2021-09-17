@@ -59,9 +59,10 @@ export default function Profile() {
     email: user?.email || "",
     status: user?.application?.statusPublic || "Not Applied",
     rsvp: user?.rsvp || false,
+    helpq: user?.helpqToken || "",
   };
 
-  const { name, email, status, rsvp } = userState;
+  const { name, email, status, rsvp, helpq } = userState;
 
   const onEdit = () => {
     router.push("/edit");
@@ -80,6 +81,7 @@ export default function Profile() {
           <ProfileInfo header="Full Name" placeholder={name} />
           <ProfileInfo header="Email" placeholder={email} />
           <ProfileInfo header="Application Status" placeholder={status} />
+          <ProfileInfo header="Helpq Credential" placeholder={helpq} />
           <div className="d-flex flex-column">
             <button
               onClick={onEdit}
@@ -94,7 +96,7 @@ export default function Profile() {
                 className={styles.profile_button}
                 style={{ margin: "10px", background: "red", color: "white" }}
               >
-                {rsvp ? "Remove RSVP" : "RSVP"}
+                {rsvp ? "Withdraw RSVP" : "RSVP"}
               </button>
             )}
             <button

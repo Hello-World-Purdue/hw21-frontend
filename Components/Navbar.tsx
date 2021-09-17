@@ -81,6 +81,15 @@ export const Navbar: FC<NavbarProps> = () => {
                   FAQ's
                 </a>
               </li>
+              <li className="nav-item">
+                <a
+                  className="nav-link"
+                  target="_blank"
+                  href="http://helpq.helloworldpurdue.com"
+                >
+                  HelpQ
+                </a>
+              </li>
               {isAuthenticated && user?.role === "ADMIN" && (
                 <li className="nav-item">
                   <a className="nav-link" href="/admin_dashboard">
