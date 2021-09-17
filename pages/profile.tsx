@@ -81,7 +81,7 @@ export default function Profile() {
           <ProfileInfo header="Full Name" placeholder={name} />
           <ProfileInfo header="Email" placeholder={email} />
           <ProfileInfo header="Application Status" placeholder={status} />
-          {/* <ProfileInfo header="Helpq Credential" placeholder={helpq} /> */}
+          <ProfileInfo header="Helpq Credential" placeholder={helpq} />
           <div className="d-flex flex-column">
             <button
               onClick={onEdit}
