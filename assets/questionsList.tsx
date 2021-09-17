@@ -55,14 +55,6 @@ export const questions = [
     ],
   },
   {
-    q: "What prizes do winners get?",
-    a: [
-      "1st: Amazon Echo",
-      "2nd: TOZO Wireless Charger",
-      "3rd: Anker Bluetooth Speaker",
-    ],
-  },
-  {
     q: "Will there be food at the hackathon?",
     a: ["Yes. Lunch, dinner, and breakfast will be provided"],
   },

@@ -433,11 +433,12 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px;
 }
 
 .faq_question {
   font-family: BackIssuesBB;
-  margin-top: 8vh;
+  margin-top: 20px;
   width: 70vw;
   color: white;
   border: solid black;
