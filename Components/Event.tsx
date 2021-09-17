@@ -7,8 +7,7 @@ interface EventProps {
   headingColumns: string[];
 }
 
-export const Event: FC<EventProps> = (
-  { eventsData }: EventProps) => {
+export const Event: FC<EventProps> = ({ eventsData }: EventProps) => {
   const displayDetails = (data) => {
     alert(`${data}`);
   };
@@ -39,12 +38,12 @@ export const Event: FC<EventProps> = (
 
     if (color == "red") {
       pastEventsDivs[index] = (
-        <div className={styles.blur} key={index}>
+        <div key={index}>
           <div className={styles.container_1r}>
             <div className={styles.event_resource_content}>
               <div className={styles.event_name}> {data.name}</div>
             </div>
-            <div className={styles.event_resource_content} >
+            <div className={styles.event_resource_content}>
               <div className={styles.event_text}>
                 <p>{data.times}</p>
                 <p>{data.locations}</p>
@@ -66,18 +65,19 @@ export const Event: FC<EventProps> = (
     } else {
       //color == black
       pastEventsDivs[index] = (
-        <div className={styles.blur} key={index + 100}>
+        <div key={index + 100}>
           <div className={styles.container_1b}>
             <div className={styles.event_resource_content}>
               <div className={styles.event_name}> {data.name}</div>
             </div>
-            <div className={styles.event_resource_content} >
+            <div className={styles.event_resource_content}>
               <div className={styles.event_text}>
                 <p>{data.times}</p>
                 <p>{data.locations}</p>
+                <p>{data.details}</p>
               </div>
             </div>
-            <button
+            {/* <button
               // key={index}
               onClick={() => {
                 displayDetails(data.details);
@@ -85,7 +85,7 @@ export const Event: FC<EventProps> = (
               className={styles.event_button_1b}
             >
               DETAILS
-            </button>
+            </button> */}
           </div>
         </div>
       );
@@ -107,7 +107,7 @@ export const Event: FC<EventProps> = (
           <div className={styles.event_resource_content}>
             <div className={styles.event_name}> {data.name}</div>
           </div>
-          <div className={styles.event_resource_content} >
+          <div className={styles.event_resource_content}>
             <div className={styles.event_text}>
               <p>{data.times}</p>
               <p>{data.locations}</p>
@@ -123,11 +123,12 @@ export const Event: FC<EventProps> = (
           <div className={styles.event_resource_content}>
             <div className={styles.event_name}> {data.name}</div>
           </div>
-          <div className={styles.event_resource_content} >
+          <div className={styles.event_resource_content}>
             <div className={styles.event_text}>
               <p>{data.times}</p>
               <p>{data.locations}</p>
-              <p>{data.details}</p>{ }
+              <p>{data.details}</p>
+              {}
             </div>
           </div>
         </div>
@@ -139,7 +140,9 @@ export const Event: FC<EventProps> = (
     <div>
       {/* upcoming */}
       <div>
-        <p style={{ textAlign: "right", fontWeight: "bold", fontSize: "2.5vh" }}>
+        <p
+          style={{ textAlign: "right", fontWeight: "bold", fontSize: "2.5vh" }}
+        >
           UPCOMING<br></br>EVENTS
         </p>
       </div>
