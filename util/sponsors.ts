@@ -12,7 +12,7 @@ export const sponsors = [
     height: 150,
     width: 150,
     about:
-      "Postman is an API platform for building and using APIs. Postman simplifies each step of the API lifecycle and streamlines collaboration so you can create better APIs—faster.",
+      "Postman is the world's leading API platform, used by more than 17 million developers and 500,000 organizations worldwide for building and using APIs. Postman simplifies each step of the API lifecycle and streamlines collaboration, enabling users to create better APIs faster.",
     background: "rgb(255,230,43)",
   },
   {
@@ -27,9 +27,7 @@ export const sponsors = [
     name: "zotec",
     height: 150,
     width: 200,
-    about:
-      "Since 1998, healthcare organizations have relied on Zotec to manage and modernize their revenue cycles. With a talented team at the helm, we designed and developed our own proprietary technology and processes to increase collections, improve your profitability, and safeguard your data—and we’re constantly improving, imagining, and creating revolutionary solutions to serve people better.",
-
+    about: "Zotec Partners (Zotec) is the country’s largest, privately held provider of patient engagement, revenue cycle and practice management solutions for healthcare practices and their patients. Supporting more than 120 million medical encounters annually, Zotec’s progressive technology solutions, data-driven tools and industry-leading client support transforms the financial capabilities for more than 21,000 healthcare providers nationwide. Our powerful revenue cycle resources enable patients with a more seamless and fulfilling bill care experience, leading to peak revenue optimization for healthcare providers. Learn more about Zotec and stay up-to-date on Twitter or LinkedIn.",
     background: "rgb(255,0,9)",
   },
   {
