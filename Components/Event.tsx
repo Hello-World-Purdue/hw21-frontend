@@ -43,7 +43,10 @@ export const Event: FC<EventProps> = ({ eventsData }: EventProps) => {
             <div className={styles.event_resource_content}>
               <div className={styles.event_name}> {data.name}</div>
             </div>
-            <div className={styles.event_resource_content}>
+            <div
+              style={{ fontFamily: "BackIssuesBB" }}
+              className={styles.event_resource_content}
+            >
               <div className={styles.event_text}>
                 <p>{data.times}</p>
                 <p>{data.locations}</p>
@@ -67,7 +70,10 @@ export const Event: FC<EventProps> = ({ eventsData }: EventProps) => {
       pastEventsDivs[index] = (
         <div key={index + 100}>
           <div className={styles.container_1b}>
-            <div className={styles.event_resource_content}>
+            <div
+              style={{ fontFamily: "BackIssuesBB" }}
+              className={styles.event_resource_content}
+            >
               <div className={styles.event_name}> {data.name}</div>
             </div>
             <div className={styles.event_resource_content}>
@@ -120,7 +126,10 @@ export const Event: FC<EventProps> = ({ eventsData }: EventProps) => {
       //color == black
       currEventsDivs[index] = (
         <div className={styles.container_1b} key={index + 100}>
-          <div className={styles.event_resource_content}>
+          <div
+            style={{ fontFamily: "BackIssuesBB" }}
+            className={styles.event_resource_content}
+          >
             <div className={styles.event_name}> {data.name}</div>
           </div>
           <div className={styles.event_resource_content}>
@@ -137,11 +146,16 @@ export const Event: FC<EventProps> = ({ eventsData }: EventProps) => {
   });
 
   return (
-    <div>
+    <div style={{ fontFamily: "BackIssuesBB" }}>
       {/* upcoming */}
       <div>
         <p
-          style={{ textAlign: "right", fontWeight: "bold", fontSize: "2.5vh" }}
+          style={{
+            textAlign: "right",
+            fontWeight: "bold",
+            fontSize: "2.5vh",
+            paddingRight: "10px",
+          }}
         >
           UPCOMING<br></br>EVENTS
         </p>
@@ -164,7 +178,14 @@ export const Event: FC<EventProps> = ({ eventsData }: EventProps) => {
 
       {/* past */}
       <div>
-        <p style={{ textAlign: "left", fontWeight: "bold", fontSize: "2.5vh" }}>
+        <p
+          style={{
+            textAlign: "left",
+            fontWeight: "bold",
+            fontSize: "2.5vh",
+            paddingLeft: "10px",
+          }}
+        >
           PAST<br></br>EVENTS
         </p>
       </div>

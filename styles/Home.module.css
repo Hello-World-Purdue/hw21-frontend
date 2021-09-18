@@ -399,7 +399,7 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
 
 .container_1r {
   background-image: url("../images/event_container_1r.png");
-  width: 13rem;
+  width: 15rem;
   height: 15rem;
   display: inline-block;
   padding-top: 40px;
@@ -410,7 +410,7 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
 .container_1b {
   background-image: url("../images/event_container_1b.png");
   background-size: 100% 100%;
-  width: 13rem;
+  width: 15rem;
   height: 15rem;
   display: inline-block;
   padding-top: 20px;
@@ -610,6 +610,7 @@ https://stackoverflow.com/questions/39718512/put-footer-at-the-bottom-html-relat
 .event_resource_content {
   padding-top: 5px;
   padding-bottom: 5px;
+  padding: 10px;
   text-align: center;
 }
 .blur {
