@@ -36,7 +36,11 @@ const CustomLabel: React.FC<{
 
   return (
     <div className={labelClasses.join(" ")}>
-      {props.annType === "Miscellaneous" ? "MISC" : props.annType.toUpperCase()}
+      {props.annType === "Miscellaneous"
+        ? "MISC"
+        : props.annType === "Sponsor"
+        ? "Partner"
+        : props.annType.toUpperCase()}
     </div>
   );
 };
