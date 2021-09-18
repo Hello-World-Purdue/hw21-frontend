@@ -151,23 +151,33 @@ export const Event: FC<EventProps> = ({ eventsData }: EventProps) => {
       <div>
         <p
           style={{
-            textAlign: "right",
+            textAlign: "center",
             fontWeight: "bold",
-            fontSize: "2.5vh",
+            fontSize: "4vh",
             paddingRight: "10px",
           }}
         >
-          UPCOMING<br></br>EVENTS
+          UPCOMING EVENTS
         </p>
       </div>
       <div
         style={{
-          backgroundColor: "orange",
-          maxWidth: "10%",
-          marginLeft: "auto",
+          textAlign: "center",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
         }}
       >
-        <p>&nbsp;</p>
+        <div
+          style={{
+            backgroundColor: "orange",
+            width: "30%",
+            height: "1.2rem",
+          }}
+        >
+          <p>&nbsp;</p>
+        </div>
       </div>
 
       <div className={styles.event_resource_grid}>
@@ -180,17 +190,33 @@ export const Event: FC<EventProps> = ({ eventsData }: EventProps) => {
       <div>
         <p
           style={{
-            textAlign: "left",
+            textAlign: "center",
             fontWeight: "bold",
-            fontSize: "2.5vh",
+            fontSize: "4vh",
             paddingLeft: "10px",
           }}
         >
-          PAST<br></br>EVENTS
+          PAST EVENTS
         </p>
       </div>
-      <div style={{ backgroundColor: "skyblue", maxWidth: "10%" }}>
-        <p>&nbsp;</p>
+      <div
+        style={{
+          textAlign: "center",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
+        }}
+      >
+        <div
+          style={{
+            backgroundColor: "skyblue",
+            width: "22%",
+            height: "1.2rem",
+          }}
+        >
+          <p>&nbsp;</p>
+        </div>
       </div>
 
       <div className={styles.event_resource_grid}>
