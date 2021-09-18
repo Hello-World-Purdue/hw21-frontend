@@ -13,12 +13,12 @@ import AuthContext from "../context/AuthContext";
 
 interface Announcement {
   label:
-  | "Events"
-  | "Food"
-  | "Judging"
-  | "Logistics"
-  | "Sponsor"
-  | "Miscellaneous";
+    | "Events"
+    | "Food"
+    | "Judging"
+    | "Logistics"
+    | "Sponsor"
+    | "Miscellaneous";
   body: string;
   updatedAt: string;
 }
@@ -56,6 +56,7 @@ function Announcements() {
 
     ws.onclose = function () {
       console.log("echo-protocol Connection Closed");
+      setTimeout(setupWS, 2900);
     };
 
     setWs(ws);
@@ -104,11 +105,11 @@ function Announcements() {
                       <div className="w-100"></div>
                       <div
                         className="col announcements-time"
-                      // style={{
-                      //   textAlign: "right",
-                      //   fontFamily: "backissues",
-                      //   fontWeight: 600,
-                      // }}
+                        // style={{
+                        //   textAlign: "right",
+                        //   fontFamily: "backissues",
+                        //   fontWeight: 600,
+                        // }}
                       >
                         {new Date(announcement.updatedAt).toLocaleString(
                           "en-US",
