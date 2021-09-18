@@ -118,7 +118,7 @@ export default function Schedule() {
     {
       name: "Board Games",
       times: "Sept 18, 11:00 to 12:00 PM",
-      locations: "TBD",
+      locations: "WALC 3121, 3127, 3132, 3138",
       details: "",
       happened: Date.now() > Date.parse("2021-09-18, 23:59:59") ? true : false,
     },
