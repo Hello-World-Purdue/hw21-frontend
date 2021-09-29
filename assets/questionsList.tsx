@@ -55,14 +55,6 @@ export const questions = [
     ],
   },
   {
-    q: "What prizes do winners get?",
-    a: [
-      "1st: Amazon Echo",
-      "2nd: TOZO Wireless Charger",
-      "3rd: Anker Bluetooth Speaker",
-    ],
-  },
-  {
     q: "Will there be food at the hackathon?",
     a: ["Yes. Lunch, dinner, and breakfast will be provided"],
   },
@@ -82,7 +74,7 @@ export const questions = [
   {
     q: "Is it alright if we don’t have a group?",
     a: [
-      "Yes. You can work alone or create teams of up to 4 during team-building events on the social (Sept 16) and day-of",
+      "Yes. You can work alone or create teams of up to 4 druing team-building events on the day-of",
     ],
   },
   {
@@ -111,10 +103,10 @@ export const questions = [
   },
   {
     q: "When will I be notified of the application results?",
-    a: ["September 11 through your email"],
+    a: ["September 13 through your email"],
   },
   {
     q: "When is the deadline to RSVP after getting the application results back?",
-    a: ["September 13"],
+    a: ["September 15"],
   },
 ];

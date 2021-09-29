@@ -11,33 +11,43 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: left;
 }
 
 .announcement {
-  border: 1px solid gray;
-  display: flex;
+  border-bottom: 1px solid gray;
+  /* display: flex; */
+
   flex-direction: row;
   align-items: center;
   margin: 2vh 4vh;
-  padding: 2vh 1vh;
+  padding: 5px 1vh;
+  margin-top: 0;
 }
 
 .annMessage {
   font-family: "backissues";
-  margin-left: 1vh;
+  /* margin-top: 5px; */
   font-size: larger;
 }
 
+.dateTime {
+  font-family: "backissues";
+  font-weight: 600;
+}
+
 .label {
-  height: 80px;
-  width: 200px;
+  /* height: 80px; */
+  /* width: 200px; */
+  width: 135px;
+  padding: 2px;
   border: 2px solid black;
   font-family: "backissues";
   font-weight: 600;
-  font-size: x-large;
+  font-size: 1.2em;
   display: flex;
   align-items: center;
+  margin-bottom: 5px;
   justify-content: center;
 }
 
@@ -61,8 +71,12 @@
   color: white;
 }
 
-.food,
 .logistics {
   background-color: #ff0000;
+  color: white;
+}
+
+.food {
+  background-color: green;
   color: white;
 }

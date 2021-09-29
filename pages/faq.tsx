@@ -7,23 +7,22 @@ import { Layout } from "../Components/Layout";
 
 export default function Faq() {
   const [state, setState] = useState({
-    name: '',
-    email: '',
-    question: ''
+    name: "",
+    email: "",
+    question: "",
   });
 
   const handleChange = (e: any) => {
     setState({
       ...state,
-      [e.target.name]: e.target.value
-    })
+      [e.target.name]: e.target.value,
+    });
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
-    location.href = `mailto:helloworldpurdue@gmail.com?subject=Query%20About%20Hello%20World&body=${state.question}`
+    location.href = `mailto:helloworldpurdue@gmail.com?subject=Query%20About%20Hello%20World&body=${state.question}`;
   };
-
 
   return (
     <Layout>
@@ -67,7 +66,11 @@ export default function Faq() {
                     onChange={handleChange}
                   />
                 </div>
-                <textarea name='question' onChange={handleChange} className={styles.faq_textArea} />
+                <textarea
+                  name="question"
+                  onChange={handleChange}
+                  className={styles.faq_textArea}
+                />
               </div>
               <div className={styles.faq_submitContainer}>
                 <button

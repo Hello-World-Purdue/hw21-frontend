@@ -1,163 +1,200 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-axios.defaults.baseURL = (process.env.NODE_ENV == 'production') ? 'https://helloworldpurdue-api.herokuapp.com': ''
+axios.defaults.baseURL =
+  process.env.NODE_ENV == "production"
+    ? "https://helloworldpurdue-api.herokuapp.com"
+    : "";
 
 const initialState = {
-	isAuthenticated: false,
-	user: null,
-	token: null,
+  isAuthenticated: false,
+  user: null,
+  token: null,
 };
 
 const AuthContext = React.createContext({
-	...initialState,
-	login: (user: any) => {},
-	logout: () => {},
-	signup: (user: any) => {},
-	forgot: (email: String) => {},
-	reset: (formData: any) => {},
-	update: (user: any) => {},
+  ...initialState,
+  login: (user: any) => {},
+  logout: () => {},
+  signup: (user: any) => {},
+  forgot: (email: String) => {},
+  reset: (formData: any) => {},
+  update: (user: any) => {},
+  rsvp: (id: String): Promise<any> => {
+    return Promise.resolve();
+  },
 });
 
 export const AuthContextProvider = (props: any) => {
-	let userdatastring = "";
-	let userData = null;
+  let userdatastring = "";
+  let userData = null;
 
-	const [state, setState] = useState(initialState);
+  const [state, setState] = useState(initialState);
 
-	useEffect(() => {
-		console.log("page reloaded");
-		if (typeof window !== "undefined") {
-			userdatastring = localStorage.getItem("userdata");
-		}
+  useEffect(() => {
+    // console.log("page reloaded");
+    if (typeof window !== "undefined") {
+      userdatastring = localStorage.getItem("userdata");
+    }
 
-		if (userdatastring !== "") {
-			userData = JSON.parse(userdatastring);
-		}
+    if (userdatastring !== "") {
+      userData = JSON.parse(userdatastring);
+    }
 
-		console.log("userData", userData);
-		setState({
-			isAuthenticated: userData ? true : false,
-			user: userData ? userData.user : null,
-			token: userData ? userData.token : null,
-		});
+    // console.log("userData", userData);
+    setState({
+      isAuthenticated: userData ? true : false,
+      user: userData ? userData.user : null,
+      token: userData ? userData.token : null,
+    });
 
-		console.log("state set");
-	}, []);
+    // console.log("state set");
+  }, []);
 
-	const loginHandler = async (user: any) => {
-		try {
-			const res = await axios.post("/api/auth/login", user, {
-				headers: {
-					"Content-Type": "application/json",
-				},
-			});
+  const loginHandler = async (user: any) => {
+    try {
+      const res = await axios.post("/api/auth/login", user, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
-			localStorage.setItem("userdata", JSON.stringify(res.data));
+      localStorage.setItem("userdata", JSON.stringify(res.data));
 
-			setState({
-				isAuthenticated: true,
-				user: res.data.user,
-				token: res.data.token,
-			});
-		} catch (err) {
-			if (err.response) {
-				return Promise.reject(err.response.data.error)
-			}
-			return Promise.reject(err.message)
-		}
-	};
+      setState({
+        isAuthenticated: true,
+        user: res.data.user,
+        token: res.data.token,
+      });
+    } catch (err) {
+      if (err.response) {
+        return Promise.reject(err.response.data.error);
+      }
+      return Promise.reject(err.message);
+    }
+  };
 
-	const logoutHandler = () => {
-		localStorage.removeItem("userdata");
-		setState({
-			isAuthenticated: false,
-			user: null,
-			token: null,
-		});
-	};
+  const logoutHandler = () => {
+    localStorage.removeItem("userdata");
+    setState({
+      isAuthenticated: false,
+      user: null,
+      token: null,
+    });
+  };
 
-	const signupHandler = async (user: any) => {
-		try {
-			const res = await axios.post("/api/auth/signup", user, {
-				headers: {
-					"Content-Type": "application/json",
-				},
-			});
+  const signupHandler = async (user: any) => {
+    try {
+      const res = await axios.post("/api/auth/signup", user, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
-			localStorage.setItem("userdata", JSON.stringify(res.data));
+      localStorage.setItem("userdata", JSON.stringify(res.data));
 
-			setState({
-				isAuthenticated: true,
-				user: res.data.user,
-				token: res.data.token,
-			});
-		} catch (err) {
-			if (err.response) {
-				return Promise.reject(err.response.data.error)
-			}
-			return Promise.reject(err.message)
-		}
-	};
+      setState({
+        isAuthenticated: true,
+        user: res.data.user,
+        token: res.data.token,
+      });
+    } catch (err) {
+      if (err.response) {
+        return Promise.reject(err.response.data.error);
+      }
+      return Promise.reject(err.message);
+    }
+  };
 
-	const forgotHandler = async (email: String) => {
-		const requestBody = {
-			email,
-		};
+  const forgotHandler = async (email: String) => {
+    const requestBody = {
+      email,
+    };
 
-		try {
-			await axios.post("/api/auth/forgot", requestBody, {
-				headers: {
-					"Content-Type": "application/json",
-				},
-			});
-		} catch (err) {
-			if (err.response) {
-				return Promise.reject(err.response.data.error)
-			}
-			return Promise.reject(err.message)
-		}
-	};
+    try {
+      await axios.post("/api/auth/forgot", requestBody, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    } catch (err) {
+      if (err.response) {
+        return Promise.reject(err.response.data.error);
+      }
+      return Promise.reject(err.message);
+    }
+  };
 
-	const updateUser = (user: any) => {
-		setState({
-			...state,
-			user: user,
-		});
-	};
+  const updateUser = (user: any) => {
+    setState({
+      ...state,
+      user: user,
+    });
+  };
 
-	const resetHandler = async (formData: any) => {
-		try {
-			await axios.post("/api/auth/reset", formData, {
-				headers: {
-					"Content-Type": "application/json",
-				},
-			});
-		} catch (err) {
-			if (err.response) {
-				return Promise.reject(err.response.data.error)
-			}
-			return Promise.reject(err.message)
-		}
-	};
+  const resetHandler = async (formData: any) => {
+    try {
+      await axios.post("/api/auth/reset", formData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    } catch (err) {
+      if (err.response) {
+        return Promise.reject(err.response.data.error);
+      }
+      return Promise.reject(err.message);
+    }
+  };
 
-	return (
-		<AuthContext.Provider
-			value={{
-				isAuthenticated: state.isAuthenticated,
-				user: state.user,
-				token: state.token,
-				login: loginHandler,
-				logout: logoutHandler,
-				signup: signupHandler,
-				forgot: forgotHandler,
-				reset: resetHandler,
-				update: updateUser,
-			}}
-		>
-			{props.children}
-		</AuthContext.Provider>
-	);
+  const rsvp = async (id: String): Promise<any> => {
+    try {
+      const res = await axios.post(
+        `/api/users/${id}/rsvp`,
+        {},
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${state.token}`,
+          },
+        }
+      );
+      let userData = res.data.user;
+      let local = JSON.parse(localStorage.getItem("userdata"));
+      local.user = userData;
+      localStorage.setItem("userdata", JSON.stringify(local));
+
+      setState({
+        ...state,
+        user: userData,
+      });
+      return Promise.resolve(res.data.user.rsvp);
+    } catch (err) {
+      if (err.response) {
+        return Promise.reject(err.response.data.error);
+      }
+      return Promise.reject(err.message);
+    }
+  };
+
+  return (
+    <AuthContext.Provider
+      value={{
+        isAuthenticated: state.isAuthenticated,
+        user: state.user,
+        token: state.token,
+        login: loginHandler,
+        logout: logoutHandler,
+        signup: signupHandler,
+        forgot: forgotHandler,
+        reset: resetHandler,
+        update: updateUser,
+        rsvp,
+      }}
+    >
+      {props.children}
+    </AuthContext.Provider>
+  );
 };
 
 export default AuthContext;
